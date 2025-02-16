@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://duvsjoelkhkiw"]
+
+[ext_resource type="Texture2D" uid="uid://buh80ndbw3cjh" path="res://assets/ingredientsPNG/mika.png" id="1_q36g2"]
+[ext_resource type="Script" path="res://scripts/food/ingredients/mika.gd" id="2_vep3a"]
+
+[node name="MikaSprite2D" type="Sprite2D"]
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("1_q36g2")
+script = ExtResource("2_vep3a")

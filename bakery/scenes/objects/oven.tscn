@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://x8ddl8432pdq"]
+
+[ext_resource type="Texture2D" uid="uid://h21jafoml2l0" path="res://assets/objectsPNG/oven off.png" id="1_mv76o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ashi"]
+size = Vector2(30, 20)
+
+[node name="Oven" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mv76o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_6ashi")

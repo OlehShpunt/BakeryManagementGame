@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds5xwi5qhgwvp"]
+
+[ext_resource type="Texture2D" uid="uid://dhviec8aepym2" path="res://assets/ingredientsPNG/butter.png" id="1_dl6tw"]
+[ext_resource type="Script" path="res://scripts/food/ingredients/butter.gd" id="1_kaqn1"]
+
+[node name="Sprite" type="Sprite2D"]
+texture = ExtResource("1_dl6tw")
+script = ExtResource("1_kaqn1")

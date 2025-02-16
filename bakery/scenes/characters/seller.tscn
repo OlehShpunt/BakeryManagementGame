@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b47cmo2rspcfv"]
+
+[ext_resource type="Texture2D" uid="uid://cdmmfjr4ff42d" path="res://assets/Adv&Adv_demo.png" id="1_v3ynh"]
+[ext_resource type="Script" path="res://scripts/characters/seller.gd" id="1_xqrk1"]
+[ext_resource type="PackedScene" uid="uid://c4q0rych386or" path="res://scenes/abstract/tradeable_component.tscn" id="3_g1pn3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_81xed"]
+radius = 6.08276
+
+[node name="Seller" type="CharacterBody2D"]
+script = ExtResource("1_xqrk1")
+
+[node name="SellerCollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_81xed")
+
+[node name="SellerSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+texture = ExtResource("1_v3ynh")
+hframes = 12
+vframes = 8
+frame = 1
+
+[node name="TradeableComponent" parent="." instance=ExtResource("3_g1pn3")]

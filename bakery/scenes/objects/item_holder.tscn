@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd3dw2xnmy76u"]
+
+[ext_resource type="Script" path="res://scripts/objects/item_holder.gd" id="1_1rih4"]
+[ext_resource type="Texture2D" uid="uid://wah7g26c7hdi" path="res://assets/objectsPNG/holder_z1.png" id="1_iravs"]
+[ext_resource type="Texture2D" uid="uid://bahfr0xmovlfg" path="res://assets/objectsPNG/holder_z2.png" id="3_udghb"]
+[ext_resource type="Texture2D" uid="uid://c6m2l0dy3seg8" path="res://assets/objectsPNG/glass16x16.png" id="4_vtw3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkd00"]
+size = Vector2(18, 12)
+
+[node name="ItemHolder" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_1rih4")
+
+[node name="Main" type="Sprite2D" parent="."]
+texture = ExtResource("1_iravs")
+
+[node name="Item" type="Sprite2D" parent="."]
+position = Vector2(-2.98023e-08, 4.76837e-07)
+scale = Vector2(0.875, 0.875)
+
+[node name="Frame" type="Sprite2D" parent="."]
+texture = ExtResource("3_udghb")
+
+[node name="Glass" type="Sprite2D" parent="."]
+texture = ExtResource("4_vtw3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_mkd00")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3q3w5g1rkyip"]
+
+[ext_resource type="Texture2D" uid="uid://bdixt4rsgvhav" path="res://assets/ingredientsPNG/drii.png" id="1_j6eqw"]
+[ext_resource type="Script" path="res://scripts/food/ingredients/drii.gd" id="1_y7dgb"]
+
+[node name="DriiSprite2D" type="Sprite2D"]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_j6eqw")
+script = ExtResource("1_y7dgb")

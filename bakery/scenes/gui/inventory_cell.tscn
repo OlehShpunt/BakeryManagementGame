@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7wdvsl7napov"]
+
+[ext_resource type="Script" path="res://scripts/gui/inventory_cell.gd" id="1_0glef"]
+[ext_resource type="Script" path="res://scripts/gui/cell_area.gd" id="2_vx6lm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gji7"]
+bg_color = Color(0.69, 0.69, 0.69, 0.333333)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.18, 0.18, 0.360784)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgt34"]
+size = Vector2(6, 6)
+
+[node name="InventoryCell" type="Panel"]
+custom_minimum_size = Vector2(20, 20)
+theme_override_styles/panel = SubResource("StyleBoxFlat_2gji7")
+script = ExtResource("1_0glef")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+expand_mode = 5
+stretch_mode = 5
+
+[node name="debug" type="Timer" parent="."]
+one_shot = true
+
+[node name="CellArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("2_vx6lm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CellArea"]
+position = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_fgt34")
+debug_color = Color(0.824543, 0.261046, 0.753247, 0.42)
+
+[connection signal="mouse_entered" from="." to="." method="_on_cell_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_cell_mouse_exited"]
+[connection signal="timeout" from="debug" to="." method="_on_timer_timeout"]

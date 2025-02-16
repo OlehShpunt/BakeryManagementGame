@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://j5g057kb27fc"]
+
+[ext_resource type="Texture2D" uid="uid://crupfd7upgv7x" path="res://assets/ingredientsPNG/jello.png" id="1_gpq87"]
+[ext_resource type="Script" path="res://jello.gd" id="1_x3ksh"]
+
+[node name="JelloSprite" type="Sprite2D"]
+texture = ExtResource("1_gpq87")
+script = ExtResource("1_x3ksh")

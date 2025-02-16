@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4q0rych386or"]
+
+[ext_resource type="PackedScene" uid="uid://cai35hokwssjj" path="res://scenes/gui/seller_gui.tscn" id="1_0ibxj"]
+[ext_resource type="Script" path="res://scripts/abstract/tradeable_component.gd" id="1_fxfsl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0kxtq"]
+radius = 58.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fh8wr"]
+radius = 20.025
+
+[node name="TradeableComponent" type="Node2D"]
+script = ExtResource("1_fxfsl")
+
+[node name="InteractableZone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableZone"]
+shape = SubResource("CircleShape2D_0kxtq")
+debug_color = Color(0.0332314, 0.525908, 1, 0.42)
+
+[node name="DollarSign" type="Label" parent="."]
+offset_left = -7.0
+offset_top = -28.0
+offset_right = 7.0
+offset_bottom = -14.0
+pivot_offset = Vector2(7, 7)
+theme_override_colors/font_color = Color(0.2295, 0.81, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "$"
+horizontal_alignment = 1
+
+[node name="ClickToTrade" type="Area2D" parent="DollarSign"]
+position = Vector2(7, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DollarSign/ClickToTrade"]
+shape = SubResource("CircleShape2D_fh8wr")
+
+[node name="SellerGUI" parent="DollarSign" instance=ExtResource("1_0ibxj")]
+layout_mode = 1
+offset_top = 28.0
+offset_bottom = 28.0
+
+[connection signal="body_entered" from="InteractableZone" to="." method="_on_interactable_zone_body_entered"]
+[connection signal="body_exited" from="InteractableZone" to="." method="_on_interactable_zone_body_exited"]
+[connection signal="mouse_entered" from="DollarSign/ClickToTrade" to="." method="_on_click_to_trade_mouse_entered"]
+[connection signal="mouse_exited" from="DollarSign/ClickToTrade" to="." method="_on_click_to_trade_mouse_exited"]

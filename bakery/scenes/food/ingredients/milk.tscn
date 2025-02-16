@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpm2em07dwlep"]
+
+[ext_resource type="Script" path="res://scripts/food/ingredients/milk.gd" id="1_nwdid"]
+[ext_resource type="Texture2D" uid="uid://d13sp4c6ygjbb" path="res://assets/ingredientsPNG/milk.png" id="1_rg2wd"]
+
+[node name="MilkSprite" type="Sprite2D"]
+texture = ExtResource("1_rg2wd")
+script = ExtResource("1_nwdid")

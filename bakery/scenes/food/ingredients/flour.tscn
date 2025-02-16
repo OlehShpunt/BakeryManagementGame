@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://diprt46xc4w3c"]
+
+[ext_resource type="Texture2D" uid="uid://cje45iuc52ihu" path="res://assets/ingredientsPNG/flour.png" id="1_gbla5"]
+[ext_resource type="Script" path="res://scripts/food/ingredients/flour.gd" id="2_kjw8r"]
+
+[node name="FlourSprite" type="Sprite2D"]
+texture = ExtResource("1_gbla5")
+script = ExtResource("2_kjw8r")

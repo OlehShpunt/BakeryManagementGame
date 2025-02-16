@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://fwesimsvb3ba"]
+
+[ext_resource type="Script" path="res://scripts/food/ingredients/cherry.gd" id="1_q3sju"]
+[ext_resource type="Texture2D" uid="uid://bbd558m7owwm2" path="res://assets/ingredientsPNG/cherry.png" id="1_x7puq"]
+
+[node name="CherrySprite" type="Sprite2D"]
+texture = ExtResource("1_x7puq")
+script = ExtResource("1_q3sju")

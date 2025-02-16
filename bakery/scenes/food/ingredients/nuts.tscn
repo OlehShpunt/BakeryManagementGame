@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdw2ifm52nixr"]
+
+[ext_resource type="Texture2D" uid="uid://dahvtvv8fijdd" path="res://assets/ingredientsPNG/nuts.png" id="1_jhqu3"]
+[ext_resource type="Script" path="res://nuts.gd" id="1_wm5uu"]
+
+[node name="NutsSprite" type="Sprite2D"]
+texture = ExtResource("1_jhqu3")
+script = ExtResource("1_wm5uu")

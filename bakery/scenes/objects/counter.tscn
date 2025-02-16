@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqorkc6y5jnbv"]
+
+[ext_resource type="Texture2D" uid="uid://61a4278l8k17" path="res://assets/objectsPNG/bakery counter.png" id="1_fwt87"]
+[ext_resource type="PackedScene" uid="uid://cd3dw2xnmy76u" path="res://scenes/objects/item_holder.tscn" id="2_xce6v"]
+[ext_resource type="Texture2D" uid="uid://cje45iuc52ihu" path="res://assets/ingredientsPNG/flour.png" id="4_6puu2"]
+[ext_resource type="Texture2D" uid="uid://dgeivb41b7uud" path="res://assets/ingredientsPNG/cocoa_powder.png" id="5_drqin"]
+[ext_resource type="Texture2D" uid="uid://bbd558m7owwm2" path="res://assets/ingredientsPNG/cherry.png" id="6_1l5hr"]
+[ext_resource type="Texture2D" uid="uid://crupfd7upgv7x" path="res://assets/ingredientsPNG/jello.png" id="7_dv5mf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1i1l"]
+size = Vector2(176, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsxa4"]
+size = Vector2(16, 11)
+
+[node name="Counter" type="StaticBody2D"]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fwt87")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24, 10.5)
+shape = SubResource("RectangleShape2D_g1i1l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(104, 10.5)
+shape = SubResource("RectangleShape2D_qsxa4")
+
+[node name="ItemHolder" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-103, -1)
+
+[node name="ItemHolder2" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-86, -1)
+item_texture = ExtResource("4_6puu2")
+
+[node name="ItemHolder3" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-69, -1)
+item_texture = ExtResource("5_drqin")
+
+[node name="ItemHolder4" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-52, -1)
+item_texture = ExtResource("6_1l5hr")
+
+[node name="ItemHolder5" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-35, -1)
+
+[node name="ItemHolder6" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-18, -1)
+
+[node name="ItemHolder7" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-1, -1)
+
+[node name="ItemHolder8" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(16, -1)
+item_texture = ExtResource("7_dv5mf")
+
+[node name="ItemHolder9" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(55, -1)
