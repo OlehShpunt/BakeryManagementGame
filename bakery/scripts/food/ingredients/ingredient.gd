@@ -1,10 +1,11 @@
 class_name Ingredient extends Item
 
-# The one currently hovering at with the item at mouse position
+# The one currently hovering over with the item at mouse position
 var recent_cell_area = null
 var is_being_moved_by_mouse = false
 var inventory_resource = preload("res://resources/gui/inventory_resource.tres")
 var storage1_resource = preload("res://resources/objects/storage1_resource.tres")
+var cooking_gui_resource = preload("res://resources/gui/cooking_gui_resource.tres")
 
 func _ready() -> void:
 	# Required when I instantiate and add the area at runtime,
@@ -36,8 +37,9 @@ func _input(event: InputEvent) -> void:
 				inventory_resource.items[recent_cell.id] = get_item_string()
 				is_being_moved_by_mouse = false
 		elif recent_cell.has_method("storage_cell"):
-			if storage1_resource.items[recent_cell.id] == null or storage1_resource.items[recent_cell.id] == "":
-				storage1_resource.items[recent_cell.id] = get_item_string()
+			var resource_to_put_in = recent_cell.resource
+			if resource_to_put_in.items[recent_cell.id] == null or resource_to_put_in.items[recent_cell.id] == "":
+				resource_to_put_in.items[recent_cell.id] = get_item_string()
 				is_being_moved_by_mouse = false
 
 func get_item_string() -> String:

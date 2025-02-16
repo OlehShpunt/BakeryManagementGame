@@ -10,7 +10,7 @@ var moved_item
 var is_occupied = true
 
 func _ready() -> void:
-	pass
+	self.resource = get_parent().get_resource()
 
 func _process(_delta: float) -> void:
 	print(resource.resource_name)
@@ -23,6 +23,7 @@ func empty_cell():
 
 func _on_cell_mouse_entered() -> void:
 	mouse_is_hovering = true
+	print("StorageCell: hovering over a cell with resource of type ", resource.get_class())
 
 func _on_cell_mouse_exited() -> void:
 	mouse_is_hovering = false

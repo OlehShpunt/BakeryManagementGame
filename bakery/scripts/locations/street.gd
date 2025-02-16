@@ -18,12 +18,15 @@ func _ready() -> void:
 			player.global_position = Vector2(325, 425)
 		else:
 			pass
-			print("Could not move Player to coordinates, because previous_scene in scene_manager is null")
+			push_error("Could not move Player to coordinates, because previous_scene in scene_manager is null")
 
 # Called when the scene is loaded for the first time
 # Since there's no player node in the street scene, it
 # needs to add the player.
 func on_first_load():
 	scene_manager.first_load = false
-	self.add_child(first_load_player.instantiate())
-	player.global_position = Vector2(200, 200)
+	var p : Player = first_load_player.instantiate()
+	self.add_child(p)
+	scene_manager.player = p
+	player = p
+	player.global_position = Vector2(200, 350)
