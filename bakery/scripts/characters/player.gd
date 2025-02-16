@@ -6,7 +6,9 @@ extends CharacterBody2D
 @export var money_balance = 50
 @onready var animation_player = $PlayerAnimationPlayer
 @onready var inventory = $Camera2D/Inventory
-var last_direction = "s";
+var last_direction = "s"
+var test_github = false
+var test_version_control = true
 
 var inventory_resources : InventoryResource = preload("res://resources/gui/inventory_resource.tres")
 
