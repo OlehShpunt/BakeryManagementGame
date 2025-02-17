@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _input(event: InputEvent) -> void:
+	## Leave an item
 	# If at area where you can leave the item, 
 	# the item is put there and removed from inventory cell 
 	if event.is_action_pressed("left_click") and recent_cell_area and is_being_moved_by_mouse:

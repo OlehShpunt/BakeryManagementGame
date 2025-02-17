@@ -29,4 +29,4 @@ func on_first_load():
 	self.add_child(p)
 	scene_manager.player = p
 	player = p
-	player.global_position = Vector2(200, 350)
+	player.global_position = Vector2(200, 100)

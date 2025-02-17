@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_csnws")
 num_of_cells = 4
-items = [null, null, null, null]
+items = [&"flour", &"flour", &"flour", null]

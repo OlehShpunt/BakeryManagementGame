@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 	if resource.get_item(id):
 		texture.set_texture(converter.string_to_texture(resource.get_item(id)))
 	else:
-		push_error("Resource item is most likely null. ")
+		empty_cell()
 
 func empty_cell():
 	texture.set_texture(null)
