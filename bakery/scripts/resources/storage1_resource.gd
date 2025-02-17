@@ -5,6 +5,7 @@ class_name Storage1Resource extends Resource
 @export var items = ["", "", "", "", "", "", "", "", "", ""]
 
 func add_item(id : int, item : String) -> void:
+	print("^ storage1 res add_item() called")
 	items[id] = item
 
 func get_item(id : int):

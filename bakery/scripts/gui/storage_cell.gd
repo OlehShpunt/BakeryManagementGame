@@ -3,20 +3,22 @@ class_name StorageCell extends Panel
 @onready var texture = $CenterContainer/TextureRect
 @onready var flour = preload("res://scenes/food/ingredients/flour.tscn")
 @onready var converter = preload("res://resources/gui/item_form_converter.tres")
-var resource = preload("res://resources/objects/storage1_resource.tres")
+var resource
 var mouse_is_hovering = false
 var moved_item
 @export var id : int
 var is_occupied = true
+# Used for CookingGUI
+@export var is_result_cell = false
 
 func _ready() -> void:
 	self.resource = get_parent().get_resource()
 
 func _process(_delta: float) -> void:
-	print(resource.resource_name)
-	print("THE item: id=", id, "; ", resource.get_item(id))
 	if resource.get_item(id):
 		texture.set_texture(converter.string_to_texture(resource.get_item(id)))
+	else:
+		push_error("Resource item is most likely null. ")
 
 func empty_cell():
 	texture.set_texture(null)

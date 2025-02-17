@@ -6,7 +6,6 @@ var cell : PackedScene = preload("res://scenes/gui/storage_cell.tscn")
 @export var resource = preload("res://resources/objects/storage1_resource.tres")
 
 func _ready() -> void:
-	print("ready")
 	self.number_of_cells = resource.num_of_cells
 	spawn_cells()
 

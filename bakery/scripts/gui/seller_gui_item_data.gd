@@ -37,7 +37,7 @@ func _on_button_pressed() -> void:
 			# Prevent adding to cell if it's already taken by other item
 			if inventory_resource.items[i] == null or inventory_resource.items[i] == "":
 				print("Adding ", item_packed_scene.resource_name, " to cell ", i)
-				inventory_resource.items[i] = item_packed_scene.resource_name
+				inventory_resource.add_item(i, item_packed_scene.resource_name)
 				item_added = true
 				# disable this whole gui
 				item_sold_out()

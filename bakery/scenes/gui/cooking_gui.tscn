@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://xcq0c0utukor"]
+[gd_scene load_steps=7 format=3 uid="uid://xcq0c0utukor"]
 
 [ext_resource type="Script" path="res://scripts/gui/cooking_grid_container.gd" id="1_k3alm"]
 [ext_resource type="PackedScene" uid="uid://wlit24jck5fn" path="res://scenes/gui/storage_cell.tscn" id="1_w5f62"]
-[ext_resource type="Script" path="res://scripts/resources/storage1_resource.gd" id="2_f57ww"]
 [ext_resource type="Texture2D" uid="uid://p71uehyh4xc8" path="res://assets/objectsPNG/arrow right.png" id="2_kfexh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iub5b"]
@@ -11,11 +10,6 @@ content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
 bg_color = Color(0.46, 0.46, 0.46, 1)
-
-[sub_resource type="Resource" id="Resource_3tu73"]
-script = ExtResource("2_f57ww")
-num_of_cells = 10
-items = ["", "", "", "", "", "", "", "", "", ""]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jcqks"]
 
@@ -45,7 +39,6 @@ layout_mode = 2
 theme_override_constants/h_separation = 0
 columns = 9
 script = ExtResource("1_k3alm")
-resource = SubResource("Resource_3tu73")
 
 [node name="Cell1" parent="PanelContainer/MarginContainer/CookingGridContainer" instance=ExtResource("1_w5f62")]
 layout_mode = 2
@@ -105,3 +98,4 @@ stretch_mode = 5
 [node name="Result" parent="PanelContainer/MarginContainer/CookingGridContainer" instance=ExtResource("1_w5f62")]
 layout_mode = 2
 id = 7
+is_result_cell = true

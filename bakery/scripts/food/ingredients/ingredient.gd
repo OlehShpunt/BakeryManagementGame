@@ -34,12 +34,14 @@ func _input(event: InputEvent) -> void:
 			if inventory_resource.items[recent_cell.id] == null or inventory_resource.items[recent_cell.id] == "":
 				# Using polymorphism, 
 				print("get_item_string() -> ", get_item_string())
-				inventory_resource.items[recent_cell.id] = get_item_string()
+				inventory_resource.add_item(recent_cell.id, get_item_string())
 				is_being_moved_by_mouse = false
 		elif recent_cell.has_method("storage_cell"):
+			print("^ putting in a storage cell")
 			var resource_to_put_in = recent_cell.resource
 			if resource_to_put_in.items[recent_cell.id] == null or resource_to_put_in.items[recent_cell.id] == "":
-				resource_to_put_in.items[recent_cell.id] = get_item_string()
+				print("^ putting confirmed")
+				resource_to_put_in.add_item(recent_cell.id, get_item_string())
 				is_being_moved_by_mouse = false
 
 func get_item_string() -> String:

@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_s5uo7")
 num_of_cells = 9
-items = ["", "", "", "", "", "", "", "", ""]
+items = ["", "", "", "", "", "", "", ""]
