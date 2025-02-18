@@ -1,0 +1,74 @@
+{
+  "recipes": [
+	{
+	  "id": 0,
+	  "title": "bread",
+	  "ingredients": ["flour", "flour", "", "", "", "", ""]
+	},
+	{
+	  "id": 1,
+	  "title": "bagel",
+	  "ingredients": ["flour", "milk", "", "", "", "", ""]
+	},
+	{
+	  "id": 2,
+	  "title": "waffle",
+	  "ingredients": ["flour", "chocolate", "", "", "", "", ""]
+	},
+	{
+	  "id": 3,
+	  "title": "sponge_cake",
+	  "ingredients": ["flour", "flour", "vanilla", "", "", "", ""]
+	},
+	{
+	  "id": 4,
+	  "title": "donut",
+	  "ingredients": ["flour", "milk", "butter", "chocolate", "", "", ""]
+	},
+	{
+	  "id": 5,
+	  "title": "chocolate_candy",
+	  "ingredients": ["butter", "chocolate", "cocoa", "", "", "", ""]
+	},
+	{
+	  "id": 6,
+	  "title": "signature_chocolate",
+	  "ingredients": ["milk", "chocolate", "vanilla", "", "", "", ""]
+	},
+	{
+	  "id": 7,
+	  "title": "pudding",
+	  "ingredients": ["flour", "milk", "vanilla", "jello", "", "", ""]
+	},
+	{
+	  "id": 8,
+	  "title": "chocolate_bun",
+	  "ingredients": ["flour", "chocolate", "vanilla", "vanilla", "", "", ""]
+	},
+	{
+	  "id": 9,
+	  "title": "muffin",
+	  "ingredients": ["flour", "milk", "cherry", "", "", "", ""]
+	},
+	{
+	  "id": 10,
+	  "title": "nut_candy",
+	  "ingredients": ["butter", "butter", "nuts", "", "", "", ""]
+	},
+	{
+	  "id": 11,
+	  "title": "cookie",
+	  "ingredients": ["flour", "butter", "chocolate", "nuts", "", "", ""]
+	},
+	{
+	  "id": 12,
+	  "title": "nut_cake",
+	  "ingredients": ["flour", "flour", "milk", "butter", "butter", "cocoa", "nuts"]
+	},
+	{
+	  "id": 13,
+	  "title": "cherry_cake",
+	  "ingredients": ["flour", "milk", "milk", "butter", "cherry", "jello", ""]
+	}
+  ]
+}

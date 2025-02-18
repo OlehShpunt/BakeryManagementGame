@@ -49,4 +49,4 @@ shape = SubResource("RectangleShape2D_f86k8")
 
 [node name="Seller" parent="." instance=ExtResource("4_trrxq")]
 position = Vector2(158, 44)
-shop_items = Array[String](["milk,3", "flour,1", "cherry,14", "butter,6", "chocolate,9", "cocoa,11", "vanilla,8", "nuts,17"])
+shop_items = Array[String](["milk,3", "flour,1", "cherry,14", "butter,6", "chocolate,9", "cocoa,11", "vanilla,8", "nuts,17", "jello,100"])

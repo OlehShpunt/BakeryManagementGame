@@ -2,6 +2,8 @@ class_name CookingGuiResource extends Resource
 
 @export var num_of_cells : int = 8
 
+var recipe_manager : RecipeManager = RecipeManager.new()
+
 # 8th is the result cell
 @export var items = ["", "", "", "", "", "", "", ""]
 
@@ -26,13 +28,13 @@ func remove_item(id : int):
 		add_item(id, "")
 
 func check_for_recipies():
-	var flour_count = items.count("flour")
-	var empty_count = items.count("")
-	if flour_count == 3:
-		add_result("cherry")
+	var items_copy = items.duplicate()
+	# removing the recipe result cell
+	items_copy.resize(7)
+	print("JSON is recipy valid?: ", recipe_manager.get_recipe_result(items_copy))
 
 ## Adds cooking result to last cell
-func add_result(result : String):
+func add_to_result(result : String):
 	items[7] = result
 
 ## Assigns all items array elements to ""
