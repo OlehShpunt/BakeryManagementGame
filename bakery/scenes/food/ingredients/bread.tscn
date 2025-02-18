@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf7b74au4d2qt"]
+
+[ext_resource type="Texture2D" uid="uid://b8qimgd4x5nud" path="res://assets/ingredientsPNG/bread.png" id="1_k6ah4"]
+[ext_resource type="Script" path="res://scripts/food/ingredients/bread.gd" id="1_vpsw3"]
+
+[node name="Bread" type="Sprite2D"]
+texture = ExtResource("1_k6ah4")
+script = ExtResource("1_vpsw3")

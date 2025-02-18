@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4hcretxms0yw"]
+
+[ext_resource type="Script" path="res://scripts/food/ingredients/donut.gd" id="1_c874i"]
+[ext_resource type="Texture2D" uid="uid://digqp18sggog4" path="res://assets/ingredientsPNG/donut.png" id="1_op2aj"]
+
+[node name="Donut" type="Sprite2D"]
+texture = ExtResource("1_op2aj")
+script = ExtResource("1_c874i")

@@ -31,7 +31,8 @@ func check_for_recipies():
 	var items_copy = items.duplicate()
 	# removing the recipe result cell
 	items_copy.resize(7)
-	print("JSON is recipy valid?: ", recipe_manager.get_recipe_result(items_copy))
+	add_to_result(recipe_manager.get_recipe_result(items_copy))
+	print("JSON is recipy valid?: ", items[7])
 
 ## Adds cooking result to last cell
 func add_to_result(result : String):
