@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8ml7u1sxcm8e"]
+
+[ext_resource type="Script" path="res://scripts/food/ingredients/pudding.gd" id="1_6wryg"]
+[ext_resource type="Texture2D" uid="uid://ddomeepufook5" path="res://assets/ingredientsPNG/pudding.png" id="1_t11sg"]
+
+[node name="Pudding" type="Sprite2D"]
+texture = ExtResource("1_t11sg")
+script = ExtResource("1_6wryg")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://hpi78iixn7xk"]
+
+[ext_resource type="Script" path="res://scripts/food/ingredients/cherry_cake.gd" id="1_2ajqo"]
+[ext_resource type="Texture2D" uid="uid://dlu0fajieyqty" path="res://assets/ingredientsPNG/cherry_cake.png" id="1_5qw5b"]
+
+[node name="CherryCake" type="Sprite2D"]
+texture = ExtResource("1_5qw5b")
+script = ExtResource("1_2ajqo")

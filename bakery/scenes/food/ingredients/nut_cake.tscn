@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmnd8cgof64el"]
+
+[ext_resource type="Script" path="res://scripts/food/ingredients/nut_cake.gd" id="1_in3ca"]
+[ext_resource type="Texture2D" uid="uid://cqtqjwgn3mkdc" path="res://assets/ingredientsPNG/nut_cake.png" id="1_p8smi"]
+
+[node name="NutCake" type="Sprite2D"]
+texture = ExtResource("1_p8smi")
+script = ExtResource("1_in3ca")

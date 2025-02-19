@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://n605bth35xrp"]
+
+[ext_resource type="Script" path="res://scripts/food/ingredients/cookie.gd" id="1_mi5p7"]
+[ext_resource type="Texture2D" uid="uid://blk6v2bxahtlu" path="res://assets/ingredientsPNG/cookie.png" id="1_vecwm"]
+
+[node name="Cookie" type="Sprite2D"]
+texture = ExtResource("1_vecwm")
+script = ExtResource("1_mi5p7")
