@@ -1,4 +1,4 @@
-extends Area2D
+class_name IngredientInteractiveArea extends Area2D
 
 @onready var item : Ingredient = get_parent()
 

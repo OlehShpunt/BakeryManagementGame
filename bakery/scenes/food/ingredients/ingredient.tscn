@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/food/ingredients/ingredient.gd" id="1_hupmy"]
 
 [node name="Ingredient" type="Sprite2D"]
-z_index = 5
+z_index = 100
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_hupmy")

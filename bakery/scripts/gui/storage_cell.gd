@@ -2,7 +2,7 @@ class_name StorageCell extends Panel
 
 @onready var texture = $CenterContainer/TextureRect
 @onready var flour = preload("res://scenes/food/ingredients/flour.tscn")
-@onready var converter = preload("res://resources/gui/item_form_converter.tres")
+
 var resource
 var mouse_is_hovering = false
 var moved_item
@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if resource.get_item(id):
-		texture.set_texture(converter.string_to_texture(resource.get_item(id)))
+		texture.set_texture(item_form_converter.string_to_texture(resource.get_item(id)))
 	else:
 		empty_cell()
 
@@ -34,9 +34,10 @@ func _on_cell_mouse_exited() -> void:
 ##TO DO: copy some code from here to InventoryCell (can't use inheritance, no components => no composition)
 
 func _input(event: InputEvent) -> void:
+	## Pick the item 
 	# When hover over cell and left click, you pick the item and move it.
 	if event.is_action_pressed("left_click") and mouse_is_hovering and texture.get_texture() != null:
-		#var item_scene = converter.string_to_scene(storage1_resource.items[id])
+		#var item_scene = item_form_converter.string_to_scene(storage1_resource.items[id])
 		var item_scene = scene_manager.get_packed_scene(resource.get_item(id))
 		resource.remove_item(id)
 		add_child(item_scene.instantiate())

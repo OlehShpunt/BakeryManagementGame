@@ -5,7 +5,6 @@ class_name SellerGUIItemData extends HBoxContainer
 @onready var purchase_button : Button = $Button
 @onready var label : Label = $Label
 var inventory_resource : InventoryResource = preload("res://resources/gui/inventory_resource.tres")
-var converter = preload("res://resources/gui/item_form_converter.tres")
 var item : String
 var price : int
 var sold_out = false
@@ -57,10 +56,10 @@ func get_item():
 	texture_rect.get_texture()
 
 func set_item_texture(item_name : String) -> void:
-	texture_rect.set_texture(converter.string_to_texture(item_name))
+	texture_rect.set_texture(item_form_converter.string_to_texture(item_name))
 
 func set_label_text(item_name : String) -> void:
-	texture_rect.set_texture(converter.string_to_texture(item_name))
+	texture_rect.set_texture(item_form_converter.string_to_texture(item_name))
 
-func set_item_price(price : int) -> void:
-	purchase_button.text = str(price) + "$"
+func set_item_price(item_price : int) -> void:
+	purchase_button.text = str(item_price) + "$"

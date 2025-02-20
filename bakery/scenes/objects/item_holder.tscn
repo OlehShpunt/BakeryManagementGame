@@ -1,12 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd3dw2xnmy76u"]
+[gd_scene load_steps=9 format=3 uid="uid://cd3dw2xnmy76u"]
 
 [ext_resource type="Script" path="res://scripts/objects/item_holder.gd" id="1_1rih4"]
 [ext_resource type="Texture2D" uid="uid://wah7g26c7hdi" path="res://assets/objectsPNG/holder_z1.png" id="1_iravs"]
 [ext_resource type="Texture2D" uid="uid://bahfr0xmovlfg" path="res://assets/objectsPNG/holder_z2.png" id="3_udghb"]
 [ext_resource type="Texture2D" uid="uid://c6m2l0dy3seg8" path="res://assets/objectsPNG/glass16x16.png" id="4_vtw3n"]
+[ext_resource type="Script" path="res://scripts/gui/cell_area.gd" id="5_hp6jv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkd00"]
 size = Vector2(18, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2vs5"]
+size = Vector2(5.75, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iam2w"]
+size = Vector2(16, 16)
 
 [node name="ItemHolder" type="StaticBody2D"]
 collision_layer = 0
@@ -16,9 +23,11 @@ script = ExtResource("1_1rih4")
 [node name="Main" type="Sprite2D" parent="."]
 texture = ExtResource("1_iravs")
 
-[node name="Item" type="Sprite2D" parent="."]
-position = Vector2(-2.98023e-08, 4.76837e-07)
-scale = Vector2(0.875, 0.875)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
 
 [node name="Frame" type="Sprite2D" parent="."]
 texture = ExtResource("3_udghb")
@@ -29,3 +38,22 @@ texture = ExtResource("4_vtw3n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_mkd00")
+
+[node name="CellArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("5_hp6jv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CellArea"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_j2vs5")
+debug_color = Color(0.858937, 0.338771, 0.353881, 0.42)
+
+[node name="MouseListener" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseListener"]
+shape = SubResource("RectangleShape2D_iam2w")
+debug_color = Color(0.390555, 0.321849, 0.536532, 0.42)
+
+[connection signal="mouse_entered" from="MouseListener" to="." method="_on_cell_mouse_entered"]
+[connection signal="mouse_exited" from="MouseListener" to="." method="_on_cell_mouse_exited"]

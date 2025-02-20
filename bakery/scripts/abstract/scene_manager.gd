@@ -12,17 +12,22 @@ extends Node
 func get_packed_scene(item_name : String, object_type : String = "ingredient") -> PackedScene:
 	print("get_packed_scene called, arguments passed: ", item_name, " --- ", object_type)
 	# Returns respective to object_type folder (changed string in load())
-	if (object_type == "ingredient"):
-		var to_return = load("res://scenes/food/ingredients/" + item_name + ".tscn")
-		to_return.set_name(item_name)
-		return to_return
-	elif (object_type == "bakery"):
-		var to_return = load("res://scenes/food/bakery/" + item_name + ".tscn")
-		to_return.set_name(item_name)
-		return to_return
+	if (item_name != ""):
+		if (object_type == "ingredient"):
+			var to_return = load("res://scenes/food/ingredients/" + item_name + ".tscn")
+			to_return.set_name(item_name)
+			return to_return
+		elif (object_type == "bakery"):
+			var to_return = load("res://scenes/food/bakery/" + item_name + ".tscn")
+			to_return.set_name(item_name)
+			return to_return
+		else:
+			push_error("\"" + object_type + "\" is an invalid value for object_type. ")
+			return null
 	else:
-		push_error("\"" + object_type + "\" is an invalid value for object_type. ")
-		return null
+		push_error("item_name has a value of \"\"")
+	
+	return null
 
 ## SCENE TRANSITION MANAGEMENT
 var first_load = true

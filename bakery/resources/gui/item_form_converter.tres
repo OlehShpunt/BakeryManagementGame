@@ -1,6 +1,0 @@
-[gd_resource type="Resource" script_class="ItemFormConverter" load_steps=2 format=3 uid="uid://cah2ftncfa5e3"]
-
-[ext_resource type="Script" path="res://scripts/resources/item_form_converter.gd" id="1_fu84j"]
-
-[resource]
-script = ExtResource("1_fu84j")

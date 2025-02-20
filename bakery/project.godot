@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 scene_manager="*res://scripts/abstract/scene_manager.gd"
+item_form_converter="*res://scripts/resources/item_form_converter.gd"
 
 [display]
 

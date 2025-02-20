@@ -2,7 +2,6 @@ class_name InventoryCell extends Panel
 
 @onready var texture = $CenterContainer/TextureRect
 @onready var flour = preload("res://scenes/food/ingredients/flour.tscn")
-@onready var converter = preload("res://resources/gui/item_form_converter.tres")
 var inventory_resource = preload("res://resources/gui/inventory_resource.tres")
 var mouse_is_hovering = false
 var moved_item
@@ -14,7 +13,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if inventory_resource.get_item(id):
-		texture.set_texture(converter.string_to_texture(inventory_resource.get_item(id)))
+		texture.set_texture(item_form_converter.string_to_texture(inventory_resource.get_item(id)))
 
 func empty_cell():
 	texture.set_texture(null)

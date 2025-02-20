@@ -18,7 +18,7 @@ func _ready() -> void:
 		self.show()
 	spawn_cells()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if inventory_blocked:
 		self.hide()
 

@@ -9,9 +9,6 @@ func _ready() -> void:
 	self.number_of_cells = resource.num_of_cells
 	spawn_cells()
 
-func _process(delta: float) -> void:
-	pass
-
 func spawn_cells():
 	print("Number of cells: ", number_of_cells)
 	for i in range(number_of_cells):
@@ -23,6 +20,3 @@ func spawn_cells():
 
 func get_resource():
 	return self.resource
-
-func _input(event: InputEvent) -> void:
-	pass
