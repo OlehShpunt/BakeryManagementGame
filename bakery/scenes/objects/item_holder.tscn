@@ -10,7 +10,7 @@
 size = Vector2(18, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2vs5"]
-size = Vector2(5.75, 6)
+size = Vector2(2.875, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iam2w"]
 size = Vector2(16, 16)
@@ -28,6 +28,8 @@ offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
 offset_bottom = 7.0
+expand_mode = 1
+stretch_mode = 3
 
 [node name="Frame" type="Sprite2D" parent="."]
 texture = ExtResource("3_udghb")
@@ -45,7 +47,7 @@ collision_mask = 4
 script = ExtResource("5_hp6jv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CellArea"]
-position = Vector2(0, 3)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_j2vs5")
 debug_color = Color(0.858937, 0.338771, 0.353881, 0.42)
 
@@ -54,6 +56,10 @@ debug_color = Color(0.858937, 0.338771, 0.353881, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseListener"]
 shape = SubResource("RectangleShape2D_iam2w")
 debug_color = Color(0.390555, 0.321849, 0.536532, 0.42)
+
+[node name="TimeBeforeEnablePicking" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="mouse_entered" from="MouseListener" to="." method="_on_cell_mouse_entered"]
 [connection signal="mouse_exited" from="MouseListener" to="." method="_on_cell_mouse_exited"]
