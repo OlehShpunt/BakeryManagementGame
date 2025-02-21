@@ -10,7 +10,6 @@ extends Node
 # @param1 name of the object
 # @param2 type of the object (food/character/furniture/appliance etc.)
 func get_packed_scene(item_name : String, object_type : String = "ingredient") -> PackedScene:
-	print("get_packed_scene called, arguments passed: ", item_name, " --- ", object_type)
 	# Returns respective to object_type folder (changed string in load())
 	if (item_name != ""):
 		if (object_type == "ingredient"):
