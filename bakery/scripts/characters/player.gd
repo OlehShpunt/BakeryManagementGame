@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 # Last movement direction is updated when awsd pressed
-@export var speed = 150
+@export var speed : int
 @export var money_balance = 50
 @onready var animation_player = $PlayerAnimationPlayer
 @onready var inventory = $Camera2D/Inventory

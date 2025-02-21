@@ -1,4 +1,4 @@
-class_name Bakery1
+class_name MiniMarket
 extends InsideLocationBase
 
 #@onready var player = scene_manager.player

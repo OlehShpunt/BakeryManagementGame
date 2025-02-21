@@ -3,7 +3,7 @@ extends Area2D
 
 # The scene where this Teleport is located (teleport's scene location)
 @onready var teleports_scene_location = self.get_owner() 
-@export_enum("street", "bakery_1", "shop_1") var teleport_to : String
+@export_enum("street", "bakery_1", "mini_market", "wholesale_shop", "kiosk", "supermarket") var teleport_to : String
 
 func _ready() -> void:
 	#connect("body_entered", _on_body_entered)

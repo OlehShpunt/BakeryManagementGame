@@ -23,9 +23,8 @@ item_holder_data="*res://scripts/abstract/item_holder_data.gd"
 
 [display]
 
-window/size/viewport_width=2300
-window/size/viewport_height=1000
-window/stretch/scale=2.6
+window/size/viewport_width=1900
+window/size/viewport_height=1100
 
 [gui]
 
