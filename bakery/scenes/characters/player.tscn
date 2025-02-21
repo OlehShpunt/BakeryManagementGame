@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ck6catep7k4as"]
+[gd_scene load_steps=23 format=3 uid="uid://ck6catep7k4as"]
 
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_48atu"]
 [ext_resource type="Texture2D" uid="uid://bs4guq86h8h8" path="res://assets/The Adventurer - Free/Walk/walk_down.png" id="1_ip50t"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dvp8mrjvq58vt" path="res://assets/The Adventurer - Free/Walk/walk_left_down.png" id="8_4g5wu"]
 [ext_resource type="Texture2D" uid="uid://45mby7kx4huh" path="res://assets/The Adventurer - Free/Walk/walk_right_down.png" id="9_s1y86"]
 [ext_resource type="PackedScene" uid="uid://dmhjvxcewxaiq" path="res://scenes/gui/inventory.tscn" id="10_nqfjq"]
+[ext_resource type="Script" path="res://scenes/characters/camera_2d.gd" id="10_uhkya"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjnek"]
 radius = 5.0
@@ -470,7 +471,7 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_48atu")
-speed = 100
+speed = 150
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
@@ -489,6 +490,7 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+script = ExtResource("10_uhkya")
 
 [node name="Inventory" parent="Camera2D" instance=ExtResource("10_nqfjq")]
 z_index = 1

@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=4 uid="uid://ds7rpqqwh7wo0"]
+
+[ext_resource type="Script" path="res://scripts/locations/kiosk.gd" id="1_3xlhe"]
+[ext_resource type="Texture2D" uid="uid://ta1sicwwr7qk" path="res://assets/The Adventurer - Free/basicTileset.jpg" id="2_eratw"]
+[ext_resource type="PackedScene" uid="uid://b4su7pwl3h08v" path="res://scenes/abstract/teleport.tscn" id="3_o8aip"]
+[ext_resource type="PackedScene" uid="uid://b47cmo2rspcfv" path="res://scenes/characters/seller.tscn" id="4_p7btr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w5dfw"]
+texture = ExtResource("2_eratw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y88dn"]
+sources/0 = SubResource("TileSetAtlasSource_w5dfw")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0o4w"]
+texture = ExtResource("2_eratw")
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_78jui"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_p0o4w")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f86k8"]
+size = Vector2(48, 32)
+
+[node name="Kiosk" type="Node2D"]
+script = ExtResource("1_3xlhe")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAEAAQAAAACAAAAAAAEAAUAAAACAAAAAAAEAAYAAAACAAAAAAAEAAcAAAACAAAAAAAEAAgAAAACAAAAAAAEAAkAAAACAAAAAAAEAAoAAAACAAAAAAAFAAQAAAACAAAAAAAFAAUAAAACAAAAAAAFAAYAAAACAAAAAAAFAAcAAAACAAAAAAAFAAgAAAACAAAAAAAFAAkAAAACAAAAAAAFAAoAAAACAAAAAAAGAAQAAAACAAAAAAAGAAUAAAACAAAAAAAGAAYAAAACAAAAAAAGAAcAAAACAAAAAAAGAAgAAAACAAAAAAAGAAkAAAACAAAAAAAGAAoAAAACAAAAAAAHAAQAAAACAAAAAAAHAAUAAAACAAAAAAAHAAYAAAACAAAAAAAHAAcAAAACAAAAAAAHAAgAAAACAAAAAAAHAAkAAAACAAAAAAAHAAoAAAACAAAAAAAIAAQAAAACAAAAAAAIAAUAAAACAAAAAAAIAAYAAAACAAAAAAAIAAcAAAACAAAAAAAIAAgAAAACAAAAAAAIAAkAAAACAAAAAAAIAAoAAAACAAAAAAAJAAQAAAACAAAAAAAJAAUAAAACAAAAAAAJAAYAAAACAAAAAAAJAAcAAAACAAAAAAAJAAgAAAACAAAAAAAJAAkAAAACAAAAAAAJAAoAAAACAAAAAAAKAAQAAAACAAAAAAAKAAUAAAACAAAAAAAKAAYAAAACAAAAAAAKAAcAAAACAAAAAAAKAAgAAAACAAAAAAAKAAkAAAACAAAAAAAKAAoAAAACAAAAAAALAAQAAAACAAAAAAALAAUAAAACAAAAAAALAAYAAAACAAAAAAALAAcAAAACAAAAAAALAAgAAAACAAAAAAALAAkAAAACAAAAAAALAAoAAAACAAAAAAAMAAQAAAACAAAAAAAMAAUAAAACAAAAAAAMAAYAAAACAAAAAAAMAAcAAAACAAAAAAAMAAgAAAACAAAAAAAMAAkAAAACAAAAAAAMAAoAAAACAAAAAAA=")
+tile_set = SubResource("TileSet_y88dn")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAMAAoAAAABAAAAAAALAAoAAAABAAAAAAAKAAoAAAABAAAAAAAGAAoAAAABAAAAAAAFAAoAAAABAAAAAAAEAAoAAAABAAAAAAADAAoAAAABAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAANAAoAAAABAAAAAAANAAkAAAABAAAAAAANAAgAAAABAAAAAAANAAcAAAABAAAAAAANAAYAAAABAAAAAAANAAUAAAABAAAAAAANAAQAAAABAAAAAAANAAMAAAABAAAAAAAMAAMAAAABAAAAAAALAAMAAAABAAAAAAAKAAMAAAABAAAAAAAJAAMAAAABAAAAAAAIAAMAAAABAAAAAAAHAAMAAAABAAAAAAAGAAMAAAABAAAAAAAFAAMAAAABAAAAAAAEAAMAAAABAAAAAAADAAMAAAABAAAAAAADAAQAAAABAAAAAAADAAUAAAABAAAAAAADAAYAAAABAAAAAAADAAcAAAABAAAAAAADAAgAAAABAAAAAAADAAkAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_78jui")
+
+[node name="Teleport" parent="." instance=ExtResource("3_o8aip")]
+position = Vector2(136, 160)
+teleport_to = "street"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
+shape = SubResource("RectangleShape2D_f86k8")
+
+[node name="Seller" parent="." instance=ExtResource("4_p7btr")]
+position = Vector2(76, 79)
+shop_items = Array[String](["cherry,1", "cherry,2", "cherry,3"])
