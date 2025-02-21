@@ -3,9 +3,12 @@ class_name ItemFormConverter extends Node
 var flour_scene : PackedScene = preload("res://scenes/food/ingredients/flour.tscn")
 
 func string_to_texture(string : String) -> Texture2D:
-	#print(string)
-	string = string.to_lower()
-	return scene_manager.get_packed_scene(string, "ingredient").instantiate().get_texture()
+	if (string == "" or string == null):
+		push_error("string has a value of \"\"")
+		return null
+	else:
+		string = string.to_lower()
+		return scene_manager.get_packed_scene(string, "ingredient").instantiate().get_texture()
 
 ## TODO move get_packed_scene() form scene_manager to this script AND rename the method
 # !!! will be probably removed and all occurrances replaced with scene_manager's get_packed_scene method

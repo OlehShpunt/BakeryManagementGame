@@ -1,19 +1,22 @@
 class_name ItemHolder extends StaticBody2D
 
-#var item_texture : Texture2D
+@export var id : int
+
 @onready var texture = $TextureRect
 var current_item_string : String = ""
 
 var mouse_is_hovering = false
 
 func _ready() -> void:
-	pass
-	#set_texture(item_texture)
+	# Setting data to this item holder, because this scene is respawned empty when player enters the parent scene.
+	set_item(item_holder_data.get_item(id))
 
 func set_item(item_to_add : String):
 	if (texture.texture == null):
 		texture.set_texture(item_form_converter.string_to_texture(item_to_add))
 		set_current_item_string(item_to_add)
+		# Saving data to the resource script
+		item_holder_data.save_to(id, current_item_string)
 	else:
 		push_error("The texture already holds an item")
 
@@ -29,9 +32,13 @@ func _input(event: InputEvent) -> void:
 		get_child(-1).is_being_moved_by_mouse = true
 		get_child(-1).z_index = 15
 
+func set_current_item_string(value):
+	current_item_string = value
+
 func empty_cell():
 	texture.set_texture(null)
 	current_item_string = ""
+	item_holder_data.empty_index(id)
 
 func _on_cell_mouse_entered() -> void:
 	print(">>>>mouse entered")
@@ -43,6 +50,3 @@ func _on_cell_mouse_exited() -> void:
 
 func item_holder():
 	pass
-
-func set_current_item_string(value):
-	current_item_string = value
