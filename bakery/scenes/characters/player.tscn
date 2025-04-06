@@ -490,6 +490,10 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 944
+limit_bottom = 816
 script = ExtResource("10_uhkya")
 
 [node name="Inventory" parent="Camera2D" instance=ExtResource("10_nqfjq")]

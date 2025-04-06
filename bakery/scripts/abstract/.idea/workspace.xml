@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="da2d4ff2-9454-4119-9312-7ad7f2ca8277" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/../../project.godot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../resources/gui/cooking_gui_resource.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../../resources/gui/cooking_gui_resource.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../resources/gui/inventory_resource.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../../resources/gui/inventory_resource.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../resources/objects/storage1_resource.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../../resources/objects/storage1_resource.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/abstract/cooking_component.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/abstract/cooking_component.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/abstract/entity_detector.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/abstract/entity_detector.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/abstract/teleport.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/abstract/teleport.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/abstract/tradeable_component.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/abstract/tradeable_component.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/characters/player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/characters/player.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/characters/seller.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/characters/seller.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/bagel.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/bagel.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/bread.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/bread.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/butter.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/butter.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/cherry.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/cherry.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/cherry_cake.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/cherry_cake.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate_bun.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate_bun.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate_candy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate_candy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/cocoa.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/cocoa.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/cookie.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/cookie.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/donut.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/donut.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/drii.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/drii.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/flour.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/flour.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/ingredient.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/ingredient.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/ingredient_interactive_area.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/ingredient_interactive_area.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/jello.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/jello.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/kika.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/kika.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/mika.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/mika.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/milk.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/milk.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/muffin.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/muffin.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/nut_cake.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/nut_cake.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/nut_candy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/nut_candy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/nuts.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/nuts.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/pudding.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/pudding.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/signature_chocolate.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/signature_chocolate.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/sponge_cake.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/sponge_cake.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/vanilla.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/vanilla.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/waffle.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/waffle.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/wew.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/wew.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/gui/cooking_gui.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/cooking_gui.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/gui/inventory.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/inventory.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/gui/inventory_cell.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/inventory_cell.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/gui/seller_gui.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/seller_gui.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/gui/seller_gui_item_data.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/seller_gui_item_data.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/gui/storage_cell.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/storage_cell.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/locations/bakery_1.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/bakery_1.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/locations/kiosk.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/kiosk.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/locations/mini_market.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/mini_market.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/locations/street.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/street.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/locations/supermarket.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/supermarket.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/locations/wholesale_shop.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/wholesale_shop.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/objects/item_holder.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/objects/item_holder.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/objects/storage_1.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/objects/storage_1.tscn" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2vITjoVVcXlon2s0s6AdHvuTfJa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "multiplayer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da2d4ff2-9454-4119-9312-7ad7f2ca8277" name="Changes" comment="" />
+      <created>1743831096620</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743831096620</updated>
+      <workItem from="1743831098646" duration="264000" />
+      <workItem from="1743831728267" duration="167000" />
+      <workItem from="1743831935618" duration="302000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

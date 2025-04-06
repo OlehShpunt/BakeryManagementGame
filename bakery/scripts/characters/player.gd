@@ -1,11 +1,15 @@
 class_name Player 
 extends CharacterBody2D
 
+# Data for multiplayer
+var player_info = {}
+
 # Last movement direction is updated when awsd pressed
 @export var speed : int
 @export var money_balance = 50
 @onready var animation_player = $PlayerAnimationPlayer
 @onready var inventory = $Camera2D/Inventory
+@onready var camera = $Camera2D
 var last_direction = "s"
 var test_github = false
 var test_version_control = true
@@ -17,11 +21,13 @@ var debug = 0
 func _ready():
 	#print("spawned in ", get_owner(), " at ", global_position)
 	#print(self.position)
+	if !is_multiplayer_authority():
+		camera.enabled = false
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
 	debug = debug + 1
-	if (debug == 100):
+	if debug == 400 && is_multiplayer_authority():
 		print("Item 1:", inventory_resources.get_item(0))
 		print("Item 2:", inventory_resources.get_item(1))
 		print("Item 3:", inventory_resources.get_item(2))
@@ -31,9 +37,13 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(_delta):
-	player_movement() # delta not needed since move_and_slide does the delta multiplication
-	move_and_slide()
-	#print(global_position)
+	if is_multiplayer_authority():
+		player_movement() # delta not needed since move_and_slide does the delta multiplication
+		move_and_slide()
+		# Sync position and animation state to other peers
+		update_position.rpc(global_position)
+		update_animation.rpc(last_direction, velocity != Vector2.ZERO)
+		#print(global_position)
 
 func _input(_event):
 	pass
@@ -79,6 +89,29 @@ func block_inventory():
 # 1) Player exits the InteractableZone of a Seller
 func unblock_inventory():
 	inventory.inventory_blocked = false
+
+
+@rpc("any_peer", "call_remote", "reliable")
+func update_position(new_position: Vector2):
+	if not is_multiplayer_authority():  # Only non-authority peers update position
+		global_position = new_position
+
+@rpc("any_peer", "call_remote", "reliable")
+func update_animation(direction: String, is_moving: bool):
+	if not is_multiplayer_authority():  # Only non-authority peers update animation
+		last_direction = direction
+		if is_moving:
+			match direction:
+				"s": animation_player.play("down_walk")
+				"w": animation_player.play("up_walk")
+				"d": animation_player.play("right_walk")
+				"a": animation_player.play("left_walk")
+		else:
+			match direction:
+				"a": animation_player.play("left_idle")
+				"d": animation_player.play("right_idle")
+				"w": animation_player.play("up_idle")
+				"s": animation_player.play("down_idle")
 
 func player():
 	pass
