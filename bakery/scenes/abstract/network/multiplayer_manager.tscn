@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://btjx4a4g25xj3"]
+
+[ext_resource type="Script" path="res://scripts/abstract/network/multiplayer_manager.gd" id="1_4g30v"]
+
+[node name="MultiplayerManager" type="Node" node_paths=PackedStringArray("_player_spawn_point")]
+script = ExtResource("1_4g30v")
+_player_spawn_point = NodePath("")

@@ -20,12 +20,19 @@ config/icon="res://icon.svg"
 scene_manager="*res://scripts/abstract/scene_manager.gd"
 item_form_converter="*res://scripts/resources/item_form_converter.gd"
 item_holder_data="*res://scripts/abstract/item_holder_data.gd"
-network_setup="*res://scripts/abstract/network/network_setup.gd"
+network_setup="res://scripts/abstract/network/network_setup.gd"
+Noray="*res://addons/netfox.noray/noray.gd"
+PacketHandshake="*res://addons/netfox.noray/packet-handshake.gd"
+NetworkManager="*res://scripts/abstract/network/network_manager.gd"
 
 [display]
 
 window/size/viewport_width=1900
 window/size/viewport_height=1100
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/netfox.internals/plugin.cfg", "res://addons/netfox.noray/plugin.cfg")
 
 [gui]
 

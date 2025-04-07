@@ -18,17 +18,25 @@ offset_bottom = 1100.0
 
 [node name="JoinName" type="TextEdit" parent="Panel"]
 layout_mode = 0
-offset_left = 584.0
-offset_top = 400.0
-offset_right = 729.0
-offset_bottom = 421.0
+offset_left = 589.0
+offset_top = 388.0
+offset_right = 734.0
+offset_bottom = 425.0
+
+[node name="OID" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 335.0
+offset_right = 734.0
+offset_bottom = 372.0
+placeholder_text = "oid"
 
 [node name="HostName" type="TextEdit" parent="Panel"]
 layout_mode = 0
 offset_left = 887.0
-offset_top = 400.0
+offset_top = 390.0
 offset_right = 1032.0
-offset_bottom = 421.0
+offset_bottom = 423.0
 
 [node name="JoinButton" type="Button" parent="Panel"]
 layout_mode = 0
@@ -54,6 +62,14 @@ offset_top = 566.0
 offset_right = 889.0
 offset_bottom = 597.0
 text = "Load Game"
+
+[node name="MY_OID" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 894.0
+offset_top = 332.0
+offset_right = 1032.0
+offset_bottom = 360.0
+text = "loading oid..."
 
 [connection signal="pressed" from="Panel/JoinButton" to="." method="_on_join_button_pressed"]
 [connection signal="pressed" from="Panel/HostButton" to="." method="_on_host_button_pressed"]

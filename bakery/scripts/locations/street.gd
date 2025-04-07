@@ -14,9 +14,10 @@ var PLAYER_SCENE = load("res://scenes/characters/player.tscn")
 var first_load_player = preload("res://scenes/characters/player.tscn")
 
 func _ready() -> void:
-	print("Network -> _ready() on peer: ", multiplayer.get_unique_id())
-	if multiplayer.is_server():
-		network_setup.spawn_all_players()
+	pass
+	#print("Network -> _ready() on peer: ", multiplayer.get_unique_id())
+	#if multiplayer.is_server():
+		#network_setup.spawn_all_players()
 	
 	#if (scene_manager.first_load == true):
 		#on_first_load()
@@ -49,18 +50,19 @@ func on_first_load():
 	player.global_position = Vector2(200, 85)
 
 func add_players():
-	for id in network_setup.players:
-		print("Network -> Adding ", id)
-		var info = network_setup.players[id]
-		var player_instance = PLAYER_SCENE.instantiate()
-		
-		# Pass player info to the instance
-		player_instance.player_info = info
-		
-		# Position the player somewhere (this is just an example)
-		player_instance.position = Vector2(100, 100) 
-		
-		# Set network ownership so only the owner can control it
-		player_instance.set_multiplayer_authority(id)
-
-		add_child(player_instance)
+	pass
+	#for id in network_setup.players:
+		#print("Network -> Adding ", id)
+		#var info = network_setup.players[id]
+		#var player_instance = PLAYER_SCENE.instantiate()
+		#
+		## Pass player info to the instance
+		#player_instance.player_info = info
+		#
+		## Position the player somewhere (this is just an example)
+		#player_instance.position = Vector2(100, 100) 
+		#
+		## Set network ownership so only the owner can control it
+		#player_instance.set_multiplayer_authority(id)
+#
+		#add_child(player_instance)

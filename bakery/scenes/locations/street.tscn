@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=4 uid="uid://c6e3gyoq4qsoj"]
+[gd_scene load_steps=26 format=4 uid="uid://c6e3gyoq4qsoj"]
 
 [ext_resource type="Texture2D" uid="uid://ta1sicwwr7qk" path="res://assets/The Adventurer - Free/basicTileset.jpg" id="1_1fwtc"]
 [ext_resource type="Script" path="res://scripts/locations/street.gd" id="1_jf3xg"]
 [ext_resource type="Texture2D" uid="uid://cfq54upvoxjpd" path="res://assets/The Adventurer - Free/basic_tileset_2.png" id="3_3m7eh"]
 [ext_resource type="PackedScene" uid="uid://b47cmo2rspcfv" path="res://scenes/characters/seller.tscn" id="4_onrjq"]
 [ext_resource type="PackedScene" uid="uid://b4su7pwl3h08v" path="res://scenes/abstract/teleport.tscn" id="5_d3m33"]
+[ext_resource type="Script" path="res://scripts/abstract/network/multiplayer_manager.gd" id="6_unkk8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx81t"]
 texture = ExtResource("1_1fwtc")
@@ -353,3 +354,7 @@ teleport_to = "supermarket"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportSupermarket"]
 shape = SubResource("RectangleShape2D_3gca6")
+
+[node name="MultiplayerManager" type="Node" parent="." node_paths=PackedStringArray("_player_spawn_point")]
+script = ExtResource("6_unkk8")
+_player_spawn_point = NodePath("..")
