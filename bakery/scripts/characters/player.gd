@@ -10,6 +10,7 @@ var player_info = {}
 @onready var animation_player = $PlayerAnimationPlayer
 @onready var inventory = $Camera2D/Inventory
 @onready var camera = $Camera2D
+@onready var playerName = $Name
 var last_direction = "s"
 var test_github = false
 var test_version_control = true
@@ -24,6 +25,10 @@ func _ready():
 	if !is_multiplayer_authority():
 		camera.enabled = false
 	pass # Replace with function body.
+	
+	# Set up name
+	if player_info:
+		playerName.text = player_info.get("name", "no-name")
 
 func _process(delta: float) -> void:
 	debug = debug + 1
