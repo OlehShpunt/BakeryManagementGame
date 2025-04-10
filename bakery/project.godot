@@ -21,6 +21,11 @@ scene_manager="*res://scripts/abstract/scene_manager.gd"
 item_form_converter="*res://scripts/resources/item_form_converter.gd"
 item_holder_data="*res://scripts/abstract/item_holder_data.gd"
 network_setup="*res://scripts/abstract/network/network_setup.gd"
+multiplayer_manager="*res://scripts/abstract/multiplayer_manager.gd"
+path_holder="*res://scripts/abstract/path_holder.gd"
+mini_market_network="*res://scripts/abstract/network/player_location_lists.gd"
+spawnpoint_resolver="*res://scripts/abstract/spawnpoint_resolver.gd"
+player_location_lists="*res://scripts/abstract/network/player_location_lists.gd"
 
 [display]
 

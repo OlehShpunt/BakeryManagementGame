@@ -29,6 +29,10 @@ func _ready():
 	# Set up name
 	if player_info:
 		playerName.text = player_info.get("name", "no-name")
+	
+	#print("$$$$ player.name = ", name)
+	#print("$$$$ player.get_multiplayer_authority() = ", get_multiplayer_authority())
+	#print("$$$$ player.get_instance_id() = ", get_instance_id())
 
 func _process(delta: float) -> void:
 	debug = debug + 1
@@ -117,6 +121,7 @@ func update_animation(direction: String, is_moving: bool):
 				"d": animation_player.play("right_idle")
 				"w": animation_player.play("up_idle")
 				"s": animation_player.play("down_idle")
+
 
 func player():
 	pass

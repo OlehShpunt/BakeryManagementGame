@@ -23,14 +23,15 @@ func _process(_delta: float) -> void:
 		self.hide()
 
 func spawn_cells():
-	for i in range(number_of_cells):
-		self.add_child(cell.instantiate())
-	# Setting id for each cell
-	for i in range(number_of_cells):
-		get_child(i).id = i
+	if is_multiplayer_authority():
+		for i in range(number_of_cells):
+			self.add_child(cell.instantiate())
+		# Setting id for each cell
+		for i in range(number_of_cells):
+			get_child(i).id = i
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("open_inventory"):
+	if event.is_action_pressed("open_inventory") && is_multiplayer_authority():
 		inventory_open = !inventory_open
 		if inventory_open:
 			self.show()
