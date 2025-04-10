@@ -17,7 +17,7 @@ func _ready() -> void:
 	#interactive_area_instance.connect("body_entered", _on_interactive_area_entered)
 	#interactive_area_instance.connect("body_exited", _on_interactive_area_entered)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_being_moved_by_mouse:
 		global_position = get_global_mouse_position()
 	else:

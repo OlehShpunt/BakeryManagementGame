@@ -11,13 +11,16 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.has_method("player")):
+		print("body is player = true")
 		if (body.is_multiplayer_authority()):
-			request_teleport(body, teleport_to)
-			scene_manager.transition_scene(get_owner(), self, body)
+			print("body is multiplayer authority = true")
+			request_teleport(teleport_to)
+			#scene_manager.transition_scene(get_owner(), self, body)
 
 
-@rpc("reliable")
-func request_teleport(body, scene_path: String):
-	if multiplayer.get_unique_id() == 1:
-		return # server shouldn't request teleport
+@rpc("any_peer", "call_local", "reliable")
+func request_teleport(scene_path: String):
+	print("teleport requested request_teleport() called")
+	#if multiplayer.get_unique_id() == 1:
+		#return # server shouldn't request teleport
 	multiplayer_manager.rpc_id(1, "handle_teleport_request", scene_path)

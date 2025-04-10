@@ -17,10 +17,11 @@ func spawn_player(player_id: int, player_info: Dictionary, spawn_position: Vecto
 	
 	get_tree().current_scene.add_child(player_instance)
 	
-	print("Network -> Player ", player_id, " spawned with authority: ", player_instance.get_multiplayer_authority(), "(Player name: )", player_info["name"])
+	#print("Network -> Player ", player_id, " spawned with authority: ", player_instance.get_multiplayer_authority(), "(Player name: )", player_info["name"])
 
 
 ## Adds all players in the list to the current scene node
+# NOTE: this function must be called after the target location scene has been loaded (e.g. in scene's _ready() function)
 ## Use this method from host client (server) only.
 ## Use before the game starts only.
 func spawn_players_on_game_start(players = player_location_lists.get_list_of_players(path_holder.STREET_PATH)):
@@ -39,12 +40,24 @@ func spawn_players_on_game_start(players = player_location_lists.get_list_of_pla
 		var spawn_position = spawn_base + Vector2(offset * i, 0)
 		spawn_player.rpc(player_id, player_info, spawn_position)
 
-## ON SERVER ONLY
-@rpc("reliable")
+## ANY CLIENT
+## Adds all players in the list to the specified location
+# NOTE: need to pass player_list as player_location_lists.get_list_of_players(path_holder.DESIRED_PATH)
+# NOTE: this function must be called after the target location scene has been loaded (e.g. in scene's _ready() function)
+func spawn_all_players(player_list : Dictionary, location_path : String):
+	for i in player_list.size():
+		var player_id = player_list.keys()[i]
+		var player_info = player_list[player_id]
+		var spawn_position = spawnpoint_resolver.get_spawn_point(location_path)
+		spawn_player.rpc(player_id, player_info, spawn_position)
+
+
+@rpc("any_peer", "call_local", "reliable")
 func handle_teleport_request(scene_path: String):
-	# Execute on server only
-	if not multiplayer.is_server():
-		return
+	print("right now in handle_teleport_request")
+	## Execute on server only
+	#if not multiplayer.is_server():
+		#return
 
 	var peer_id = multiplayer.get_remote_sender_id()
 	var spawn_position = spawnpoint_resolver.get_spawn_point(scene_path)

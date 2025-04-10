@@ -1,6 +1,11 @@
 class_name SceneManager
 extends Node
 
+
+# The variable works like a state
+var current_scene_path = path_holder.STREET_PATH
+
+
 ## manages game scene transitions
 ## holds all item packed scenes (they then can be retrieved by any script)
 ## sets a name to every packed scene (using resource_name's set_name(value))
@@ -36,7 +41,7 @@ var previous_scene : PackedScene
 var current_scene : PackedScene
 
 ##leaving some comments
-func transition_scene(from, teleport_used : Teleport, body : Player) -> void:
+func transition_scene(_from, teleport_used : Teleport, body : Player) -> void:
 	# Get the reference of the player to be teleported from 
 	# the scene where teleport_used is located
 	self.player = body # from
@@ -56,26 +61,33 @@ func actual_transition():
 	
 
 ## NEW SCENE TRANSITION MANAGEMENT OVER NETWORK
-@rpc("call_remote")
-func load_scene(scene_path: String, spawn_position: Vector2):
+@rpc("any_peer", "call_local", "reliable")
+func load_scene(scene_path: String, _spawn_position: Vector2):
 	var new_scene = load(scene_path).instantiate()
 	
 	# Replace current scene
 	var tree = get_tree()
-	var current_scene = tree.current_scene
-	if current_scene:
-		current_scene.queue_free()
+
+	if tree.current_scene:
+		tree.current_scene.queue_free()
 	tree.root.add_child(new_scene)
 	tree.current_scene = new_scene
 
-	# Optional: move player to spawn point
-	var player = new_scene.get_node_or_null("Player")
-	if player:
-		player.global_position = spawn_position
+	multiplayer_manager.spawn_all_players(player_location_lists.get_list_of_players(scene_path), scene_path)
 
 ## ON SERVER ONLY
 ## Teleport a specific peer to the specified scene
-func teleport_player(peer_id: int, scene_path: String, spawn_position: Vector2):
+func teleport_player(peer_id: int, location_path: String, _spawn_position: Vector2):
+	print("in teleport_player right now (teleport)")
 	if not multiplayer.is_server():
+		print("true: not multiplayer.is_server(), so returning the process")
 		return
-	rpc_id(peer_id, "load_scene", scene_path, spawn_position)
+	
+	# Move player from one location to another (TODO: creatae move_player(player_id, from_location, to_location) function in player_location_lists singleton)
+	var player_info = player_location_lists.remove_player(current_scene_path, peer_id)
+	player_location_lists.add_player(location_path, peer_id, player_info)
+	
+	# Reset to new scene path (the current_scene_path variable works like state)
+	current_scene_path = location_path
+	
+	rpc_id(peer_id, "load_scene", location_path, _spawn_position)

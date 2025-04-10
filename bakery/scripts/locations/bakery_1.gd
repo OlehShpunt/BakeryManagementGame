@@ -1,6 +1,11 @@
 class_name Bakery1
 extends InsideLocationBase
 
+
+func get_location_path():
+	return path_holder.BAKERY_1_PATH
+
+
 #@onready var player = scene_manager.player
 ## Called when the node enters the scene tree for the first time.
 #func _ready() -> void:

@@ -34,15 +34,15 @@ func _ready():
 	#print("$$$$ player.get_multiplayer_authority() = ", get_multiplayer_authority())
 	#print("$$$$ player.get_instance_id() = ", get_instance_id())
 
-func _process(delta: float) -> void:
-	debug = debug + 1
-	if debug == 400 && is_multiplayer_authority():
-		print("Item 1:", inventory_resources.get_item(0))
-		print("Item 2:", inventory_resources.get_item(1))
-		print("Item 3:", inventory_resources.get_item(2))
-		print("Item 4:", inventory_resources.get_item(3))
-		print()
-		debug = 0
+func _process(_delta: float) -> void:
+	#debug = debug + 1
+	#if debug == 400 && is_multiplayer_authority():
+		#print("Item 1:", inventory_resources.get_item(0))
+		#print("Item 2:", inventory_resources.get_item(1))
+		#print("Item 3:", inventory_resources.get_item(2))
+		#print("Item 4:", inventory_resources.get_item(3))
+		#print()
+		#debug = 0
 	pass
 
 func _physics_process(_delta):
