@@ -80,6 +80,8 @@ func remove_multiplayer_peer():
 @rpc("call_local", "reliable")
 func load_game(game_scene_path):
 	get_tree().change_scene_to_file(game_scene_path)
+	print("locations dict street values: id=", multiplayer.get_unique_id(), "; ")
+	player_location_lists.print_dict_contents(player_location_lists.locations)
 
 
 # new_player_info must be specified before connecting a player using join/host
@@ -103,6 +105,7 @@ func _on_player_connected(id):
 	_register_player.rpc_id(id, player_info)
 
 
+## SERVER ONLY
 func _on_player_disconnected(id):
 	print("Network -> _on_player_disconnected() called")
 	player_location_lists.delete_player(id)

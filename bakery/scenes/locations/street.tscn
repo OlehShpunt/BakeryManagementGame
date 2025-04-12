@@ -317,7 +317,7 @@ shape = SubResource("RectangleShape2D_h6t2n")
 
 [node name="TeleportBakery1" parent="Teleports" instance=ExtResource("5_d3m33")]
 position = Vector2(544, 136)
-teleport_to = "bakery_1"
+teleport_to = "res://scenes/locations/bakery_1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportBakery1"]
 shape = SubResource("RectangleShape2D_qflg8")

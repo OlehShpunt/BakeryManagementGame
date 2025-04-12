@@ -1,9 +1,9 @@
 extends Node
 
-var PLAYER_SCENE = load("res://scenes/characters/player.tscn")
+var PLAYER_SCENE = preload("res://scenes/characters/player.tscn")
 
 # Spawn a player on all peers
-@rpc("authority", "call_local", "reliable")
+@rpc("any_peer", "call_local", "reliable")
 func spawn_player(player_id: int, player_info: Dictionary, spawn_position: Vector2):
 	
 	var player_instance = PLAYER_SCENE.instantiate()
@@ -15,7 +15,7 @@ func spawn_player(player_id: int, player_info: Dictionary, spawn_position: Vecto
 	player_instance.set_multiplayer_authority(player_id)
 	player_instance.name = str(player_id)  # Unique name to avoid conflicts
 	
-	get_tree().current_scene.add_child(player_instance)
+	get_tree().current_scene.call_deferred("add_child", player_instance)
 	
 	#print("Network -> Player ", player_id, " spawned with authority: ", player_instance.get_multiplayer_authority(), "(Player name: )", player_info["name"])
 
@@ -24,7 +24,7 @@ func spawn_player(player_id: int, player_info: Dictionary, spawn_position: Vecto
 # NOTE: this function must be called after the target location scene has been loaded (e.g. in scene's _ready() function)
 ## Use this method from host client (server) only.
 ## Use before the game starts only.
-func spawn_players_on_game_start(players = player_location_lists.get_list_of_players(path_holder.STREET_PATH)):
+func spawn_players_on_game_start(players):
 	if (not multiplayer.is_server()):
 		return
 	
@@ -42,7 +42,7 @@ func spawn_players_on_game_start(players = player_location_lists.get_list_of_pla
 
 ## ANY CLIENT
 ## Adds all players in the list to the specified location
-# NOTE: need to pass player_list as player_location_lists.get_list_of_players(path_holder.DESIRED_PATH)
+# DEPRECATED NOTE: need to pass player_list as player_location_lists.get_list_of_players(path_holder.DESIRED_PATH)
 # NOTE: this function must be called after the target location scene has been loaded (e.g. in scene's _ready() function)
 func spawn_all_players(player_list : Dictionary, location_path : String):
 	for i in player_list.size():
@@ -52,12 +52,13 @@ func spawn_all_players(player_list : Dictionary, location_path : String):
 		spawn_player.rpc(player_id, player_info, spawn_position)
 
 
+## SERVER ONLY
 @rpc("any_peer", "call_local", "reliable")
 func handle_teleport_request(scene_path: String):
-	print("right now in handle_teleport_request")
-	## Execute on server only
-	#if not multiplayer.is_server():
-		#return
+	# Execute on server only
+	if not multiplayer.is_server():
+		push_warning("Cannot call this method from Client")
+		return
 
 	var peer_id = multiplayer.get_remote_sender_id()
 	var spawn_position = spawnpoint_resolver.get_spawn_point(scene_path)

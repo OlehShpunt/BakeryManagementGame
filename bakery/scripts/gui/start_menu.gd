@@ -50,8 +50,17 @@ func _on_host_button_pressed() -> void:
 		print("Network -> Hosting server as: ", input_name)
 
 
+## SERVER ONLY
 func _on_load_game_button_pressed() -> void:
-	if (player_location_lists.num_of_players() > 0):
-		network_setup.load_game.rpc(path_holder.STREET_PATH)
-	else: 
-		print("Network -> cannot load the game, because player list is empty")
+	
+	#If Server
+	if multiplayer.get_unique_id() == 1:
+		if (player_location_lists.num_of_players() > 0):
+			print("[SERVER] Loading game...")
+			network_setup.load_game.rpc(path_holder.STREET_PATH)
+		else: 
+			print("[SERVER] Cannot load the game, because player list is empty")
+	
+	# If Client
+	else:
+		push_warning("Clients cannot load game")

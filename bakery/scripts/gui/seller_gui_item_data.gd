@@ -8,7 +8,7 @@ var inventory_resource : InventoryResource = preload("res://resources/gui/invent
 var item : String
 var price : int
 var sold_out = false
-## TO-DO: Will be changed by item distribution algorithms 
+## TODO: Will be changed by item distribution algorithms 
 ## when generating the seller's item list
 #moved to ready
 var item_packed_scene : PackedScene

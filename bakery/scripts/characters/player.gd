@@ -49,10 +49,11 @@ func _physics_process(_delta):
 	if is_multiplayer_authority():
 		player_movement() # delta not needed since move_and_slide does the delta multiplication
 		move_and_slide()
+		
 		# Sync position and animation state to other peers
+		#if get_tree().current_scene.get_location_path() == path_holder.STREET_PATH:
 		update_position.rpc(global_position)
 		update_animation.rpc(last_direction, velocity != Vector2.ZERO)
-		#print(global_position)
 
 func _input(_event):
 	pass

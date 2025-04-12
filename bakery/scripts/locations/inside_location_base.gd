@@ -3,12 +3,21 @@ extends Node2D
 
 
 func _ready() -> void:
+	player_location_lists.list_of_players_received.connect(_on_list_of_players_received)
+	# Request for player_list
+	player_location_lists.get_list_of_players(get_location_path())
+
+
+## Called when the requested player list arrives
+func _on_list_of_players_received(player_list):
 	# Polymorphism
-	multiplayer_manager.spawn_all_players(player_location_lists.get_list_of_players(get_location_path()), get_location_path())
+	multiplayer_manager.spawn_all_players(player_list, get_location_path())
+
 
 # NOTE: You must override get_location_path() in the child class that extends InsideLocationBase
 func get_location_path():
 	push_error("You must override get_location_path() in the child class that extends InsideLocationBase")
+	print("------------>>>>>>>> THIS DAMN ERROR")
 	return "Override this method in child class"
 
 
