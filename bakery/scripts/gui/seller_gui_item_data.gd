@@ -29,13 +29,13 @@ func _ready() -> void:
 
 # Adds the item to the first available player's inventory cell
 func _on_button_pressed() -> void:
-	print("Button pressed!")
+	print("{SELLER_GUI_ITEM_DATA} Button pressed!")
 	var item_added = false
 	for i in range(inventory_resource.items.size()):
 		if !item_added:
 			# Prevent adding to cell if it's already taken by other item
 			if inventory_resource.items[i] == null or inventory_resource.items[i] == "":
-				print("Adding ", item_packed_scene.resource_name, " to cell ", i)
+				print("{SELLER_GUI_ITEM_DATA} Adding ", item_packed_scene.resource_name, " to cell ", i)
 				inventory_resource.add_item(i, item_packed_scene.resource_name)
 				item_added = true
 				# disable this whole gui
@@ -44,7 +44,7 @@ func _on_button_pressed() -> void:
 				break
 	# If no space in player's inventory
 	if !item_added:
-		print("PLAYER'S INVENTORY IS FULL!!")
+		print("{SELLER_GUI_ITEM_DATA} Could not add item - player's inventory is full")
 
 func item_sold_out():
 	sold_out = true

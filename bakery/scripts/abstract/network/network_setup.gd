@@ -41,9 +41,9 @@ func join_game(address = ""):
 	
 	var peer = ENetMultiplayerPeer.new()
 	var error = peer.create_client(address, PORT)
-	print("join_game() returned:", error)
+	print("{NETWORK_SETUP} join_game() returned:", error)
 	if error != OK:
-		print("Error name:", error)
+		print("{NETWORK_SETUP} Error name:", error)
 		return error
 	multiplayer.multiplayer_peer = peer
 	
@@ -53,10 +53,11 @@ func join_game(address = ""):
 func create_game():
 	var peer = ENetMultiplayerPeer.new()
 	var error = peer.create_server(PORT, MAX_CONNECTIONS)
-	print("create_server() returned:", error)
-
+	print("{NETWORK_SETUP} create_server() returned:", error)
+	
+	# TODO refactoring
 	if error != OK:
-		print("Error name:", error)
+		print("{NETWORK_SETUP} Error name:", error)
 		return error
 
 	multiplayer.multiplayer_peer = peer
@@ -80,7 +81,6 @@ func remove_multiplayer_peer():
 @rpc("call_local", "reliable")
 func load_game(game_scene_path):
 	get_tree().change_scene_to_file(game_scene_path)
-	print("locations dict street values: id=", multiplayer.get_unique_id(), "; ")
 	player_location_lists.print_dict_contents(player_location_lists.locations)
 
 
@@ -91,7 +91,7 @@ func load_game(game_scene_path):
 ## Register in the player Dictionary
 @rpc("any_peer", "reliable")
 func _register_player(new_player_info):
-	print("Network -> _register_player() called")
+	print("{NETWORK_SETUP} _register_player() called")
 	var new_player_id = multiplayer.get_remote_sender_id()  # get peer id
 	player_location_lists.add_player(path_holder.STREET_PATH, new_player_id, new_player_info)
 	player_connected.emit(new_player_id, new_player_info)  # unused
@@ -100,32 +100,32 @@ func _register_player(new_player_info):
 # When a peer connects, send them my player info.
 # This allows transfer of all desired data for each player, not only the unique ID.
 func _on_player_connected(id):
-	print("Network -> _on_player_connected() called")
+	print("{NETWORK_SETUP} _on_player_connected() called")
 	# Call rpc on specific multiplayer peer using its id
 	_register_player.rpc_id(id, player_info)
 
 
 ## SERVER ONLY
 func _on_player_disconnected(id):
-	print("Network -> _on_player_disconnected() called")
+	print("{NETWORK_SETUP} _on_player_disconnected() called")
 	player_location_lists.delete_player(id)
 	player_disconnected.emit(id)
 
 
 func _on_connected_to_server():
-	print("Network -> _on_connected_to_server() called")
+	print("{NETWORK_SETUP} _on_connected_to_server() called")
 	var peer_id = multiplayer.get_unique_id()
 	player_location_lists.add_player(path_holder.STREET_PATH, peer_id, player_info)
 	player_connected.emit(peer_id, player_info)  # unused
 
 
 func _on_connected_fail():
-	print("Network -> _on_connected_fail() called")
+	print("{NETWORK_SETUP} _on_connected_fail() called")
 	multiplayer.multiplayer_peer = null
 
 
 func _on_server_disconnected():
-	print("Network -> _on_server_disconnected() called")
+	print("{NETWORK_SETUP} _on_server_disconnected() called")
 	multiplayer.multiplayer_peer = null
 	player_location_lists.reset_list()
 	server_disconnected.emit()

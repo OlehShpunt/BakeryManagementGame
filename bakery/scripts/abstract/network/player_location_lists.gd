@@ -1,7 +1,11 @@
 extends Node
 
-
+## DEPRECATED
 signal new_locations_update
+
+signal locations_changes(locations_list)
+#signal spawn_this_player(player_id, player_info)
+#signal despawn_this_player(player_id)
 signal list_of_players_received(player_list)
 
 
@@ -34,6 +38,15 @@ func add_player(location_path : String, player_id : int, player_info : Dictionar
 		
 		print("[SERVER] Adding ", player_info["name"], " (id:", player_id, ") to location ", location_path)
 		locations[location_path][player_id] = player_info
+		
+		# RPC call to all affected peers (that are in the location_path) TODO: move to another func maybe?
+		for target_peer_id in locations[location_path]:
+			# Don't send RPC to the peer that has been moved between scenes (the argument to this.add_player())
+			if target_peer_id != player_id:
+				print("[SERVER] Requesting Client with id:", target_peer_id, " to spawn player with id:", player_id, " at Client's location: ", location_path)
+				var err = multiplayer_manager.rpc_id(target_peer_id, "spawn_player", player_id, player_info, spawnpoint_resolver.get_spawn_point(location_path))
+				if err != OK:
+					print("[SERVER] RPC spawn request failed with error code ", err)
 	
 	# If called from Client
 	else:
@@ -59,6 +72,15 @@ func remove_player(location_path : String, player_id : int) -> Dictionary:
 		
 		print("[SERVER] Removing ", player_info["name"], " (id:", player_id, ") from location ", location_path)
 		locations[location_path].erase(player_id)
+		
+		# RPC call to all affected peers (that are in the location_path) TODO: move to another func maybe?
+		for peer_id in locations[location_path]:
+			# Don't send RPC to the peer that has been moved between scenes (the argument to this.remove_player())
+			if peer_id != player_id:
+				print("[SERVER] Requesting id:", peer_id, " to despawn player id:", player_id, " from location: ", location_path)
+				var err = multiplayer_manager.rpc_id(peer_id, "despawn_player", player_id)
+				if err != OK:
+					print("[SERVER] RPC despawn request failed with error code ", err)
 		
 		return player_info
 	
@@ -117,11 +139,21 @@ func delete_player(player_id : int):
 	var player_info_to_return = null
 	# If Server
 	if multiplayer.get_unique_id() == 1:
-		for location in locations:
-			if locations[location].has(player_id):
-				player_info_to_return = locations[location][player_id]
-				locations[location].erase(player_id)
-				print("[SERVER] Client id:", player_id, " removed from location: ", location)
+		for location_path in locations:
+			if locations[location_path].has(player_id):
+				player_info_to_return = locations[location_path][player_id]
+				locations[location_path].erase(player_id)
+				print("[SERVER] Client id:", player_id, " removed from location: ", location_path)
+				
+				# RPC call to all affected peers (that are in the location_path) TODO: move to another func maybe?
+				for peer_id in locations[location_path]:
+					# Don't send RPC to the peer that has been moved between scenes (the argument to this.remove_player())
+					if peer_id != player_id:
+						print("[SERVER] Requesting id:", peer_id, " to despawn player id:", player_id, " from location: ", location_path)
+						var err = multiplayer_manager.rpc_id(peer_id, "despawn_player", player_id)
+						if err != OK:
+							print("[SERVER] RPC despawn request failed wit error code ", err)
+				
 				return player_info_to_return
 	# If Client
 	else:
@@ -135,8 +167,6 @@ func get_list_of_players(location_path: String):
 	
 	# If called by Server
 	if multiplayer.get_unique_id() == 1:
-		print("YES HERE", multiplayer.get_unique_id())
-		print("suka: ", locations[location_path])
 		list_of_players_received.emit(locations[location_path])
 		return
 	
@@ -165,7 +195,7 @@ func receive_list_of_players(player_list):
 		print("[CLIENT:", multiplayer.get_unique_id(), "] Requested list of players is null")
 		list_of_players_received.emit({"name": "Requested list is empty (null)"})
 	else:
-		print("Received player list: ", player_list)
+		print("[CLIENT:", multiplayer.get_unique_id(), "] Received player list: ", player_list)
 		list_of_players_received.emit(player_list)
 
 

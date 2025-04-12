@@ -19,16 +19,27 @@ var first_load_player = preload("res://scenes/characters/player.tscn")
 
 
 func _ready() -> void:
-	
+	var state_msg = "NOT ON GAME START"
+	if multiplayer_manager.is_game_start:
+		state_msg = "ON GAME START, BUT SPAWNING WILL BE PERFORMED FROM SERVER, NOT HERE"
+		
 	player_location_lists.list_of_players_received.connect(_on_list_of_players_received)
 	
-	print("Street _ready() on peer: ", multiplayer.get_unique_id())
-	if multiplayer.is_server():
-		player_location_lists.get_list_of_players(path_holder.STREET_PATH)
+	print("[CLIENT:", multiplayer.get_unique_id(), "] Street _ready() called ", state_msg)
+	
+	player_location_lists.get_list_of_players(path_holder.STREET_PATH)
 
 
 func _on_list_of_players_received(player_list):
-	multiplayer_manager.spawn_players_on_game_start(player_list)
+	
+	# ON GAME START - SERVER ONLY
+	if multiplayer_manager.is_game_start:
+		if multiplayer.is_server():
+			multiplayer_manager.spawn_players_on_game_start(player_list)
+	
+	# NOT ON GAME START - CLIENT/SERVER
+	else:
+		multiplayer_manager.spawn_all_players(player_list, get_location_path())
 
 
 func get_location_path():

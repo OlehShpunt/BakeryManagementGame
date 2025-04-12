@@ -6,10 +6,10 @@ class_name IngredientInteractiveArea extends Area2D
 func _on_area_entered(area: CellArea) -> void:
 	# Need to be careful here, because CellArea for inventory and storage might be different in nature
 	if (item.recent_cell_area == null):  # To prevent accidental overridings, which will cause troubles
-		print(">>>> entered, ", area)
+		print("{INGREDIENT_INTERACTIVE_AREA} entered, ", area)
 		item.recent_cell_area = area
 
 func _on_area_exited(area: CellArea) -> void:
 	if (area == item.recent_cell_area):
-		print(">>>> exited, ", area)
+		print("{INGREDIENT_INTERACTIVE_AREA} exited, ", area)
 		item.recent_cell_area = null

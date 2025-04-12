@@ -1,7 +1,6 @@
 extends Camera2D
 
 func _enter_tree():
-	print(">>>>>> func called")
 	match get_tree().current_scene.name:
 		"Street":
 			zoom = Vector2(4.5, 4.5)

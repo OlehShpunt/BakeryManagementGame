@@ -22,7 +22,6 @@ func _process(_delta: float) -> void:
 		global_position = get_global_mouse_position()
 	else:
 		pass
-		#print("NOT MOVED BY MOUSE ANYMORE")
 		queue_free()
 
 func _input(event: InputEvent) -> void:

@@ -25,7 +25,7 @@ var PLAYER : Player
 
 func _ready() -> void:
 	self.shop_items = get_parent().shop_items
-	print(shop_items)
+	#print(shop_items)
 	dollar.hide()
 	seller_gui.hide()
 	initialize_seller_gui() # Add items to gui
@@ -85,12 +85,12 @@ func _on_interactable_zone_body_exited(body: Node2D) -> void:
 # Allows opening the seller gui hovering over dollar
 func _on_click_to_trade_mouse_entered() -> void:
 	mouse_is_hovering_dollar = true
-	print("mouse entered dollar")
+	#print("mouse entered dollar")
 
 # Prevents the seller gui from opening when not hovering over dollar
 func _on_click_to_trade_mouse_exited() -> void:
 	mouse_is_hovering_dollar = false
-	print("mouse exited dollar")
+	#print("mouse exited dollar")
 
 # Open/Close seller GUI here
 func _input(event: InputEvent) -> void:

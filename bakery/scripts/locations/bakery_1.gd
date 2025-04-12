@@ -3,7 +3,6 @@ extends InsideLocationBase
 
 
 func get_location_path():
-	print("------------>>>>>>>>> THIS DAMN CORRECT FUNC WAS CALLED")
 	return path_holder.BAKERY_1_PATH
 
 func _ready() -> void:
@@ -14,7 +13,6 @@ func _ready() -> void:
 
 ## Called when the requested player list arrives
 func _on_list_of_players_received(player_list):
-	print("--------->>>>>>>>>>> DAMN PLAYER LIST:", player_list)
 	# Polymorphism
 	multiplayer_manager.spawn_all_players(player_list, get_location_path())
 

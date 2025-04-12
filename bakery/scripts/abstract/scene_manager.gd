@@ -45,9 +45,15 @@ func load_scene(location_path: String, _spawn_position: Vector2, player_list : D
 
 	if tree.current_scene:
 		tree.current_scene.queue_free()
+		
+	#private_function__LOAD_SCENE(tree, location_path, player_list, new_scene)
+	
+	# Call it deferred
+	call_deferred("private_function__LOAD_SCENE", tree, location_path, player_list, new_scene)
+
+func private_function__LOAD_SCENE(tree, location_path, player_list, new_scene):
 	tree.root.add_child(new_scene)
 	tree.current_scene = new_scene
-
 	multiplayer_manager.spawn_all_players(player_list, location_path)
 
 
@@ -55,7 +61,7 @@ func load_scene(location_path: String, _spawn_position: Vector2, player_list : D
 ## Teleport a specific peer to the specified scene
 ## Calls load_scene function in the peer that is being teleported. Manages what scene it needs to load and at what position.
 func teleport_player(peer_id: int, location_path: String, _spawn_position: Vector2):
-	print("in teleport_player right now (teleport)")
+	
 	if not multiplayer.is_server():
 		push_error("true: not multiplayer.is_server(), so returning the process")
 		return

@@ -1,14 +1,15 @@
 extends Node
 
 var PLAYER_SCENE = preload("res://scenes/characters/player.tscn")
+var is_game_start = true
 
-# Spawn a player on all peers
+# Spawn a player on all peers on game start, but after game start called locally only (no RPC)
 @rpc("any_peer", "call_local", "reliable")
 func spawn_player(player_id: int, player_info: Dictionary, spawn_position: Vector2):
 	
 	var player_instance = PLAYER_SCENE.instantiate()
 	
-	print("Network -> Spawning player ", player_id, " at ", spawn_position, " on peer ", multiplayer.get_unique_id())
+	print("{MULTIPLAYER_MANAGER} Spawning player ", player_id, " at ", spawn_position, " on peer ", multiplayer.get_unique_id())
 	
 	player_instance.player_info = player_info
 	player_instance.position = spawn_position
@@ -39,6 +40,11 @@ func spawn_players_on_game_start(players):
 		# Spawn in line with offset distance between the 
 		var spawn_position = spawn_base + Vector2(offset * i, 0)
 		spawn_player.rpc(player_id, player_info, spawn_position)
+	
+	# Since the game start has been performed above
+	# This tells other classes that the current state of game is
+	# not the "game start" anymore
+	is_game_start = false
 
 ## ANY CLIENT
 ## Adds all players in the list to the specified location
@@ -49,7 +55,9 @@ func spawn_all_players(player_list : Dictionary, location_path : String):
 		var player_id = player_list.keys()[i]
 		var player_info = player_list[player_id]
 		var spawn_position = spawnpoint_resolver.get_spawn_point(location_path)
-		spawn_player.rpc(player_id, player_info, spawn_position)
+		spawn_player(player_id, player_info, spawn_position)
+		#most likely mistake
+		#spawn_player.rpc(player_id, player_info, spawn_position)
 
 
 ## SERVER ONLY
@@ -65,3 +73,15 @@ func handle_teleport_request(scene_path: String):
 
 	# Tell SceneManager to do the teleport
 	scene_manager.teleport_player(peer_id, scene_path, spawn_position)
+
+## CLIENT/SERVER
+## This function is called from Server's player_location_list, when it removes a player from a list in its locations dictionary
+## Despawns player from the get_tree().current_scene
+@rpc("any_peer", "call_local", "reliable")
+func despawn_player(player_id):
+	var player_node = get_tree().current_scene.get_node_or_null(str(player_id))
+	if player_node:
+		get_tree().current_scene.remove_child(player_node)
+		player_node.queue_free()
+	else:
+		print("[CLIENT:", multiplayer.get_unique_id(), "] Player node with ID '%s' not found." % str(player_id))

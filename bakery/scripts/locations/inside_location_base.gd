@@ -17,7 +17,6 @@ func _on_list_of_players_received(player_list):
 # NOTE: You must override get_location_path() in the child class that extends InsideLocationBase
 func get_location_path():
 	push_error("You must override get_location_path() in the child class that extends InsideLocationBase")
-	print("------------>>>>>>>> THIS DAMN ERROR")
 	return "Override this method in child class"
 
 

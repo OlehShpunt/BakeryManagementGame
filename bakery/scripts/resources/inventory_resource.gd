@@ -7,7 +7,6 @@ class_name InventoryResource extends Resource
 @export var items = ["", "", "", ""]
 
 func add_item(id : int, item : String) -> void:
-	print("^ inventory res add_item() called")
 	items[id] = item
 
 func get_item(id : int):

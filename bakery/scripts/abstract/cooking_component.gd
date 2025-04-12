@@ -18,7 +18,7 @@ func _ready() -> void:
 
 # When player enters the cooking zone, cook is enabled
 func _on_interactable_zone_body_entered(body: Node2D) -> void:
-	print(body, " entered")
+	#print(body, " entered")
 	if (body.has_method("player")):
 		num_players_in_interactable_zone += 1
 		if (!cook_shown): # Exception (lol what), there's where it's needed
@@ -36,12 +36,12 @@ func _on_interactable_zone_body_exited(body: Node2D) -> void:
 # Allows opening the seller gui hovering over cook
 func _on_click_to_trade_mouse_entered() -> void:
 	mouse_is_hovering_cook = true
-	print("mouse entered cook")
+	#print("mouse entered cook")
 
 # Prevents the seller gui from opening when not hovering over cook
 func _on_click_to_trade_mouse_exited() -> void:
 	mouse_is_hovering_cook = false
-	print("mouse exited cook")
+	#print("mouse exited cook")
 
 # Open/Close seller GUI here
 func _input(event: InputEvent) -> void:
