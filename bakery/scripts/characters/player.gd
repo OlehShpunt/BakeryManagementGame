@@ -50,10 +50,10 @@ func _physics_process(_delta):
 		player_movement() # delta not needed since move_and_slide does the delta multiplication
 		move_and_slide()
 		
-		# Sync position and animation state to other peers
-		#if get_tree().current_scene.get_location_path() == path_holder.STREET_PATH:
-		update_position.rpc(global_position)
-		update_animation.rpc(last_direction, velocity != Vector2.ZERO)
+		# Sync position and animation state with other peers in the same scene
+		for player_id in player_location_lists.get_player_ids_in_same_scene():
+			rpc_id(player_id, "update_position", global_position)
+			rpc_id(player_id, "update_animation", last_direction, velocity != Vector2.ZERO)
 
 func _input(_event):
 	pass

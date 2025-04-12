@@ -250,6 +250,19 @@ func update_locations(_updated_locations: Dictionary) -> void:
 	#emit_signal("new_locations_update")  # unused yet
 
 
+## Returns an array of player_ids that are in the same location as the method caller
+func get_player_ids_in_same_scene() -> Array:
+	var scene_node = get_tree().current_scene
+	var peer_ids = []
+	for node in scene_node.get_children():
+		if node.has_method("player") && node.has_method("get_multiplayer_authority"):
+			var pid = int(node.get_multiplayer_authority())
+			# Don't add the authority's peer id
+			if pid != multiplayer.get_unique_id():
+				peer_ids.append(pid)
+	return peer_ids
+
+
 ## TODO: to remove (debug function)
 func print_dict_contents(dict: Dictionary, indent := 0) -> void:
 	for key in dict.keys():
