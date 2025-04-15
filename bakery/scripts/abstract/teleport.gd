@@ -14,7 +14,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if (body.has_method("player")):
 		if (body.is_multiplayer_authority()):
 			request_teleport(teleport_to)
-			#scene_manager.transition_scene(get_owner(), self, body)
 
 
 @rpc("any_peer", "call_local", "reliable")

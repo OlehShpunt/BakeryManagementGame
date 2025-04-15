@@ -1,12 +1,19 @@
 extends Node
 
 
-func get_spawn_point(scene_path: String) -> Vector2:
-	# You can expand this later per scene
-	match scene_path:
+## Returns default spawn point for a specified location
+func get_spawn_point(to_location_path: String, _from_location_path : String = "not specified") -> Vector2:
+	match to_location_path:
 		path_holder.STREET_PATH:
-			return Vector2(100, 100)
-		"res://scenes/cave.tscn":
-			return Vector2(100, 100)
+			match _from_location_path:
+				path_holder.WHOLESALE_SHOP_PATH:
+					return Vector2(50, 300)
+				"not specified":
+					print("Spawn position not specified")
+					return Vector2(200, 80) # position does not matter
+				_:
+					return Vector2(30, 30)
+		path_holder.WHOLESALE_SHOP_PATH:
+			return Vector2(100, 90) 
 		_:
 			return Vector2(50, 50)

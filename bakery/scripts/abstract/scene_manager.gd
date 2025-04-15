@@ -74,29 +74,3 @@ func teleport_player(peer_id: int, location_path: String, _spawn_position: Vecto
 	var player_list = player_location_lists.get_list_of_players__CALL_FROM_SERVER(location_path)
 	
 	rpc_id(peer_id, "load_scene", location_path, _spawn_position, player_list)
-
-
-## OLD SCENE TRANSITION MANAGEMENT
-var first_load = true
-var player : Player = preload("res://scenes/characters/player.tscn").instantiate()
-var previous_scene : PackedScene
-var current_scene : PackedScene
-
-##leaving some comments
-func transition_scene(_from, teleport_used : Teleport, body : Player) -> void:
-	# Get the reference of the player to be teleported from 
-	# the scene where teleport_used is located
-	self.player = body # from
-	# Removing the player from the scene it is in before teleportation
-	self.player.get_parent().remove_child(player)
-	
-	# Each Teleport has its own teleport_to var, which
-	# specifies the destination scene. Its value is explicitly 
-	# specified using @export_enum in each teleport.
-	previous_scene = current_scene
-	current_scene = load("res://scenes/locations/" +  teleport_used.teleport_to + ".tscn")
-	call_deferred("actual_transition") # I was getting an error, sooo this was used
-
-# Needed to debug this error: Removing a CollisionObject node during a physics callback is not allowed and will cause undesired behavior. Remove with call_deferred() instead.
-func actual_transition():
-	get_tree().change_scene_to_packed(current_scene)

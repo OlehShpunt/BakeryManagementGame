@@ -39,14 +39,16 @@ func add_player(location_path : String, player_id : int, player_info : Dictionar
 		print("[SERVER] Adding ", player_info["name"], " (id:", player_id, ") to location ", location_path)
 		locations[location_path][player_id] = player_info
 		
-		# RPC call to all affected peers (that are in the location_path) TODO: move to another func maybe?
-		for target_peer_id in locations[location_path]:
-			# Don't send RPC to the peer that has been moved between scenes (the argument to this.add_player())
-			if target_peer_id != player_id:
-				print("[SERVER] Requesting Client with id:", target_peer_id, " to spawn player with id:", player_id, " at Client's location: ", location_path)
-				var err = multiplayer_manager.rpc_id(target_peer_id, "spawn_player", player_id, player_info, spawnpoint_resolver.get_spawn_point(location_path))
-				if err != OK:
-					print("[SERVER] RPC spawn request failed with error code ", err)
+		# Don't spawn on clients if the game hasn't started
+		if not multiplayer_manager.is_game_start:
+			# RPC call to all affected peers (that are in the location_path) TODO: move to another func maybe?
+			for target_peer_id in locations[location_path]:
+				# Don't send RPC to the peer that has been moved between scenes (the argument to this.add_player())
+				if target_peer_id != player_id:
+					print("[SERVER] Requesting Client with id:", target_peer_id, " to spawn player with id:", player_id, " at Client's location: ", location_path)
+					var err = multiplayer_manager.rpc_id(target_peer_id, "spawn_player", player_id, player_info, spawnpoint_resolver.get_spawn_point(location_path))
+					if err != OK:
+						print("[SERVER] RPC spawn request failed with error code ", err)
 	
 	# If called from Client
 	else:
