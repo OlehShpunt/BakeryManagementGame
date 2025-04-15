@@ -11,7 +11,7 @@ func _ready() -> void:
 ## Called when the requested player list arrives
 func _on_list_of_players_received(player_list):
 	# Polymorphism
-	multiplayer_manager.spawn_all_players(player_list, get_location_path())
+	multiplayer_manager.spawn_all_players(player_list, spawnpoint_resolver.get_spawn_point(get_location_path()))
 
 
 # NOTE: You must override get_location_path() in the child class that extends InsideLocationBase

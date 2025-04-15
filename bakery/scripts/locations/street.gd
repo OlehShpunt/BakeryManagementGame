@@ -20,7 +20,7 @@ func _on_list_of_players_received(player_list):
 	# NOT ON GAME START - CLIENT/SERVER
 	else:
 		print("[CLIENT:", multiplayer.get_unique_id(), "] Street _ready() called not on game start")
-		multiplayer_manager.spawn_all_players(player_list, get_location_path())
+		multiplayer_manager.spawn_all_players(player_list, spawnpoint_resolver.get_spawn_point(get_location_path()))
 
 
 func get_location_path():

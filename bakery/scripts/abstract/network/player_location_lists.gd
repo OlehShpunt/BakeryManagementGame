@@ -137,26 +137,50 @@ func get_player(location_path : String, player_id : int) -> Dictionary:
 ##TODO: add defensive programming in this function
 ## SERVER ONLY
 ## Fully deletes a player from the game player list
+## Returns a dictionary with player info and recent location where the player was removed from
 func delete_player(player_id : int):
-	var player_info_to_return = null
+	
+	# Value to return
+	var player_info_to_return : Dictionary = {
+		"player_info" : "not found",
+		"recent_location" : "not found"
+	}
+	
+	# Found the player in locations
+	var found = false
+	
 	# If Server
 	if multiplayer.get_unique_id() == 1:
 		for location_path in locations:
 			if locations[location_path].has(player_id):
-				player_info_to_return = locations[location_path][player_id]
+				
+				# Saving data to return
+				player_info_to_return["player_info"] = (locations[location_path][player_id])
+				player_info_to_return["recent_location"] = location_path
+				
+				# Remove from locations
 				locations[location_path].erase(player_id)
 				print("[SERVER] Client id:", player_id, " removed from location: ", location_path)
+				found = true
 				
 				# RPC call to all affected peers (that are in the location_path) TODO: move to another func maybe?
 				for peer_id in locations[location_path]:
-					# Don't send RPC to the peer that has been moved between scenes (the argument to this.remove_player())
+					
+					# Don't send RPC to the found player
 					if peer_id != player_id:
 						print("[SERVER] Requesting id:", peer_id, " to despawn player id:", player_id, " from location: ", location_path)
 						var err = multiplayer_manager.rpc_id(peer_id, "despawn_player", player_id)
 						if err != OK:
 							print("[SERVER] RPC despawn request failed wit error code ", err)
 				
-				return player_info_to_return
+				break  # out of the loop when found
+		
+		# If not found in the game locations Dictionary
+		if not found:
+			print("[SERVER] Client id:", player_id, " not found in game")
+		
+		return player_info_to_return
+	
 	# If Client
 	else:
 		push_warning("Cannot call this function from Client")

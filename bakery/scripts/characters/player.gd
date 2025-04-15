@@ -35,6 +35,7 @@ func _ready():
 	#print("$$$$ player.get_instance_id() = ", get_instance_id())
 
 func _process(_delta: float) -> void:
+	$CoordinateDisplay.text = str("%.2f" % global_position.x) + ", " + str("%.2f" % global_position.y)
 	#debug = debug + 1
 	#if debug == 400 && is_multiplayer_authority():
 		#print("Item 1:", inventory_resources.get_item(0))

@@ -50,11 +50,11 @@ func spawn_players_on_game_start(players):
 ## Adds all players in the list to the specified location
 # DEPRECATED NOTE: need to pass player_list as player_location_lists.get_list_of_players(path_holder.DESIRED_PATH)
 # NOTE: this function must be called after the target location scene has been loaded (e.g. in scene's _ready() function)
-func spawn_all_players(player_list : Dictionary, location_path : String):
+func spawn_all_players(player_list : Dictionary, spawn_position : Vector2):
 	for i in player_list.size():
 		var player_id = player_list.keys()[i]
 		var player_info = player_list[player_id]
-		var spawn_position = spawnpoint_resolver.get_spawn_point(location_path)
+		#var spawn_position = spawnpoint_resolver.get_spawn_point(location_path)
 		spawn_player(player_id, player_info, spawn_position)
 		#most likely mistake
 		#spawn_player.rpc(player_id, player_info, spawn_position)
@@ -69,10 +69,10 @@ func handle_teleport_request(scene_path: String):
 		return
 
 	var peer_id = multiplayer.get_remote_sender_id()
-	var spawn_position = spawnpoint_resolver.get_spawn_point(scene_path)
+	#var spawn_position = spawnpoint_resolver.get_spawn_point(scene_path)
 
 	# Tell SceneManager to do the teleport
-	scene_manager.teleport_player(peer_id, scene_path, spawn_position)
+	scene_manager.teleport_player(peer_id, scene_path)
 
 ## CLIENT/SERVER
 ## This function is called from Server's player_location_list, when it removes a player from a list in its locations dictionary

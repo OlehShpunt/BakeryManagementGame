@@ -42,7 +42,7 @@ tile_set = SubResource("TileSet_78jui")
 
 [node name="Teleport" parent="." instance=ExtResource("3_v1nf0")]
 position = Vector2(136, 160)
-teleport_to = "street"
+teleport_to = "res://scenes/locations/street.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
 shape = SubResource("RectangleShape2D_f86k8")
