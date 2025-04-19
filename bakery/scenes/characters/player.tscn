@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ck6catep7k4as"]
+[gd_scene load_steps=24 format=3 uid="uid://ck6catep7k4as"]
 
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_48atu"]
 [ext_resource type="Texture2D" uid="uid://bs4guq86h8h8" path="res://assets/The Adventurer - Free/Walk/walk_down.png" id="1_ip50t"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://45mby7kx4huh" path="res://assets/The Adventurer - Free/Walk/walk_right_down.png" id="9_s1y86"]
 [ext_resource type="PackedScene" uid="uid://dmhjvxcewxaiq" path="res://scenes/gui/inventory.tscn" id="10_nqfjq"]
 [ext_resource type="Script" path="res://scenes/characters/camera_2d.gd" id="10_uhkya"]
+[ext_resource type="PackedScene" uid="uid://bpilqlax7p1ip" path="res://scenes/gui/new_gui/inventory_ui.tscn" id="12_j1frw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjnek"]
 radius = 5.0
@@ -497,7 +498,10 @@ limit_bottom = 816
 script = ExtResource("10_uhkya")
 
 [node name="Inventory" parent="Camera2D" instance=ExtResource("10_nqfjq")]
+visible = false
 z_index = 1
+
+[node name="InventoryUi" parent="Camera2D" instance=ExtResource("12_j1frw")]
 
 [node name="Name" type="Label" parent="."]
 anchors_preset = 8

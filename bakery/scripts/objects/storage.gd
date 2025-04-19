@@ -10,7 +10,7 @@ func _ready() -> void:
 	spawn_cells()
 
 func spawn_cells():
-	print("Number of cells: ", number_of_cells)
+	#print("Number of cells: ", number_of_cells)
 	for i in range(number_of_cells):
 		print(i)
 		self.add_child(cell.instantiate())

@@ -1,6 +1,49 @@
 class_name ItemFormConverter extends Node
 
+
 var flour_scene : PackedScene = preload("res://scenes/food/ingredients/flour.tscn")
+
+
+# Function to get image path based on scene path
+func get_image_path_from_scene(scene_path: String) -> String:
+	if scene_path == path_holder.EMPTY:
+		return path_holder.EMPTY
+	
+	if path_holder.scene_to_image_map.has(scene_path):
+		return path_holder.scene_to_image_map[scene_path]
+	
+	# Default
+	push_warning("Could not find the mapping to scene path ", scene_path)
+	return path_holder.EMPTY
+
+# Function to get scene path based on image path
+func get_scene_path_from_image(image_path: String) -> String:
+	if image_path == path_holder.EMPTY:
+		return path_holder.EMPTY
+	
+	for scene_path in path_holder.scene_to_image_map.keys():
+		if path_holder.scene_to_image_map[scene_path] == image_path:
+			return scene_path
+	
+	# Default
+	push_warning("Could not find the mapping to image path ", image_path)
+	return path_holder.EMPTY
+
+
+# Function to load an image and create a texture
+func get_texture_from_image_path(image_path: String) -> Texture:
+	if image_path == path_holder.EMPTY:
+		return null
+	
+	var texture = load(image_path)  # Load the image as a texture resource
+	
+	if texture:
+		return texture
+	else:
+		push_warning("Failed to load texture at path (conversion path -> texture failed): ", image_path)
+		return null
+
+
 
 func string_to_texture(string : String) -> Texture2D:
 	if (string == "" or string == null):

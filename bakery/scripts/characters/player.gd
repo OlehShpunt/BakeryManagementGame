@@ -11,6 +11,7 @@ var player_info = {}
 @onready var inventory = $Camera2D/Inventory
 @onready var camera = $Camera2D
 @onready var playerName = $Name
+@onready var coordinate_display = $CoordinateDisplay
 var last_direction = "s"
 var test_github = false
 var test_version_control = true
@@ -18,6 +19,9 @@ var test_version_control = true
 var inventory_resources : InventoryResource = preload("res://resources/gui/inventory_resource.tres")
 
 var debug = 0
+
+## Turn on to see player coordinates
+@export var show_coordinates : bool = false
 
 func _ready():
 	#print("spawned in ", get_owner(), " at ", global_position)
@@ -30,12 +34,19 @@ func _ready():
 	if player_info:
 		playerName.text = player_info.get("name", "no-name")
 	
+	if show_coordinates:
+		coordinate_display.show()
+	else:
+		coordinate_display.hide()
+	
 	#print("$$$$ player.name = ", name)
 	#print("$$$$ player.get_multiplayer_authority() = ", get_multiplayer_authority())
 	#print("$$$$ player.get_instance_id() = ", get_instance_id())
 
 func _process(_delta: float) -> void:
-	$CoordinateDisplay.text = str("%.2f" % global_position.x) + ", " + str("%.2f" % global_position.y)
+	if show_coordinates:
+		coordinate_display.text = str("%.2f" % global_position.x) + ", " + str("%.2f" % global_position.y)
+	
 	#debug = debug + 1
 	#if debug == 400 && is_multiplayer_authority():
 		#print("Item 1:", inventory_resources.get_item(0))

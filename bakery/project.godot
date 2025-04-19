@@ -32,6 +32,10 @@ player_location_lists="*res://scripts/abstract/network/player_location_lists.gd"
 window/size/viewport_width=1900
 window/size/viewport_height=1100
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
 [gui]
 
 theme/default_font_multichannel_signed_distance_field=true
