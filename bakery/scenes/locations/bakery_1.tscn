@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://udcsxfiubnwv"]
+[gd_scene load_steps=15 format=4 uid="uid://udcsxfiubnwv"]
 
 [ext_resource type="Texture2D" uid="uid://ta1sicwwr7qk" path="res://assets/The Adventurer - Free/basicTileset.jpg" id="1_2tj81"]
 [ext_resource type="Script" path="res://scripts/locations/bakery_1.gd" id="1_wbqrc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://x8ddl8432pdq" path="res://scenes/objects/oven.tscn" id="6_t48hl"]
 [ext_resource type="PackedScene" uid="uid://cqorkc6y5jnbv" path="res://scenes/objects/counter.tscn" id="7_0jgpo"]
 [ext_resource type="PackedScene" uid="uid://504xsu0lfgc1" path="res://scenes/objects/coffee_maker.tscn" id="8_w402d"]
+[ext_resource type="PackedScene" uid="uid://c33h0117r3wt2" path="res://scenes/objects/bakery_storage.tscn" id="9_w7lvf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w5dfw"]
 texture = ExtResource("1_2tj81")
@@ -54,6 +55,7 @@ teleport_to = "res://scenes/locations/street.tscn"
 shape = SubResource("RectangleShape2D_f86k8")
 
 [node name="Storage1" parent="." instance=ExtResource("5_oxjwv")]
+visible = false
 position = Vector2(212, -65)
 
 [node name="CookingStation" parent="." instance=ExtResource("5_pvimk")]
@@ -67,3 +69,7 @@ position = Vector2(128, 58)
 
 [node name="CoffeeMaker" parent="." instance=ExtResource("8_w402d")]
 position = Vector2(232, 60)
+
+[node name="BakeryStorage" parent="." instance=ExtResource("9_w7lvf")]
+z_index = 1
+position = Vector2(215, -78)

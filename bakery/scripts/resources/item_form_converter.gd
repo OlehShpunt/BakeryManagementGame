@@ -44,6 +44,9 @@ func get_texture_from_image_path(image_path: String) -> Texture:
 		return null
 
 
+func get_texture_from_scene_path(scene_path):
+	var image_path = get_image_path_from_scene(scene_path)
+	return get_texture_from_image_path(image_path)
 
 func string_to_texture(string : String) -> Texture2D:
 	if (string == "" or string == null):

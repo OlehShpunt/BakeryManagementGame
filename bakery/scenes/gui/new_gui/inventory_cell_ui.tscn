@@ -1,7 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccmtncj2csjkn"]
 
 [ext_resource type="Script" path="res://scripts/gui/new_gui/inventory_cell_ui.gd" id="1_2fpp6"]
-[ext_resource type="Script" path="res://scripts/gui/cell_area.gd" id="1_xtht8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1fv4"]
 content_margin_left = 10.0
@@ -20,8 +19,21 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ha34"]
-size = Vector2(6, 6)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0d8c"]
+size = Vector2(97.1394, 95.3327)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uujmb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 0.6, 0.2, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
 
 [node name="InventoryCellUi" type="Control"]
 layout_mode = 3
@@ -31,12 +43,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00886, 1.007)
+mouse_filter = 1
 script = ExtResource("1_2fpp6")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 130.0
 offset_bottom = 130.0
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_u1fv4")
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel"]
@@ -61,15 +75,20 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 stretch_mode = 5
 
-[node name="CellArea" type="Area2D" parent="Panel"]
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("1_xtht8")
+[node name="InventoryCellAreaUi" type="Area2D" parent="Panel"]
+collision_layer = 7
+collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/CellArea"]
-position = Vector2(65, 65)
-shape = SubResource("RectangleShape2D_4ha34")
-debug_color = Color(0.824543, 0.261046, 0.753247, 0.42)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/InventoryCellAreaUi"]
+position = Vector2(65.4204, 64.5482)
+shape = SubResource("RectangleShape2D_m0d8c")
+
+[node name="ActiveStateFrame" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 130.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_uujmb")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
