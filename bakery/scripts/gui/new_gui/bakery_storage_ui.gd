@@ -5,7 +5,7 @@ extends Control
 
 
 var capacity : int = 4
-var inv_cell = preload("res://scenes/gui/new_gui/")
+var inv_cell = preload("res://scenes/gui/new_gui/bakery_storage_cell_ui.tscn")
 
 
 func _ready() -> void:

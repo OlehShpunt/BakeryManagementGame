@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv3s0cna5crbr"]
+
+[ext_resource type="Script" path="res://scripts/gui/new_gui/cell_base.gd" id="1_2r07q"]
+
+[node name="TestCell" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2r07q")

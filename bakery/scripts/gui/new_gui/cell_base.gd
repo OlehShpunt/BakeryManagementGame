@@ -33,6 +33,7 @@ func _ready() -> void:
 	
 	cell_area.mouse_entered.connect(on_mouse_entered)
 	cell_area.mouse_exited.connect(on_mouse_exited)
+	
 	cell_data.inventory_contents_changed.connect(on_inventory_contents_changed)
 	cell_data.current_active_cell_changed.connect(on_current_active_cell_changed)
 

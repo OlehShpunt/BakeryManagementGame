@@ -12,3 +12,4 @@ script = ExtResource("1_6gkoq")
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
+columns = 8
