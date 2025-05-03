@@ -6,14 +6,7 @@
 [node name="BakeryStorageCellUi" instance=ExtResource("1_ubxjj")]
 script = ExtResource("1_q8eni")
 
-[node name="Panel" parent="." index="0"]
-layout_mode = 0
-
-[node name="ActiveStateFrame" parent="." index="1"]
-layout_mode = 0
-
 [node name="Label" parent="." index="2"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 40.0

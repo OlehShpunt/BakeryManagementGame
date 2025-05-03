@@ -1,13 +1,21 @@
 class_name bakery_storage extends Node2D
 
 @onready var GRID_CONTAINER = $StorageUI/CanvasLayer/GridContainer
-@onready var STORAGE_UI = $StorageUI
+@onready var storage_data_holder = bakery_data.new()
+
+@export var ID : int
+
 
 var capacity : int = 12
 var storage_cell = preload("res://scenes/gui/new_gui/bakery_storage_cell_ui.tscn")
 
 
 func _ready() -> void:
+	
+	# Initializing the storage data holder instance
+	storage_data_holder.ID = self.ID
+	storage_data_holder._ready()
+	
 	spawn_cells()
 #	hide_storage()
 
@@ -21,8 +29,14 @@ func spawn_cells():
 		for i in range(capacity):
 			var cell = storage_cell.instantiate()
 			cell.cell_id = i
+			cell.cell_data = storage_data_holder
+			#cell.parent_container = self
 			GRID_CONTAINER.add_child(cell)
 		hide_storage()
+
+
+func get_storage_data_holder():
+	return storage_data_holder
 
 
 func show_storage():

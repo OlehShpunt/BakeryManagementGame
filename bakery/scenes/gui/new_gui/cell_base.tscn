@@ -46,6 +46,7 @@ mouse_filter = 1
 script = ExtResource("1_oietp")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 130.0
 offset_bottom = 130.0
 mouse_filter = 1
@@ -82,12 +83,14 @@ position = Vector2(65.4204, 64.5482)
 shape = SubResource("RectangleShape2D_utv67")
 
 [node name="ActiveStateFrame" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 130.0
 offset_bottom = 130.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_4xm27")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 45.0
 offset_top = 53.0
 offset_right = 85.0

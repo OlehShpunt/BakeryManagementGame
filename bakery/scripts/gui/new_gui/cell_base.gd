@@ -29,10 +29,12 @@ func _ready() -> void:
 	self.update_image()
 	
 	# Make active or unactive
-	on_current_active_cell_changed(cell_data.current_active_cell)
+	on_current_active_cell_changed(cell_data.get_current_active_cell())
 	
 	cell_area.mouse_entered.connect(on_mouse_entered)
 	cell_area.mouse_exited.connect(on_mouse_exited)
+	
+	client_ui_data.client_current_active_cell_changed.connect(on_client_current_active_cell_changed)
 	
 	cell_data.inventory_contents_changed.connect(on_inventory_contents_changed)
 	cell_data.current_active_cell_changed.connect(on_current_active_cell_changed)
@@ -66,6 +68,11 @@ func on_current_active_cell_changed(current_active_cell):
 		self.make_active()
 	else:
 		self.make_unactive()
+
+
+func on_client_current_active_cell_changed(new_cell_id, new_data_holder_id):
+	if new_data_holder_id != cell_data.get_id():
+		make_unactive()
 
 
 ## Updates the cell texture image
