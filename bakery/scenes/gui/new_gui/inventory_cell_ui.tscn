@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccmtncj2csjkn"]
 
-[ext_resource type="Script" path="res://scripts/gui/new_gui/inventory_cell_ui.gd" id="1_2fpp6"]
+[ext_resource type="Script" path="res://scripts/gui/new_gui/inventory_cell.gd" id="1_g6l03"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1fv4"]
 content_margin_left = 10.0
@@ -44,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00886, 1.007)
 mouse_filter = 1
-script = ExtResource("1_2fpp6")
+script = ExtResource("1_g6l03")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0

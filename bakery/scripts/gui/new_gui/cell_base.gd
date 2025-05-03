@@ -1,3 +1,4 @@
+class_name CellBase 
 extends Control
 
 
@@ -11,8 +12,15 @@ var current_item_scene_path = path_holder.EMPTY
 var is_mouse_hovering = false
 
 
+## Specify in child class
+var cell_data
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	cell_data = get_cell_data()
+	
 	# Debug
 	$Label.text = str(cell_id)
 	
@@ -21,13 +29,14 @@ func _ready() -> void:
 	self.update_image()
 	
 	# Make active or unactive
-	on_current_active_cell_changed(local_player_data.current_active_cell)
+	on_current_active_cell_changed(cell_data.current_active_cell)
 	
 	cell_area.mouse_entered.connect(on_mouse_entered)
 	cell_area.mouse_exited.connect(on_mouse_exited)
-	local_player_data.inventory_contents_changed.connect(on_inventory_contents_changed)
-	local_player_data.current_active_cell_changed.connect(on_current_active_cell_changed)
-	
+	cell_data.inventory_contents_changed.connect(on_inventory_contents_changed)
+	cell_data.current_active_cell_changed.connect(on_current_active_cell_changed)
+
+
 
 
 var debug = 0
@@ -45,7 +54,7 @@ func _process(delta: float) -> void:
 ## updates the current_item_scene_path variable and updates the cell image
 func on_inventory_contents_changed(changed_cell_id):
 	if changed_cell_id == cell_id:
-		current_item_scene_path = local_player_data.get_inventory_item(cell_id)
+		current_item_scene_path = cell_data.get_inventory_item(cell_id)
 		update_image()
 
 
@@ -94,8 +103,8 @@ func on_mouse_click():
 		
 		# Deactivate (this sell has nothing it)
 		# If this cell is already active - deactivate it and set the current active to none, i.g. -1
-		if local_player_data.get_current_active_cell() == cell_id:
-			local_player_data.set_current_active_cell(-1)
+		if cell_data.get_current_active_cell() == cell_id:
+			cell_data.set_current_active_cell(-1)
 		#Activate (this sell has something)
 		else:
 			
@@ -104,7 +113,7 @@ func on_mouse_click():
 				# This sets an id of this cell as the active id
 				# local_player_data then emits the signal which makes this cell
 				# become active (if the current_active_cell == self.cell_id)
-				local_player_data.set_current_active_cell(self.cell_id)
+				cell_data.set_current_active_cell(self.cell_id)
 
 
 func on_mouse_entered():
@@ -115,3 +124,11 @@ func on_mouse_entered():
 func on_mouse_exited():
 	print("MOUSE EXITED")
 	is_mouse_hovering = false
+
+
+func set_cell_data(data_source) -> void:
+	cell_data = data_source
+
+
+func get_cell_data():
+	push_error("Implement this function in the child")
