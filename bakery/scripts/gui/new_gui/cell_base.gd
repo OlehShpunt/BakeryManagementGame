@@ -21,6 +21,8 @@ func _ready() -> void:
 	
 	cell_data = get_cell_data()
 	
+	client_ui_data.register_data_holder(cell_data.get_id(), cell_data)
+	
 	# Debug
 	$Label.text = str(cell_id)
 	
@@ -29,7 +31,7 @@ func _ready() -> void:
 	self.update_image()
 	
 	# Make active or unactive
-	on_current_active_cell_changed(cell_data.get_current_active_cell())
+	on_current_active_cell_changed(client_ui_data.get_current_active_cell_id(), client_ui_data.get_current_active_cell_data_holder_id())
 	
 	cell_area.mouse_entered.connect(on_mouse_entered)
 	cell_area.mouse_exited.connect(on_mouse_exited)
@@ -38,8 +40,6 @@ func _ready() -> void:
 	
 	cell_data.inventory_contents_changed.connect(on_inventory_contents_changed)
 	cell_data.current_active_cell_changed.connect(on_current_active_cell_changed)
-
-
 
 
 var debug = 0
@@ -63,8 +63,8 @@ func on_inventory_contents_changed(changed_cell_id):
 
 ## Whenever the current_active_cell changes in local_player_data, this function
 ## activates/disactivates the current cell
-func on_current_active_cell_changed(current_active_cell):
-	if current_active_cell == cell_id:
+func on_current_active_cell_changed(current_active_cell, current_active_cell_parent_id):
+	if current_active_cell == cell_id and current_active_cell_parent_id == get_cell_data().get_id():
 		self.make_active()
 	else:
 		self.make_unactive()
@@ -81,6 +81,9 @@ func update_image():
 	var texture = item_form_converter.get_texture_from_image_path(image_path)
 	
 	texture_rect.set_texture(texture)
+
+
+
 
 
 ## Shows the active frame around the cell
@@ -113,6 +116,7 @@ func on_mouse_click():
 		# If this cell is already active - deactivate it and set the current active to none, i.g. -1
 		if cell_data.get_current_active_cell() == cell_id:
 			cell_data.set_current_active_cell(-1)
+		
 		#Activate (this sell has something)
 		else:
 			
