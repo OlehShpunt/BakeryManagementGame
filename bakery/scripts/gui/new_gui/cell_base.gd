@@ -125,7 +125,7 @@ func on_mouse_click():
 		else:
 			
 			# Do not activate the cell if there's nothing in the cell
-			if not current_item_scene_path == path_holder.EMPTY:
+			#if not current_item_scene_path == path_holder.EMPTY:
 				# This sets an id of this cell as the active id
 				# local_player_data then emits the signal which makes this cell
 				# become active (if the current_active_cell == self.cell_id)

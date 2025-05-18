@@ -46,6 +46,8 @@ func _on_button_pressed() -> void:
 				
 				print("{SELLER_GUI_ITEM_DATA} Adding bought item to cell ", i)
 				local_player_data.set_inventory_item(i, item_scene_path)
+				# Reset current selected cell to prevent unexpected behavior (e.g. when an item is bought from seller, and placed into the cell that is already active, the current item would need to be updated in client_ui_data. For making it less complex, the selected cell is simply deselected when a new item is set)
+				client_ui_data.set_current_active_cell_id(-1, -1, path_holder.EMPTY)
 				
 				item_added = true
 				
