@@ -64,6 +64,8 @@ func on_inventory_contents_changed(changed_cell_id):
 ## Whenever the current_active_cell changes in local_player_data, this function
 ## activates/disactivates the current cell
 func on_current_active_cell_changed(current_active_cell, current_active_cell_parent_id):
+	print("* checking in cell base the passed params: ", current_active_cell, current_active_cell_parent_id)
+	
 	if current_active_cell == cell_id and current_active_cell_parent_id == get_cell_data().get_id():
 		self.make_active()
 	else:
@@ -114,7 +116,9 @@ func on_mouse_click():
 		
 		# Deactivate (this sell has nothing it)
 		# If this cell is already active - deactivate it and set the current active to none, i.g. -1
-		if cell_data.get_current_active_cell() == cell_id:
+		if client_ui_data.get_current_active_cell_data_holder_id() == get_cell_data().get_id() \
+		   and cell_data.get_current_active_cell() == self.cell_id:
+			
 			cell_data.set_current_active_cell(-1)
 		
 		#Activate (this sell has something)
