@@ -268,9 +268,11 @@ autowrap_mode = 2
 
 [node name="FarmerGreg" parent="." instance=ExtResource("4_onrjq")]
 position = Vector2(103, 30)
+ID = 13001
 
 [node name="MarketSeller1" parent="." instance=ExtResource("4_onrjq")]
 position = Vector2(159, 722)
+ID = 13002
 
 [node name="Teleports" type="Node2D" parent="."]
 z_index = 1

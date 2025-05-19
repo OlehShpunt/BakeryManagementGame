@@ -52,7 +52,7 @@
 					],
 			}
 		},
-		"14003" : {
+		"14001" : {
 			"name" : "Supermarket Cashier",
 			"location" : "supermarket path",
 			"possible_shop_items" : {
@@ -69,7 +69,7 @@
 					]
 			}
 		},
-		"14004" : {
+		"14002" : {
 			"name" : "Mini market Cashier",
 			"location" : "mini market path",
 			"possible_shop_items" : {
@@ -94,7 +94,7 @@
 					]
 			}
 		},
-		"14005" : {
+		"14003" : {
 			"name" : "Kiosk Cashier",
 			"location" : "kiosk path",
 			"possible_shop_items" : {

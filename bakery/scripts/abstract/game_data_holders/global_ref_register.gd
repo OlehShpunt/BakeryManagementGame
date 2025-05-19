@@ -16,8 +16,8 @@ func is_seller_registered(seller_id) -> bool:
 		return false
 
 
-func get_seller_ref(seller_id : int):
-	if seller_id != -1:
+func get_seller_ref(seller_id : String):
+	if seller_id != "-1":
 		if registered_sellers.has(str(seller_id)):
 			return registered_sellers[str(seller_id)]
 		else:

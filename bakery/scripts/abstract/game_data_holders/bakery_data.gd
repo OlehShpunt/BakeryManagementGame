@@ -22,7 +22,8 @@ func _ready() -> void:
 	# Populate dictionary with default inventory empty values
 	for i in range(storage_size):
 		storage[i] = path_holder.EMPTY
-		set_inventory_item(i, path_holder.BREAD_SCENE)
+		# FOR DEBUG TO FILL ALL STORAGE CELLS WITH BREAD
+		#set_inventory_item(i, path_holder.BREAD_SCENE)
 
 
 func set_inventory_item(cell_id : int, item_scene_path : String) -> void:

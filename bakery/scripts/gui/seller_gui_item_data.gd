@@ -21,10 +21,11 @@ func _ready() -> void:
 		purchase_button.text = str(price) + "$"
 		
 		# Setting item name in gui
-		#var item_packed_scene = load(item_scene_path)
-		#push_warning("----->>>>", item_scene_path)
 		label.text = load(item_scene_path).instantiate().get_item_string().capitalize()
-	
+		
+		# Is sold out?
+		if sold_out:
+			item_sold_out()
 	else: 
 		push_error("value of item is not specified")
 	
@@ -61,6 +62,7 @@ func _on_button_pressed() -> void:
 	# If no space in player's inventory
 	if !item_added:
 		print("{SELLER_GUI_ITEM_DATA} Could not add item - player's inventory is full")
+
 
 func item_sold_out():
 	sold_out = true

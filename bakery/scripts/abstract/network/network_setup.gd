@@ -81,6 +81,7 @@ func remove_multiplayer_peer():
 @rpc("call_local", "reliable")
 func load_game(game_scene_path):
 	get_tree().change_scene_to_file(game_scene_path)
+	seller_item_list_generator.generate_item_list_for_all_sellers()
 	player_location_lists.print_dict_contents(player_location_lists.locations)
 
 

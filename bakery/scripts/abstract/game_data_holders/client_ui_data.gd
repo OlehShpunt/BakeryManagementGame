@@ -1,5 +1,15 @@
 extends Node
 
+#var debug = 0
+#func _process(delta: float) -> void:
+	#debug = debug + 1
+	#if debug > 1000:
+		#seller_item_list_generator.generate_item_list_for_all_sellers()
+		#debug = 0
+		#print("AGAIN NOW")
+
+
+## PLAYER UI DATA
 
 signal client_current_active_cell_changed(cell_id, parent_id)
 
@@ -79,3 +89,71 @@ func is_data_holder_registered(data_holder_id) -> bool:
 		return true
 	else:
 		return false
+
+
+## SELLER DATA
+
+signal sellers_data_updated(seller_id : String)
+signal seller_data_initialization_success
+signal seller_data_initialization_failure
+
+
+## Format: "seller_id" : [Array[String]] with "item_path,price,isSold"
+var sellers_data : Dictionary = {}
+var sellers_JSON_path = "res://resources/json/sellers.json"
+
+
+## At the start of game
+## Saves data on server only
+## Adds the registered seller IDs to the dictionary
+func initialize_seller_data():
+	
+	## Save data on server only
+	if get_multiplayer_authority() != 1:
+		return
+	
+	var file = FileAccess.open(sellers_JSON_path, FileAccess.READ)
+	var data = JSON.parse_string(file.get_as_text())
+	var sellers = data["sellers"]
+	
+	# seller_id is a String integer
+	for seller_id in sellers:
+		# fill with a placeholder
+		update_seller(seller_id, [])
+	
+	emit_signal("seller_data_initialization_success")
+	
+	return 0
+
+
+## Sets sellers data (all seller_ids)
+## @param new_sellers_data consists of "seller_id" - Array[String] key-value pairs,
+## where Array[String] has Strings formatted as "item_path,price,isSold"
+func update_all_sellers(new_sellers_data : Dictionary) -> void:
+	for seller_id in new_sellers_data:
+		if self.sellers_data.has(str(seller_id)):
+			update_seller(seller_id, new_sellers_data[str(seller_id)])
+		else:
+			push_warning("Seller id is not found in sellers_data (id = ", seller_id, ")")
+
+
+## Sets shop_items for each seller_id
+## Mutator to change the shop_items list (normally for keeping track of sold items to send rpcs to other clients)
+## Format for shop_items single item is "item_path:String, priceInt:int, isSoldOut:bool":String
+func update_seller(seller_id : String, shop_items : Array) -> void:
+	self.sellers_data[seller_id] = shop_items
+	emit_signal("sellers_data_updated", seller_id)  # seller_id : String
+
+
+## Returns sellers_data
+func get_sellers_data() -> Dictionary:
+	return sellers_data
+
+
+## Returns shop_items Array[String] for specific seller_id
+func get_seller_shop_items(seller_id : String):
+	if sellers_data.has(seller_id):
+		return sellers_data[seller_id]
+	else:
+		# The key is not in the array
+		return ERR_DOES_NOT_EXIST
