@@ -62,9 +62,6 @@ func set_current_active_cell_id(new_cell_id, new_cell_data_holder_id, new_curren
 		#emit_signal("client_current_data_changed_from_to", from_current_active_cell_id, from_current_active_cell_data_holder_id, from_cell_data, current_active_cell_id, current_active_cell_data_holder_id, to_cell_data)
 
 
-func justTesting():
-	pass
-
 func get_current_active_cell_id() -> int:
 	return current_active_cell_id
 

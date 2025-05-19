@@ -28,6 +28,7 @@ spawnpoint_resolver="*res://scripts/abstract/spawnpoint_resolver.gd"
 player_location_lists="*res://scripts/abstract/network/player_location_lists.gd"
 local_player_data="*res://scripts/abstract/game_data_holders/player_data.gd"
 client_ui_data="*res://scripts/abstract/game_data_holders/client_ui_data.gd"
+global_ref_register="*res://scripts/abstract/game_data_holders/global_ref_register.gd"
 
 [display]
 

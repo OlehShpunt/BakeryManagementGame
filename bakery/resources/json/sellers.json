@@ -1,0 +1,117 @@
+{
+	"sellers" : {
+		"13001" : {
+			"name" : "Farmer Greg",
+			"location" : "street path",
+			"possible_shop_items" : {
+				"0" : [
+					"res://scenes/food/ingredients/flour.tscn, -1", 
+					"res://scenes/food/ingredients/milk.tscn, 1",
+					"res://scenes/food/ingredients/butter.tscn, 0",
+					"res://scenes/food/ingredients/chocolate.tscn, -1",
+					"res://scenes/food/ingredients/cherry.tscn, 1",
+					"res://scenes/food/ingredients/nuts.tscn, 0"
+					],
+				"1" : [
+					"res://scenes/food/ingredients/flour.tscn, 0", 
+					"res://scenes/food/ingredients/milk.tscn, -1",
+					"res://scenes/food/ingredients/butter.tscn, 1",
+					"res://scenes/food/ingredients/chocolate.tscn, 0",
+					"res://scenes/food/ingredients/cherry.tscn, -1",
+					"res://scenes/food/ingredients/nuts.tscn, 1"
+					],
+				"2" : [
+					"res://scenes/food/ingredients/flour.tscn, 1", 
+					"res://scenes/food/ingredients/milk.tscn, 0",
+					"res://scenes/food/ingredients/butter.tscn, -1",
+					"res://scenes/food/ingredients/chocolate.tscn, 1",
+					"res://scenes/food/ingredients/cherry.tscn, 0",
+					"res://scenes/food/ingredients/nuts.tscn, -1"
+					]
+			}
+		},
+		"13002" : {
+			"name" : "Granny Laura",
+			"location" : "street path",
+			"possible_shop_items" : {
+				"0" : [
+					"res://scenes/food/ingredients/butter.tscn, -1",
+					"res://scenes/food/ingredients/cherry.tscn, -1"
+					],
+				"1" : [
+					"res://scenes/food/ingredients/milk.tscn, -1",
+					"res://scenes/food/ingredients/nuts.tscn, -1"
+					],
+				"2" : [
+					"res://scenes/food/ingredients/milk.tscn, -1",
+					"res://scenes/food/ingredients/butter.tscn, -1",
+					],
+				"3" : [
+					"res://scenes/food/ingredients/cherry.tscn, -1",
+					"res://scenes/food/ingredients/nuts.tscn, -1"
+					],
+			}
+		},
+		"14003" : {
+			"name" : "Supermarket Cashier",
+			"location" : "supermarket path",
+			"possible_shop_items" : {
+				"0" : [
+					"res://scenes/food/ingredients/flour.tscn, 1",
+					"res://scenes/food/ingredients/milk.tscn, 1",
+					"res://scenes/food/ingredients/butter.tscn, 1",
+					"res://scenes/food/ingredients/chocolate.tscn, 1",
+					"res://scenes/food/ingredients/vanilla.tscn, 1",
+					"res://scenes/food/ingredients/cocoa.tscn, 1",
+					"res://scenes/food/ingredients/nuts.tscn, 1",
+					"res://scenes/food/ingredients/cherry.tscn, 1",
+					"res://scenes/food/ingredients/jello.tscn, 1"
+					]
+			}
+		},
+		"14004" : {
+			"name" : "Mini market Cashier",
+			"location" : "mini market path",
+			"possible_shop_items" : {
+				"0" : [
+					"res://scenes/food/ingredients/butter.tscn, -1",
+					"res://scenes/food/ingredients/vanilla.tscn, -1",
+					"res://scenes/food/ingredients/cocoa.tscn, 1",
+					"res://scenes/food/ingredients/nuts.tscn, 1"
+					],
+				"1" : [
+					"res://scenes/food/ingredients/chocolate.tscn, 1",
+					"res://scenes/food/ingredients/cocoa.tscn, -1",
+					"res://scenes/food/ingredients/nuts.tscn, 1",
+					"res://scenes/food/ingredients/cherry.tscn, 2"
+					],
+				"2" : [
+					"res://scenes/food/ingredients/butter.tscn, 2",
+					"res://scenes/food/ingredients/chocolate.tscn, -1",
+					"res://scenes/food/ingredients/vanilla.tscn, 1",
+					"res://scenes/food/ingredients/cherry.tscn, 1",
+					"res://scenes/food/ingredients/jello.tscn, -2"
+					]
+			}
+		},
+		"14005" : {
+			"name" : "Kiosk Cashier",
+			"location" : "kiosk path",
+			"possible_shop_items" : {
+				"0" : [
+					"res://scenes/food/ingredients/cocoa.tscn, -2",
+					"res://scenes/food/ingredients/jello.tscn, 0"
+				],
+				"1" : [
+					"res://scenes/food/ingredients/vanilla.tscn, -1",
+					"res://scenes/food/ingredients/jello.tscn, 1"
+				],
+				"2" : [
+					"res://scenes/food/ingredients/vanilla.tscn, -1",
+					"res://scenes/food/ingredients/cocoa.tscn, -1",
+					"res://scenes/food/ingredients/jello.tscn, 0"
+				]
+			}
+		}
+	}
+}
