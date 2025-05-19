@@ -36,7 +36,21 @@ func spawn_cells():
 
 
 func get_storage_data_holder():
-	return storage_data_holder
+	# The check below is needed to prevent this bakery storage from using
+	# a new bakery data holder, if it already registered in 
+	# client_ui_data. Otherwise, a new instance would be used
+	# for this storage, and the old data holder in client_ui_data
+	# would be overwritten, so the items would disappear when player
+	# leaves and re-enters the scene.
+	var returned_val = client_ui_data.is_data_holder_registered(ID)
+	
+	if returned_val is not int:  # If is not ERR_DOES_NOT_EXIST, then it holdss the registered data_holder
+		# It means the returned_val is the data_holder that needs to be used
+		storage_data_holder = returned_val
+		return storage_data_holder
+	else:
+		print("&&& is int, so new bakery storage instance is passed")
+		return storage_data_holder
 
 
 func show_storage():

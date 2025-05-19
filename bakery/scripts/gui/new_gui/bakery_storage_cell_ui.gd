@@ -1,7 +1,5 @@
 class_name StorageCell_New extends CellBase
 
-
-#var parent_container = get_parent().get_parent().get_parent()
 #var data_holder
 
 # Called when the node enters the scene tree for the first time.

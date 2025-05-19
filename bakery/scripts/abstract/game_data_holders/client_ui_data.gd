@@ -81,14 +81,19 @@ func get_current_active_cell_data_holder_id() -> int:
 
 
 func register_data_holder(data_holder_id, data_holder_reference):
-	registered_data_holders[str(data_holder_id)] = data_holder_reference
-
-
-func is_data_holder_registered(data_holder_id) -> bool:
+	# If already registered, just reassign the existing value to the passed data_holder_reference
 	if registered_data_holders.has(str(data_holder_id)):
-		return true
+		pass
+		#data_holder_reference = registered_data_holders[str(data_holder_id)]
 	else:
-		return false
+		registered_data_holders[str(data_holder_id)] = data_holder_reference
+
+
+func is_data_holder_registered(data_holder_id):
+	if registered_data_holders.has(str(data_holder_id)):
+		return registered_data_holders[str(data_holder_id)]
+	else:
+		return ERR_DOES_NOT_EXIST
 
 
 ## SELLER DATA
