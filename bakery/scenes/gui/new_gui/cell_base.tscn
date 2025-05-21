@@ -70,7 +70,6 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer"]
 z_index = 30
-custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 stretch_mode = 5
 

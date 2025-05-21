@@ -25,35 +25,36 @@ shape = SubResource("RectangleShape2D_qsxa4")
 
 [node name="ItemHolder" parent="." instance=ExtResource("2_xce6v")]
 position = Vector2(-103, -1)
+ID = 3001
 
 [node name="ItemHolder2" parent="." instance=ExtResource("2_xce6v")]
 position = Vector2(-86, -1)
-id = 1
+ID = 3002
 
 [node name="ItemHolder3" parent="." instance=ExtResource("2_xce6v")]
 position = Vector2(-69, -1)
-id = 2
+ID = 3003
 
 [node name="ItemHolder4" parent="." instance=ExtResource("2_xce6v")]
 position = Vector2(-52, -1)
-id = 3
+ID = 3004
 
 [node name="ItemHolder5" parent="." instance=ExtResource("2_xce6v")]
 position = Vector2(-35, -1)
-id = 4
+ID = 3005
 
 [node name="ItemHolder6" parent="." instance=ExtResource("2_xce6v")]
 position = Vector2(-18, -1)
-id = 5
+ID = 3006
 
 [node name="ItemHolder7" parent="." instance=ExtResource("2_xce6v")]
 position = Vector2(-1, -1)
-id = 6
+ID = 3007
 
 [node name="ItemHolder8" parent="." instance=ExtResource("2_xce6v")]
 position = Vector2(16, -1)
-id = 7
+ID = 3008
 
 [node name="ItemHolder9" parent="." instance=ExtResource("2_xce6v")]
 position = Vector2(55, -1)
-id = 8
+ID = 3009

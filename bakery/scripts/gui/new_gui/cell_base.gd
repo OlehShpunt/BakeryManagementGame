@@ -16,6 +16,17 @@ var is_mouse_hovering = false
 var cell_data
 
 
+func set_cell_size(multiplicator : float) -> void:
+	$Panel.size *= multiplicator
+	$Panel/CenterContainer.size *= multiplicator
+	$Panel/CenterContainer/TextureRect.size *= multiplicator
+	$Panel/InventoryCellAreaUi.apply_scale(Vector2(multiplicator, multiplicator))
+	$ActiveStateFrame.size *= multiplicator
+	$Label.add_theme_font_size_override("font_size", ($Label.get_theme_font_size("font_size") * multiplicator))
+	$Label.position = Vector2(2, 2)
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	

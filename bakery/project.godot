@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 scene_manager="*res://scripts/abstract/scene_manager.gd"
 item_form_converter="*res://scripts/resources/item_form_converter.gd"
-item_holder_data="*res://scripts/abstract/item_holder_data.gd"
+item_holder_data="res://scripts/abstract/item_holder_data.gd"
 network_setup="*res://scripts/abstract/network/network_setup.gd"
 multiplayer_manager="*res://scripts/abstract/multiplayer_manager.gd"
 path_holder="*res://scripts/abstract/path_holder.gd"

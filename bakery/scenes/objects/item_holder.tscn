@@ -24,12 +24,27 @@ script = ExtResource("1_1rih4")
 texture = ExtResource("1_iravs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
 offset_bottom = 7.0
 expand_mode = 1
 stretch_mode = 3
+
+[node name="HolderUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MustBeCanvasLayer" type="Node2D" parent="HolderUI"]
+
+[node name="GridContainer" type="GridContainer" parent="HolderUI/MustBeCanvasLayer"]
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 31.0
+offset_bottom = 31.0
 
 [node name="Frame" type="Sprite2D" parent="."]
 texture = ExtResource("3_udghb")
@@ -42,6 +57,7 @@ position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_mkd00")
 
 [node name="CellArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("5_hp6jv")
@@ -52,6 +68,7 @@ shape = SubResource("RectangleShape2D_j2vs5")
 debug_color = Color(0.858937, 0.338771, 0.353881, 0.42)
 
 [node name="MouseListener" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseListener"]
 shape = SubResource("RectangleShape2D_iam2w")
