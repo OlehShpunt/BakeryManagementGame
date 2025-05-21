@@ -17,13 +17,14 @@ var cell_data
 
 
 func set_cell_size(multiplicator : float) -> void:
-	$Panel.size *= multiplicator
-	$Panel/CenterContainer.size *= multiplicator
-	$Panel/CenterContainer/TextureRect.size *= multiplicator
-	$Panel/InventoryCellAreaUi.apply_scale(Vector2(multiplicator, multiplicator))
-	$ActiveStateFrame.size *= multiplicator
-	$Label.add_theme_font_size_override("font_size", ($Label.get_theme_font_size("font_size") * multiplicator))
-	$Label.position = Vector2(2, 2)
+	pass
+	#$Panel.size *= multiplicator
+	#$Panel/CenterContainer.size *= multiplicator
+	#$Panel/CenterContainer/TextureRect.size *= multiplicator
+	#$Panel/InventoryCellAreaUi.apply_scale(Vector2(multiplicator, multiplicator))
+	#$ActiveStateFrame.size *= multiplicator
+	#$Label.add_theme_font_size_override("font_size", ($Label.get_theme_font_size("font_size") * multiplicator))
+	#$Label.position = Vector2(2, 2)
 
 
 
@@ -103,7 +104,7 @@ func update_image():
 func make_active():
 	if active_state_frame:
 		active_state_frame.show()
-		print("ACTIVATED")
+		print("ACTIVATED HERE")
 	else:
 		push_warning("active_state_frame is null")
 

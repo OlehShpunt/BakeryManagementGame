@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckkus01rk2i4x"]
+[gd_scene load_steps=6 format=3 uid="uid://ckkus01rk2i4x"]
 
 [ext_resource type="Script" path="res://scripts/gui/new_gui/cell_base.gd" id="1_oietp"]
+[ext_resource type="Texture2D" uid="uid://dlu0fajieyqty" path="res://assets/ingredientsPNG/cherry_cake.png" id="2_g86qr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sra1p"]
 content_margin_left = 10.0
@@ -54,24 +55,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_sra1p")
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel"]
 z_index = 24
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer"]
 z_index = 30
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-stretch_mode = 5
+texture = ExtResource("2_g86qr")
 
 [node name="InventoryCellAreaUi" type="Area2D" parent="Panel"]
 collision_layer = 7

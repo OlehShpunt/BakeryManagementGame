@@ -37,6 +37,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="MustBeCanvasLayer" type="Node2D" parent="HolderUI"]
 
@@ -53,6 +54,7 @@ texture = ExtResource("3_udghb")
 texture = ExtResource("4_vtw3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_mkd00")
 

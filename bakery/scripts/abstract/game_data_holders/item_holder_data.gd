@@ -23,7 +23,7 @@ func _ready() -> void:
 	for i in range(storage_size):
 		storage[i] = path_holder.EMPTY
 		# FOR DEBUG TO FILL ALL STORAGE CELLS WITH BREAD
-		set_inventory_item(i, path_holder.CHERRY_CAKE_SCENE)
+		#set_inventory_item(i, path_holder.CHERRY_CAKE_SCENE)
 
 
 func set_inventory_item(cell_id : int, item_scene_path : String) -> void:

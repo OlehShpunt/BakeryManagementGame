@@ -32,7 +32,7 @@ func spawn_cells():
 			cell.cell_data = storage_data_holder
 			
 			# Set cell sizing, since it is not on canvas layer like other UI cells, so it is by default spawned too big
-			cell.set_cell_size(0.15)
+			#cell.set_cell_size(0.15)
 			
 			#cell.parent_container = self
 			GRID_CONTAINER.add_child(cell)

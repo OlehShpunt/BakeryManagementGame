@@ -1,18 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://h0mbclx13dls"]
+[gd_scene load_steps=5 format=3 uid="uid://dmyd5ugnkleo4"]
 
-[ext_resource type="PackedScene" uid="uid://ckkus01rk2i4x" path="res://scenes/gui/new_gui/cell_base.tscn" id="1_qchve"]
 [ext_resource type="Script" path="res://scripts/gui/new_gui/item_holder_cell_ui.gd" id="2_y8dni"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kncuy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwg1d"]
 draw_center = false
 
-[node name="ItemHolderCellUi" instance=ExtResource("1_qchve")]
-anchors_preset = -1
-anchor_right = 0.068
-anchor_bottom = 0.115
-offset_right = -0.200012
-offset_bottom = 0.5
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4awk4"]
+size = Vector2(14, 14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4t26"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.6, 0.2, 1)
+
+[node name="ItemHolderCellUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("2_y8dni")
 
-[node name="Panel" parent="." index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_kncuy")
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 18.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_lwg1d")
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer"]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="InventoryCellAreaUi" type="Area2D" parent="Panel"]
+z_index = -1
+position = Vector2(9, 9)
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/InventoryCellAreaUi"]
+shape = SubResource("RectangleShape2D_4awk4")
+debug_color = Color(0.950412, 1.82897e-06, 0.568727, 0.42)
+
+[node name="ActiveStateFrame" type="Panel" parent="."]
+z_index = 2
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 18.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_b4t26")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 6.0
+offset_bottom = 6.0
+theme_override_font_sizes/font_size = 2
+text = "asd"
