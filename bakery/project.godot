@@ -30,6 +30,7 @@ local_player_data="*res://scripts/abstract/game_data_holders/player_data.gd"
 client_ui_data="*res://scripts/abstract/game_data_holders/client_ui_data.gd"
 global_ref_register="*res://scripts/abstract/game_data_holders/global_ref_register.gd"
 seller_item_list_generator="*res://scripts/abstract/backend_algorithms/seller_item_list_generator.gd"
+npc_driver="*res://scripts/abstract/backend_algorithms/npc_driver.gd"
 
 [display]
 
