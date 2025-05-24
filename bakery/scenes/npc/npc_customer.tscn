@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://jg66j3ooiqxj"]
+
+[ext_resource type="Script" path="res://scripts/npc/npc_customer.gd" id="1_eoaf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6tbx"]
+size = Vector2(12, 20)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bjc42"]
+
+[node name="NpcCustomer" type="CharacterBody2D"]
+script = ExtResource("1_eoaf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g6tbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(12, 20)
+texture = SubResource("CanvasTexture_bjc42")
+
+[node name="ID" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 22.3333
