@@ -7,6 +7,9 @@ var first_load_player = preload("res://scenes/characters/player.tscn")
 func _ready() -> void:
 	player_location_lists.list_of_players_received.connect(_on_list_of_players_received)
 	player_location_lists.get_list_of_players(path_holder.STREET_PATH)
+	
+	# TEST
+	npc_driver.add_npc_customer()
 
 
 func _on_list_of_players_received(player_list):

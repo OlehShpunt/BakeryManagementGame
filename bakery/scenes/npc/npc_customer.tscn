@@ -12,8 +12,10 @@ script = ExtResource("1_eoaf6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g6tbx")
+debug_color = Color(0, 0.85, 1, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 3
 scale = Vector2(12, 20)
 texture = SubResource("CanvasTexture_bjc42")
 

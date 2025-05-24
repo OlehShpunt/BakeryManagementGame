@@ -26,3 +26,20 @@ func get_seller_ref(seller_id : String):
 	else:
 		push_warning("The specified seller id is invalid (", seller_id, "), so null is returned")
 		return null
+
+
+## PATH POINTS
+
+var registered_path_points : Dictionary = {}
+
+
+func register_path_point(id, path_point_ref):
+	registered_path_points[str(id)] = path_point_ref
+
+
+func get_path_point_ref(id):
+	if registered_path_points.has(str(id)):
+		return registered_path_points[str(id)]
+	else:
+		push_warning("The specified seller id is not registered, so null is returned")
+		return null

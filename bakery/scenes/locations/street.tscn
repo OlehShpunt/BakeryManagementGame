@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=4 uid="uid://c6e3gyoq4qsoj"]
+[gd_scene load_steps=26 format=4 uid="uid://c6e3gyoq4qsoj"]
 
 [ext_resource type="Texture2D" uid="uid://ta1sicwwr7qk" path="res://assets/The Adventurer - Free/basicTileset.jpg" id="1_1fwtc"]
 [ext_resource type="Script" path="res://scripts/locations/street.gd" id="1_jf3xg"]
 [ext_resource type="Texture2D" uid="uid://cfq54upvoxjpd" path="res://assets/The Adventurer - Free/basic_tileset_2.png" id="3_3m7eh"]
 [ext_resource type="PackedScene" uid="uid://b47cmo2rspcfv" path="res://scenes/characters/seller.tscn" id="4_onrjq"]
 [ext_resource type="PackedScene" uid="uid://b4su7pwl3h08v" path="res://scenes/abstract/teleport.tscn" id="5_d3m33"]
+[ext_resource type="PackedScene" uid="uid://fo5evng3o3li" path="res://scenes/abstract/npc_path_point.tscn" id="6_m8g31"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx81t"]
 texture = ExtResource("1_1fwtc")
@@ -360,3 +361,120 @@ teleport_to = "res://scenes/locations/supermarket.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportSupermarket"]
 shape = SubResource("RectangleShape2D_3gca6")
+
+[node name="IntermediatePathPoints" type="Node2D" parent="."]
+
+[node name="NpcPathPoint6" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(437, 58)
+ID = 6
+default_radius = 30
+
+[node name="NpcPathPoint7" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(440, 217)
+ID = 7
+default_radius = 30
+
+[node name="NpcPathPoint8" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(438, 320)
+ID = 8
+default_radius = 30
+
+[node name="NpcPathPoint9" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(440, 456)
+ID = 9
+default_radius = 30
+
+[node name="NpcPathPoint10" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(440, 745)
+ID = 10
+default_radius = 30
+
+[node name="NpcPathPoint11" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(593, 736)
+ID = 11
+default_radius = 30
+
+[node name="NpcPathPoint12" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(591, 443)
+ID = 12
+default_radius = 30
+
+[node name="NpcPathPoint13" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(687, 443)
+ID = 13
+default_radius = 30
+
+[node name="NpcPathPoint14" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(541, 211)
+ID = 14
+default_radius = 30
+
+[node name="NpcPathPoint15" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(736, 204)
+ID = 15
+default_radius = 30
+
+[node name="NpcPathPoint16" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(191, 311)
+ID = 16
+default_radius = 30
+
+[node name="NpcPathPoint17" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(338, 313)
+ID = 17
+default_radius = 30
+
+[node name="NpcPathPoint25" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(592, 680)
+ID = 25
+default_radius = 30
+
+[node name="EdgePathPoints" type="Node2D" parent="."]
+
+[node name="NpcPathPoint" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(26, 56)
+ID = 1
+
+[node name="NpcPathPoint2" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(24, 315)
+ID = 2
+
+[node name="NpcPathPoint3" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(19, 554)
+ID = 3
+
+[node name="NpcPathPoint4" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(441, 814)
+ID = 4
+
+[node name="NpcPathPoint5" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(938, 217)
+ID = 5
+
+[node name="NpcPathPoint18" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(192, 245)
+ID = 18
+
+[node name="NpcPathPoint19" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(336, 247)
+ID = 19
+
+[node name="NpcPathPoint20" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(545, 152)
+ID = 20
+
+[node name="NpcPathPoint21" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(736, 150)
+ID = 21
+
+[node name="NpcPathPoint22" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(591, 388)
+ID = 22
+
+[node name="NpcPathPoint23" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(688, 391)
+ID = 23
+
+[node name="NpcPathPoint24" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(48, 489)
+ID = 24

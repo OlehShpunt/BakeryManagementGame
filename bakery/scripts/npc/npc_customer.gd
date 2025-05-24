@@ -8,7 +8,7 @@ var ID : int = -1
 # Actual first path point is at last index in array
 var path = []
 var next_coordinate : Vector2 = Vector2.ZERO
-var speed : int = 100
+var speed : int = 20
 
 
 func _ready() -> void:
