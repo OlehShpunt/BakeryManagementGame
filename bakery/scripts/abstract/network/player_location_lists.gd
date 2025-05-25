@@ -25,6 +25,10 @@ var locations : Dictionary = {
 }
 
 
+## Needed to emit the signal using call_deferred()
+func emit__locations_changes():
+	locations_changes.emit(locations)
+
 @rpc("any_peer", "call_local", "reliable")
 func add_player(location_path : String, player_id : int, player_info : Dictionary) -> int:
 	
@@ -38,6 +42,8 @@ func add_player(location_path : String, player_id : int, player_info : Dictionar
 		
 		print("[SERVER] Adding ", player_info["name"], " (id:", player_id, ") to location ", location_path)
 		locations[location_path][player_id] = player_info
+		
+		call_deferred("emit__locations_changes")
 		
 		# Don't spawn on clients if the game hasn't started
 		if not multiplayer_manager.is_game_start:
@@ -74,6 +80,8 @@ func remove_player(location_path : String, player_id : int) -> Dictionary:
 		
 		print("[SERVER] Removing ", player_info["name"], " (id:", player_id, ") from location ", location_path)
 		locations[location_path].erase(player_id)
+		
+		call_deferred("emit__locations_changes")
 		
 		# RPC call to all affected peers (that are in the location_path) TODO: move to another func maybe?
 		for peer_id in locations[location_path]:
@@ -163,6 +171,8 @@ func delete_player(player_id : int):
 				print("[SERVER] Client id:", player_id, " removed from location: ", location_path)
 				found = true
 				
+				call_deferred("emit__locations_changes")
+				
 				# RPC call to all affected peers (that are in the location_path) TODO: move to another func maybe?
 				for peer_id in locations[location_path]:
 					
@@ -242,6 +252,8 @@ func reset_list():
 		print("[SERVER] Resetting locations dictionary...")
 		for location in locations:
 			locations[location].clear()
+			
+			call_deferred("emit__locations_changes")
 	else:
 		push_warning("Cannot call from Client")
 

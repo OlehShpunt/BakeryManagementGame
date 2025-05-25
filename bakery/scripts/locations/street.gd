@@ -2,6 +2,7 @@ class_name Street
 extends Node2D
 
 var first_load_player = preload("res://scenes/characters/player.tscn")
+var PATH = path_holder.STREET_PATH
 
 
 func _ready() -> void:
