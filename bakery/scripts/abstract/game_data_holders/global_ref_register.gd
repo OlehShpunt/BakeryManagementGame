@@ -43,3 +43,12 @@ func get_path_point_ref(id):
 	else:
 		push_warning("The specified seller id is not registered, so null is returned")
 		return null
+
+
+func get_path_point_ref__param_Vector2(coord : Vector2):
+	for key in registered_path_points:
+		if registered_path_points[key].get_global_coordinate() == coord:
+			return registered_path_points[key]
+	
+	push_warning("Given coordinate does not match any registered path point coordinate")
+	return ERR_DOES_NOT_EXIST

@@ -71,7 +71,7 @@ const CHERRY_CAKE_IMAGE = "res://assets/ingredientsPNG/cherry_cake.png"
 
 
 # Mapping of scene paths to image paths
-var scene_to_image_map = {
+const scene_to_image_map = {
 	"res://scenes/food/ingredients/flour.tscn": "res://assets/ingredientsPNG/flour.png",
 	"res://scenes/food/ingredients/milk.tscn": "res://assets/ingredientsPNG/milk.png",
 	"res://scenes/food/ingredients/butter.tscn": "res://assets/ingredientsPNG/butter.png",

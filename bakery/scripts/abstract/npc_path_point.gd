@@ -4,6 +4,9 @@ extends Node2D
 
 @export var ID : int
 @export var default_radius : int = 0
+## Scene the path holder teleports npc to, if it is an end point
+@export var target_scene : String = path_holder.EMPTY
+
 
 func _ready() -> void:
 	if ID:
@@ -23,3 +26,11 @@ func get_rand_coordinate(radius : int = default_radius) -> Vector2:
 	var offset = Vector2(cos(angle), sin(angle)) * distance
 	# Finalized random value
 	return global_position + offset
+
+
+func get_global_coordinate():
+	return global_position
+
+
+func get_target_scene():
+	return target_scene

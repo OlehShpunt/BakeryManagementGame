@@ -310,3 +310,7 @@ func print_dict_contents(dict: Dictionary, indent := 0) -> void:
 		
 		if typeof(value) == TYPE_DICTIONARY:
 			print_dict_contents(value, indent + 1)
+
+
+func get_locations():
+	return locations

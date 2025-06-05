@@ -365,7 +365,7 @@ shape = SubResource("RectangleShape2D_3gca6")
 [node name="IntermediatePathPoints" type="Node2D" parent="."]
 
 [node name="NpcPathPoint6" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(437, 58)
+position = Vector2(431, 65)
 ID = 6
 default_radius = 30
 
@@ -429,6 +429,31 @@ position = Vector2(592, 680)
 ID = 25
 default_radius = 30
 
+[node name="NpcPathPoint26" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(200, 552)
+ID = 26
+default_radius = 30
+
+[node name="NpcPathPoint27" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(309, 446)
+ID = 27
+default_radius = 30
+
+[node name="NpcPathPoint28" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(837, 262)
+ID = 28
+default_radius = 30
+
+[node name="NpcPathPoint29" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(821, 437)
+ID = 29
+default_radius = 30
+
+[node name="NpcPathPoint30" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
+position = Vector2(421, 584)
+ID = 30
+default_radius = 30
+
 [node name="EdgePathPoints" type="Node2D" parent="."]
 
 [node name="NpcPathPoint" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
@@ -462,6 +487,7 @@ ID = 19
 [node name="NpcPathPoint20" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
 position = Vector2(545, 152)
 ID = 20
+target_scene = "res://scenes/locations/bakery_1.tscn"
 
 [node name="NpcPathPoint21" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
 position = Vector2(736, 150)
