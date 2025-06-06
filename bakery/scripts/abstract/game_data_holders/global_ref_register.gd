@@ -30,25 +30,35 @@ func get_seller_ref(seller_id : String):
 
 ## PATH POINTS
 
-var registered_path_points : Dictionary = {}
+var registered_path_points : Array = []
 
 
-func register_path_point(id, path_point_ref):
-	registered_path_points[str(id)] = path_point_ref
+func _ready() -> void:
+	registered_path_points.resize(50)
 
 
-func get_path_point_ref(id):
-	if registered_path_points.has(str(id)):
-		return registered_path_points[str(id)]
+func register_path_point(id : int, path_point_ref):
+	
+	var err
+	
+	if registered_path_points[id] != null:
+		err = ERR_DUPLICATE_SYMBOL
 	else:
-		push_warning("The specified seller id is not registered, so null is returned")
-		return null
+		err = OK
+	
+	registered_path_points[id] = path_point_ref
+	
+	return err
+
+
+func get_path_point_ref(id : int):
+	return registered_path_points[id]
 
 
 func get_path_point_ref__param_Vector2(coord : Vector2):
-	for key in registered_path_points:
-		if registered_path_points[key].get_global_coordinate() == coord:
-			return registered_path_points[key]
+	for path_point_ref in registered_path_points:
+			if path_point_ref and path_point_ref.get_global_coordinate() == coord:
+				return path_point_ref
 	
 	push_warning("Given coordinate does not match any registered path point coordinate")
 	return ERR_DOES_NOT_EXIST

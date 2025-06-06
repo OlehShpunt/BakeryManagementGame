@@ -56,9 +56,14 @@ func _process(delta: float) -> void:
 		# If reached, remove the last coordinate from path array, and save last coordinate in last_path_point_vector2
 		if next_coordinate.distance_to(global_position) < 2:
 			
+			# Control variable
+			var resizing_performed = false
+			
 			# If reached last path point
 			if path.size() == 1:
+				
 				var path_point_ref = global_ref_register.get_path_point_ref__param_Vector2(last_path_point_vector2)
+				
 				# If not ERR_DOES_NOT_EXIST
 				if path_point_ref is not int:
 					# Casting to type npc_path_point for convenience
@@ -67,6 +72,11 @@ func _process(delta: float) -> void:
 					var target_scene : String = path_point_ref.get_target_scene()
 					
 					if target_scene != "":
+						
+						print("Resizing to size path.size() - 1 = ", path.size() - 1)
+						var err = path.resize(path.size() - 1)
+						resizing_performed = true
+						
 						change_npc_location_path(target_scene)
 						# Hide or show self
 						on_location_changed(player_location_lists.get_locations())
@@ -75,9 +85,11 @@ func _process(delta: float) -> void:
 				
 				else:
 					push_warning("get_path_point_ref__param_Vector2() returned ERR_DOES_NOT_EXIST")
-					
 			
-			path.resize(path.size() - 1)
+			
+			if not resizing_performed:
+				print("Resizing to size path.size() - 1 = ", path.size() - 1)
+				var err = path.resize(path.size() - 1)
 			
 			# Tracking last path point coordinate
 			last_path_point_vector2 = next_coordinate
@@ -130,5 +142,15 @@ func deferred_call(location_list):
 		print("*** hiding npc")
 
 
+## Handles behavior after teleporting
 func on_npc_current_location_path_changed(new_location_path : String):
-	print("**** new location ", new_location_path)
+	if new_location_path == path_holder.BAKERY_1_PATH:
+		initiate_purchase_process()
+
+
+## Moves self to the cashier, scans available items on the shelf, and requests purchase from player
+func initiate_purchase_process():
+	print("Initiating bakery location behavior")
+	global_position = Vector2(135, 135)
+	path.append(Vector2(165, 85))
+	print("appending Vector2(165, 85)")

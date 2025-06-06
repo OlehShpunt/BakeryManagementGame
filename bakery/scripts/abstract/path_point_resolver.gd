@@ -9,4 +9,4 @@ func resolve_next_scene(coord : Vector2):
 	if path_point is int:
 		return path_holder.EMPTY
 	
-	path_point.
+	#path_point.

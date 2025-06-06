@@ -7,10 +7,25 @@ extends Node2D
 ## Scene the path holder teleports npc to, if it is an end point
 @export var target_scene : String = path_holder.EMPTY
 
+@onready var self_position = global_position
+
 
 func _ready() -> void:
 	if ID:
-		global_ref_register.register_path_point(ID, self)
+		var err = global_ref_register.register_path_point(ID, self)
+		
+		# If OK
+		if err != ERR_DUPLICATE_SYMBOL:
+			call_deferred("reparent", path_point_parent)
+		
+		## If already registered
+		#if err == ERR_DUPLICATE_SYMBOL:
+			#get_tree().current_scene.remove_child(self)
+		## If not registered yet
+		#else:
+			#get_tree().current_scene.remove_child(self)
+			#path_point_parent.add_child(self)
+		
 	else:
 		push_error("ID not set")
 
@@ -25,11 +40,11 @@ func get_rand_coordinate(radius : int = default_radius) -> Vector2:
 	# Vector from global pos
 	var offset = Vector2(cos(angle), sin(angle)) * distance
 	# Finalized random value
-	return global_position + offset
+	return self_position + offset
 
 
 func get_global_coordinate():
-	return global_position
+	return self_position
 
 
 func get_target_scene():
