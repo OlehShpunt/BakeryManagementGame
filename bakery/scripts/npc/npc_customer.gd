@@ -1,6 +1,7 @@
 class_name npc_customer
 extends CharacterBody2D
 
+
 var ID : int = -1
 @onready var npc_current_location_path = path_holder.STREET_PATH  # Default val, changed when npc reaches end point and changes its current location
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://lugtk53r4ygg"]
+
+[ext_resource type="Script" path="res://scripts/npc/npc_base.gd" id="1_1xw1e"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_v6ydx"]
+specular_color = Color(0.292354, 0.442882, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_16v5l"]
+
+[node name="NpcBase" type="Node2D"]
+z_index = 1
+scale = Vector2(0.0910713, 0.0910713)
+script = ExtResource("1_1xw1e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(274, 274)
+texture = SubResource("CanvasTexture_v6ydx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(12, 12)
+shape = SubResource("CircleShape2D_16v5l")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

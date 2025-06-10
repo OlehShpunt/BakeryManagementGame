@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://c6e3gyoq4qsoj"]
+[gd_scene load_steps=27 format=4 uid="uid://c6e3gyoq4qsoj"]
 
 [ext_resource type="Texture2D" uid="uid://ta1sicwwr7qk" path="res://assets/The Adventurer - Free/basicTileset.jpg" id="1_1fwtc"]
 [ext_resource type="Script" path="res://scripts/locations/street.gd" id="1_jf3xg"]
@@ -107,6 +107,12 @@ size = Vector2(32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gca6"]
 size = Vector2(48, 16)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jotnr"]
+vertices = PackedVector2Array(313.383, 273.688, 337, 225.648, 361.227, 274.93, 158.422, 272.82, 190.406, 225.672, 221.461, 278.289, 153.844, 345.43, 32.75, 262, 52.9609, 227.242, 88.0469, 275.172, 109.5, 759, 116.422, 781.742, 31.4375, 780.18, 97.6016, 759.539, 119.273, 732, 214.648, 732, 208.906, 759, 642.867, 709.992, 727.039, 639.508, 774.07, 726.031, 673.57, 771.508, 120.07, 666.242, 194.047, 658.227, 192.758, 674.117, 117.727, 675.141, 702.5, 180.906, 737.32, 142.602, 768.82, 183.953, 469, 482.078, 314.422, 711.219, 315.383, 693.07, 390.258, 708.047, 400.383, 731.977, 834.539, 121.203, 873, 175.219, 865, 238.211, -5.52344, 354.391, -1.42969, 262, 404.367, 85.9688, -2.07812, 86.9688, 3.14844, 27.0312, 468.18, 28.9531, 471.117, 181.273, 397.688, 269.719, 961.617, 171.438, 959.344, 236.203, 942.172, 725.047, 943.812, 817.812, 679.656, 813.141, 590.727, 649.672, 474.43, 782.461, 469, 716.953, 32.5312, 755.594, 105.398, 704.883, 29.9062, 698.828, 32.0312, 676.57, 97.3906, 680.602, 102.578, 592.43, 125.758, 595.148, 865, 479.07, 594.406, 183.07, 5, 588.398, 5, 505.297, 48.2969, 464.453, 94.6562, 504.312, 397.656, 590.828, 156.141, 499.188, 466.547, 830.656, 408.242, 828.352, 544.547, 140.727, 482.023, 186.656)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 10), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(25, 26, 27, 28), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(27, 33, 34, 35, 28), PackedInt32Array(6, 36, 37, 7, 9), PackedInt32Array(6, 9, 3), PackedInt32Array(38, 39, 40, 41), PackedInt32Array(38, 41, 42, 43), PackedInt32Array(34, 44, 45, 35), PackedInt32Array(19, 46, 47, 48, 20), PackedInt32Array(49, 17, 20, 50, 51), PackedInt32Array(12, 52, 13), PackedInt32Array(14, 10, 13, 53, 24), PackedInt32Array(53, 54, 55, 56), PackedInt32Array(21, 24, 53, 56, 57, 58), PackedInt32Array(35, 59, 28), PackedInt32Array(60, 25, 28, 43), PackedInt32Array(57, 61, 62, 63, 64), PackedInt32Array(65, 58, 57, 64, 66, 28), PackedInt32Array(50, 67, 68, 32, 51), PackedInt32Array(28, 51, 32, 31, 65), PackedInt32Array(28, 66, 6, 5, 0, 2), PackedInt32Array(28, 2, 43), PackedInt32Array(69, 60, 43, 70), PackedInt32Array(43, 42, 70)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-6, 17, 478, 19, 481, 175, 545, 128, 598, 173, 698, 171, 738, 127, 770, 169, 836, 106, 878, 165, 972, 161, 969, 246, 875, 248, 875, 489, 479, 492, 479, 700, 593, 637, 644, 696, 730, 624, 780, 716, 952, 715, 954, 828, 671, 823, 665, 782, 483, 792, 475, 841, 399, 838, 391, 740, 304, 719, 306, 681, 381, 696, 387, 601, 135, 605, 131, 655, 205, 647, 202, 684, 128, 685, 129, 722, 227, 722, 217, 769, 123, 769, 130, 792, 21, 790, 23, 745, 89, 749, 94, 714, 19, 708, 23, 666, 88, 670, 92, 602, -5, 598, -5, 501, 48, 451, 98, 494, 146, 490, 144, 356, -16, 365, -11, 252, 27, 252, 52, 209, 93, 265, 153, 263, 191, 207, 227, 268, 307, 264, 337, 203, 367, 264, 388, 261, 394, 96, -13, 97)])
+parsed_collision_mask = 1
 
 [node name="Street" type="Node2D"]
 y_sort_enabled = true
@@ -504,3 +510,6 @@ ID = 23
 [node name="NpcPathPoint24" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
 position = Vector2(48, 489)
 ID = 24
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_jotnr")

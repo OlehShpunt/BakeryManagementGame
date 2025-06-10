@@ -57,8 +57,9 @@ func get_path_point_ref(id : int):
 
 func get_path_point_ref__param_Vector2(coord : Vector2):
 	for path_point_ref in registered_path_points:
-			if path_point_ref and path_point_ref.get_global_coordinate() == coord:
-				return path_point_ref
+			if path_point_ref:
+				if path_point_ref.get_global_coordinate() == coord:
+					return path_point_ref
 	
 	push_warning("Given coordinate does not match any registered path point coordinate")
 	return ERR_DOES_NOT_EXIST

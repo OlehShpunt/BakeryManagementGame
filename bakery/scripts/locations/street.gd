@@ -10,7 +10,7 @@ func _ready() -> void:
 	player_location_lists.get_list_of_players(path_holder.STREET_PATH)
 	
 	# TEST
-	npc_driver.add_npc_customer()
+	npc_driver.add_npc_base()
 
 
 func _on_list_of_players_received(player_list):
