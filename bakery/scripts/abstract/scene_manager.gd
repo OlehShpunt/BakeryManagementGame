@@ -1,6 +1,19 @@
 class_name SceneManager
 extends Node
 
+## Loads all scenes on game start to get all necessary objects registered
+func _ready() -> void:
+	pass
+	#load_for_registration(path_holder.BAKERY_1_PATH)
+	##TODO other shops and locations
+
+
+func load_for_registration(scene_path: String) -> void:
+	var scene = load(scene_path).instantiate()
+	scene.global_position = Vector2(-1000, -1000)
+	add_child(scene)
+	remove_child(scene)
+
 
 ## manages game scene transitions
 ## holds all item packed scenes (they then can be retrieved by any script)

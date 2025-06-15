@@ -6,11 +6,38 @@ var npc_base_inst = preload("res://scenes/npc/npc_base.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	# Add a nav layer with no borders so that npc can move freely
+	var empty_nav_reg = NavigationRegion2D.new()
+	
+	for i in range(32):
+		empty_nav_reg.set_navigation_layer_value(i, false)
+		
+	empty_nav_reg.set_navigation_layer_value(2, true)
+	
+	# Create a big walkable polygon
+	# TODO: custom for each location (shop/bakery) with different polygon assigned using a polygon resolver script
+	var nav_polygon = NavigationPolygon.new()
+	var polygon = PackedVector2Array([
+		Vector2(-1000, -1000),
+		Vector2(1000, -1000),
+		Vector2(1000, 1000),
+		Vector2(-1000, 1000)
+	])
+	nav_polygon.add_outline(polygon)
+	nav_polygon.make_polygons_from_outlines()
+	
+	# Set the polygon to the region
+	empty_nav_reg.navigation_polygon = nav_polygon
+	
+	add_child(empty_nav_reg)
+	
+	
 	print("&& NPC Driver started! ")
 
 
 func add_npc_base():
-	var target_pos = Vector2(545, 150)
+	var target_pos = global_ref_register.get_teleport_global_pos(str(101))
 	
 	var npc : npc_base = npc_base_inst.instantiate()
 	npc.buffered_target_position = target_pos

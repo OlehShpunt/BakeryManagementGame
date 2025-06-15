@@ -63,3 +63,64 @@ func get_path_point_ref__param_Vector2(coord : Vector2):
 	
 	push_warning("Given coordinate does not match any registered path point coordinate")
 	return ERR_DOES_NOT_EXIST
+
+
+# TELEPORTS
+
+# id as String
+# |
+# -- "ref" : as Teleport
+# |
+# -- "g_pos" : as Vector2
+# |
+# -- "teleport_to" : as String
+var registered_teleports : Dictionary = {}
+
+
+func register_teleport(teleport : Teleport):
+	registered_teleports[str(teleport.get_id())] = {"ref" : null, "g_pos" : null, "teleport_to" : null}
+	registered_teleports[str(teleport.get_id())]["ref"] = teleport
+	registered_teleports[str(teleport.get_id())]["g_pos"] = teleport.global_position
+	registered_teleports[str(teleport.get_id())]["teleport_to"] = teleport.get_teleport_to_path()
+
+
+func teleport_vector2_to_location_path(given_position : Vector2) -> String:
+	# Each key is a string with teleport id
+	for key in registered_teleports:
+		if registered_teleports[key]["g_pos"] == given_position:
+			return registered_teleports[key]["teleport_to"]
+	
+	push_warning("Given position does not match any registered Teleport")
+	return path_holder.EMPTY
+
+func get_teleport_dict(id: String) -> Dictionary:
+	if registered_teleports.has(id):
+		return registered_teleports[id]
+	else:
+		return {}
+
+func get_teleport_global_pos(id: String) -> Vector2:
+	if get_teleport_dict(id).has("g_pos"):
+		return get_teleport_dict(id)["g_pos"]
+	else:
+		print("*** returned dict is empty")
+		return Vector2.ZERO
+
+
+## NAVIGATION REGION 2D
+
+var registered_nav_regions = {}
+
+
+func register_nav_region(id : String, nav_reg_ref):
+	
+	var err
+	
+	if registered_nav_regions.has(id):
+		err = ERR_DUPLICATE_SYMBOL
+	else:
+		err = OK
+	
+	registered_nav_regions[id] = nav_reg_ref
+
+	return err

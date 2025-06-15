@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://lugtk53r4ygg"]
+[gd_scene load_steps=5 format=3 uid="uid://lugtk53r4ygg"]
 
 [ext_resource type="Script" path="res://scripts/npc/npc_base.gd" id="1_1xw1e"]
 
@@ -6,6 +6,9 @@
 specular_color = Color(0.292354, 0.442882, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_16v5l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6kw53"]
+radius = 1702.53
 
 [node name="NpcBase" type="Node2D"]
 z_index = 1
@@ -16,8 +19,22 @@ script = ExtResource("1_1xw1e")
 scale = Vector2(274, 274)
 texture = SubResource("CanvasTexture_v6ydx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(12, 12)
 shape = SubResource("CircleShape2D_16v5l")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="ItemHolderDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemHolderDetector"]
+shape = SubResource("CircleShape2D_6kw53")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_teleport_area_entered"]
+[connection signal="area_entered" from="ItemHolderDetector" to="." method="_on_item_holder_entered"]

@@ -172,7 +172,7 @@ func delete_player(player_id : int):
 				found = true
 				
 				call_deferred("emit__locations_changes")
-				
+				 
 				# RPC call to all affected peers (that are in the location_path) TODO: move to another func maybe?
 				for peer_id in locations[location_path]:
 					

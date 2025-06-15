@@ -61,6 +61,10 @@ func show_storage():
 	GRID_CONTAINER.show()
 
 
+func get_id():
+	return ID
+
+
 #func hide_storage():
 	#GRID_CONTAINER.hide()
 

@@ -3,8 +3,10 @@ extends Node
 
 ## Returns default spawn point for a specified location
 func get_spawn_point(to_location_path: String, _from_location_path : String = "not specified") -> Vector2:
+	
 	match to_location_path:
 		path_holder.STREET_PATH:
+			
 			match _from_location_path:
 				# The coordinates must be slightly below the entrance to the building
 				path_holder.WHOLESALE_SHOP_PATH:
@@ -22,6 +24,7 @@ func get_spawn_point(to_location_path: String, _from_location_path : String = "n
 					return Vector2(200, 80) # position does not matter
 				_:
 					return Vector2(30, 30)
+		
 		path_holder.WHOLESALE_SHOP_PATH:
 			return Vector2(132, 132) 
 		path_holder.MINI_MARKET_PATH:

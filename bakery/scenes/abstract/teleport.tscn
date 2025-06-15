@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/abstract/teleport.gd" id="1_xkul8"]
 
 [node name="Teleport" type="Area2D"]
-collision_layer = 0
+collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_xkul8")
 
