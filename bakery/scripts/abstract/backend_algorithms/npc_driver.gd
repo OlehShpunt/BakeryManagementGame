@@ -41,7 +41,7 @@ func add_npc_base():
 	
 	var npc = npc_base_inst.instantiate()
 	npc.buffered_target_position = target_pos
-	npc.global_position = Vector2(45, 55)
+	npc.global_position = Vector2(450, 810)
 	
 	var planned_purchase_list = [path_holder.CHERRY_CAKE_SCENE, path_holder.BREAD_SCENE, path_holder.NUTS_SCENE, path_holder.BUTTER_SCENE, path_holder.MILK_SCENE]
 	npc.set_planned_purchase_list(planned_purchase_list)

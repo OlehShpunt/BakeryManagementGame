@@ -2,9 +2,12 @@ class_name npc_base
 extends Node2D
 
 
-@export var movement_speed: float = 100.0
+@export var movement_speed: float = 20.0
+
 @onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
 @onready var thoughts = $ThoughtComponent
+@onready var button = $Button
+
 var movement_delta: float
 ## Used on instance creation before adding to a scene to specify initial NPC spawn position
 var buffered_target_position : Vector2 = Vector2.ZERO
@@ -15,6 +18,7 @@ var visible_items = []
 ## Items that NPC initially planned to buy in current round. Not necessarily NPC will be able to buy these items.
 var planned_purchase_list
 ## Items that the NPC is willing to buy in current bakery
+## Intersection of visible_items and planned_purchase_list
 var desired_items = []
 
 func _ready() -> void:
@@ -182,8 +186,36 @@ func set_planned_purchase_list(list: Array):
 	planned_purchase_list = list
 
 
+func remove_from_purchase_list(item: String):
+	planned_purchase_list.erase(item)
+	display_thoughts()
+
+
 func display_thoughts():
 	print("(( displaying thoughts...")
 	var to_display: Array = array_operations.intersection_of(visible_items, planned_purchase_list)
+	desired_items = to_display
 	print(visible_items, "(( intersect ", planned_purchase_list, " = ", to_display)
 	thoughts.display(to_display)
+
+
+func _on_button_pressed() -> void:
+	print("(( button pressed")
+	if not planned_purchase_list.is_empty():
+		# If the active cell is in inventory
+		if client_ui_data.get_current_active_cell_data_holder_id() == local_player_data.get_id():
+			var cell_id = local_player_data.get_current_active_cell()
+			var item_path = local_player_data.get_inventory_item(cell_id)
+			
+			print("(( item_path is ", item_path)
+			if desired_items.has(item_path):
+				# TODO purchase logic here (money)
+				local_player_data.set_inventory_item(cell_id, path_holder.EMPTY)
+				# Remove purchased item from the desired and purchase list
+				remove_from_purchase_list(item_path)
+			else:
+				print("(( the chosen item is not in the NPC desired list")
+		else:
+			print("(( current active cell is not in inventory")
+	else:
+		print("(( planned_purchase_list is empty")
