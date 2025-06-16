@@ -27,6 +27,7 @@ draw_center = false
 z_index = 1
 scale = Vector2(0.0910713, 0.0910713)
 script = ExtResource("1_1xw1e")
+movement_speed = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(274, 274)

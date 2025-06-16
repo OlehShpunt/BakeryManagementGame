@@ -5,12 +5,25 @@ extends Node2D
 ## Displays the items as images
 ## TODO for strings as well to make possible to add text, not just images
 
-func display(items: Array):
+
+func _ready() -> void:
+	self.hide()
+
+
+func display(items: Array, _delay: int = 0):
+	
+	if _delay > 0:
+		var t = Timer.new()
+		add_child(t)
+		t.start(_delay)
+		await t.timeout
+	
 	# Remove all current children
 	for existing_item in grid.get_children():
 		existing_item.queue_free()
 	
 	if not items.is_empty():
+		self.show()
 		for item_path in items:
 			var sprite: Sprite2D = load(item_path).instantiate()
 			var texture = sprite.texture
@@ -32,3 +45,5 @@ func display(items: Array):
 			panel.add_child(image_rect)
 
 			grid.add_child(panel)
+	else:
+		self.hide()

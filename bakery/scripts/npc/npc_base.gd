@@ -171,7 +171,7 @@ func _on_item_holder_entered(area: Area2D) -> void:
 func add_visible_item(item: String) -> void:
 	if item != path_holder.EMPTY:
 		visible_items.push_back(item)
-		display_thoughts()
+		display_thoughts(2)
 
 
 func remove_visible_item(item: String) -> void:
@@ -191,12 +191,14 @@ func remove_from_purchase_list(item: String):
 	display_thoughts()
 
 
-func display_thoughts():
+## Calculates intersection of visible_items and planned_purchase_list,
+## assigns it to desired_items and displays the desired_items
+func display_thoughts(_delay: int = 0):
 	print("(( displaying thoughts...")
 	var to_display: Array = array_operations.intersection_of(visible_items, planned_purchase_list)
 	desired_items = to_display
 	print(visible_items, "(( intersect ", planned_purchase_list, " = ", to_display)
-	thoughts.display(to_display)
+	thoughts.display(to_display, _delay)
 
 
 func _on_button_pressed() -> void:
