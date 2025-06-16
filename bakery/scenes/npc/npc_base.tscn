@@ -27,15 +27,15 @@ draw_center = false
 z_index = 1
 scale = Vector2(0.0910713, 0.0910713)
 script = ExtResource("1_1xw1e")
-movement_speed = 10.0
+movement_speed = 70.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(274, 274)
 texture = SubResource("CanvasTexture_v6ydx")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 8
+collision_layer = 2
+collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(12, 12)
