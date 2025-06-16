@@ -4,14 +4,18 @@ extends Node2D
 
 @export var movement_speed: float = 100.0
 @onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
+@onready var thoughts = $ThoughtComponent
 var movement_delta: float
 ## Used on instance creation before adding to a scene to specify initial NPC spawn position
 var buffered_target_position : Vector2 = Vector2.ZERO
 @onready var npc_current_location_path = path_holder.STREET_PATH
 
-## Store item paths of all visible to npc item holders
+## Item paths of all visible to npc item holders
 var visible_items = []
-
+## Items that NPC initially planned to buy in current round. Not necessarily NPC will be able to buy these items.
+var planned_purchase_list
+## Items that the NPC is willing to buy in current bakery
+var desired_items = []
 
 func _ready() -> void:
 	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
@@ -21,6 +25,12 @@ func _ready() -> void:
 		push_warning("buffered_target_position is ZERO")
 	
 	player_location_lists.locations_changes.connect(on_player_location_changed)
+	
+	thoughts.display(desired_items)
+
+
+func _process(delta: float) -> void:
+	pass
 
 
 func _physics_process(delta):
@@ -157,6 +167,7 @@ func _on_item_holder_entered(area: Area2D) -> void:
 func add_visible_item(item: String) -> void:
 	if item != path_holder.EMPTY:
 		visible_items.push_back(item)
+		display_thoughts()
 
 
 func remove_visible_item(item: String) -> void:
@@ -165,3 +176,14 @@ func remove_visible_item(item: String) -> void:
 
 func empty_visible_items() -> void:
 	visible_items.resize(0)
+
+
+func set_planned_purchase_list(list: Array):
+	planned_purchase_list = list
+
+
+func display_thoughts():
+	print("(( displaying thoughts...")
+	var to_display: Array = array_operations.intersection_of(visible_items, planned_purchase_list)
+	print(visible_items, "(( intersect ", planned_purchase_list, " = ", to_display)
+	thoughts.display(to_display)

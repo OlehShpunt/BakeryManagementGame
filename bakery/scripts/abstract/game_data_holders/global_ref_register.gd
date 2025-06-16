@@ -90,7 +90,7 @@ func teleport_vector2_to_location_path(given_position : Vector2) -> String:
 		if registered_teleports[key]["g_pos"] == given_position:
 			return registered_teleports[key]["teleport_to"]
 	
-	push_warning("Given position does not match any registered Teleport")
+	#push_warning("Given position does not match any registered Teleport")
 	return path_holder.EMPTY
 
 func get_teleport_dict(id: String) -> Dictionary:
