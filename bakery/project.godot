@@ -32,6 +32,8 @@ global_ref_register="*res://scripts/abstract/game_data_holders/global_ref_regist
 seller_item_list_generator="*res://scripts/abstract/backend_algorithms/seller_item_list_generator.gd"
 npc_driver="*res://scripts/abstract/backend_algorithms/npc_driver.gd"
 path_point_parent="*res://scripts/abstract/path_points_parent.gd"
+GameOrchestrator="*res://scripts/abstract/GameOrchestrator.gd"
+GameLoopUi="*res://scenes/gui/GameLoopUI.tscn"
 
 [display]
 

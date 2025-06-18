@@ -99,7 +99,7 @@ func on_shop_items_updated():
 
 # When player enters the tradeable zone, trade (dollar) is enabled
 func _on_interactable_zone_body_entered(body: Node2D) -> void:
-	if (body.has_method("player")):
+	if body.has_method("player") and GameOrchestrator.current_phase == GameOrchestrator.BUYING_PHASE:
 		
 		# TODO !!! 
 		# TEMPORARY - NEEDS REPLACEMENT AS SOON AS MULTIPLAYER IS IMPLEMENTED (see comments above)
@@ -116,7 +116,7 @@ func _on_interactable_zone_body_entered(body: Node2D) -> void:
 
 # When all players exit the tradeable zone, trade (dollar) is disabled
 func _on_interactable_zone_body_exited(body: Node2D) -> void:
-	if (body.has_method("player")):
+	if body.has_method("player"):
 		
 		# !!! 
 		# TEMPORARY - NEEDS REPLACEMENT AS SOON AS MULTIPLAYER IS IMPLEMENTED (see comments above)

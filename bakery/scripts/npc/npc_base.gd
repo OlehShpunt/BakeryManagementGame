@@ -221,3 +221,8 @@ func _on_button_pressed() -> void:
 			print("(( current active cell is not in inventory")
 	else:
 		print("(( planned_purchase_list is empty")
+
+
+## Identification method
+func npc():
+	pass

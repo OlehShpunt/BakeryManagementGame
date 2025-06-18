@@ -1,0 +1,96 @@
+[gd_scene load_steps=2 format=3 uid="uid://i200ys7r050"]
+
+[ext_resource type="Script" path="res://scripts/gui/GameLoopUI.gd" id="1_3mejj"]
+
+[node name="GameLoopUI" type="Control"]
+z_index = 50
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.095
+offset_bottom = -0.500008
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3mejj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 32.0
+offset_bottom = 84.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Left" type="Control" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PhaseLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Left"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -11.5
+offset_right = 199.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Loading phase name..."
+
+[node name="Center" type="Control" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RoundNumberLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Center"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.5
+offset_right = 96.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Loading round number..."
+horizontal_alignment = 1
+
+[node name="Right" type="Control" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PhaseTimerLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Right"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -11.5
+offset_right = -24.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Loading timer value..."
+
+[node name="PhaseTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="OneSecondTimer" type="Timer" parent="."]
