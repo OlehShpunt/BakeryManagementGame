@@ -45,13 +45,20 @@ func _ready() -> void:
 
 ## Add specified items in shop_items
 func initialize_seller_gui():
+	
+	# Used for assigning seller_gui_item_data ID
+	var count = 0
+	
 	# Each "item" is a string that holds coma-separated item data 
 	# (its algorithm-generated name and price)
-	for item : String in get_parent().get_shop_items():
+	for item: String in get_parent().get_shop_items():
 		
-		var shop_item : SellerGUIItemData = seller_gui_item_data.instantiate()
+		var shop_item: SellerGUIItemData = seller_gui_item_data.instantiate()
 		
 		var i_data = item.split(",")
+		
+		shop_item.ID = count
+		count += 1
 		
 		# i_data: 0 = name, 1 = price
 		# setting item name

@@ -55,7 +55,6 @@ teleport_to = "res://scenes/locations/street.tscn"
 shape = SubResource("RectangleShape2D_f86k8")
 
 [node name="Storage1" parent="." instance=ExtResource("5_oxjwv")]
-visible = false
 position = Vector2(212, -65)
 
 [node name="CookingStation" parent="." instance=ExtResource("5_pvimk")]

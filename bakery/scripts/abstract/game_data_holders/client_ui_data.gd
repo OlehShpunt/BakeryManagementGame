@@ -150,6 +150,16 @@ func update_seller(seller_id : String, shop_items : Array) -> void:
 	emit_signal("sellers_data_updated", seller_id)  # seller_id : String
 
 
+## For single item when on destroy of seller_gui_item_data called
+func set_seller_shop_item(seller_id: int, gui_item_data_id: int, new_item_data: String):
+	print("+++ setting a specific item data for seller_id ", seller_id, " for item at index ", gui_item_data_id, "and new data is ", new_item_data)
+	self.sellers_data[str(seller_id)][gui_item_data_id] = new_item_data
+	print()
+	print("+++ just check = ", sellers_data[str(seller_id)][gui_item_data_id])
+	emit_signal("sellers_data_updated", seller_id)  # seller_id : String
+	print("+++ just check 2 = ", sellers_data[str(seller_id)][gui_item_data_id])
+
+
 ## Returns sellers_data
 func get_sellers_data() -> Dictionary:
 	return sellers_data

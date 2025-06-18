@@ -1,18 +1,20 @@
 class_name SellerGUIItemData extends HBoxContainer
 
+var ID = -1
+
 #@onready var seller_gui_node : SellerGUI = get_parent()
 @onready var texture_rect : TextureRect = $TextureRect
 @onready var purchase_button : Button = $Button
 @onready var label : Label = $Label
 var inventory_resource : InventoryResource = preload("res://resources/gui/inventory_resource.tres")
 #var item : String
+var item_scene_path : String = path_holder.EMPTY
 var price : int
 var sold_out = false
 ## TODO: Will be changed by item distribution algorithms 
 ## when generating the seller's item list
 #moved to ready
 #var item_packed_scene : PackedScene
-var item_scene_path : String = path_holder.EMPTY
 
 func _ready() -> void:
 	if item_scene_path != path_holder.EMPTY:
@@ -68,6 +70,20 @@ func item_sold_out():
 	sold_out = true
 	label.set("theme_override_colors/font_color", Color.DIM_GRAY)
 	purchase_button.disabled = true
+
+
+func _on_tree_exiting() -> void:
+	if sold_out:
+		print("+++ this one with ID ", ID, "is sold out, so saving it")
+		# Getting seller_gui.tradeable_component.seller
+		var seller_id: int = get_seller_gui().get_tradeable_component().get_parent().ID
+		var new_data = item_scene_path + ", " + str(price) + ", " + str(sold_out)
+		print("+++ new data is ", new_data)
+		client_ui_data.set_seller_shop_item(seller_id, self.ID, new_data)
+
+
+func get_seller_gui():
+	return get_parent().get_parent().get_parent().get_parent()
 
 
 #func get_item():
