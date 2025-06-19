@@ -12,11 +12,13 @@ signal shop_items_updated()
 func set_shop_items(item_list : Array) -> void:
 	if item_list != null:
 		shop_items = item_list
+		print("Seller debug > shop items set for ", ID, ": ", shop_items)
 		emit_signal("shop_items_updated")
 
 
 ## Reinitializes the seller's gui by adding new items based on self.shop_items
 func on_shop_items_updated():
+	pass  # TEST
 	tradeable_component.initialize_seller_gui()
 
 
@@ -32,7 +34,12 @@ func _ready():
 	if client_ui_data.get_seller_shop_items(str(ID)) is not int:
 		#set_shop_items(client_ui_data.get_seller_shop_items(str(ID)))
 		shop_items = client_ui_data.get_seller_shop_items(str(ID))
-	tradeable_component.initialize_seller_gui()
+	
+	#if client_ui_data.is_seller_with_empty_gui(ID):
+		#client_ui_data.remove_seller_with_empty_gui(ID)
+		#tradeable_component.initialize_seller_gui()
+	if GameOrchestrator.current_phase == GameOrchestrator.BUYING_PHASE:
+		tradeable_component.initialize_seller_gui()
 	
 	call_deferred("deffered_call_here")
 

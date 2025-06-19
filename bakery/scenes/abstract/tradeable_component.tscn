@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/abstract/tradeable_component.gd" id="1_fxfsl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0kxtq"]
-radius = 58.0
+radius = 118.068
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fh8wr"]
 radius = 15.0

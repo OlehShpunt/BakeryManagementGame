@@ -108,6 +108,33 @@ var sellers_data : Dictionary = {}
 var sellers_JSON_path = "res://resources/json/sellers.json"
 
 
+### Stores ids of sellers, who during item list assignment were freed instances.
+### When the seller is loaded later, its item lists is empty, because it has not been assigned.
+### This array records IDs of those Sellers, who during the loading (in _ready()) need to initialize their item lists.
+#var sellers_with_empty_gui = []  ## Array of integer IDs
+#
+#
+#func add_seller_with_empty_gui(id):
+	#if sellers_with_empty_gui.has(str(id)):
+		#return
+	#
+	#sellers_with_empty_gui.push_back(str(id))
+#
+#
+#func remove_seller_with_empty_gui(id):
+	#if not sellers_with_empty_gui.has(str(id)):
+		#return
+	#
+	#sellers_with_empty_gui.erase(str(id))
+#
+#
+#func is_seller_with_empty_gui(id) -> bool:
+	#if sellers_with_empty_gui.has(str(id)):
+		#return true
+	#else:
+		#return false
+
+
 ## At the start of game
 ## Saves data on server only
 ## Adds the registered seller IDs to the dictionary

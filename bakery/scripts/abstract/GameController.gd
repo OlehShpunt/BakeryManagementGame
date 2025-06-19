@@ -24,7 +24,7 @@ static func triggerBuyingPhase(duration: int):
 	GameLoopUi.assign_new_timer(duration)
 	
 	# Generate and assign Seller item list
-	# BUG (TODO) seller_item_list_generator.generate_item_list_for_all_sellers()
+	seller_item_list_generator.generate_item_list_for_all_sellers()
 	
 	# Remove all NPCs from registers
 	for child in npc_driver.get_children():
