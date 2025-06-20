@@ -275,7 +275,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="FarmerGreg" parent="." instance=ExtResource("4_onrjq")]
-position = Vector2(389, 413)
+position = Vector2(245, 37)
 ID = 13001
 
 [node name="MarketSeller1" parent="." instance=ExtResource("4_onrjq")]

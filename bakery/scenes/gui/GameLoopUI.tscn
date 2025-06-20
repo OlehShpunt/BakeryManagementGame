@@ -5,6 +5,7 @@
 [node name="GameLoopUI" type="Control"]
 z_index = 50
 layout_mode = 3
+anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3mejj")

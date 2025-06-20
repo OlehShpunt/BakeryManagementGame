@@ -1,14 +1,18 @@
 class_name bakery_storage extends Node2D
 
 @onready var GRID_CONTAINER = $StorageUI/CanvasLayer/GridContainer
+@onready var STORAGE_UI = $StorageUI
+@onready var CANVAS_LAYER = $StorageUI/CanvasLayer
 @onready var storage_data_holder = bakery_data.new()
 
 @export var ID : int
 
+@export var display_sprite = true
 
-var capacity : int = 12
+@export var capacity : int = 12
 var storage_cell = preload("res://scenes/gui/new_gui/bakery_storage_cell_ui.tscn")
 
+@export var grid_columns: int = 6
 
 func _ready() -> void:
 	
@@ -16,8 +20,12 @@ func _ready() -> void:
 	storage_data_holder.ID = self.ID
 	storage_data_holder._ready()
 	
+	GRID_CONTAINER.columns = grid_columns
 	spawn_cells()
-#	hide_storage()
+	
+	if not display_sprite:
+		set_sprite_texture(null)
+	
 
 
 func _process(_delta: float) -> void:
@@ -71,3 +79,7 @@ func _on_interactable_area_2d_body_exited(body: Node2D) -> void:
 	if body.has_method("player") and body.get_multiplayer_authority() == get_multiplayer_authority():
 		print("exited, with mult auth: ", body.get_multiplayer_authority())
 		hide_storage()
+
+
+func set_sprite_texture(texture: Texture2D):
+	$StaticBody2D/Sprite2D.texture = texture

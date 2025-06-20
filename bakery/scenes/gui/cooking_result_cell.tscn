@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://de2ostjcomdh0"]
+
+[ext_resource type="Script" path="res://scripts/gui/cooking_result_cell.gd" id="1_liyh2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfu21"]
+
+[node name="CookingResultCell" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(2.87729, 2.87621)
+script = ExtResource("1_liyh2")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0
+scale = Vector2(3.78567, 3.78567)
+theme_override_styles/panel = SubResource("StyleBoxFlat_kfu21")
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 0.51
+offset_top = 0.47
+offset_right = 16.51
+offset_bottom = 16.47
+scale = Vector2(0.681022, 0.682538)
+
+[connection signal="pressed" from="Panel/TextureButton" to="." method="_on_texture_button_pressed"]

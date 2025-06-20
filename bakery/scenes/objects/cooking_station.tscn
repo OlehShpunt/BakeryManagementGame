@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkvhmccgqqass"]
+[gd_scene load_steps=6 format=3 uid="uid://bkvhmccgqqass"]
 
+[ext_resource type="Script" path="res://scripts/objects/cooking_station.gd" id="1_jixqx"]
 [ext_resource type="Texture2D" uid="uid://dw5xot62pe4a3" path="res://assets/objectsPNG/cooking station.png" id="1_ws5os"]
 [ext_resource type="PackedScene" uid="uid://c4jh52ktimaca" path="res://scenes/abstract/cooking_component.tscn" id="2_qp43f"]
+[ext_resource type="PackedScene" uid="uid://c33h0117r3wt2" path="res://scenes/objects/bakery_storage.tscn" id="3_h34u4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xolcu"]
 size = Vector2(128, 14)
 
 [node name="CookingStation" type="StaticBody2D"]
+script = ExtResource("1_jixqx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ws5os")
@@ -16,3 +19,11 @@ position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_xolcu")
 
 [node name="CookingComponent" parent="." instance=ExtResource("2_qp43f")]
+visible = false
+
+[node name="BakeryStorage" parent="." instance=ExtResource("3_h34u4")]
+position = Vector2(0, -3)
+ID = 2002
+display_sprite = false
+capacity = 7
+grid_columns = 7
