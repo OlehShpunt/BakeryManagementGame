@@ -8,5 +8,5 @@ func get_image_path():
 	return path_holder.CHERRY_CAKE_IMAGE
 
 
-func func get_scene_path():
+func get_scene_path():
 	return path_holder.CHERRY_CAKE_SCENE

@@ -54,7 +54,8 @@ teleport_to = "res://scenes/locations/street.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
 shape = SubResource("RectangleShape2D_f86k8")
 
-[node name="Storage1" parent="." instance=ExtResource("5_oxjwv")]
+[node name="OldStorage1" parent="." instance=ExtResource("5_oxjwv")]
+visible = false
 position = Vector2(212, -65)
 
 [node name="CookingStation" parent="." instance=ExtResource("5_pvimk")]

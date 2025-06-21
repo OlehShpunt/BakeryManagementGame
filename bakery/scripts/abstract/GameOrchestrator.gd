@@ -22,10 +22,10 @@ var phase_timer: Timer = Timer.new()
 
 
 class PhaseDurationHandler:
-	var buying: int = 30#240       # 4 min
-	var preparation: int = 7#420  # 7 min
-	var selling: int = 9#300      # 5 min
-	var pre_game: int = 10      # 10 sec
+	var buying: int = 80#240       # 4 min
+	var preparation: int = 30#420  # 7 min
+	var selling: int = 40#300      # 5 min
+	var pre_game: int = 20      # 10 sec
 
 
 #signal phase_changed(phase: String)

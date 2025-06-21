@@ -12,7 +12,12 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	cooking_result_cell.global_position = $BakeryStorage.GRID_CONTAINER.global_position + Vector2(450, -150)
+	if $BakeryStorage.GRID_CONTAINER.visible == true:
+		cooking_result_cell.show()
+		cooking_result_cell.global_position = $BakeryStorage.GRID_CONTAINER.global_position + Vector2(450, -150)
+	else:
+		cooking_result_cell.hide()
+	
 
 
 func _on_inventory_contents_changed(_cell_id):
