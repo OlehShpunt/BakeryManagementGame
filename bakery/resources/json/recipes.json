@@ -28,7 +28,7 @@
 	{
 	  "id": 5,
 	  "title": "chocolate_candy",
-	  "ingredients": ["butter", "chocolate", "cocoa", "", "", "", ""]
+	  "ingredients": ["butter", "chocolate", "cocoa_powder", "", "", "", ""]
 	},
 	{
 	  "id": 6,
@@ -63,7 +63,7 @@
 	{
 	  "id": 12,
 	  "title": "nut_cake",
-	  "ingredients": ["flour", "flour", "milk", "butter", "butter", "cocoa", "nuts"]
+	  "ingredients": ["flour", "flour", "milk", "butter", "butter", "cocoa_powder", "nuts"]
 	},
 	{
 	  "id": 13,

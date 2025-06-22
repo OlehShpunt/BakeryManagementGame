@@ -79,7 +79,7 @@ const scene_to_image_map = {
 	"res://scenes/food/ingredients/butter.tscn": "res://assets/ingredientsPNG/butter.png",
 	"res://scenes/food/ingredients/chocolate.tscn": "res://assets/ingredientsPNG/chocolate.png",
 	"res://scenes/food/ingredients/vanilla.tscn": "res://assets/ingredientsPNG/vanilla.png",
-	"res://scenes/food/ingredients/cocoa.tscn": "res://assets/ingredientsPNG/cocoa.png",
+	"res://scenes/food/ingredients/cocoa_powder.tscn": "res://assets/ingredientsPNG/cocoa_powder.png",
 	"res://scenes/food/ingredients/nuts.tscn": "res://assets/ingredientsPNG/nuts.png",
 	"res://scenes/food/ingredients/cherry.tscn": "res://assets/ingredientsPNG/cherry.png",
 	"res://scenes/food/ingredients/jello.tscn": "res://assets/ingredientsPNG/jello.png",

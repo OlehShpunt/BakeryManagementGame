@@ -65,6 +65,7 @@ func initialize_seller_gui():
 		
 		# i_data: 0 = name, 1 = price
 		# setting item name
+		print("&* setting ", i_data[0], " to seller item gui")  # TEST
 		shop_item.item_scene_path = i_data[0]
 		# setting item price
 		shop_item.price = i_data[1]

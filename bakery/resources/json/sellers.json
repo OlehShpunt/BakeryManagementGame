@@ -62,7 +62,7 @@
 					"res://scenes/food/ingredients/butter.tscn, 1",
 					"res://scenes/food/ingredients/chocolate.tscn, 1",
 					"res://scenes/food/ingredients/vanilla.tscn, 1",
-					"res://scenes/food/ingredients/cocoa.tscn, 1",
+					"res://scenes/food/ingredients/cocoa_powder.tscn, 1",
 					"res://scenes/food/ingredients/nuts.tscn, 1",
 					"res://scenes/food/ingredients/cherry.tscn, 1",
 					"res://scenes/food/ingredients/jello.tscn, 1"
@@ -76,12 +76,12 @@
 				"0" : [
 					"res://scenes/food/ingredients/butter.tscn, -1",
 					"res://scenes/food/ingredients/vanilla.tscn, -1",
-					"res://scenes/food/ingredients/cocoa.tscn, 1",
+					"res://scenes/food/ingredients/cocoa_powder.tscn, 1",
 					"res://scenes/food/ingredients/nuts.tscn, 1"
 					],
 				"1" : [
 					"res://scenes/food/ingredients/chocolate.tscn, 1",
-					"res://scenes/food/ingredients/cocoa.tscn, -1",
+					"res://scenes/food/ingredients/cocoa_powder.tscn, -1",
 					"res://scenes/food/ingredients/nuts.tscn, 1",
 					"res://scenes/food/ingredients/cherry.tscn, 2"
 					],
@@ -99,7 +99,7 @@
 			"location" : "kiosk path",
 			"possible_shop_items" : {
 				"0" : [
-					"res://scenes/food/ingredients/cocoa.tscn, -2",
+					"res://scenes/food/ingredients/cocoa_powder.tscn, -2",
 					"res://scenes/food/ingredients/jello.tscn, 0"
 				],
 				"1" : [
@@ -108,7 +108,7 @@
 				],
 				"2" : [
 					"res://scenes/food/ingredients/vanilla.tscn, -1",
-					"res://scenes/food/ingredients/cocoa.tscn, -1",
+					"res://scenes/food/ingredients/cocoa_powder.tscn, -1",
 					"res://scenes/food/ingredients/jello.tscn, 0"
 				]
 			}
