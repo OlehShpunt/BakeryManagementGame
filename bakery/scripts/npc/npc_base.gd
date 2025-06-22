@@ -211,7 +211,11 @@ func _on_button_pressed() -> void:
 			
 			print("(( item_path is ", item_path)
 			if desired_items.has(item_path):
-				# TODO purchase logic here (money)
+				
+				# Purchase logic here (money)
+				var profit: int = Finance.resolve_price(item_path)
+				local_player_data.balance += profit  # TODO use setter method
+				
 				local_player_data.set_inventory_item(cell_id, path_holder.EMPTY)
 				client_ui_data.set_current_active_cell_id(-1, -1, path_holder.EMPTY)
 				# Remove purchased item from the desired and purchase list

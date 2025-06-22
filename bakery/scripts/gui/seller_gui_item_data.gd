@@ -1,23 +1,56 @@
 class_name SellerGUIItemData extends HBoxContainer
 
+
 var ID = -1
+
 
 #@onready var seller_gui_node : SellerGUI = get_parent()
 @onready var texture_rect : TextureRect = $TextureRect
-@onready var purchase_button : Button = $Button
+@onready var purchase_button : Button = $PurchaseButton
 @onready var label : Label = $Label
+
 var inventory_resource : InventoryResource = preload("res://resources/gui/inventory_resource.tres")
 #var item : String
 var item_scene_path : String = path_holder.EMPTY
+
+
 var price : int
+var price_difference: int
 var sold_out = false
-## TODO: Will be changed by item distribution algorithms 
-## when generating the seller's item list
-#moved to ready
-#var item_packed_scene : PackedScene
+var current_color = COLOR_REG_0_BLACK
+
+
+const COLOR_PLS_2_PURPLE = Color(100, 0, 120)
+const COLOR_PLS_1_RED =    Color(200, 0, 0)
+const COLOR_REG_0_BLACK =  Color(0, 0, 0)
+const COLOR_MIN_1_GREEN =  Color(0, 210, 0)
+const COLOR_MIN_2_GOLD =   Color(255, 185, 1)
+
 
 func _ready() -> void:
 	if item_scene_path != path_holder.EMPTY:
+		
+		# Resolving price
+		# I.g. the "-1" "0" "+1" ...
+		price_difference = price
+		price = Finance.resolve_price(item_scene_path) + price_difference
+		
+		# Setting color depending on the price_difference
+		match price_difference:
+			2:
+				current_color = COLOR_PLS_2_PURPLE
+			1:
+				current_color = COLOR_PLS_1_RED
+			0:
+				current_color = COLOR_REG_0_BLACK
+			-1:
+				current_color = COLOR_MIN_1_GREEN
+			-2:
+				current_color = COLOR_MIN_2_GOLD
+			_:
+				current_color = Color(255, 255, 255)
+		
+		purchase_button.add_theme_color_override("font_color", current_color)
 		
 		# Setting item price in gui
 		purchase_button.text = str(price) + "$"
@@ -35,6 +68,10 @@ func _ready() -> void:
 
 # Adds the item to the first available player's inventory cell
 func _on_button_pressed() -> void:
+	
+	if local_player_data.balance < self.price:
+		return
+	
 	print("{SELLER_GUI_ITEM_DATA} Button pressed!")
 	
 	var item_added = false
@@ -57,7 +94,8 @@ func _on_button_pressed() -> void:
 				# Disable this whole gui
 				item_sold_out()
 				
-				## TO-DO: MINUS MONEY FROM PLAYER RIGHT HERE
+				# Finance logic
+				local_player_data.balance = local_player_data.balance - self.price
 				
 				break
 	

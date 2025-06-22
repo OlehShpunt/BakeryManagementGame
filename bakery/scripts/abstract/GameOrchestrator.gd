@@ -25,7 +25,7 @@ class PhaseDurationHandler:
 	var buying: int = 80#240       # 4 min
 	var preparation: int = 30#420  # 7 min
 	var selling: int = 40#300      # 5 min
-	var pre_game: int = 20      # 10 sec
+	var pre_game: int = 5      # 10 sec
 
 
 #signal phase_changed(phase: String)

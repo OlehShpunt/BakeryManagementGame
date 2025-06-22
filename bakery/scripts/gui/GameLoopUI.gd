@@ -8,6 +8,10 @@ extends Control
 @onready var one_second_timer = $OneSecondTimer
 
 
+func _process(delta: float) -> void:
+	$CanvasLayer/Control/PlayerBalanceLabel.text = "Balance: $" + str(local_player_data.balance)  # TODO refactor into signal listener
+
+
 func _ready() -> void:
 	# Enables PhaseTimerLabel second-based updates
 	one_second_timer.timeout.connect(update_timer_label_each_second)
