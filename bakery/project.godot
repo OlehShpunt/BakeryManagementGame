@@ -34,6 +34,7 @@ npc_driver="*res://scripts/abstract/backend_algorithms/npc_driver.gd"
 path_point_parent="*res://scripts/abstract/path_points_parent.gd"
 GameOrchestrator="*res://scripts/abstract/GameOrchestrator.gd"
 GameLoopUi="*res://scenes/gui/GameLoopUI.tscn"
+PurchaseListManager="*res://scripts/abstract/purchase_list_manager.gd"
 
 [display]
 

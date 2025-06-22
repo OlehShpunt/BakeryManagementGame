@@ -14,6 +14,8 @@ const SUPERMARKET_PATH : String = "res://scenes/locations/supermarket.tscn"
 
 
 ## Ingredient Scenes
+const INGR_DIR_PATH = "res://scenes/food/ingredients/"
+const SCENE_EXT = ".tscn"
 const FLOUR_SCENE = "res://scenes/food/ingredients/flour.tscn"
 const MILK_SCENE = "res://scenes/food/ingredients/milk.tscn"
 const BUTTER_SCENE = "res://scenes/food/ingredients/butter.tscn"

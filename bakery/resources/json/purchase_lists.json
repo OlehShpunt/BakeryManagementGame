@@ -1,0 +1,49 @@
+{
+	"rounds": {
+		
+		"1": {
+			"0": ["bread", "bagel"],
+			"1": ["bread", "waffle"],
+			"2": ["bread"],
+			"3": ["bread", "bread", "waffle"],
+			"4": ["bagel"],
+			"5": ["bagel", "waffle"]
+		},
+		
+		"2": {
+			"0": ["bread", "donut", "chocolate_bun"],
+			"1": ["bread", "chocolate_candy", "signature_chocolate"],
+			"2": ["waffle", "sponge_cake", "chocolate_candy"],
+			"3": ["sponge_cake", "pudding", "chocolate_bun"],
+			"4": ["signature_chocolate", "pudding", "pudding"],
+			"5": ["sponge_cake", "chocolate_candy", "pudding"]
+		},
+		
+		"3": {
+			"0": ["muffin"],
+			"1": ["muffin", "muffin"],
+			"2": ["pudding"],
+			"3": ["muffin"],
+			"4": ["waffle"],
+			"5": ["bagel", "muffin"]
+		},
+		
+		"4": {
+			"0": ["chocolate_candy", "cherry_cake"],
+			"1": ["sponge_cake", "nut_cake", "cherry_cake"],
+			"2": ["donut", "nut_candy"],
+			"3": ["chocolate_bun"],
+			"4": ["donut", "cookie"],
+			"5": ["chocolate_candy", "signature_chocolate"]
+		},
+		
+		"5": {
+			"0": ["sponge_cake", "cookie", "nut_cake"],
+			"1": ["muffin", "cookie"],
+			"2": ["chocolate_candy", "cookie", "cherry_cake"],
+			"3": ["nut_cake"],
+			"4": ["pudding", "nut_candy"],
+			"5": ["donut", "signature_chocolate", "cherry_cake"]
+		},
+	}
+}

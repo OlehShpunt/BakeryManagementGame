@@ -36,14 +36,14 @@ func _ready() -> void:
 	print("&& NPC Driver started! ")
 
 
-func add_npc_base():
+func add_npc_base(purchase_list):
 	var target_pos = global_ref_register.get_teleport_global_pos(str(101))
 	
 	var npc = npc_base_inst.instantiate()
 	npc.buffered_target_position = target_pos
 	npc.global_position = Vector2(450, 810)
 	
-	var planned_purchase_list = [path_holder.CHERRY_CAKE_SCENE, path_holder.BREAD_SCENE, path_holder.NUTS_SCENE, path_holder.BUTTER_SCENE, path_holder.MILK_SCENE]
+	var planned_purchase_list = purchase_list
 	npc.set_planned_purchase_list(planned_purchase_list)
 	
 	add_child(npc)
