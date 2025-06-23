@@ -2,12 +2,12 @@
 
 extends Node
 
-const PRE_GAME_PHASE = "Get Ready to Play!"
 
+const PRE_GAME_PHASE = "Get Ready to Play!"
 const BUYING_PHASE = "Buying Phase"
 const PREPARATION_PHASE = "Preparation Phase"
 const SELLING_PHASE = "Selling Phase"
-
+const MAX_NUM_ROUNDS = 5
 
 var current_phase = PRE_GAME_PHASE
 
@@ -22,25 +22,16 @@ var phase_timer: Timer = Timer.new()
 
 
 class PhaseDurationHandler:
-	var buying: int = 80#240       # 4 min
-	var preparation: int = 30#420  # 7 min
-	var selling: int = 40#300      # 5 min
+	var buying: int = 5#240       # 4 min
+	var preparation: int = 5#420  # 7 min
+	var selling: int = 5#300      # 5 min
 	var pre_game: int = 5      # 10 sec
 
 
-#signal phase_changed(phase: String)
-#signal round_changed(round_num: int)
-#signal new_timer_assigned(duration: int)
-
-
-func _ready() -> void:
-	print("Camel > _ready called")
+func start_game_processes():
 	set_up_timer()
-
-
-func _physics_process(delta: float) -> void:
-	pass
-	#print("Camel > ", phase_timer.time_left)
+	GameLoopUi.change_phase(current_phase)
+	GameLoopUi.change_round(current_round_num)
 
 
 func set_up_timer():
@@ -68,6 +59,15 @@ func toggle_phase():
 		GameController.triggerSellingPhase(phase_duration_handler.selling, current_round_num)
 		phase_timer.start(phase_duration_handler.selling)
 	elif current_phase == SELLING_PHASE:
+		
+		current_round_num = current_round_num + 1
+		if current_round_num <= MAX_NUM_ROUNDS:
+			GameLoopUi.change_round(current_round_num)
+		else:
+			GameLoopUi.change_phase("GAME IS FINISHED")
+			# TODO game end logic
+			return
+		
 		print("Camel > selling phase now 3 -> buying phase")
 		current_phase = BUYING_PHASE
 		GameController.triggerBuyingPhase(phase_duration_handler.buying)

@@ -58,6 +58,7 @@ func _on_load_game_button_pressed() -> void:
 		if (player_location_lists.num_of_players() > 0):
 			print("[SERVER] Loading game...")
 			network_setup.load_game.rpc(path_holder.STREET_PATH)
+			GameOrchestrator.start_game_processes()
 		else: 
 			print("[SERVER] Cannot load the game, because player list is empty")
 	

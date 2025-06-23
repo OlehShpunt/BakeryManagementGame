@@ -5,7 +5,7 @@ extends Node
 ## IF of player_data holder
 const ID = 1000
 
-var balance = 5
+var balance = 15
 
 
 signal inventory_contents_changed(cell_id)
