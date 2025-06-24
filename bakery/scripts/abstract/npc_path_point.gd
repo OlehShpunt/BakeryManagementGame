@@ -11,23 +11,25 @@ extends Node2D
 
 
 func _ready() -> void:
-	if ID:
-		var err = global_ref_register.register_path_point(ID, self)
-		
-		# If OK
-		if err != ERR_DUPLICATE_SYMBOL:
-			call_deferred("reparent", path_point_parent)
-		
-		## If already registered
-		#if err == ERR_DUPLICATE_SYMBOL:
-			#get_tree().current_scene.remove_child(self)
-		## If not registered yet
-		#else:
-			#get_tree().current_scene.remove_child(self)
-			#path_point_parent.add_child(self)
-		
-	else:
-		push_error("ID not set")
+	pass
+	# DEPRECATED
+	#if ID:
+		#var err = global_ref_register.register_path_point(ID, self)
+		#
+		## If OK
+		#if err != ERR_DUPLICATE_SYMBOL:
+			#call_deferred("reparent", path_point_parent)
+		#
+		### If already registered
+		##if err == ERR_DUPLICATE_SYMBOL:
+			##get_tree().current_scene.remove_child(self)
+		### If not registered yet
+		##else:
+			##get_tree().current_scene.remove_child(self)
+			##path_point_parent.add_child(self)
+		#
+	#else:
+		#push_error("ID not set")
 
 
 ## Returns random distance away from global_position with max radius being a constraint
