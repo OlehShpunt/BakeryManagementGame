@@ -84,7 +84,7 @@ left_click={
 
 [layer_names]
 
-2d_physics/layer_1="Buildings"
+2d_physics/layer_1="Buildings and static objects"
 2d_navigation/layer_1="street"
 2d_physics/layer_2="Entities"
 2d_navigation/layer_2="empty (in npc driver)"
