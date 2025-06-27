@@ -10,15 +10,15 @@ func get_spawn_point(to_location_path: String, _from_location_path : String = "n
 			match _from_location_path:
 				# The coordinates must be slightly below the entrance to the building
 				path_holder.WHOLESALE_SHOP_PATH:
-					return Vector2(48, 241)
+					return Vector2(95, 422)
 				path_holder.BAKERY_1_PATH:
-					return Vector2(543, 148)
+					return Vector2(1007, 559)
 				path_holder.MINI_MARKET_PATH:
-					return Vector2(830, 134)
+					return Vector2(1777, 172)
 				path_holder.SUPERMARKET_PATH:
-					return Vector2(710, 677)
+					return Vector2(1392, 1446)
 				path_holder.KIOSK_PATH:
-					return Vector2(320, 710)
+					return Vector2(530, 1545)
 				"not specified":
 					print("Spawn position not specified")
 					return Vector2(200, 80) # position does not matter

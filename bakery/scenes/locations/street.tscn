@@ -3623,19 +3623,19 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Teleports" type="Node2D" parent="."]
-visible = false
 z_index = 1
 
 [node name="TeleportWholesaleShop" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(48, 232)
+position = Vector2(96, 400)
 id = 201
 teleport_to = "res://scenes/locations/wholesale_shop.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportWholesaleShop"]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_wlwo1")
 
 [node name="TeleportKiosk" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(320, 696)
+position = Vector2(530, 1526)
 id = 202
 teleport_to = "res://scenes/locations/kiosk.tscn"
 
@@ -3643,7 +3643,7 @@ teleport_to = "res://scenes/locations/kiosk.tscn"
 shape = SubResource("RectangleShape2D_b70w8")
 
 [node name="Teleport12" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(48, 472)
+position = Vector2(495, 1082)
 id = 12
 teleport_to = "res://scenes/locations/bakery_1.tscn"
 
@@ -3651,7 +3651,7 @@ teleport_to = "res://scenes/locations/bakery_1.tscn"
 shape = SubResource("RectangleShape2D_3c6ue")
 
 [node name="Teleport2" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(192, 232)
+position = Vector2(975, 153)
 id = 2
 teleport_to = "res://scenes/locations/bakery_1.tscn"
 
@@ -3659,7 +3659,7 @@ teleport_to = "res://scenes/locations/bakery_1.tscn"
 shape = SubResource("RectangleShape2D_ry5k1")
 
 [node name="Teleport3" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(336, 232)
+position = Vector2(1615, 537)
 id = 3
 teleport_to = "res://scenes/locations/street.tscn"
 
@@ -3667,7 +3667,7 @@ teleport_to = "res://scenes/locations/street.tscn"
 shape = SubResource("RectangleShape2D_hv4iu")
 
 [node name="Teleport4" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(592, 376)
+position = Vector2(271, 409)
 id = 4
 teleport_to = "res://scenes/locations/bakery_1.tscn"
 
@@ -3675,7 +3675,7 @@ teleport_to = "res://scenes/locations/bakery_1.tscn"
 shape = SubResource("RectangleShape2D_h6t2n")
 
 [node name="TeleportBakery1" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(544, 136)
+position = Vector2(1007, 538)
 id = 101
 teleport_to = "res://scenes/locations/bakery_1.tscn"
 
@@ -3683,7 +3683,7 @@ teleport_to = "res://scenes/locations/bakery_1.tscn"
 shape = SubResource("RectangleShape2D_qflg8")
 
 [node name="Teleport6" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(736, 136)
+position = Vector2(1231, 1083)
 id = 6
 teleport_to = "res://scenes/locations/bakery_1.tscn"
 
@@ -3691,36 +3691,36 @@ teleport_to = "res://scenes/locations/bakery_1.tscn"
 shape = SubResource("RectangleShape2D_n60wr")
 
 [node name="TeleportMiniMarket" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(832, 120)
+position = Vector2(1776, 154)
 id = 203
 teleport_to = "res://scenes/locations/mini_market.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportMiniMarket"]
 shape = SubResource("RectangleShape2D_yenf1")
 
-[node name="Teleport8" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(688, 376)
+[node name="EXTRA-Teleport8" parent="Teleports" instance=ExtResource("5_d3m33")]
+position = Vector2(-503, 673)
 id = 8
 teleport_to = "res://scenes/locations/bakery_1.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/Teleport8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/EXTRA-Teleport8"]
 shape = SubResource("RectangleShape2D_xdvqy")
 
-[node name="Teleport9" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(592, 664)
+[node name="EXTRA-Teleport9" parent="Teleports" instance=ExtResource("5_d3m33")]
+position = Vector2(-608, 674)
 id = 9
 teleport_to = "res://scenes/locations/bakery_1.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/Teleport9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/EXTRA-Teleport9"]
 shape = SubResource("RectangleShape2D_3bke8")
 
 [node name="TeleportSupermarket" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(712, 664)
+position = Vector2(1393, 1424)
 id = 204
 teleport_to = "res://scenes/locations/supermarket.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportSupermarket"]
-shape = SubResource("RectangleShape2D_3gca6")
+shape = SubResource("RectangleShape2D_3u34w")
 
 [node name="IntermediatePathPoints" type="Node2D" parent="."]
 visible = false
