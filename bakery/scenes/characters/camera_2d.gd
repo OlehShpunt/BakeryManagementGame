@@ -5,9 +5,9 @@ func _enter_tree():
 		"Street":
 			limit_left = 0
 			limit_top = 0
-			limit_right = 944
-			limit_bottom = 816
-			zoom = Vector2(4.5, 4.5)
+			limit_right = 1920
+			limit_bottom = 1665
+			zoom = Vector2(3.85, 3.85)
 		_:
 			limit_left = -1000
 			limit_top = -1000
