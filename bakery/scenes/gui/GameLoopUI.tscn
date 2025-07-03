@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://i200ys7r050"]
 
-[ext_resource type="Script" path="res://scripts/gui/GameLoopUI.gd" id="1_3mejj"]
+[ext_resource type="Script" uid="uid://dm0nwko7bm7k3" path="res://scripts/gui/GameLoopUI.gd" id="1_3mejj"]
 
 [node name="GameLoopUI" type="Control"]
 z_index = 50

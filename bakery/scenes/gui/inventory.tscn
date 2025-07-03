@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmhjvxcewxaiq"]
 
-[ext_resource type="Script" path="res://scripts/gui/inventory.gd" id="1_a7kgx"]
+[ext_resource type="Script" uid="uid://bribhpk6fkepo" path="res://scripts/gui/inventory.gd" id="1_a7kgx"]
 [ext_resource type="Resource" uid="uid://cmbeqa4a3vk5c" path="res://resources/gui/inventory_resource.tres" id="2_ncym3"]
 
 [node name="Inventory" type="GridContainer"]

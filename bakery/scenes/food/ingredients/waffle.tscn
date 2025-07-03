@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfgwj8u7ot2bs"]
 
-[ext_resource type="Script" path="res://scripts/food/ingredients/waffle.gd" id="1_1jk4i"]
+[ext_resource type="Script" uid="uid://dpn4nqwfkg4op" path="res://scripts/food/ingredients/waffle.gd" id="1_1jk4i"]
 [ext_resource type="Texture2D" uid="uid://bx57nwpkcmm11" path="res://assets/ingredientsPNG/waffle.png" id="1_ki07q"]
 
 [node name="Waffle" type="Sprite2D"]

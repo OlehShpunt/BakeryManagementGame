@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkvhmccgqqass"]
 
-[ext_resource type="Script" path="res://scripts/objects/cooking_station.gd" id="1_jixqx"]
+[ext_resource type="Script" uid="uid://6venktgxo227" path="res://scripts/objects/cooking_station.gd" id="1_jixqx"]
 [ext_resource type="Texture2D" uid="uid://dw5xot62pe4a3" path="res://assets/objectsPNG/cooking station.png" id="1_ws5os"]
 [ext_resource type="PackedScene" uid="uid://c4jh52ktimaca" path="res://scenes/abstract/cooking_component.tscn" id="2_qp43f"]
 [ext_resource type="PackedScene" uid="uid://c33h0117r3wt2" path="res://scenes/objects/bakery_storage.tscn" id="3_h34u4"]

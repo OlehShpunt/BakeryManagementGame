@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=4 uid="uid://c6e3gyoq4qsoj"]
 
-[ext_resource type="Script" path="res://scripts/locations/street.gd" id="1_jf3xg"]
+[ext_resource type="Script" uid="uid://cs5ekhoaf1oql" path="res://scripts/locations/street.gd" id="1_jf3xg"]
 [ext_resource type="Texture2D" uid="uid://c7owscp2p0ks5" path="res://assets/city builder assets/exports city assets/park and street tiles.png" id="4_dwa1c"]
 [ext_resource type="PackedScene" uid="uid://b47cmo2rspcfv" path="res://scenes/characters/seller.tscn" id="4_onrjq"]
 [ext_resource type="PackedScene" uid="uid://b4su7pwl3h08v" path="res://scenes/abstract/teleport.tscn" id="5_d3m33"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://0p4v3pdic6kw"]
 
-[ext_resource type="Script" path="res://scripts/food/ingredients/sponge_cake.gd" id="1_7cpam"]
+[ext_resource type="Script" uid="uid://dq6puhjbws6ep" path="res://scripts/food/ingredients/sponge_cake.gd" id="1_7cpam"]
 [ext_resource type="Texture2D" uid="uid://cn8axqqvw00r7" path="res://assets/ingredientsPNG/sponge_cake.png" id="1_pwn1f"]
 
 [node name="SpongeCake" type="Sprite2D"]

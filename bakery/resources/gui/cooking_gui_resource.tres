@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CookingGuiResource" load_steps=2 format=3 uid="uid://cj4rdhh8h0vj"]
 
-[ext_resource type="Script" path="res://scripts/resources/cooking_gui_resource.gd" id="1_s5uo7"]
+[ext_resource type="Script" uid="uid://b6b0dv824qlp4" path="res://scripts/resources/cooking_gui_resource.gd" id="1_s5uo7"]
 
 [resource]
 script = ExtResource("1_s5uo7")

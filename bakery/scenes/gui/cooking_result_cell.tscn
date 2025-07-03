@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://de2ostjcomdh0"]
 
-[ext_resource type="Script" path="res://scripts/gui/cooking_result_cell.gd" id="1_liyh2"]
+[ext_resource type="Script" uid="uid://dpa7jvfq8mivs" path="res://scripts/gui/cooking_result_cell.gd" id="1_liyh2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfu21"]
 

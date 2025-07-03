@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cnt0qqxqsvixt"]
 
 [ext_resource type="Texture2D" uid="uid://0joqvwmq8ucf" path="res://assets/ingredientsPNG/chocolate_bun.png" id="1_dxl10"]
-[ext_resource type="Script" path="res://scripts/food/ingredients/chocolate_bun.gd" id="1_w46xy"]
+[ext_resource type="Script" uid="uid://06jdmlrjjtje" path="res://scripts/food/ingredients/chocolate_bun.gd" id="1_w46xy"]
 
 [node name="ChocolateBun" type="Sprite2D"]
 texture = ExtResource("1_dxl10")

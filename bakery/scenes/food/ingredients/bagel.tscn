@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddhqydpqnaboo"]
 
 [ext_resource type="Texture2D" uid="uid://cjjmhmccd60kn" path="res://assets/ingredientsPNG/bagel.png" id="1_38gbt"]
-[ext_resource type="Script" path="res://scripts/food/ingredients/bagel.gd" id="1_kpdfc"]
+[ext_resource type="Script" uid="uid://cndhubmwl7mpu" path="res://scripts/food/ingredients/bagel.gd" id="1_kpdfc"]
 
 [node name="Bagel" type="Sprite2D"]
 texture = ExtResource("1_38gbt")

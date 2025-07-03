@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://ds7rpqqwh7wo0"]
 
-[ext_resource type="Script" path="res://scripts/locations/kiosk.gd" id="1_3xlhe"]
+[ext_resource type="Script" uid="uid://kvk8e2y7w1rh" path="res://scripts/locations/kiosk.gd" id="1_3xlhe"]
 [ext_resource type="Texture2D" uid="uid://ta1sicwwr7qk" path="res://assets/The Adventurer - Free/basicTileset.jpg" id="2_eratw"]
 [ext_resource type="PackedScene" uid="uid://b4su7pwl3h08v" path="res://scenes/abstract/teleport.tscn" id="3_o8aip"]
 [ext_resource type="PackedScene" uid="uid://b47cmo2rspcfv" path="res://scenes/characters/seller.tscn" id="4_p7btr"]

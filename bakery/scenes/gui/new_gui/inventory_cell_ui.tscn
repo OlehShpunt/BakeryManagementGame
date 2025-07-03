@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccmtncj2csjkn"]
 
 [ext_resource type="PackedScene" uid="uid://ckkus01rk2i4x" path="res://scenes/gui/new_gui/cell_base.tscn" id="1_7am8t"]
-[ext_resource type="Script" path="res://scripts/gui/new_gui/inventory_cell.gd" id="1_g6l03"]
+[ext_resource type="Script" uid="uid://csj5fpwoq554l" path="res://scripts/gui/new_gui/inventory_cell.gd" id="1_g6l03"]
 
 [node name="InventoryCellUi" instance=ExtResource("1_7am8t")]
 script = ExtResource("1_g6l03")

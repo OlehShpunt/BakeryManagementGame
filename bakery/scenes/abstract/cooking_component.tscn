@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4jh52ktimaca"]
 
-[ext_resource type="Script" path="res://scripts/abstract/cooking_component.gd" id="1_b34q8"]
+[ext_resource type="Script" uid="uid://dvrqio8rstv2n" path="res://scripts/abstract/cooking_component.gd" id="1_b34q8"]
 [ext_resource type="PackedScene" uid="uid://xcq0c0utukor" path="res://scenes/gui/cooking_gui.tscn" id="2_d1q4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trh2x"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0110ipwfoowy"]
 
-[ext_resource type="Script" path="res://scripts/food/ingredients/ingredient.gd" id="1_hupmy"]
+[ext_resource type="Script" uid="uid://cgyeqpuy3tl1f" path="res://scripts/food/ingredients/ingredient.gd" id="1_hupmy"]
 
 [node name="Ingredient" type="Sprite2D"]
 z_index = 100

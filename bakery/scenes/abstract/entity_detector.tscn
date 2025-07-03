@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://q6mh7ck153pd"]
 
-[ext_resource type="Script" path="res://scripts/abstract/entity_detector.gd" id="1_1xkby"]
+[ext_resource type="Script" uid="uid://bjatx07oa3rvb" path="res://scripts/abstract/entity_detector.gd" id="1_1xkby"]
 
 [node name="EntityDetector" type="Area2D"]
 script = ExtResource("1_1xkby")

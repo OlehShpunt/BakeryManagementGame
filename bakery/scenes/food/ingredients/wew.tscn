@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://hoyy7bhhqejw"]
 
 [ext_resource type="Texture2D" uid="uid://c0hpkjbbcfxsr" path="res://assets/ingredientsPNG/wew.png" id="1_jnf5i"]
-[ext_resource type="Script" path="res://scripts/food/ingredients/wew.gd" id="2_8euwc"]
+[ext_resource type="Script" uid="uid://b3oc37lxjl7si" path="res://scripts/food/ingredients/wew.gd" id="2_8euwc"]
 
 [node name="WewSprite2D" type="Sprite2D"]
 scale = Vector2(0.125, 0.125)

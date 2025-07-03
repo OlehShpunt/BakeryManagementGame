@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmyd5ugnkleo4"]
 
-[ext_resource type="Script" path="res://scripts/gui/new_gui/item_holder_cell_ui.gd" id="2_y8dni"]
+[ext_resource type="Script" uid="uid://cc7k784qkvaga" path="res://scripts/gui/new_gui/item_holder_cell_ui.gd" id="2_y8dni"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwg1d"]
 draw_center = false

@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://ck6catep7k4as"]
 
-[ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_48atu"]
+[ext_resource type="Script" uid="uid://cl2xj4eijch3e" path="res://scripts/characters/player.gd" id="1_48atu"]
 [ext_resource type="Texture2D" uid="uid://bs4guq86h8h8" path="res://assets/The Adventurer - Free/Walk/walk_down.png" id="1_ip50t"]
 [ext_resource type="Texture2D" uid="uid://vwgd4y81rwue" path="res://assets/The Adventurer - Free/Idle/idle_down.png" id="2_5pdaq"]
 [ext_resource type="Texture2D" uid="uid://cu6k5omopydmw" path="res://assets/The Adventurer - Free/Walk/walk_up.png" id="2_jl6wd"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dvp8mrjvq58vt" path="res://assets/The Adventurer - Free/Walk/walk_left_down.png" id="8_4g5wu"]
 [ext_resource type="Texture2D" uid="uid://45mby7kx4huh" path="res://assets/The Adventurer - Free/Walk/walk_right_down.png" id="9_s1y86"]
 [ext_resource type="PackedScene" uid="uid://dmhjvxcewxaiq" path="res://scenes/gui/inventory.tscn" id="10_nqfjq"]
-[ext_resource type="Script" path="res://scenes/characters/camera_2d.gd" id="10_uhkya"]
+[ext_resource type="Script" uid="uid://cmp64tvfefm5a" path="res://scenes/characters/camera_2d.gd" id="10_uhkya"]
 [ext_resource type="PackedScene" uid="uid://bpilqlax7p1ip" path="res://scenes/gui/new_gui/inventory_ui.tscn" id="12_j1frw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjnek"]
@@ -627,15 +627,15 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lu5cv"]
 _data = {
-"RESET": SubResource("Animation_org8v"),
-"down_idle": SubResource("Animation_u4om8"),
-"down_walk": SubResource("Animation_y8dyo"),
-"left_idle": SubResource("Animation_idnve"),
-"left_walk": SubResource("Animation_fbpme"),
-"right_idle": SubResource("Animation_jgbqd"),
-"right_walk": SubResource("Animation_ee2ub"),
-"up_idle": SubResource("Animation_piuc5"),
-"up_walk": SubResource("Animation_qlfo2")
+&"RESET": SubResource("Animation_org8v"),
+&"down_idle": SubResource("Animation_u4om8"),
+&"down_walk": SubResource("Animation_y8dyo"),
+&"left_idle": SubResource("Animation_idnve"),
+&"left_walk": SubResource("Animation_fbpme"),
+&"right_idle": SubResource("Animation_jgbqd"),
+&"right_walk": SubResource("Animation_ee2ub"),
+&"up_idle": SubResource("Animation_piuc5"),
+&"up_walk": SubResource("Animation_qlfo2")
 }
 
 [node name="Player" type="CharacterBody2D"]
@@ -663,7 +663,7 @@ frame = 1
 
 [node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_lu5cv")
+&"": SubResource("AnimationLibrary_lu5cv")
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]

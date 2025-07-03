@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bta3g8ygrn8xk"]
 
-[ext_resource type="Script" path="res://scripts/gui/seller_gui_item_data.gd" id="1_bomui"]
+[ext_resource type="Script" uid="uid://c2hi243jxnp6t" path="res://scripts/gui/seller_gui_item_data.gd" id="1_bomui"]
 [ext_resource type="Texture2D" uid="uid://cje45iuc52ihu" path="res://assets/ingredientsPNG/flour.png" id="1_xlheb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0nnr"]

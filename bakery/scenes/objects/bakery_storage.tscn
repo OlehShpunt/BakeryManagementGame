@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c33h0117r3wt2"]
 
 [ext_resource type="Texture2D" uid="uid://ca4ptldxet5ti" path="res://assets/objectsPNG/bakery storage.png" id="1_8qf3k"]
-[ext_resource type="Script" path="res://scripts/objects/bakery_storage.gd" id="1_7038u"]
+[ext_resource type="Script" uid="uid://b40wgyicqp0q2" path="res://scripts/objects/bakery_storage.gd" id="1_7038u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrjh6"]
 size = Vector2(114, 14)

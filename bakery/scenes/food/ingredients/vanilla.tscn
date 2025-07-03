@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbg83i2pxggb"]
 
 [ext_resource type="Texture2D" uid="uid://dhu624wfb508t" path="res://assets/ingredientsPNG/vanilla.png" id="1_3nwtt"]
-[ext_resource type="Script" path="res://vanilla.gd" id="1_4pwt5"]
+[ext_resource type="Script" uid="uid://dodfgiv60e6gs" path="res://vanilla.gd" id="1_4pwt5"]
 
 [node name="VanillaSprite" type="Sprite2D"]
 texture = ExtResource("1_3nwtt")

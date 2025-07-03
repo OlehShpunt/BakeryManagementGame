@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cd3dw2xnmy76u"]
 
-[ext_resource type="Script" path="res://scripts/objects/item_holder.gd" id="1_1rih4"]
+[ext_resource type="Script" uid="uid://bm0o6mlghu2k1" path="res://scripts/objects/item_holder.gd" id="1_1rih4"]
 [ext_resource type="Texture2D" uid="uid://wah7g26c7hdi" path="res://assets/objectsPNG/holder_z1.png" id="1_iravs"]
 [ext_resource type="Texture2D" uid="uid://bahfr0xmovlfg" path="res://assets/objectsPNG/holder_z2.png" id="3_udghb"]
 [ext_resource type="Texture2D" uid="uid://c6m2l0dy3seg8" path="res://assets/objectsPNG/glass16x16.png" id="4_vtw3n"]
-[ext_resource type="Script" path="res://scripts/gui/cell_area.gd" id="5_hp6jv"]
+[ext_resource type="Script" uid="uid://gbye2can8hqr" path="res://scripts/gui/cell_area.gd" id="5_hp6jv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkd00"]
 size = Vector2(18, 12)

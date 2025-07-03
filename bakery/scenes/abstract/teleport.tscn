@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4su7pwl3h08v"]
 
-[ext_resource type="Script" path="res://scripts/abstract/teleport.gd" id="1_xkul8"]
+[ext_resource type="Script" uid="uid://ijv4l0lrng1x" path="res://scripts/abstract/teleport.gd" id="1_xkul8"]
 
 [node name="Teleport" type="Area2D"]
 collision_layer = 8

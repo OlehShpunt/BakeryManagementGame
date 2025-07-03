@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://wlit24jck5fn"]
 
-[ext_resource type="Script" path="res://scripts/gui/storage_cell.gd" id="1_x7v43"]
-[ext_resource type="Script" path="res://scripts/gui/cell_area.gd" id="2_fycx7"]
+[ext_resource type="Script" uid="uid://hkbs7t8b7ukh" path="res://scripts/gui/storage_cell.gd" id="1_x7v43"]
+[ext_resource type="Script" uid="uid://gbye2can8hqr" path="res://scripts/gui/cell_area.gd" id="2_fycx7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gji7"]
 bg_color = Color(0.69, 0.69, 0.69, 0.333333)

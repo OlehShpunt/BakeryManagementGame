@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3itcdrhp65jr"]
 
-[ext_resource type="Script" path="res://scripts/food/ingredients/cocoa.gd" id="1_5lflx"]
+[ext_resource type="Script" uid="uid://n51t1b0cndpp" path="res://scripts/food/ingredients/cocoa.gd" id="1_5lflx"]
 [ext_resource type="Texture2D" uid="uid://dgeivb41b7uud" path="res://assets/ingredientsPNG/cocoa_powder.png" id="1_hkqaa"]
 
 [node name="CocoaSprite" type="Sprite2D"]

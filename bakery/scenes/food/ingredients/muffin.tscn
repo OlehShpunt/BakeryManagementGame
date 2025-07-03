@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c45k5w0pu57s8"]
 
-[ext_resource type="Script" path="res://scripts/food/ingredients/muffin.gd" id="1_1pgaj"]
+[ext_resource type="Script" uid="uid://dl0725b36nqse" path="res://scripts/food/ingredients/muffin.gd" id="1_1pgaj"]
 [ext_resource type="Texture2D" uid="uid://cgonsucd4jy70" path="res://assets/ingredientsPNG/muffin.png" id="1_e7pgw"]
 
 [node name="Muffin" type="Sprite2D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://di1i41bbwpu82"]
 
-[ext_resource type="Script" path="res://scripts/gui/new_gui/bakery_storage_cell_ui.gd" id="1_q8eni"]
+[ext_resource type="Script" uid="uid://5712ssecnmoe" path="res://scripts/gui/new_gui/bakery_storage_cell_ui.gd" id="1_q8eni"]
 [ext_resource type="PackedScene" uid="uid://ckkus01rk2i4x" path="res://scenes/gui/new_gui/cell_base.tscn" id="1_ubxjj"]
 
 [node name="BakeryStorageCellUi" instance=ExtResource("1_ubxjj")]

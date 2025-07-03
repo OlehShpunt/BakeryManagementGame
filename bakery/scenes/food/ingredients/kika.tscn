@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2iba3bi1gv7o"]
 
 [ext_resource type="Texture2D" uid="uid://bwh5rblkvs37u" path="res://assets/ingredientsPNG/kika.png" id="1_3q6w8"]
-[ext_resource type="Script" path="res://scripts/food/ingredients/kika.gd" id="2_incml"]
+[ext_resource type="Script" uid="uid://d2fd4kehg37hf" path="res://scripts/food/ingredients/kika.gd" id="2_incml"]
 
 [node name="KikaSprite2D" type="Sprite2D"]
 scale = Vector2(0.09, 0.09)

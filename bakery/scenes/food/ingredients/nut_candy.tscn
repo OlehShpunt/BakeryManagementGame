@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjp04volijyxl"]
 
-[ext_resource type="Script" path="res://scripts/food/ingredients/nut_candy.gd" id="1_ftfxl"]
+[ext_resource type="Script" uid="uid://ch2mxpuxtlxu4" path="res://scripts/food/ingredients/nut_candy.gd" id="1_ftfxl"]
 [ext_resource type="Texture2D" uid="uid://liymmg3qnv12" path="res://assets/ingredientsPNG/nut_candy.png" id="1_pyfvs"]
 
 [node name="NutCandy" type="Sprite2D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ckkus01rk2i4x"]
 
-[ext_resource type="Script" path="res://scripts/gui/new_gui/cell_base.gd" id="1_oietp"]
+[ext_resource type="Script" uid="uid://4ew43eal84ad" path="res://scripts/gui/new_gui/cell_base.gd" id="1_oietp"]
 [ext_resource type="Texture2D" uid="uid://dlu0fajieyqty" path="res://assets/ingredientsPNG/cherry_cake.png" id="2_g86qr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sra1p"]
