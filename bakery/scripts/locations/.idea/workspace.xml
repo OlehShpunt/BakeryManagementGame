@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="14e863b4-d82c-472b-8093-7af816e82350" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/../../project.godot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/npc/npc_base.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/npc/npc_base.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../abstract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../abstract/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../abstract/GameController.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../abstract/GameController.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../abstract/GameOrchestrator.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../abstract/GameOrchestrator.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../abstract/backend_algorithms/npc_driver.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../abstract/backend_algorithms/npc_driver.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,24 +18,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2vITTjTyY33u23AlN4auYCoyAue" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "gdscript.promo.shown": "true",
-    "git-widget-placeholder": "multiplayer",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;gdscript.promo.shown&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,6 +46,8 @@
       <updated>1743831096620</updated>
       <workItem from="1743831098646" duration="264000" />
       <workItem from="1743831600181" duration="16000" />
+      <workItem from="1751609256580" duration="218000" />
+      <workItem from="1751610170135" duration="16000" />
     </task>
     <servers />
   </component>

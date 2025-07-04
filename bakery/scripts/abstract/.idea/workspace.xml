@@ -6,58 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="da2d4ff2-9454-4119-9312-7ad7f2ca8277" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/../../project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../resources/gui/cooking_gui_resource.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../../resources/gui/cooking_gui_resource.tres" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../resources/gui/inventory_resource.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../../resources/gui/inventory_resource.tres" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../resources/objects/storage1_resource.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../../resources/objects/storage1_resource.tres" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/abstract/cooking_component.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/abstract/cooking_component.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/abstract/entity_detector.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/abstract/entity_detector.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/abstract/teleport.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/abstract/teleport.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/abstract/tradeable_component.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/abstract/tradeable_component.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/characters/player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/characters/player.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/characters/seller.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/characters/seller.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/bagel.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/bagel.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/bread.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/bread.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/butter.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/butter.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/cherry.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/cherry.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/cherry_cake.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/cherry_cake.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate_bun.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate_bun.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate_candy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/chocolate_candy.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/cocoa.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/cocoa.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/cookie.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/cookie.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/donut.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/donut.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/drii.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/drii.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/flour.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/flour.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/ingredient.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/ingredient.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/ingredient_interactive_area.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/ingredient_interactive_area.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/jello.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/jello.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/kika.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/kika.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/mika.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/mika.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/milk.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/milk.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/muffin.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/muffin.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/nut_cake.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/nut_cake.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/nut_candy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/nut_candy.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/nuts.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/nuts.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/pudding.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/pudding.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/signature_chocolate.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/signature_chocolate.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/sponge_cake.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/sponge_cake.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/vanilla.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/vanilla.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/waffle.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/waffle.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/food/ingredients/wew.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/food/ingredients/wew.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/gui/cooking_gui.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/cooking_gui.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/gui/inventory.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/inventory.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/gui/inventory_cell.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/inventory_cell.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/gui/seller_gui.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/seller_gui.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/gui/seller_gui_item_data.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/seller_gui_item_data.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/gui/storage_cell.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/gui/storage_cell.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/locations/bakery_1.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/bakery_1.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/locations/kiosk.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/kiosk.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/locations/mini_market.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/mini_market.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/locations/street.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/street.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/locations/supermarket.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/supermarket.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/locations/wholesale_shop.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/locations/wholesale_shop.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/objects/item_holder.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/objects/item_holder.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scenes/objects/storage_1.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/objects/storage_1.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../scenes/npc/npc_base.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../scenes/npc/npc_base.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameController.gd" beforeDir="false" afterPath="$PROJECT_DIR$/GameController.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameOrchestrator.gd" beforeDir="false" afterPath="$PROJECT_DIR$/GameOrchestrator.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_algorithms/npc_driver.gd" beforeDir="false" afterPath="$PROJECT_DIR$/backend_algorithms/npc_driver.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../locations/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../locations/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +34,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "multiplayer",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,6 +55,7 @@
       <workItem from="1743831098646" duration="264000" />
       <workItem from="1743831728267" duration="167000" />
       <workItem from="1743831935618" duration="302000" />
+      <workItem from="1751609741408" duration="15000" />
     </task>
     <servers />
   </component>

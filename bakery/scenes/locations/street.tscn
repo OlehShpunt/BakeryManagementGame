@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://c6e3gyoq4qsoj"]
+[gd_scene load_steps=45 format=4 uid="uid://c6e3gyoq4qsoj"]
 
 [ext_resource type="Script" uid="uid://cs5ekhoaf1oql" path="res://scripts/locations/street.gd" id="1_jf3xg"]
 [ext_resource type="Texture2D" uid="uid://c7owscp2p0ks5" path="res://assets/city builder assets/exports city assets/park and street tiles.png" id="4_dwa1c"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://fo5evng3o3li" path="res://scenes/abstract/npc_path_point.tscn" id="6_m8g31"]
 [ext_resource type="Texture2D" uid="uid://b3gq38gcg724d" path="res://assets/city builder assets/exports city assets/buildin tiles.png" id="6_mui8i"]
 [ext_resource type="Texture2D" uid="uid://osqrrxknov0e" path="res://assets/city builder assets/exports city assets/green_tile_street.png" id="7_a3ib7"]
+[ext_resource type="Script" uid="uid://b8gl7io7e15py" path="res://scripts/locations/navigation_region_2d_manager.gd" id="9_edl1b"]
 [ext_resource type="Texture2D" uid="uid://eks5rn2x1m5h" path="res://assets/city builder assets/exports city assets/cars exports .png" id="9_pxtf1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3ey1"]
@@ -9188,7 +9189,10 @@ tile_map_data = PackedByteArray("AAAGABsAAAAYABEAAAANAB4AAAATABQAAAAUABsAAAAYABE
 tile_set = SubResource("TileSet_d72pl")
 
 [node name="TEST-NavigationRegion2D2" type="NavigationRegion2D" parent="."]
+z_index = -5
 navigation_polygon = SubResource("NavigationPolygon_x4gfc")
+script = ExtResource("9_edl1b")
+ID = 1
 
 [node name="Buildings" type="TileMapLayer" parent="TEST-NavigationRegion2D2"]
 y_sort_enabled = true

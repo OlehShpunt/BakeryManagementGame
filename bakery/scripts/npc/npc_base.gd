@@ -125,7 +125,7 @@ func set_npc_current_location_path(new_path : String) -> void:
 		navigation_agent.set_navigation_layer_value(1, true)
 	else:
 		print("*** setting new target pos for test purposes")
-		navigation_agent.target_position = global_position + Vector2(40, -60)  # TEST
+		navigation_agent.target_position = global_position + Vector2(180, -85)  # TEST
 		
 		for i in range(32):
 			navigation_agent.set_navigation_layer_value(i, false)

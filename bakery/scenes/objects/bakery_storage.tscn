@@ -10,6 +10,7 @@ size = Vector2(114, 14)
 size = Vector2(114, 45)
 
 [node name="BakeryStorage" type="Node2D"]
+visible = false
 script = ExtResource("1_7038u")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

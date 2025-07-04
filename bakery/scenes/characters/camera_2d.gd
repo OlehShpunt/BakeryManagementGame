@@ -9,11 +9,11 @@ func _enter_tree():
 			limit_bottom = 1665
 			zoom = Vector2(3.85, 3.85)
 		_:
-			limit_left = -1000
-			limit_top = -1000
-			limit_right = 1000
-			limit_bottom = 1000
-			zoom = Vector2(6, 6)
+			limit_left = -2000
+			limit_top = -2000
+			limit_right = 2000
+			limit_bottom = 2000
+			zoom = Vector2(4.5, 4.5)
 
 ## Smooth camera transition
 func set_camera_zoom(target_zoom: Vector2):

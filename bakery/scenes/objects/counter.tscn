@@ -14,13 +14,16 @@ disable_mode = 1
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_fwt87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-24, 10.5)
 shape = SubResource("RectangleShape2D_g1i1l")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(104, 10.5)
 shape = SubResource("RectangleShape2D_qsxa4")
 
@@ -57,5 +60,9 @@ position = Vector2(16, -1)
 ID = 3008
 
 [node name="ItemHolder9" parent="." instance=ExtResource("2_xce6v")]
-position = Vector2(55, -1)
+position = Vector2(33, -1)
 ID = 3009
+
+[node name="ItemHolder10" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(50, -1)
+ID = 3010
