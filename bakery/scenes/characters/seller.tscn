@@ -8,6 +8,7 @@
 radius = 6.08276
 
 [node name="Seller" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_xqrk1")
 
 [node name="SellerCollisionShape2D" type="CollisionShape2D" parent="."]
