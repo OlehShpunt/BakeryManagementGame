@@ -16,7 +16,7 @@ func get_spawn_point(to_location_path: String, _from_location_path : String = "n
 				path_holder.MINI_MARKET_PATH:
 					return Vector2(1777, 172)
 				path_holder.SUPERMARKET_PATH:
-					return Vector2(1392, 1446)
+					return Vector2(1025, 1446)
 				path_holder.KIOSK_PATH:
 					return Vector2(530, 1545)
 				"not specified":
@@ -30,7 +30,7 @@ func get_spawn_point(to_location_path: String, _from_location_path : String = "n
 		path_holder.MINI_MARKET_PATH:
 			return Vector2(133, 128) 
 		path_holder.SUPERMARKET_PATH:
-			return Vector2(135, 128) 
+			return Vector2(560, 260) 
 		path_holder.KIOSK_PATH:
 			return Vector2(495, 275) 
 		path_holder.BAKERY_1_PATH:
