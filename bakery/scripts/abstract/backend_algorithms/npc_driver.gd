@@ -19,10 +19,10 @@ func _ready() -> void:
 	# TODO: custom for each location (shop/bakery) with different polygon assigned using a polygon resolver script
 	var nav_polygon = NavigationPolygon.new()
 	var polygon = PackedVector2Array([
-		Vector2(-1000, -1000),
-		Vector2(1000, -1000),
-		Vector2(1000, 1000),
-		Vector2(-1000, 1000)
+		Vector2(-200, -200),
+		Vector2(2000, -200),
+		Vector2(2000, -2000),
+		Vector2(-200, 2000)
 	])
 	nav_polygon.add_outline(polygon)
 	nav_polygon.make_polygons_from_outlines()
@@ -41,7 +41,8 @@ func add_npc_base(purchase_list):
 	
 	var npc = npc_base_inst.instantiate()
 	npc.buffered_target_position = target_pos
-	npc.global_position = Vector2(450, 810)
+	npc.global_position = Vector2(1750, 1650)  # bottom
+	#npc.global_position = Vector2(1726, 900)  # road cross
 	
 	var planned_purchase_list = purchase_list
 	npc.set_planned_purchase_list(planned_purchase_list)
