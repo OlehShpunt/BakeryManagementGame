@@ -12,7 +12,6 @@ config_version=5
 
 config/name="Bakery Version Control"
 run/main_scene="res://scenes/gui/start_menu.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
