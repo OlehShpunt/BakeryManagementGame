@@ -121,6 +121,25 @@
 					"res://scenes/food/ingredients/jello.tscn, 0"
 				]
 			}
+		},
+		"14004" : {
+			"name" : "Wholesale Shop",
+			"location" : "wholesale shop path",
+			"possible_shop_items" : {
+				"0" : [
+					"res://scenes/food/ingredients/flour.tscn, 0",
+					"res://scenes/food/ingredients/flour.tscn, 0",
+					"res://scenes/food/ingredients/flour.tscn, 0",
+					"res://scenes/food/ingredients/flour.tscn, 0",
+					"res://scenes/food/ingredients/flour.tscn, 0",
+					"res://scenes/food/ingredients/flour.tscn, 0",
+					"res://scenes/food/ingredients/flour.tscn, 0",
+					"res://scenes/food/ingredients/flour.tscn, 1",
+					"res://scenes/food/ingredients/flour.tscn, 1",
+					"res://scenes/food/ingredients/flour.tscn, 1",
+					"res://scenes/food/ingredients/flour.tscn, 2"
+				]
+			}
 		}
 	}
 }
