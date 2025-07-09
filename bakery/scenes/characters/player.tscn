@@ -57,6 +57,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_u4om8"]
+resource_local_to_scene = true
 resource_name = "idle_front"
 length = 2.00001
 loop_mode = 1
@@ -123,6 +124,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_y8dyo"]
+resource_local_to_scene = true
 resource_name = "idle_run"
 length = 0.666675
 loop_mode = 1
@@ -189,6 +191,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_idnve"]
+resource_local_to_scene = true
 length = 2.00001
 step = 0.0833333
 tracks/0/type = "value"
@@ -265,6 +268,7 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_fbpme"]
+resource_local_to_scene = true
 length = 0.666675
 loop_mode = 1
 step = 0.0833333
@@ -342,6 +346,7 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_jgbqd"]
+resource_local_to_scene = true
 length = 2.00001
 loop_mode = 1
 step = 0.0833333
@@ -419,6 +424,7 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_ee2ub"]
+resource_local_to_scene = true
 length = 0.666675
 loop_mode = 1
 step = 0.0833333
@@ -496,6 +502,7 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_piuc5"]
+resource_local_to_scene = true
 length = 2.00001
 loop_mode = 1
 step = 0.0833333
@@ -561,6 +568,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_qlfo2"]
+resource_local_to_scene = true
 length = 0.666675
 loop_mode = 1
 step = 0.0833333
@@ -657,7 +665,7 @@ vframes = 6
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_jl6wd")
+texture = ExtResource("1_ip50t")
 hframes = 8
 frame = 1
 

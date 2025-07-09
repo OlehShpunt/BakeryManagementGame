@@ -1,15 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://lugtk53r4ygg"]
+[gd_scene load_steps=9 format=3 uid="uid://lugtk53r4ygg"]
 
-[ext_resource type="Script" path="res://scripts/npc/npc_base.gd" id="1_1xw1e"]
-[ext_resource type="Script" path="res://scripts/npc/thought_component.gd" id="2_08i8u"]
+[ext_resource type="Script" uid="uid://wt3chcpe40xg" path="res://scripts/npc/npc_base.gd" id="1_1xw1e"]
+[ext_resource type="Script" uid="uid://bshao3y8rpdn3" path="res://scripts/npc/thought_component.gd" id="2_08i8u"]
+[ext_resource type="PackedScene" uid="uid://bb4bjns3wjw3m" path="res://scenes/npc/npc_animation_component.tscn" id="3_bianu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_v6ydx"]
 specular_color = Color(0.292354, 0.442882, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_16v5l"]
+radius = 0.833333
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6kw53"]
-radius = 1702.53
+radius = 136.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2c0j1"]
 content_margin_left = 11.0
@@ -25,11 +27,11 @@ draw_center = false
 
 [node name="NpcBase" type="Node2D"]
 z_index = 1
-scale = Vector2(0.0910713, 0.0910713)
 script = ExtResource("1_1xw1e")
 movement_speed = 70.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(274, 274)
 texture = SubResource("CanvasTexture_v6ydx")
 
@@ -51,6 +53,8 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_6kw53")
 
 [node name="ThoughtComponent" type="Node2D" parent="."]
+position = Vector2(5, -18)
+scale = Vector2(0.127099, 0.136133)
 script = ExtResource("2_08i8u")
 
 [node name="PanelContainer" type="PanelContainer" parent="ThoughtComponent"]
@@ -71,11 +75,14 @@ theme_override_constants/v_separation = 18
 columns = 20
 
 [node name="Button" type="Button" parent="."]
-offset_left = -132.0
-offset_top = -132.0
-offset_right = 132.0
-offset_bottom = 132.0
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 13.0
+offset_bottom = 30.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_lp88l")
+
+[node name="NpcAnimationComponent" parent="." instance=ExtResource("3_bianu")]
+position = Vector2(0, -16)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_teleport_area_entered"]
 [connection signal="area_entered" from="ItemHolderDetector" to="." method="_on_item_holder_entered"]
