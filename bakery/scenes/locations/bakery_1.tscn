@@ -5207,39 +5207,39 @@ ID = 3017
 position = Vector2(630, 146)
 ID = 3018
 
-[node name="ItemHolders Z 2" type="Node2D" parent="."]
+[node name="unused ItemHolders Z 2" type="Node2D" parent="."]
 z_index = 2
-position = Vector2(-2, 1)
+position = Vector2(-298, -71)
 
-[node name="ItemHolder" parent="ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
+[node name="ItemHolder" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(469, 146)
 ID = 3021
 
-[node name="ItemHolder2" parent="ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
+[node name="ItemHolder2" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(492, 146)
 ID = 3022
 
-[node name="ItemHolder3" parent="ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
+[node name="ItemHolder3" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(515, 146)
 ID = 3023
 
-[node name="ItemHolder4" parent="ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
+[node name="ItemHolder4" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(538, 146)
 ID = 3024
 
-[node name="ItemHolder5" parent="ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
+[node name="ItemHolder5" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(561, 146)
 ID = 3025
 
-[node name="ItemHolder6" parent="ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
+[node name="ItemHolder6" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(584, 146)
 ID = 3026
 
-[node name="ItemHolder7" parent="ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
+[node name="ItemHolder7" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(607, 146)
 ID = 3027
 
-[node name="ItemHolder8" parent="ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
+[node name="ItemHolder8" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(630, 146)
 ID = 3028
 
