@@ -8085,7 +8085,7 @@ tile_set = SubResource("TileSet_34bib")
 
 [node name="NewAppliances4" type="TileMapLayer" parent="To enable y sorting"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAFAAEAAgAKAAoAACAGAAEAAgALAAoAACAJAAMAAgAKAAgAAAAKAAQAAgAOAAsAACAJAAQAAgAKAA4AACAKAAAAAgADABQAAAAKAAEAAgACABAAAFAIAAQAAgAKAA0AAAA=")
+tile_map_data = PackedByteArray("AAAFAAEAAgAKAAoAACAGAAEAAgALAAoAACAJAAMAAgAKAAgAAAAKAAQAAgAOAAsAACAJAAQAAgAKAA4AACAIAAQAAgAKAA0AAAA=")
 tile_set = SubResource("TileSet_34bib")
 
 [node name="NewAppliances2" type="TileMapLayer" parent="To enable y sorting"]

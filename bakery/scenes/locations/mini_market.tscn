@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://blkyotwdn31tm" path="res://assets/interior $1.5/moderninteriors-win/3_Animated_objects/32x32/spritesheets/animated_canteen_big_fridge_empty_32x32.png" id="11_h6gi8"]
 [ext_resource type="Texture2D" uid="uid://f6ykay16axvn" path="res://assets/interior $1.5/moderninteriors-win/3_Animated_objects/32x32/spritesheets/animated_canteen_fridge_empty_32x32.png" id="12_juyob"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i5k05"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hee8h"]
 texture = ExtResource("2_a0lv5")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -1041,7 +1041,7 @@ texture_region_size = Vector2i(32, 32)
 22:58/0 = 0
 23:58/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rmdi8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1ufi"]
 texture = ExtResource("3_xswxa")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -2071,7 +2071,7 @@ texture_region_size = Vector2i(32, 32)
 19:37/0 = 0
 20:37/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a408a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0yxxk"]
 texture = ExtResource("4_7mc12")
 texture_region_size = Vector2i(32, 32)
 0:2/0 = 0
@@ -2507,7 +2507,7 @@ texture_region_size = Vector2i(32, 32)
 13:37/0 = 0
 14:37/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hee8h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggigp"]
 texture = ExtResource("5_17o5l")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -2799,10 +2799,10 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_n1ufi"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_i5k05")
-sources/2 = SubResource("TileSetAtlasSource_rmdi8")
-sources/3 = SubResource("TileSetAtlasSource_a408a")
-sources/4 = SubResource("TileSetAtlasSource_hee8h")
+sources/1 = SubResource("TileSetAtlasSource_hee8h")
+sources/2 = SubResource("TileSetAtlasSource_n1ufi")
+sources/3 = SubResource("TileSetAtlasSource_0yxxk")
+sources/4 = SubResource("TileSetAtlasSource_ggigp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqtfw"]
 texture = ExtResource("6_hee8h")
