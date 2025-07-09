@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://c6e3gyoq4qsoj"]
+[gd_scene load_steps=42 format=4 uid="uid://c6e3gyoq4qsoj"]
 
 [ext_resource type="Script" uid="uid://cs5ekhoaf1oql" path="res://scripts/locations/street.gd" id="1_jf3xg"]
 [ext_resource type="Texture2D" uid="uid://c7owscp2p0ks5" path="res://assets/city builder assets/exports city assets/park and street tiles.png" id="4_dwa1c"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cqoytr2x3rghh" path="res://assets/city builder assets/exports city assets/purple_tilel_street.png" id="5_hkohu"]
 [ext_resource type="Texture2D" uid="uid://jn1vuafm820y" path="res://assets/city builder assets/exports city assets/premade buildings.png" id="5_n2wgy"]
 [ext_resource type="Texture2D" uid="uid://cvh2gsvwd0s8h" path="res://assets/city builder assets/exports city assets/park and street tiles original.png" id="6_4sy8a"]
-[ext_resource type="PackedScene" uid="uid://fo5evng3o3li" path="res://scenes/abstract/npc_path_point.tscn" id="6_m8g31"]
 [ext_resource type="Texture2D" uid="uid://b3gq38gcg724d" path="res://assets/city builder assets/exports city assets/buildin tiles.png" id="6_mui8i"]
 [ext_resource type="Texture2D" uid="uid://osqrrxknov0e" path="res://assets/city builder assets/exports city assets/green_tile_street.png" id="7_a3ib7"]
 [ext_resource type="Script" uid="uid://b8gl7io7e15py" path="res://scripts/locations/navigation_region_2d_manager.gd" id="9_edl1b"]
@@ -9137,12 +9136,6 @@ size = Vector2(32, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yenf1"]
 size = Vector2(46, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdvqy"]
-size = Vector2(32, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bke8"]
-size = Vector2(32, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u34w"]
 size = Vector2(74, 20)
 
@@ -9218,7 +9211,7 @@ tile_map_data = PackedByteArray("AAAAAAkAAAByAD0AAAAAAAoAAAByAD0AAAAAAAsAAAByAD0
 enabled = false
 tile_set = SubResource("TileSet_mmc8d")
 
-[node name="TEST-NavigationRegion2D2" type="NavigationRegion2D" parent="."]
+[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="."]
 z_index = -5
 navigation_polygon = SubResource("NavigationPolygon_x4gfc")
 script = ExtResource("9_edl1b")
@@ -9308,22 +9301,6 @@ teleport_to = "res://scenes/locations/mini_market.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportMiniMarket"]
 shape = SubResource("RectangleShape2D_yenf1")
 
-[node name="EXTRA-Teleport8" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(-503, 673)
-id = 8
-teleport_to = "res://scenes/locations/bakery_1.tscn"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/EXTRA-Teleport8"]
-shape = SubResource("RectangleShape2D_xdvqy")
-
-[node name="EXTRA-Teleport9" parent="Teleports" instance=ExtResource("5_d3m33")]
-position = Vector2(-608, 674)
-id = 9
-teleport_to = "res://scenes/locations/bakery_1.tscn"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/EXTRA-Teleport9"]
-shape = SubResource("RectangleShape2D_3bke8")
-
 [node name="TeleportSupermarket" parent="Teleports" instance=ExtResource("5_d3m33")]
 position = Vector2(1393, 1424)
 id = 204
@@ -9331,148 +9308,3 @@ teleport_to = "res://scenes/locations/supermarket.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportSupermarket"]
 shape = SubResource("RectangleShape2D_3u34w")
-
-[node name="IntermediatePathPoints" type="Node2D" parent="."]
-visible = false
-
-[node name="NpcPathPoint6" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(431, 65)
-ID = 6
-default_radius = 30
-
-[node name="NpcPathPoint7" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(440, 217)
-ID = 7
-default_radius = 30
-
-[node name="NpcPathPoint8" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(438, 320)
-ID = 8
-default_radius = 30
-
-[node name="NpcPathPoint9" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(440, 456)
-ID = 9
-default_radius = 30
-
-[node name="NpcPathPoint10" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(440, 745)
-ID = 10
-default_radius = 30
-
-[node name="NpcPathPoint11" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(593, 736)
-ID = 11
-default_radius = 30
-
-[node name="NpcPathPoint12" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(591, 443)
-ID = 12
-default_radius = 30
-
-[node name="NpcPathPoint13" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(687, 443)
-ID = 13
-default_radius = 30
-
-[node name="NpcPathPoint14" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(541, 211)
-ID = 14
-default_radius = 30
-
-[node name="NpcPathPoint15" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(736, 204)
-ID = 15
-default_radius = 30
-
-[node name="NpcPathPoint16" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(191, 311)
-ID = 16
-default_radius = 30
-
-[node name="NpcPathPoint17" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(338, 313)
-ID = 17
-default_radius = 30
-
-[node name="NpcPathPoint25" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(592, 680)
-ID = 25
-default_radius = 30
-
-[node name="NpcPathPoint26" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(200, 552)
-ID = 26
-default_radius = 30
-
-[node name="NpcPathPoint27" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(309, 446)
-ID = 27
-default_radius = 30
-
-[node name="NpcPathPoint28" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(837, 262)
-ID = 28
-default_radius = 30
-
-[node name="NpcPathPoint29" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(821, 437)
-ID = 29
-default_radius = 30
-
-[node name="NpcPathPoint30" parent="IntermediatePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(421, 584)
-ID = 30
-default_radius = 30
-
-[node name="EdgePathPoints" type="Node2D" parent="."]
-visible = false
-
-[node name="NpcPathPoint" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(26, 56)
-ID = 1
-
-[node name="NpcPathPoint2" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(24, 315)
-ID = 2
-
-[node name="NpcPathPoint3" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(19, 554)
-ID = 3
-
-[node name="NpcPathPoint4" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(441, 814)
-ID = 4
-
-[node name="NpcPathPoint5" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(938, 217)
-ID = 5
-
-[node name="NpcPathPoint18" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(192, 245)
-ID = 18
-
-[node name="NpcPathPoint19" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(336, 247)
-ID = 19
-
-[node name="NpcPathPoint20" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(545, 152)
-ID = 20
-target_scene = "res://scenes/locations/bakery_1.tscn"
-
-[node name="NpcPathPoint21" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(736, 150)
-ID = 21
-
-[node name="NpcPathPoint22" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(591, 388)
-ID = 22
-
-[node name="NpcPathPoint23" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(688, 391)
-ID = 23
-
-[node name="NpcPathPoint24" parent="EdgePathPoints" instance=ExtResource("6_m8g31")]
-position = Vector2(48, 489)
-ID = 24
