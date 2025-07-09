@@ -16,7 +16,7 @@ var buffered_target_position : Vector2 = Vector2.ZERO
 ## Item paths of all visible to npc item holders
 var visible_items = []
 ## Items that NPC initially planned to buy in current round. Not necessarily NPC will be able to buy these items.
-var planned_purchase_list
+var planned_purchase_list = []
 ## Items that the NPC is willing to buy in current bakery
 ## Intersection of visible_items and planned_purchase_list
 var desired_items = []
