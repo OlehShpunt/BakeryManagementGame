@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://7mbnd2g4uv6c"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_bxhm2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Virtual Joystick" parent="CanvasLayer" instance=ExtResource("1_bxhm2")]
+action_left = "a"
+action_right = "d"
+action_up = "w"
+action_down = "s"

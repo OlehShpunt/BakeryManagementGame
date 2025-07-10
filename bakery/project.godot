@@ -45,6 +45,10 @@ window/size/viewport_height=1100
 
 movie_writer/fps=120
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/virtual_joystick/plugin.cfg")
+
 [gui]
 
 theme/default_font_multichannel_signed_distance_field=true
@@ -82,6 +86,11 @@ left_click={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
+
 [layer_names]
 
 2d_physics/layer_1="Buildings and static objects"
@@ -92,8 +101,10 @@ left_click={
 2d_physics/layer_4="Teleports"
 2d_physics/layer_5="ItemHolders"
 2d_physics/layer_6="Uninteractable"
+2d_physics/layer_7="NPC Body"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

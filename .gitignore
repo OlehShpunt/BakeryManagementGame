@@ -12,3 +12,6 @@ data_*/
 
 # Assets
 bakery/assets/**
+
+# Addons and plugins
+bakery/addons/**

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ck6catep7k4as"]
+[gd_scene load_steps=26 format=3 uid="uid://ck6catep7k4as"]
 
 [ext_resource type="Script" uid="uid://cl2xj4eijch3e" path="res://scripts/characters/player.gd" id="1_48atu"]
 [ext_resource type="Texture2D" uid="uid://bs4guq86h8h8" path="res://assets/The Adventurer - Free/Walk/walk_down.png" id="1_ip50t"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dmhjvxcewxaiq" path="res://scenes/gui/inventory.tscn" id="10_nqfjq"]
 [ext_resource type="Script" uid="uid://cmp64tvfefm5a" path="res://scenes/characters/camera_2d.gd" id="10_uhkya"]
 [ext_resource type="PackedScene" uid="uid://bpilqlax7p1ip" path="res://scenes/gui/new_gui/inventory_ui.tscn" id="12_j1frw"]
+[ext_resource type="PackedScene" uid="uid://7mbnd2g4uv6c" path="res://scenes/gui/joystick.tscn" id="14_k4v7y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjnek"]
 radius = 7.0
@@ -727,3 +728,5 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 3
 text = "10, 10"
 horizontal_alignment = 1
+
+[node name="Node2D" parent="." instance=ExtResource("14_k4v7y")]
