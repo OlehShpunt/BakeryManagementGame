@@ -80,11 +80,25 @@ func player_movement():
 func play_animation(direction):
 	if direction != Vector2.ZERO:  # If awsd pressed, play walk
 		if direction.y > 0: # s pressed
-			animation_player.play("down_walk")
-			last_direction = "s"
+			if direction.x > 0.85:
+				animation_player.play("right_walk")
+				last_direction = "d"
+			elif direction.x < -0.85:
+				animation_player.play("left_walk")
+				last_direction = "a"
+			else:
+				animation_player.play("down_walk")
+				last_direction = "s"
 		elif direction.y < 0: # w pressed
-			animation_player.play("up_walk")
-			last_direction = "w"
+			if direction.x > 0.85:
+				animation_player.play("right_walk")
+				last_direction = "d"
+			elif direction.x < -0.85:
+				animation_player.play("left_walk")
+				last_direction = "a"
+			else:
+				animation_player.play("up_walk")
+				last_direction = "w"
 		elif direction.x > 0: # d pressed
 			animation_player.play("right_walk")
 			last_direction = "d"
