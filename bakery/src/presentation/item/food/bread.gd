@@ -1,4 +1,4 @@
-class_name Bread extends Ingredient
+class_name Bread extends 
 
 func get_item_string():
 	return "bread"

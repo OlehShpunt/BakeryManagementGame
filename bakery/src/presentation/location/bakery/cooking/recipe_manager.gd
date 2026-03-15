@@ -10,7 +10,7 @@ var json = JSON.new()
 ## Returns the result item name if the given ingredients match a recipe.
 ## Else, returns "".
 static func get_recipe_result(given_ingredients : Array) -> String:
-	var file = FileAccess.open("res://src/domain/data_structures/json/recipes.json", FileAccess.READ)
+	var file = FileAccess.open("res://src/domain/cooking/data_structures/recipes.json", FileAccess.READ)
 	var data = JSON.parse_string(file.get_as_text())
 	var recipes = data["recipes"]
 	for recipe in recipes:

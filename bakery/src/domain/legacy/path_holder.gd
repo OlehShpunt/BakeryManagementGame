@@ -1,49 +1,44 @@
 # TODO: Separate into several holders
-
 extends Node
-
 
 const EMPTY = ""
 
-
 ## Locations
-const STREET_PATH : String = "res://scenes/locations/street.tscn"
-const BAKERY_1_PATH : String = "res://scenes/locations/bakery_1.tscn"
-const MINI_MARKET_PATH : String = "res://scenes/locations/mini_market.tscn"
-const WHOLESALE_SHOP_PATH : String = "res://scenes/locations/wholesale_shop.tscn"
-const KIOSK_PATH : String = "res://scenes/locations/kiosk.tscn"
-const SUPERMARKET_PATH : String = "res://scenes/locations/supermarket.tscn"
-
+const STREET_PATH: String = "res://scenes/locations/street.tscn"
+const BAKERY_1_PATH: String = "res://src/presentation/location/bakery/bakery_1.tscn"
+const MINI_MARKET_PATH: String = "res://scenes/locations/mini_market.tscn"
+const WHOLESALE_SHOP_PATH: String = "res://scenes/locations/wholesale_shop.tscn"
+const KIOSK_PATH: String = "res://scenes/locations/kiosk.tscn"
+const SUPERMARKET_PATH: String = "res://scenes/locations/supermarket.tscn"
 
 ## Ingredient Scenes
-const INGR_DIR_PATH = "res://scenes/food/ingredients/"
+const INGR_DIR_PATH = "res://src/presentation/item/food"
 const SCENE_EXT = ".tscn"
-const FLOUR_SCENE = "res://scenes/food/ingredients/flour.tscn"
-const MILK_SCENE = "res://scenes/food/ingredients/milk.tscn"
-const BUTTER_SCENE = "res://scenes/food/ingredients/butter.tscn"
-const CHOCOLATE_SCENE = "res://scenes/food/ingredients/chocolate.tscn"
-const VANILLA_SCENE = "res://scenes/food/ingredients/vanilla.tscn"
-const COCOA_SCENE = "res://scenes/food/ingredients/cocoa_powder.tscn"
-const NUTS_SCENE = "res://scenes/food/ingredients/nuts.tscn"
-const CHERRY_SCENE = "res://scenes/food/ingredients/cherry.tscn"
-const JELLO_SCENE = "res://scenes/food/ingredients/jello.tscn"
+const FLOUR_SCENE = INGR_DIR_PATH + "/flour.tscn"
+const MILK_SCENE = INGR_DIR_PATH + "/milk.tscn"
+const BUTTER_SCENE = INGR_DIR_PATH + "/butter.tscn"
+const CHOCOLATE_SCENE = INGR_DIR_PATH + "/chocolate.tscn"
+const VANILLA_SCENE = INGR_DIR_PATH + "/vanilla.tscn"
+const COCOA_SCENE = INGR_DIR_PATH + "/cocoa_powder.tscn"
+const NUTS_SCENE = INGR_DIR_PATH + "/nuts.tscn"
+const CHERRY_SCENE = INGR_DIR_PATH + "/cherry.tscn"
+const JELLO_SCENE = INGR_DIR_PATH + "/jello.tscn"
 
 ## Product Scenes
-const BREAD_SCENE = "res://scenes/food/ingredients/bread.tscn"
-const BAGEL_SCENE = "res://scenes/food/ingredients/bagel.tscn"
-const WAFFLE_SCENE = "res://scenes/food/ingredients/waffle.tscn"
-const SPONGE_CAKE_SCENE = "res://scenes/food/ingredients/sponge_cake.tscn"
-const DONUT_SCENE = "res://scenes/food/ingredients/donut.tscn"
-const CHOCOLATE_CANDY_SCENE = "res://scenes/food/ingredients/chocolate_candy.tscn"
-const SIGNATURE_CHOCOLATE_SCENE = "res://scenes/food/ingredients/signature_chocolate.tscn"
-const PUDDING_SCENE = "res://scenes/food/ingredients/pudding.tscn"
-const CHOCOLATE_BUN_SCENE = "res://scenes/food/ingredients/chocolate_bun.tscn"
-const MUFFIN_SCENE = "res://scenes/food/ingredients/muffin.tscn"
-const NUT_CANDY_SCENE = "res://scenes/food/ingredients/nut_candy.tscn"
-const COOKIE_SCENE = "res://scenes/food/ingredients/cookie.tscn"
-const NUT_CAKE_SCENE = "res://scenes/food/ingredients/nut_cake.tscn"
-const CHERRY_CAKE_SCENE = "res://scenes/food/ingredients/cherry_cake.tscn"
-
+const BREAD_SCENE = INGR_DIR_PATH + "/bread.tscn"
+const BAGEL_SCENE = INGR_DIR_PATH + "/bagel.tscn"
+const WAFFLE_SCENE = INGR_DIR_PATH + "/waffle.tscn"
+const SPONGE_CAKE_SCENE = INGR_DIR_PATH + "/sponge_cake.tscn"
+const DONUT_SCENE = INGR_DIR_PATH + "/donut.tscn"
+const CHOCOLATE_CANDY_SCENE = INGR_DIR_PATH + "/chocolate_candy.tscn"
+const SIGNATURE_CHOCOLATE_SCENE = INGR_DIR_PATH + "/signature_chocolate.tscn"
+const PUDDING_SCENE = INGR_DIR_PATH + "/pudding.tscn"
+const CHOCOLATE_BUN_SCENE = INGR_DIR_PATH + "/chocolate_bun.tscn"
+const MUFFIN_SCENE = INGR_DIR_PATH + "/muffin.tscn"
+const NUT_CANDY_SCENE = INGR_DIR_PATH + "/nut_candy.tscn"
+const COOKIE_SCENE = INGR_DIR_PATH + "/cookie.tscn"
+const NUT_CAKE_SCENE = INGR_DIR_PATH + "/nut_cake.tscn"
+const CHERRY_CAKE_SCENE = INGR_DIR_PATH + "/cherry_cake.tscn"
 
 ## Ingredient Images
 const FLOUR_IMAGE = "res://assets/ingredientsPNG/flour.png"
@@ -55,7 +50,6 @@ const COCOA_IMAGE = "res://assets/ingredientsPNG/cocoa_powder.png"
 const NUTS_IMAGE = "res://assets/ingredientsPNG/nuts.png"
 const CHERRY_IMAGE = "res://assets/ingredientsPNG/cherry.png"
 const JELLO_IMAGE = "res://assets/ingredientsPNG/jello.png"
-
 
 ## Product Images
 const BREAD_IMAGE = "res://assets/ingredientsPNG/bread.png"
@@ -73,30 +67,36 @@ const COOKIE_IMAGE = "res://assets/ingredientsPNG/cookie.png"
 const NUT_CAKE_IMAGE = "res://assets/ingredientsPNG/nut_cake.png"
 const CHERRY_CAKE_IMAGE = "res://assets/ingredientsPNG/cherry_cake.png"
 
-
 # Mapping of scene paths to image paths
 const scene_to_image_map = {
-	"res://scenes/food/ingredients/flour.tscn": "res://assets/ingredientsPNG/flour.png",
-	"res://scenes/food/ingredients/milk.tscn": "res://assets/ingredientsPNG/milk.png",
-	"res://scenes/food/ingredients/butter.tscn": "res://assets/ingredientsPNG/butter.png",
-	"res://scenes/food/ingredients/chocolate.tscn": "res://assets/ingredientsPNG/chocolate.png",
-	"res://scenes/food/ingredients/vanilla.tscn": "res://assets/ingredientsPNG/vanilla.png",
-	"res://scenes/food/ingredients/cocoa_powder.tscn": "res://assets/ingredientsPNG/cocoa_powder.png",
-	"res://scenes/food/ingredients/nuts.tscn": "res://assets/ingredientsPNG/nuts.png",
-	"res://scenes/food/ingredients/cherry.tscn": "res://assets/ingredientsPNG/cherry.png",
-	"res://scenes/food/ingredients/jello.tscn": "res://assets/ingredientsPNG/jello.png",
-	"res://scenes/food/ingredients/bread.tscn": "res://assets/ingredientsPNG/bread.png",
-	"res://scenes/food/ingredients/bagel.tscn": "res://assets/ingredientsPNG/bagel.png",
-	"res://scenes/food/ingredients/waffle.tscn": "res://assets/ingredientsPNG/waffle.png",
-	"res://scenes/food/ingredients/sponge_cake.tscn": "res://assets/ingredientsPNG/sponge_cake.png",
-	"res://scenes/food/ingredients/donut.tscn": "res://assets/ingredientsPNG/donut.png",
-	"res://scenes/food/ingredients/chocolate_candy.tscn": "res://assets/ingredientsPNG/chocolate_candy.png",
-	"res://scenes/food/ingredients/signature_chocolate.tscn": "res://assets/ingredientsPNG/signature_chocolate.png",
-	"res://scenes/food/ingredients/pudding.tscn": "res://assets/ingredientsPNG/pudding.png",
-	"res://scenes/food/ingredients/chocolate_bun.tscn": "res://assets/ingredientsPNG/chocolate_bun.png",
-	"res://scenes/food/ingredients/muffin.tscn": "res://assets/ingredientsPNG/muffin.png",
-	"res://scenes/food/ingredients/nut_candy.tscn": "res://assets/ingredientsPNG/nut_candy.png",
-	"res://scenes/food/ingredients/cookie.tscn": "res://assets/ingredientsPNG/cookie.png",
-	"res://scenes/food/ingredients/nut_cake.tscn": "res://assets/ingredientsPNG/nut_cake.png",
-	"res://scenes/food/ingredients/cherry_cake.tscn": "res://assets/ingredientsPNG/cherry_cake.png"
+	INGR_DIR_PATH + "/flour.tscn": "res://assets/ingredientsPNG/flour.png",
+	INGR_DIR_PATH + "/milk.tscn": "res://assets/ingredientsPNG/milk.png",
+	INGR_DIR_PATH + "/butter.tscn": "res://assets/ingredientsPNG/butter.png",
+	INGR_DIR_PATH + "/chocolate.tscn": "res://assets/ingredientsPNG/chocolate.png",
+	INGR_DIR_PATH + "/vanilla.tscn": "res://assets/ingredientsPNG/vanilla.png",
+	INGR_DIR_PATH + "/cocoa_powder.tscn": "res://assets/ingredientsPNG/cocoa_powder.png",
+	INGR_DIR_PATH + "/nuts.tscn": "res://assets/ingredientsPNG/nuts.png",
+	INGR_DIR_PATH + "/cherry.tscn": "res://assets/ingredientsPNG/cherry.png",
+	INGR_DIR_PATH + "/jello.tscn": "res://assets/ingredientsPNG/jello.png",
+	INGR_DIR_PATH + "/bread.tscn": "res://assets/ingredientsPNG/bread.png",
+	INGR_DIR_PATH + "/bagel.tscn": "res://assets/ingredientsPNG/bagel.png",
+	INGR_DIR_PATH + "/waffle.tscn": "res://assets/ingredientsPNG/waffle.png",
+	INGR_DIR_PATH + "/sponge_cake.tscn": "res://assets/ingredientsPNG/sponge_cake.png",
+	INGR_DIR_PATH + "/donut.tscn": "res://assets/ingredientsPNG/donut.png",
+	INGR_DIR_PATH + "/chocolate_candy.tscn": "res://assets/ingredientsPNG/chocolate_candy.png",
+	INGR_DIR_PATH + "/signature_chocolate.tscn": "res://assets/ingredientsPNG/signature_chocolate.png",
+	INGR_DIR_PATH + "/pudding.tscn": "res://assets/ingredientsPNG/pudding.png",
+	INGR_DIR_PATH + "/chocolate_bun.tscn": "res://assets/ingredientsPNG/chocolate_bun.png",
+	INGR_DIR_PATH + "/muffin.tscn": "res://assets/ingredientsPNG/muffin.png",
+	INGR_DIR_PATH + "/nut_candy.tscn": "res://assets/ingredientsPNG/nut_candy.png",
+	INGR_DIR_PATH + "/cookie.tscn": "res://assets/ingredientsPNG/cookie.png",
+	INGR_DIR_PATH + "/nut_cake.tscn": "res://assets/ingredientsPNG/nut_cake.png",
+	INGR_DIR_PATH + "/cherry_cake.tscn": "res://assets/ingredientsPNG/cherry_cake.png",
 }
+
+# Data holders
+
+const INVENTORY_RESOURCE_PATH = "res://src/presentation/player/hud/inventory_resource.tres"
+const STORAGE_1_RESOURCE_PATH = "res://src/presentation/location/shared/furniture/storage1_resource.tres"
+const COOKING_GUI_RESOURCE_PATH = "res://src/presentation/location/bakery/cooking/cooking_gui_resource.tres"
+const INGREDIENT_INTERACTIVE_AREA = "res://src/presentation/item/food/ingredient_interactive_area.tscn"

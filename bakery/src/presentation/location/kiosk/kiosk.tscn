@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ta1sicwwr7qk" path="res://assets/The Adventurer - Free/basicTileset.jpg" id="2_eratw"]
 [ext_resource type="Texture2D" uid="uid://ba4mo2mprjdsm" path="res://assets/interior $1.5/moderninteriors-win/1_Interiors/32x32/Room_Bulder_subfiles_32x32/Room_Builder_3d_walls_32x32.png" id="2_gebm5"]
 [ext_resource type="Texture2D" uid="uid://c51hh7ombdjq5" path="res://assets/interior $1.5/moderninteriors-win/1_Interiors/32x32/Room_Bulder_subfiles_32x32/Room_Builder_Walls_32x32.png" id="3_dfl5n"]
-[ext_resource type="PackedScene" uid="uid://b4su7pwl3h08v" path="res://scenes/abstract/teleport.tscn" id="3_o8aip"]
+[ext_resource type="PackedScene" uid="uid://b4su7pwl3h08v" path="res://src/presentation/location/shared/teleport.tscn" id="3_o8aip"]
 [ext_resource type="PackedScene" uid="uid://b47cmo2rspcfv" path="res://scenes/characters/seller.tscn" id="4_p7btr"]
 [ext_resource type="Texture2D" uid="uid://cigw5dd3u4ow8" path="res://assets/interior $1.5/moderninteriors-win/1_Interiors/32x32/Room_Bulder_subfiles_32x32/Room_Builder_Floors_32x32.png" id="4_sp3n5"]
 [ext_resource type="Texture2D" uid="uid://5laihu8ffujd" path="res://assets/interior $1.5/moderninteriors-win/1_Interiors/32x32/Room_Bulder_subfiles_32x32/Room_Builder_borders_32x32.png" id="5_mf43a"]

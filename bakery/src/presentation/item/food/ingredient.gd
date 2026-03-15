@@ -1,21 +1,24 @@
-class_name Ingredient extends Item
+class_name Ingredient
+extends Item
 
 # The one currently hovering over with the item at mouse position
 var recent_cell_area = null
 var is_being_moved_by_mouse = false
-var inventory_resource = preload("res://resources/gui/inventory_resource.tres")
-var storage1_resource = preload("res://resources/objects/storage1_resource.tres")
-var cooking_gui_resource = preload("res://resources/gui/cooking_gui_resource.tres")
+var inventory_resource = preload(path_holder.INVENTORY_RESOURCE_PATH)
+var storage1_resource = preload(path_holder.STORAGE_1_RESOURCE_PATH)
+var cooking_gui_resource = preload(path_holder.COOKING_GUI_RESOURCE_PATH)
+
 
 func _ready() -> void:
 	# Z-index is overriden by subclass (value 0) at runtime, so no matter what z-index I statically set in this class in attributes, it is later overriden, unless I override it again down here.
 	z_index = 30 # Needed to make floating items not be below other game elements, like furniture or walls.
 	# Required when I instantiate and add the area at runtime, but I decided to put it in the Ingredient scene manually
-	var interactive_area = preload("res://scenes/food/ingredients/ingredient_interactive_area.tscn")
-	var interactive_area_instance = interactive_area.instantiate()
+	var interactive_area: PackedScene = preload(path_holder.INGREDIENT_INTERACTIVE_AREA)
+	var interactive_area_instance: IngredientInteractiveArea = interactive_area.instantiate()
 	add_child(interactive_area_instance)
 	#interactive_area_instance.connect("body_entered", _on_interactive_area_entered)
 	#interactive_area_instance.connect("body_exited", _on_interactive_area_entered)
+
 
 func _process(_delta: float) -> void:
 	if is_being_moved_by_mouse:
@@ -23,6 +26,7 @@ func _process(_delta: float) -> void:
 	else:
 		pass
 		queue_free()
+
 
 func _input(event: InputEvent) -> void:
 	## TODO make same code lines work for all cases - need to rewrite the way it works, probably remove the usage of resources, and make it all work like it's working in the "item_holder" case.
@@ -32,7 +36,7 @@ func _input(event: InputEvent) -> void:
 		var recent_cell = recent_cell_area.get_parent()
 		if recent_cell.has_method("inventory_cell"):
 			if inventory_resource.items[recent_cell.id] == null or inventory_resource.items[recent_cell.id] == "":
-				# Using polymorphism, 
+				# Using polymorphism,
 				inventory_resource.add_item(recent_cell.id, get_item_string())
 				is_being_moved_by_mouse = false
 		elif recent_cell.has_method("storage_cell"):
@@ -46,6 +50,7 @@ func _input(event: InputEvent) -> void:
 			# Passing the item string so that the item name can be saved in the holder as well. The string is then converted into texture.
 			recent_cell.set_item(get_item_string())
 			is_being_moved_by_mouse = false
+
 
 ## !!! NOT WORKING THE INTENDED WAY, BUT MAY STILL BE ACCIDENTALLY CALLED AT RUNTIME, SO THE CODER IS NOTIFIED
 func get_item_string() -> String:

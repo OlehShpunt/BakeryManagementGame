@@ -1,7 +1,6 @@
 class_name InventoryResource extends Resource
 
 @export var num_of_cells : int = 4
-#var converter : ItemFormConverter = preload("res://resources/gui/item_form_converter.tres")
 
 # second value must be strings
 @export var items = ["", "", "", ""]

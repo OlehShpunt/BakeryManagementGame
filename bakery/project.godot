@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bakery Version Control"
-run/main_scene="res://scenes/gui/start_menu.tscn"
+run/main_scene="res://src/presentation/shared/legacy_start_menu.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -20,21 +20,21 @@ config/icon="res://icon.svg"
 scene_manager="*res://scripts/abstract/scene_manager.gd"
 item_form_converter="*res://scripts/resources/item_form_converter.gd"
 item_holder_data="res://scripts/abstract/item_holder_data.gd"
-network_setup="*res://scripts/abstract/network/network_setup.gd"
-multiplayer_manager="*res://scripts/abstract/multiplayer_manager.gd"
-path_holder="*res://scripts/abstract/path_holder.gd"
-mini_market_network="*res://scripts/abstract/network/player_location_lists.gd"
+path_holder="*res://src/domain/legacy/path_holder.gd"
 spawnpoint_resolver="*res://scripts/abstract/spawnpoint_resolver.gd"
-player_location_lists="*res://scripts/abstract/network/player_location_lists.gd"
 local_player_data="*res://scripts/abstract/game_data_holders/player_data.gd"
 client_ui_data="*res://scripts/abstract/game_data_holders/client_ui_data.gd"
 global_ref_register="*res://scripts/abstract/game_data_holders/global_ref_register.gd"
 seller_item_list_generator="*res://scripts/abstract/backend_algorithms/seller_item_list_generator.gd"
-npc_driver="*res://scripts/abstract/backend_algorithms/npc_driver.gd"
-path_point_parent="*res://scripts/abstract/path_points_parent.gd"
 GameOrchestrator="*res://scripts/abstract/GameOrchestrator.gd"
 GameLoopUi="*res://scenes/gui/GameLoopUI.tscn"
 PurchaseListManager="*res://scripts/abstract/purchase_list_manager.gd"
+network_setup="*res://scripts/abstract/network/network_setup.gd"
+multiplayer_manager="*res://scripts/abstract/multiplayer_manager.gd"
+mini_market_network="*res://scripts/abstract/network/player_location_lists.gd"
+player_location_lists="*res://scripts/abstract/network/player_location_lists.gd"
+npc_driver="*res://scripts/abstract/backend_algorithms/npc_driver.gd"
+path_point_parent="*res://scripts/abstract/path_points_parent.gd"
 
 [display]
 

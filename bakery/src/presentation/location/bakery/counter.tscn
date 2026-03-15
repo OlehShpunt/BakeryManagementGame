@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqorkc6y5jnbv"]
 
 [ext_resource type="Texture2D" uid="uid://61a4278l8k17" path="res://assets/objectsPNG/bakery counter.png" id="1_fwt87"]
-[ext_resource type="PackedScene" uid="uid://cd3dw2xnmy76u" path="res://scenes/objects/item_holder.tscn" id="2_xce6v"]
+[ext_resource type="PackedScene" uid="uid://cd3dw2xnmy76u" path="res://src/presentation/location/bakery/item_holder.tscn" id="2_xce6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1i1l"]
 size = Vector2(176, 11)

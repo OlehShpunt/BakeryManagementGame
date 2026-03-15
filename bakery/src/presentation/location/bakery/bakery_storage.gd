@@ -10,7 +10,7 @@ class_name bakery_storage extends Node2D
 @export var display_sprite = true
 
 @export var capacity : int = 12
-var storage_cell = preload("res://scenes/gui/new_gui/bakery_storage_cell_ui.tscn")
+var storage_cell = preload("res://src/presentation/location/bakery/bakery_storage_cell_ui.tscn")
 
 @export var grid_columns: int = 6
 
