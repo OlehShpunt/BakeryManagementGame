@@ -1,15 +1,20 @@
 # TODO: Separate into several holders
+class_name PathHolder
 extends Node
 
 const EMPTY = ""
 
 ## Locations
-const STREET_PATH: String = "res://scenes/locations/street.tscn"
-const BAKERY_1_PATH: String = "res://src/presentation/location/bakery/bakery_1.tscn"
-const MINI_MARKET_PATH: String = "res://scenes/locations/mini_market.tscn"
-const WHOLESALE_SHOP_PATH: String = "res://scenes/locations/wholesale_shop.tscn"
-const KIOSK_PATH: String = "res://scenes/locations/kiosk.tscn"
-const SUPERMARKET_PATH: String = "res://scenes/locations/supermarket.tscn"
+static var LOCATIONS_PATH = "res://src/presentation/location"
+static var STREET_PATH: String = LOCATIONS_PATH + "/street/street.tscn"
+static var BAKERY_1_PATH: String = LOCATIONS_PATH + "/bakery/bakery_1.tscn"
+static var MINI_MARKET_PATH: String = LOCATIONS_PATH + "/mini_market/mini_market.tscn"
+static var WHOLESALE_SHOP_PATH: String = LOCATIONS_PATH + "/wholesale_shop/wholesale_shop.tscn"
+static var KIOSK_PATH: String = LOCATIONS_PATH + "/kiosk/kiosk.tscn"
+static var SUPERMARKET_PATH: String = LOCATIONS_PATH + "/supermarket/supermarket.tscn"
+
+## Player
+static var PLAYER_SCENE_PATH = "res://src/presentation/player/player.tscn"
 
 ## Ingredient Scenes
 const INGR_DIR_PATH = "res://src/presentation/item/food"

@@ -1,8 +1,8 @@
 extends Camera2D
 
 func _enter_tree():
-	match get_tree().current_scene.name:
-		"Street":
+	match StateManager.get_player_state().get_player_location():
+		EnumHolder.Location.STREET:
 			limit_left = 0
 			limit_top = 0
 			limit_right = 1920
@@ -15,7 +15,8 @@ func _enter_tree():
 			limit_bottom = 2000
 			zoom = Vector2(4.5, 4.5)
 
+
 ## Smooth camera transition
 func set_camera_zoom(target_zoom: Vector2):
 	var tween = create_tween()
-	tween.tween_property(self, "zoom", target_zoom, 1.0)  # 1 second transition
+	tween.tween_property(self, "zoom", target_zoom, 1.0) # 1 second transition
