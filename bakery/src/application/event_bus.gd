@@ -1,6 +1,11 @@
 extends Node
 
+### Session Events
 signal start_game()
-signal load_street_location()
-signal spawn_player(coordinates: Vector2)
+
+### Location Signals
+signal load_location(location: EnumHolder.Location)
+
+### Player Signals
+signal spawn_player(location: EnumHolder.Location, coordinates: Vector2)
 signal despawn_player(id: String)

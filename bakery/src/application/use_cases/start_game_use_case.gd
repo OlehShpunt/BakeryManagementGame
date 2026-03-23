@@ -1,19 +1,15 @@
 class_name StartGameUseCase
 extends RefCounted
 
-var load_street_location_use_case: LoadStreetLocationUseCase
-var spawn_player_use_case: SpawnPlayerUseCase
+var load_location_use_case: LoadLocationUseCase
 
 
 func _init() -> void:
-	load_street_location_use_case = LoadStreetLocationUseCase.new()
-	spawn_player_use_case = SpawnPlayerUseCase.new()
+	load_location_use_case = LoadLocationUseCase.new()
 
 
 func execute():
-	load_street_location_use_case.execute()
-	spawn_player_use_case.execute.call_deferred(Vector2(20, 20))
-	#spawn_player_use_case.execute(Vector2(20, 20))
+	load_location_use_case.execute(EnumHolder.Location.Street)
 	EventBus.start_game.emit()
 
 	print("[DEV][A] Starting the game...")

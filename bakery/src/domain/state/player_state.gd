@@ -22,12 +22,16 @@ func set_player_name(name: String) -> void:
 func set_player_location(location: EnumHolder.Location) -> void:
 	_player_location = location
 
+	DomainEventBus.player_location_updated.emit()
+
 	print("[DEV][D] Player Location set to %s" % [_player_location])
 
 
 func get_player_name() -> String:
+	print("[DEV][D] Returning Player Name %s" % [_player_name])
 	return _player_name
 
 
 func get_player_location() -> EnumHolder.Location:
+	print("[DEV][D] Returning Player Location %s" % [_player_location])
 	return _player_location

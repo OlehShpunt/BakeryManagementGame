@@ -7,6 +7,7 @@ const EMPTY = ""
 ## Locations
 static var LOCATIONS_PATH = "res://src/presentation/location"
 static var STREET_PATH: String = LOCATIONS_PATH + "/street/street.tscn"
+static var BAKERY_PATH: String = LOCATIONS_PATH + "/bakery/bakery.tscn"
 static var BAKERY_1_PATH: String = LOCATIONS_PATH + "/bakery/bakery_1.tscn"
 static var MINI_MARKET_PATH: String = LOCATIONS_PATH + "/mini_market/mini_market.tscn"
 static var WHOLESALE_SHOP_PATH: String = LOCATIONS_PATH + "/wholesale_shop/wholesale_shop.tscn"

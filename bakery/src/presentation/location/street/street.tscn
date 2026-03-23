@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://c6e3gyoq4qsoj"]
+[gd_scene load_steps=32 format=4 uid="uid://c6e3gyoq4qsoj"]
 
 [ext_resource type="Script" uid="uid://cs5ekhoaf1oql" path="res://src/presentation/location/street/street.gd" id="1_jf3xg"]
 [ext_resource type="Texture2D" uid="uid://c7owscp2p0ks5" path="res://assets/city builder assets/exports city assets/park and street tiles.png" id="4_dwa1c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvh2gsvwd0s8h" path="res://assets/city builder assets/exports city assets/park and street tiles original.png" id="6_4sy8a"]
 [ext_resource type="Texture2D" uid="uid://b3gq38gcg724d" path="res://assets/city builder assets/exports city assets/buildin tiles.png" id="6_mui8i"]
 [ext_resource type="Texture2D" uid="uid://osqrrxknov0e" path="res://assets/city builder assets/exports city assets/green_tile_street.png" id="7_a3ib7"]
+[ext_resource type="PackedScene" uid="uid://b08ghk0i7pyyx" path="res://src/presentation/location/shared/teleport.tscn" id="9_3g2c7"]
 [ext_resource type="Texture2D" uid="uid://eks5rn2x1m5h" path="res://assets/city builder assets/exports city assets/cars exports .png" id="9_pxtf1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3ey1"]
@@ -3302,6 +3303,19 @@ physics_layer_0/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_lgqam")
 sources/0 = SubResource("TileSetAtlasSource_h0yaa")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbn3"]
+size = Vector2(46, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3g2c7"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggdyx"]
+size = Vector2(44, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbual"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olly5"]
+
 [node name="Street" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_jf3xg")
@@ -3343,3 +3357,44 @@ tile_set = SubResource("TileSet_fi4hn")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAGABsAAAAYABEAAAANAB4AAAATABQAAAAUABsAAAAYABEAAAAJADQAAAARABEAAAAOACkAAAANABEAAAADACgAAAATAA4AABAbACkAAAAYABEAAAA4ACkAAAANABEAAAAaABAAAAATAA4AAAAZAAAAAAAYABEAABAOAP//AAARABEAABACAP//AAAYABEAABAjADQAAAAWABEAAAAaAD4AAAATAA4AAAApAFkAAAAYABEAAAA0AFwAAAAYABEAABAVADUAAAAYABEAAAAWAE4AAAAYABEAAAAWAGIAAAAYABEAAAAfAA4AAAAhABEAAAAiAAwAAAAaAAIAAAAiAA4AAAAaAAMAAAAlAA4AAAAhABEAAAArAA4AAAAhABEAAAAuAAwAAAAaAAIAAAAuAA4AAAAaAAMAAAAxAA4AAAAhABEAAAA3AA4AAAAhABEAAAA6AAwAAAAaAAIAAAA6AA4AAAAaAAMAAAA4AEwAAAAnABEAAAA7AEYAAAAbABEAAAA4ADoAAAAnABEAAAAzADoAAAAbABEAAAAyADwAAAApABEAAAA3AEYAAAApABEAAAA3AEoAAAApABEAAAA7AFgAAAApABEAAAAwABoAAAAhABEAAAAkAB4AAAAhABEAAAAlAB4AAAAhABEAAAAdABwAAAAnABEAAAAiACYAAAArABEAAAAeACgAAAAaAAMAAAAeACYAAAAaAAIAAAAsABwAAAAhABEAAAAvABgAAAAaAAMAAAAvABYAAAAaAAIAAAAtABwAAAAaAAMAAAAtABoAAAAaAAIAAAAsACAAAAAhABEAAAAsAB4AAAAhABEAAAAsABoAAAAhABEAAAAsABgAAAAhABEAAAAwACAAAAAhABEAAAAwAB4AAAAhABEAAAAwABwAAAAhABEAAAAwABgAAAAhABEAAAAyACQAAAAnABEAAAAdADkAAAAhABEAAAAeADkAAAAjABEAAAAfADkAAAAhABEAAAAgADkAAAAhABEAAAAhADkAAAAjABEAAAAiADkAAAAhABEAAAAjADkAAAAhABEAAAAkADkAAAAjABEAAAAlADkAAAAhABEAAAAnADkAAAAhABEAAAAoADkAAAAjABEAAAApADkAAAAhABEAAAAcADkAAAAhABEAAAAqADkAAAAjABEAAAAcADoAAAAjABEAAAAcADwAAAAjABEAAAAcAD4AAAAhABEAAAAcAEAAAAAjABEAAAAcAEIAAAAhABEAAAArAEIAAAAhABEAAAArAEAAAAAjABEAAAArAD4AAAAhABEAAAArADwAAAAhABEAAAArADoAAAAjABEAAAAjADsAAAAjABEAAAAjAD0AAAAhABEAAAAjAD8AAAAjABEAAAAjAEEAAAAhABEAAAAmADkAAAAhABEAAAAiADgAAAAhABEAAAAjADgAAAAjABEAAAAkADgAAAAjABEAAAAlADgAAAAhABEAAAAmADgAAAAhABEAAAAnADgAAAAjABEAAAAoADgAAAAhABEAAAApADgAAAAjABEAAAAqADgAAAAhABEAAAAhADgAAAAhABEAAAAgADgAAAAjABEAAAAfADgAAAAjABEAAAAeADgAAAAjABEAAAAdADgAAAAhABEAAAAcADgAAAAjABEAAAArADgAAAAhABEAAAAdAEYAAAAaAAMAAAAiAEYAAAAaAAMAAAAlAEYAAAAaAAMAAAAqAEYAAAAaAAMAAAAlAEQAAAAaAAIAAAAqAEQAAAAaAAIAAAAiAEQAAAAaAAIAAAAdAEQAAAAaAAIAAAAqAEwAAAAaAAMAAAAlAEwAAAAaAAMAAAAiAEwAAAAaAAMAAAAdAEwAAAAaAAMAAAAdAEoAAAAaAAIAAAAiAEoAAAAaAAIAAAAlAEoAAAAaAAIAAAAqAEoAAAAaAAIAAAAmACYAAAAYABEAAAAvACYAAAAYABEAAAAAAB4AAAArABEAAAAAADQAAAApABEAAAAAACQAAAAnABEAAAAAAC4AAAAnABEAAAAAAEsAAAAkABEAAAADAEoAAAArABEAAAAEAEsAAAApABEAAAAHAEoAAAArABEAAAALAEkAAAArABEAAAAMAEoAAAAkABEAAAAKAEoAAAApABEAAAAFAEoAAAAnABEAAAAKAFIAAAArABEAAAAKAE8AAAAkABEAAAAAAFYAAAAnABEAAAAAAGYAAAArABEAAAD//2MAAAArABEAAAD//10AAAArABEAAAD//08AAAAkABEAAAAGAGUAAAAkABEAAAAJAGEAAAArABEAAAAKAF4AAAAkABEAAAAKAFYAAAArABEAAAAaAB0AAAAUABMAAAAVABcAAAAUABMAAAAzADQAAAARABEAAAAbAGYAAAAUABMAAAAfAFwAAAAUABMAAAAVAFUAAAAUABMAAAAbAFgAAAARABEAAAAyAFIAAAALABEAAAA1AGQAAAATABQAAAAjAFwAAAATABQAAAAVAEEAAAATABQAAAACADMAAAATABQAAAALAAoAAAAPABEAABANABgAAAAaAAMAAAANABYAAAAaAAIAAAAAACwAAAAaAAMAAAAAACoAAAAaAAIAAAAIAEoAAAAaAAIAAAAIAEwAAAAaAAMAAAAMAE4AAAAaAAIAAAAMAFAAAAAaAAMAAAAHAFoAAAAaAAIAAAAHAFwAAAAaAAMAAAAEAF4AAAAaAAIAAAAEAGAAAAAaAAMAAAAHAGIAAAAaAAIAAAAHAGQAAAAaAAMAAAAEAFQAAAAaAAIAAAAEAFYAAAAaAAMAAAAGAE4AAAAaAAIAAAAGAFAAAAAaAAMAAAAAAFAAAAAaAAIAAAAAAFIAAAAaAAMAAAAAAGAAAAAaAAIAAAAAAGIAAAAaAAMAAAAkAAgAAAAaAAMAAAAyAAgAAAAaAAMAAAAyAAYAAAAaAAIAAAAkAAYAAAAaAAIAAAAOAAIAAAATABQAAAAbAAYAAAATABQAAAAkACwAAAATABQAAAA7ACcAAAATABQAAAA2AEwAAAAaAAMAAAA2AEoAAAAaAAIAAAA4AEIAAAAaAAIAAAA4AD4AAAAaAAIAAAAyAD4AAAAaAAIAAAAyAEIAAAAaAAIAAAA7AFIAAAAaAAIAAAA7AGIAAAAaAAIAAAA7AGQAAAAaAAMAAAA7AFQAAAAaAAMAAAA4AEAAAAAaAAMAAAA4AEQAAAAaAAMAAAAyAEQAAAAaAAMAAAAyAEAAAAAaAAMAAAA=")
 tile_set = SubResource("TileSet_d72pl")
+
+[node name="Teleports" type="Node2D" parent="."]
+z_index = 1
+
+[node name="TeleportToWholesaleShop" parent="Teleports" instance=ExtResource("9_3g2c7")]
+position = Vector2(96, 398)
+destination = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportToWholesaleShop"]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_bcbn3")
+
+[node name="TeleportToMiniMarket" parent="Teleports" instance=ExtResource("9_3g2c7")]
+position = Vector2(1776, 154)
+destination = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportToMiniMarket"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_3g2c7")
+
+[node name="TeleportToSupermarket" parent="Teleports" instance=ExtResource("9_3g2c7")]
+position = Vector2(1393, 1420)
+destination = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportToSupermarket"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_ggdyx")
+
+[node name="TeleportToKiosk" parent="Teleports" instance=ExtResource("9_3g2c7")]
+position = Vector2(530, 1527)
+destination = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportToKiosk"]
+shape = SubResource("RectangleShape2D_jbual")
+
+[node name="TeleportToBakery1" parent="Teleports" instance=ExtResource("9_3g2c7")]
+position = Vector2(975, 154)
+destination = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportToBakery1"]
+shape = SubResource("RectangleShape2D_olly5")

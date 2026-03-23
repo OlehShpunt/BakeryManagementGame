@@ -1,15 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b47cmo2rspcfv"]
+[gd_scene load_steps=3 format=3 uid="uid://b47cmo2rspcfv"]
 
-[ext_resource type="Script" uid="uid://cinss7s2pcfub" path="res://scripts/characters/seller.gd" id="1_xqrk1"]
 [ext_resource type="Texture2D" uid="uid://b15doqq3mr3ey" path="res://assets/city builder assets/exports city assets/Character parck/man-6.png" id="2_0n5uw"]
-[ext_resource type="PackedScene" uid="uid://c4q0rych386or" path="res://scenes/abstract/tradeable_component.tscn" id="3_g1pn3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_81xed"]
 radius = 6.08276
 
 [node name="Seller" type="CharacterBody2D"]
 y_sort_enabled = true
-script = ExtResource("1_xqrk1")
 
 [node name="SellerCollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_81xed")
@@ -19,6 +16,3 @@ position = Vector2(0, -10)
 texture = ExtResource("2_0n5uw")
 hframes = 4
 vframes = 6
-
-[node name="TradeableComponent" parent="." instance=ExtResource("3_g1pn3")]
-position = Vector2(0, -6)

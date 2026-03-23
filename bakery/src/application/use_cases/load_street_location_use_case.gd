@@ -1,7 +1,7 @@
-class_name LoadStreetLocationUseCase
+class_name LoadLocationUseCase
 extends RefCounted
 
-func execute() -> void:
+func execute(location: EnumHolder.Location) -> void:
 	print("[DEV][A] Loading street location...")
 
-	EventBus.load_street_location.emit()
+	EventBus.load_location.emit(location)

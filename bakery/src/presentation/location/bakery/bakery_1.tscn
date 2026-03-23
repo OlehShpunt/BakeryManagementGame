@@ -1,16 +1,16 @@
 [gd_scene load_steps=30 format=4 uid="uid://udcsxfiubnwv"]
 
 [ext_resource type="Texture2D" uid="uid://ta1sicwwr7qk" path="res://assets/The Adventurer - Free/basicTileset.jpg" id="1_2tj81"]
-[ext_resource type="Script" uid="uid://ubgf04opr1jw" path="res://scripts/locations/bakery_1.gd" id="1_wbqrc"]
+[ext_resource type="Script" uid="uid://ubgf04opr1jw" path="res://src/presentation/location/bakery/bakery_1.gd" id="1_wbqrc"]
 [ext_resource type="Texture2D" uid="uid://ba4mo2mprjdsm" path="res://assets/interior $1.5/moderninteriors-win/1_Interiors/32x32/Room_Bulder_subfiles_32x32/Room_Builder_3d_walls_32x32.png" id="2_dm5bb"]
 [ext_resource type="Texture2D" uid="uid://c51hh7ombdjq5" path="res://assets/interior $1.5/moderninteriors-win/1_Interiors/32x32/Room_Bulder_subfiles_32x32/Room_Builder_Walls_32x32.png" id="3_jxr6k"]
-[ext_resource type="PackedScene" uid="uid://b4su7pwl3h08v" path="res://src/presentation/location/shared/teleport.tscn" id="3_n3bwo"]
+[ext_resource type="PackedScene" uid="uid://b08ghk0i7pyyx" path="res://src/presentation/location/shared/teleport.tscn" id="3_n3bwo"]
 [ext_resource type="Texture2D" uid="uid://cigw5dd3u4ow8" path="res://assets/interior $1.5/moderninteriors-win/1_Interiors/32x32/Room_Bulder_subfiles_32x32/Room_Builder_Floors_32x32.png" id="4_1rhps"]
 [ext_resource type="Texture2D" uid="uid://5laihu8ffujd" path="res://assets/interior $1.5/moderninteriors-win/1_Interiors/32x32/Room_Bulder_subfiles_32x32/Room_Builder_borders_32x32.png" id="5_1rhps"]
 [ext_resource type="PackedScene" uid="uid://fub8ijfnyid5" path="res://src/presentation/location/bakery/storage_1.tscn" id="5_oxjwv"]
-[ext_resource type="PackedScene" uid="uid://bkvhmccgqqass" path="res://scenes/objects/cooking_station.tscn" id="5_pvimk"]
+[ext_resource type="PackedScene" uid="uid://bkvhmccgqqass" path="res://src/presentation/location/bakery/cooking/cooking_station.tscn" id="5_pvimk"]
 [ext_resource type="Texture2D" uid="uid://hakquknsxj3h" path="res://assets/interior $1.5/moderninteriors-win/1_Interiors/32x32/Theme_Sorter_Black_Shadow_32x32/16_Grocery_store_Black_Shadow_32x32.png" id="6_3h5r5"]
-[ext_resource type="PackedScene" uid="uid://x8ddl8432pdq" path="res://scenes/objects/oven.tscn" id="6_t48hl"]
+[ext_resource type="PackedScene" uid="uid://x8ddl8432pdq" path="res://src/presentation/location/bakery/cooking/oven.tscn" id="6_t48hl"]
 [ext_resource type="PackedScene" uid="uid://cqorkc6y5jnbv" path="res://src/presentation/location/bakery/counter.tscn" id="7_0jgpo"]
 [ext_resource type="Texture2D" uid="uid://c5wt4666kl7ab" path="res://assets/interior $1.5/moderninteriors-win/1_Interiors/32x32/Theme_Sorter_Black_Shadow_32x32/12_Kitchen_Black_Shadow_32x32.png" id="7_n5wok"]
 [ext_resource type="PackedScene" uid="uid://504xsu0lfgc1" path="res://src/presentation/location/bakery/coffee_maker.tscn" id="8_w402d"]
@@ -4684,35 +4684,27 @@ position = Vector2(-2, 1)
 
 [node name="ItemHolder" parent="ItemHolders Z 1" instance=ExtResource("13_v1r8d")]
 position = Vector2(469, 146)
-ID = 3011
 
 [node name="ItemHolder2" parent="ItemHolders Z 1" instance=ExtResource("13_v1r8d")]
 position = Vector2(492, 146)
-ID = 3012
 
 [node name="ItemHolder3" parent="ItemHolders Z 1" instance=ExtResource("13_v1r8d")]
 position = Vector2(515, 146)
-ID = 3013
 
 [node name="ItemHolder4" parent="ItemHolders Z 1" instance=ExtResource("13_v1r8d")]
 position = Vector2(538, 146)
-ID = 3014
 
 [node name="ItemHolder5" parent="ItemHolders Z 1" instance=ExtResource("13_v1r8d")]
 position = Vector2(561, 146)
-ID = 3015
 
 [node name="ItemHolder6" parent="ItemHolders Z 1" instance=ExtResource("13_v1r8d")]
 position = Vector2(584, 146)
-ID = 3016
 
 [node name="ItemHolder7" parent="ItemHolders Z 1" instance=ExtResource("13_v1r8d")]
 position = Vector2(607, 146)
-ID = 3017
 
 [node name="ItemHolder8" parent="ItemHolders Z 1" instance=ExtResource("13_v1r8d")]
 position = Vector2(630, 146)
-ID = 3018
 
 [node name="unused ItemHolders Z 2" type="Node2D" parent="."]
 z_index = 2
@@ -4720,35 +4712,27 @@ position = Vector2(-298, -71)
 
 [node name="ItemHolder" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(469, 146)
-ID = 3021
 
 [node name="ItemHolder2" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(492, 146)
-ID = 3022
 
 [node name="ItemHolder3" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(515, 146)
-ID = 3023
 
 [node name="ItemHolder4" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(538, 146)
-ID = 3024
 
 [node name="ItemHolder5" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(561, 146)
-ID = 3025
 
 [node name="ItemHolder6" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(584, 146)
-ID = 3026
 
 [node name="ItemHolder7" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(607, 146)
-ID = 3027
 
 [node name="ItemHolder8" parent="unused ItemHolders Z 2" instance=ExtResource("13_v1r8d")]
 position = Vector2(630, 146)
-ID = 3028
 
 [node name="Floor" type="TileMapLayer" parent="."]
 visible = false
@@ -4763,7 +4747,6 @@ tile_set = SubResource("TileSet_78jui")
 
 [node name="Teleport" parent="." instance=ExtResource("3_n3bwo")]
 position = Vector2(136, 160)
-teleport_to = "res://scenes/locations/street.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
 position = Vector2(360, 145)

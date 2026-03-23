@@ -245,7 +245,7 @@ _data = {
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_48atu")
-speed = 150
+speed = 350
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
