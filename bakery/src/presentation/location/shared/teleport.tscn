@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b08ghk0i7pyyx"]
+
+[ext_resource type="Script" uid="uid://5qp3db43l0ts" path="res://src/presentation/location/shared/teleport.gd" id="1_xkul8"]
+
+[node name="Teleport" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_xkul8")

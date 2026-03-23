@@ -1,0 +1,2 @@
+class_name WholesaleShop
+extends Node2D

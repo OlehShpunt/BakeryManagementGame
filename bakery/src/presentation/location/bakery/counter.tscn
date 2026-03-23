@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqorkc6y5jnbv"]
+
+[ext_resource type="Texture2D" uid="uid://61a4278l8k17" path="res://assets/objectsPNG/bakery counter.png" id="1_fwt87"]
+[ext_resource type="PackedScene" uid="uid://cd3dw2xnmy76u" path="res://src/presentation/location/bakery/item_holder.tscn" id="2_xce6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1i1l"]
+size = Vector2(176, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsxa4"]
+size = Vector2(16, 11)
+
+[node name="Counter" type="StaticBody2D"]
+disable_mode = 1
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_fwt87")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-24, 10.5)
+shape = SubResource("RectangleShape2D_g1i1l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(104, 10.5)
+shape = SubResource("RectangleShape2D_qsxa4")
+
+[node name="ItemHolder" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-103, -1)
+ID = 3001
+
+[node name="ItemHolder2" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-86, -1)
+ID = 3002
+
+[node name="ItemHolder3" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-69, -1)
+ID = 3003
+
+[node name="ItemHolder4" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-52, -1)
+ID = 3004
+
+[node name="ItemHolder5" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-35, -1)
+ID = 3005
+
+[node name="ItemHolder6" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-18, -1)
+ID = 3006
+
+[node name="ItemHolder7" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(-1, -1)
+ID = 3007
+
+[node name="ItemHolder8" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(16, -1)
+ID = 3008
+
+[node name="ItemHolder9" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(33, -1)
+ID = 3009
+
+[node name="ItemHolder10" parent="." instance=ExtResource("2_xce6v")]
+position = Vector2(50, -1)
+ID = 3010
