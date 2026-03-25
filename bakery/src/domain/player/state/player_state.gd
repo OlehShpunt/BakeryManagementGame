@@ -3,6 +3,7 @@ extends RefCounted
 
 var _player_name: String
 var _player_location: EnumHolder.Location
+var _player_balance: int
 
 
 func _init() -> void:
