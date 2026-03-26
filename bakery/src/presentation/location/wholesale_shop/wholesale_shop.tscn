@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://deno10af84wbf"]
+[gd_scene format=4 uid="uid://deno10af84wbf"]
 
 [ext_resource type="Script" uid="uid://degm7tgqthk8k" path="res://src/presentation/location/wholesale_shop/wholesale_shop.gd" id="1_w8crf"]
 [ext_resource type="PackedScene" uid="uid://b08ghk0i7pyyx" path="res://src/presentation/location/shared/teleport.tscn" id="3_xvpar"]
@@ -3964,32 +3964,33 @@ sources/1 = SubResource("TileSetAtlasSource_vvni7")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f86k8"]
 size = Vector2(48, 32)
 
-[node name="WholesaleShop" type="Node2D"]
+[node name="WholesaleShop" type="Node2D" unique_id=1709361407]
 y_sort_enabled = true
 script = ExtResource("1_w8crf")
 
-[node name="FloorWalls" type="TileMapLayer" parent="."]
+[node name="FloorWalls" type="TileMapLayer" parent="." unique_id=1279659020]
 z_index = -1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAACAAAAAgAMAAAAAAACAAEAAgAMAAEAAAACAAIAAwABABwAAAACAAMAAwABAB0AAAACAAQAAwABAB0AAAACAAUAAwABAB0AAAACAAYAAwABAB0AAAACAAcAAwABAB0AAAACAAgABAAFAAYAABADAAAAAgAMAAAAAAADAAEAAgAMAAEAAAADAAIAAwABABwAAAADAAMAAwABAB0AAAADAAQAAwABAB0AAAADAAUAAwABAB0AAAADAAYAAwABAB0AAAADAAcAAwABAB0AAAADAAgAAwABAB0AAAAEAAAAAgAMAAAAAAAEAAEAAgAMAAEAAAAEAAIAAwABABwAAAAEAAMAAwABAB0AAAAEAAQAAwABAB0AAAAEAAUAAwABAB0AAAAEAAYAAwABAB0AAAAEAAcAAwABAB0AAAAEAAgABAAFAAYAAAAAAAAABAAGAAYAAAAAAAEABAAGAAcAAAAAAAIABAAGAAcAAAAAAAMABAAGAAcAAAAAAAQABAAGAAcAAAAAAAUABAAGAAcAAAAAAAYABAAGAAcAAAAAAAcABAAGAAcAAAAAAAgABAAGAAgAAAABAAAAAgAMAAAAAAABAAEAAgAMAAEAAAABAAIAAwAAABwAAAABAAMAAwAAAB0AAAABAAQAAwAAAB0AAAABAAUAAwAAAB0AAAABAAYAAwAAAB0AAAABAAcAAwAAAB0AAAABAAgABAAHAAYAAAAFAAAAAgAMAAAAAAAFAAEAAgAMAAEAAAAFAAIAAwABABwAAAAFAAMAAwABAB0AAAAFAAQAAwABAB0AAAAFAAUAAwABAB0AAAAFAAYAAwABAB0AAAAFAAcAAwABAB0AAAAGAAAAAgAMAAAAAAAGAAEAAgAMAAEAAAAGAAIAAwABABwAAAAGAAMAAwABAB0AAAAGAAQAAwABAB0AAAAGAAUAAwABAB0AAAAGAAYAAwABAB0AAAAGAAcAAwABAB0AAAAGAAgABAAHAAYAAAAHAAAABAAIAAYAAAAHAAEABAAIAAcAAAAHAAIABAAIAAcAAAAHAAMABAAIAAcAAAAHAAQABAAIAAcAAAAHAAUABAAIAAcAAAAHAAYABAAIAAcAAAAHAAcABAAIAAcAAAAHAAgABAAIAAgAAAAFAAgABAAHAAYAAAA=")
 tile_set = SubResource("TileSet_vndfj")
 
-[node name="Appliances" type="TileMapLayer" parent="."]
+[node name="Appliances" type="TileMapLayer" parent="." unique_id=847450567]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAFAAcAAQAEAD8AAAABAAQAAQAEAD0AAAABAAYAAQABADwAAAACAAYAAQADAD8AAAABAAcAAQABAD8AAAABAAMAAQAAAD8AAAAFAAIAAQAKAEEAAAAGAAMAAQANAEIAABADAAIAAQAPACEAAAAGAAYAAQADADwAAAA=")
 tile_set = SubResource("TileSet_1kka5")
 
-[node name="BoxContents" type="TileMapLayer" parent="."]
+[node name="BoxContents" type="TileMapLayer" parent="." unique_id=1993504387]
 y_sort_enabled = true
 rotation = -0.000615305
 tile_map_data = PackedByteArray("AAAGAAYAAQAFADwAAAAFAAYAAQAGADwAAAABAAMAAQAIADwAAAACAAMAAQAIAD4AAAA=")
 tile_set = SubResource("TileSet_1kka5")
 
-[node name="Teleport" parent="." instance=ExtResource("3_xvpar")]
+[node name="Teleport" parent="." unique_id=1316354968 instance=ExtResource("3_xvpar")]
 position = Vector2(112, 287)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport" unique_id=961980016]
 shape = SubResource("RectangleShape2D_f86k8")
 
-[node name="Seller" parent="." instance=ExtResource("4_astny")]
+[node name="Seller" parent="." unique_id=1448016309 instance=ExtResource("4_astny")]
 position = Vector2(142, 69)
+id = 1000

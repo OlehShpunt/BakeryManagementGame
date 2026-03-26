@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ck6catep7k4as"]
+[gd_scene format=3 uid="uid://ck6catep7k4as"]
 
 [ext_resource type="Script" uid="uid://cl2xj4eijch3e" path="res://src/presentation/player/player.gd" id="1_48atu"]
 [ext_resource type="Texture2D" uid="uid://c57gimoikstek" path="res://assets/city builder assets/exports city assets/Character parck/man-1.png" id="2_k8b3m"]
@@ -241,29 +241,27 @@ _data = {
 &"up_walk": SubResource("Animation_qlfo2")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1631247182]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_48atu")
 speed = 350
 
-[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="." unique_id=1841241589]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_sjnek")
 debug_color = Color(1, 1, 0, 0.419608)
 
-[node name="PlayerSprite" type="Sprite2D" parent="."]
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=161971249]
 position = Vector2(0, -16)
 texture = ExtResource("2_k8b3m")
 hframes = 4
 vframes = 6
 
-[node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_lu5cv")
-}
+[node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="." unique_id=118826380]
+libraries/ = SubResource("AnimationLibrary_lu5cv")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1469158664]
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
@@ -271,7 +269,7 @@ limit_right = 944
 limit_bottom = 816
 script = ExtResource("10_uhkya")
 
-[node name="Name" type="Label" parent="."]
+[node name="Name" type="Label" parent="." unique_id=1035095289]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -291,7 +289,7 @@ theme_override_font_sizes/font_size = 8
 text = "Player"
 horizontal_alignment = 1
 
-[node name="CoordinateDisplay" type="Label" parent="."]
+[node name="CoordinateDisplay" type="Label" parent="." unique_id=466420853]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -311,5 +309,5 @@ theme_override_font_sizes/font_size = 3
 text = "10, 10"
 horizontal_alignment = 1
 
-[node name="Node2D" parent="." instance=ExtResource("14_k4v7y")]
+[node name="Node2D" parent="." unique_id=1436863201 instance=ExtResource("14_k4v7y")]
 visible = false
