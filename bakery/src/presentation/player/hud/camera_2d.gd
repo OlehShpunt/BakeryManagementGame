@@ -1,10 +1,10 @@
 extends Camera2D
 
 func _init() -> void:
-	DomainEventBus.player_location_updated.connect(_on_player_location_updated)
+	var _err: int = DomainEventBus.player_location_updated.connect(_on_player_location_updated)
 
 
-func _on_player_location_updated():
+func _on_player_location_updated() -> void:
 	match StateManager.get_player_state().get_player_location():
 		EnumHolder.Location.Street:
 			limit_left = 0
@@ -23,6 +23,6 @@ func _on_player_location_updated():
 
 
 ## Smooth camera transition
-func set_camera_zoom(target_zoom: Vector2):
-	var tween = create_tween()
-	tween.tween_property(self, "zoom", target_zoom, 1.0) # 1 second transition
+func set_camera_zoom(target_zoom: Vector2) -> void:
+	var tween: Tween = create_tween()
+	var _property_tweener: PropertyTweener = tween.tween_property(self, "zoom", target_zoom, 1.0) # 1 second transition

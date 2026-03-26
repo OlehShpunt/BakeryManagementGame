@@ -10,10 +10,10 @@ func _ready() -> void:
 		free()
 
 	collision_shape = $CollisionShape2D
-	body_entered.connect(_on_body_entered)
+	var _err: int = body_entered.connect(_on_body_entered)
 
 	teleport_player_use_case = TeleportPlayerUseCase.new()
 
 
-func _on_body_entered(body: Player):
+func _on_body_entered(_body: Player) -> void:
 	teleport_player_use_case.execute(destination)

@@ -8,6 +8,7 @@ var _player_balance: int
 
 func _init() -> void:
 	_player_name = ""
+	_player_balance = 50
 
 	print("[DEV][D] PlayerState initialized")
 

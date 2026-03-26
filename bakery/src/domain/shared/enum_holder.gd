@@ -1,7 +1,7 @@
 class_name EnumHolder
 extends RefCounted
 
-static var STREET = "Street"
+static var STREET: String = "Street"
 
 enum Location {
 	Street,
