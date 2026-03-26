@@ -18,3 +18,7 @@ enum Location {
 	Bakery7,
 	Bakery8,
 }
+
+enum ItemCode {
+	Bread,
+}

@@ -1,0 +1,2 @@
+class_name LegacyItem
+extends Sprite2D
