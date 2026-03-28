@@ -2,9 +2,19 @@
 
 [ext_resource type="Script" uid="uid://dx5jnpst0wim1" path="res://src/presentation/npc/seller/seller.gd" id="1_ptr8y"]
 [ext_resource type="Texture2D" uid="uid://b15doqq3mr3ey" path="res://assets/city builder assets/exports city assets/Character parck/man-6.png" id="2_0n5uw"]
+[ext_resource type="Shader" uid="uid://cnkiopodtgckr" path="res://src/presentation/npc/seller/seller.gdshader" id="2_247u5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_81xed"]
 radius = 6.08276
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f3jbf"]
+shader = ExtResource("2_247u5")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_thickness = 1.0
+shader_parameter/outline_enabled = false
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ptr8y"]
+radius = 66.007576
 
 [node name="Seller" type="CharacterBody2D" unique_id=937344087]
 y_sort_enabled = true
@@ -14,6 +24,7 @@ script = ExtResource("1_ptr8y")
 shape = SubResource("CircleShape2D_81xed")
 
 [node name="SellerSprite2D" type="Sprite2D" parent="." unique_id=1950129285]
+material = SubResource("ShaderMaterial_f3jbf")
 position = Vector2(0, -10)
 texture = ExtResource("2_0n5uw")
 hframes = 4
@@ -25,4 +36,14 @@ offset_top = -22.0
 offset_right = 10.0
 offset_bottom = 16.0
 
+[node name="Area2D" type="Area2D" parent="." unique_id=903286038]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=70516449]
+shape = SubResource("CircleShape2D_ptr8y")
+debug_color = Color(0, 0.70196074, 0.15723701, 0.41960785)
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

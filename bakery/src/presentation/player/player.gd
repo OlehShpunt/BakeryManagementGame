@@ -15,6 +15,8 @@ var _player_movement_disabled = false
 
 
 func _ready() -> void:
+	StateManager.get_player_state().player_ref = self
+
 	if show_coordinates:
 		coordinate_display.show()
 	else:
