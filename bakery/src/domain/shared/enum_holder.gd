@@ -21,4 +21,13 @@ enum Location {
 
 enum ItemCode {
 	Bread,
+	Flour,
+	Milk,
+	Butter,
+	Chocolate,
+	Cherry,
+	Nuts,
+	Vanilla,
+	CocoaPowder,
+	Jello,
 }
