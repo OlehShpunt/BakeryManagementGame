@@ -309,5 +309,4 @@ theme_override_font_sizes/font_size = 3
 text = "10, 10"
 horizontal_alignment = 1
 
-[node name="Node2D" parent="." unique_id=1436863201 instance=ExtResource("14_k4v7y")]
-visible = false
+[node name="Joystick" parent="." unique_id=1436863201 instance=ExtResource("14_k4v7y")]
