@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var player_name: Label = $Name
 @onready var coordinate_display: Label = $CoordinateDisplay
 var last_direction: String = "s"
+var _player_movement_disabled = false
 
 ## Turn on to see player coordinates
 @export var show_coordinates: bool = false
@@ -21,6 +22,9 @@ func _ready() -> void:
 
 	player_name.text = StateManager.get_player_state().get_player_name()
 
+	PresentationEventBus.disable_player_movement.connect(_on_disable_player_movement)
+	PresentationEventBus.enable_player_movement.connect(_on_enable_player_movement)
+
 
 func _process(_delta: float) -> void:
 	if show_coordinates:
@@ -33,6 +37,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func player_movement() -> void:
+	if (_player_movement_disabled):
+		return
+
 	var direction: Vector2 = Input.get_vector("a", "d", "w", "s")
 	velocity = direction * speed
 	play_animation(direction)
@@ -76,3 +83,11 @@ func play_animation(direction: Vector2) -> void:
 				animation_player.play("up_idle")
 			"s":
 				animation_player.play("down_idle")
+
+
+func _on_disable_player_movement():
+	_player_movement_disabled = true
+
+
+func _on_enable_player_movement():
+	_player_movement_disabled = false

@@ -11,6 +11,8 @@ func _init() -> void:
 
 ## Renders seller UI depending on seller_id
 func _on_show_seller_ui(seller_id: int):
+	PresentationEventBus.disable_player_movement.emit()
+
 	var seller_state := StateManager.get_seller_state(seller_id)
 
 	var items: Array[Item]
@@ -28,6 +30,8 @@ func _on_show_seller_ui(seller_id: int):
 
 # TODO: Optimize by caching
 func _on_hide_seller_ui():
+	PresentationEventBus.enable_player_movement.emit()
+
 	var children := item_list_container.get_children()
 	for child in children:
 		child.queue_free()
