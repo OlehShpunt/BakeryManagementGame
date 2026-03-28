@@ -3,21 +3,20 @@ extends CharacterBody2D
 
 # Last movement direction is updated when awsd pressed
 @export var speed: int
-@export var money_balance = 50
-@onready var animation_player = $PlayerAnimationPlayer
-@onready var inventory = $Camera2D/Inventory
-@onready var camera = $Camera2D
+@onready var animation_player: AnimationPlayer = $PlayerAnimationPlayer
+@onready var camera: Camera2D = $Camera2D
 @onready var player_name: Label = $Name
-@onready var coordinate_display = $CoordinateDisplay
-var last_direction = "s"
-var test_github = false
-var test_version_control = true
+@onready var coordinate_display: Label = $CoordinateDisplay
+var last_direction: String = "s"
+var _player_movement_disabled = false
 
 ## Turn on to see player coordinates
 @export var show_coordinates: bool = false
 
 
-func _ready():
+func _ready() -> void:
+	StateManager.get_player_state().player_ref = self
+
 	if show_coordinates:
 		coordinate_display.show()
 	else:
@@ -25,24 +24,30 @@ func _ready():
 
 	player_name.text = StateManager.get_player_state().get_player_name()
 
+	PresentationEventBus.disable_player_movement.connect(_on_disable_player_movement)
+	PresentationEventBus.enable_player_movement.connect(_on_enable_player_movement)
+
 
 func _process(_delta: float) -> void:
 	if show_coordinates:
 		coordinate_display.text = str("%.2f" % global_position.x) + ", " + str("%.2f" % global_position.y)
 
 
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	player_movement() # delta not needed since move_and_slide does the delta multiplication
-	move_and_slide()
+	var _body_collided: bool = move_and_slide()
 
 
-func player_movement():
-	var direction = Input.get_vector("a", "d", "w", "s")
+func player_movement() -> void:
+	if (_player_movement_disabled):
+		return
+
+	var direction: Vector2 = Input.get_vector("a", "d", "w", "s")
 	velocity = direction * speed
 	play_animation(direction)
 
 
-func play_animation(direction):
+func play_animation(direction: Vector2) -> void:
 	if direction != Vector2.ZERO: # If awsd pressed, play walk
 		if direction.y > 0: # s pressed
 			if direction.x > 0.85:
@@ -81,50 +86,10 @@ func play_animation(direction):
 			"s":
 				animation_player.play("down_idle")
 
-'''
-# Inventory blocked when:
-# 1) Player enters the InteractableZone of a Seller
-func block_inventory():
-	inventory.inventory_blocked = true
+
+func _on_disable_player_movement():
+	_player_movement_disabled = true
 
 
-# Inventory unblocked when:
-# 1) Player exits the InteractableZone of a Seller
-func unblock_inventory():
-	inventory.inventory_blocked = false
-
-
-@rpc("any_peer", "call_remote", "reliable")
-func update_position(new_position: Vector2):
-	if not is_multiplayer_authority(): # Only non-authority peers update position
-		global_position = new_position
-
-
-@rpc("any_peer", "call_remote", "reliable")
-func update_animation(direction: String, is_moving: bool):
-	if not is_multiplayer_authority(): # Only non-authority peers update animation
-		last_direction = direction
-		if is_moving:
-			match direction:
-				"s":
-					animation_player.play("down_walk")
-				"w":
-					animation_player.play("up_walk")
-				"d":
-					animation_player.play("right_walk")
-				"a":
-					animation_player.play("left_walk")
-		else:
-			match direction:
-				"a":
-					animation_player.play("left_idle")
-				"d":
-					animation_player.play("right_idle")
-				"w":
-					animation_player.play("up_idle")
-				"s":
-					animation_player.play("down_idle")
-'''
-
-func player():
-	pass
+func _on_enable_player_movement():
+	_player_movement_disabled = false

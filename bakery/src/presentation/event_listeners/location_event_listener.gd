@@ -16,12 +16,12 @@ func _init() -> void:
 
 
 func _ready() -> void:
-	EventBus.load_location.connect(_on_load_location)
+	var _err: int = EventBus.load_location.connect(_on_load_location)
 
 	print("[DEV][P] LocationEventListener initialized")
 
 
-func _on_load_location(location: EnumHolder.Location):
+func _on_load_location(location: EnumHolder.Location) -> void:
 	match location:
 		EnumHolder.Location.Street:
 			_load_scene(_street_packed_scene)
@@ -37,21 +37,21 @@ func _on_load_location(location: EnumHolder.Location):
 			_load_scene(_supermarket_scene)
 
 	var current_player_location: EnumHolder.Location = StateManager.get_player_state().get_player_location()
-	var coordinates = PlayerSpawnCoordinatesResolver.resolve(current_player_location, location)
+	var coordinates: Vector2 = PlayerSpawnCoordinatesResolver.resolve(current_player_location, location)
 	spawn_player_use_case.execute(location, coordinates)
 
 
-func _load_scene(packed_scene: PackedScene):
-	var tree = get_tree()
-	var current_scene = tree.current_scene
+func _load_scene(packed_scene: PackedScene) -> void:
+	var tree: SceneTree = get_tree()
+	var current_scene: Node = tree.current_scene
 
 	if (current_scene):
 		current_scene.queue_free()
 
-	tree.root.remove_child(tree.current_scene)
+	tree.root.remove_child.call_deferred(tree.current_scene)
 	tree.current_scene = null
 
-	var scene_instance = packed_scene.instantiate()
+	var scene_instance: Node = packed_scene.instantiate()
 	tree.root.add_child(scene_instance)
 	tree.current_scene = scene_instance
 

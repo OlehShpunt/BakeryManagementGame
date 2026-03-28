@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dppf1i3mld62o"]
+
+[ext_resource type="Script" uid="uid://cw2g1mpig0hdt" path="res://src/presentation/npc/seller/ui/seller_ui.gd" id="1_liod1"]
+
+[node name="SellerUi" type="Control" unique_id=40930946]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_liod1")
+
+[node name="Panel" type="Panel" parent="." unique_id=2015368185]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 63.909058
+offset_top = 37.0
+offset_right = -63.909058
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameLabel" type="Label" parent="Panel" unique_id=399607190]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.19100001
+offset_left = -244.0
+offset_top = 64.0
+offset_right = 244.0
+offset_bottom = -108.96602
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 56
+text = "Shop Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=716135226]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -729.0
+offset_top = 200.0
+offset_right = 729.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_hint_mode = 1
+
+[node name="ItemVBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer" unique_id=134536140]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="Panel" unique_id=932552531]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.09094
+offset_top = 28.0
+offset_right = -24.090942
+offset_bottom = 134.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 70
+text = "×"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

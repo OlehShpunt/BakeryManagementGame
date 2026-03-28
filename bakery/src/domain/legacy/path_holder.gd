@@ -5,7 +5,7 @@ extends Node
 const EMPTY = ""
 
 ## Locations
-static var LOCATIONS_PATH = "res://src/presentation/location"
+static var LOCATIONS_PATH: String = "res://src/presentation/location"
 static var STREET_PATH: String = LOCATIONS_PATH + "/street/street.tscn"
 static var BAKERY_PATH: String = LOCATIONS_PATH + "/bakery/bakery.tscn"
 static var BAKERY_1_PATH: String = LOCATIONS_PATH + "/bakery/bakery_1.tscn"
@@ -15,7 +15,7 @@ static var KIOSK_PATH: String = LOCATIONS_PATH + "/kiosk/kiosk.tscn"
 static var SUPERMARKET_PATH: String = LOCATIONS_PATH + "/supermarket/supermarket.tscn"
 
 ## Player
-static var PLAYER_SCENE_PATH = "res://src/presentation/player/player.tscn"
+static var PLAYER_SCENE_PATH: String = "res://src/presentation/player/player.tscn"
 
 ## Ingredient Scenes
 const INGR_DIR_PATH = "res://src/presentation/item/food"

@@ -1,48 +1,32 @@
-class_name SellerBase extends CharacterBody2D
+class_name Seller
+extends CharacterBody2D
 
-@export var ID : int
-
-var shop_items: Array
-
-signal shop_items_updated()
-
-@onready var tradeable_component = $TradeableComponent
+@export var id: int
+var _seller_state: SellerState
+@onready var sprite: Sprite2D = $SellerSprite2D
 
 
-func set_shop_items(item_list : Array) -> void:
-	if item_list != null:
-		shop_items = item_list
-		print("Seller debug > shop items set for ", ID, ": ", shop_items)
-		emit_signal("shop_items_updated")
+func _ready() -> void:
+	_seller_state = StateManager.register_seller_state(id)
+	sprite.material.set("shader_param/outline_enabled", false)
+	$TextureButton.mouse_default_cursor_shape = 0
 
 
-## Reinitializes the seller's gui by adding new items based on self.shop_items
-func on_shop_items_updated():
-	pass  # TEST
-	tradeable_component.initialize_seller_gui()
+func _on_texture_button_pressed() -> void:
+	var player := StateManager.get_player_state().player_ref
+
+	if (!$Area2D.overlaps_body(player)):
+		print("doesn't overlap - not showing the menu")
+		return
+
+	PresentationEventBus.show_seller_ui.emit(id)
 
 
-func get_shop_items() -> Array:
-	return shop_items
+func _on_area_2d_body_entered(body: Player) -> void:
+	sprite.material.set("shader_param/outline_enabled", true)
+	$TextureButton.mouse_default_cursor_shape = 2
 
 
-func _ready():
-	global_ref_register.register_seller(ID, self)
-	
-	# Fill seller GUI with items specified in the global data holder client_ui_data
-	shop_items.clear()
-	if client_ui_data.get_seller_shop_items(str(ID)) is not int:
-		#set_shop_items(client_ui_data.get_seller_shop_items(str(ID)))
-		shop_items = client_ui_data.get_seller_shop_items(str(ID))
-	
-	#if client_ui_data.is_seller_with_empty_gui(ID):
-		#client_ui_data.remove_seller_with_empty_gui(ID)
-		#tradeable_component.initialize_seller_gui()
-	if GameOrchestrator.current_phase == GameOrchestrator.BUYING_PHASE:
-		tradeable_component.initialize_seller_gui()
-	
-	call_deferred("deffered_call_here")
-
-
-func deffered_call_here():
-	shop_items_updated.connect(on_shop_items_updated)
+func _on_area_2d_body_exited(body: Player) -> void:
+	sprite.material.set("shader_param/outline_enabled", false)
+	$TextureButton.mouse_default_cursor_shape = 0

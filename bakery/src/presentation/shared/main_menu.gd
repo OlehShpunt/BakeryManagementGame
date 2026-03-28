@@ -14,7 +14,7 @@ func _init() -> void:
 func _on_start_game_button_pressed() -> void:
 	print("[DEV][P] Start game button pressed")
 
-	var player_name = player_name_text_edit.text
+	var player_name: String = player_name_text_edit.text
 
 	if (player_name.is_empty()):
 		return

@@ -4,10 +4,18 @@ extends RefCounted
 var _player_name: String
 var _player_location: EnumHolder.Location
 var _player_balance: int
+var _player_ref: Player
+
+var player_ref: Player:
+	set(player_ref):
+		_player_ref = player_ref
+	get():
+		return _player_ref
 
 
 func _init() -> void:
 	_player_name = ""
+	_player_balance = 50
 
 	print("[DEV][D] PlayerState initialized")
 

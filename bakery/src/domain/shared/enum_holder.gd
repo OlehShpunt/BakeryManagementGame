@@ -1,7 +1,7 @@
 class_name EnumHolder
 extends RefCounted
 
-static var STREET = "Street"
+static var STREET: String = "Street"
 
 enum Location {
 	Street,
@@ -17,4 +17,17 @@ enum Location {
 	Bakery6,
 	Bakery7,
 	Bakery8,
+}
+
+enum ItemCode {
+	Bread,
+	Flour,
+	Milk,
+	Butter,
+	Chocolate,
+	Cherry,
+	Nuts,
+	Vanilla,
+	CocoaPowder,
+	Jello,
 }

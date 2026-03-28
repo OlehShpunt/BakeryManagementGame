@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu0w4uf1r7dc1"]
+[gd_scene format=3 uid="uid://bu0w4uf1r7dc1"]
 
 [ext_resource type="Texture2D" uid="uid://djanq212i7e2v" path="res://assets/2026/images/Screenshot 2026-03-15 at 12.11.20 AM.png" id="1_otjwu"]
 [ext_resource type="Script" uid="uid://biht121pcyqic" path="res://src/presentation/shared/main_menu.gd" id="1_vsyyr"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsyyr"]
-bg_color = Color(0.96, 0.96, 0.96, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otjwu"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -16,14 +16,14 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otjwu"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsyyr"]
+bg_color = Color(0.96, 0.96, 0.96, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=2052830489]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vsyyr")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=331786798]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,7 +45,7 @@ scale = Vector2(1, 0.999318)
 texture = ExtResource("1_otjwu")
 expand_mode = 5
 
-[node name="StartGameButton" type="Button" parent="."]
+[node name="StartGameButton" type="Button" parent="." unique_id=162388900]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -59,17 +59,17 @@ offset_bottom = 246.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vsyyr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vsyyr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wmsc0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_otjwu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wmsc0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vsyyr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vsyyr")
 text = "Start Game
 "
 
-[node name="PlayerNameTextEdit" type="TextEdit" parent="."]
+[node name="PlayerNameTextEdit" type="TextEdit" parent="." unique_id=793623258]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -85,7 +85,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 36
 placeholder_text = "Enter Your Name"
 
-[node name="WelcomeLabel" type="Label" parent="."]
+[node name="WelcomeLabel" type="Label" parent="." unique_id=300854871]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

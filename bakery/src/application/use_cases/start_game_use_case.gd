@@ -8,7 +8,7 @@ func _init() -> void:
 	load_location_use_case = LoadLocationUseCase.new()
 
 
-func execute():
+func execute() -> void:
 	load_location_use_case.execute(EnumHolder.Location.Street)
 	EventBus.start_game.emit()
 
