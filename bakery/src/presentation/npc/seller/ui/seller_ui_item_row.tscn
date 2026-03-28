@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://hhe3qdjicwjb"]
+
+[ext_resource type="Texture2D" uid="uid://b8qimgd4x5nud" path="res://assets/ingredientsPNG/bread.png" id="1_5q4v0"]
+[ext_resource type="Script" uid="uid://ctu61be6qqm4n" path="res://src/presentation/npc/seller/ui/seller_ui_item_row.gd" id="1_idoxy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oula8"]
+
+[node name="SellerUiItemRowHBoxContainer" type="HBoxContainer" unique_id=711119498]
+offset_right = 604.0
+offset_bottom = 100.0
+theme_override_constants/separation = 20
+script = ExtResource("1_idoxy")
+
+[node name="ItemTextureRect" type="TextureRect" parent="." unique_id=751051891]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_5q4v0")
+expand_mode = 2
+
+[node name="ItemNameLabel" type="Label" parent="." unique_id=959428850]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Bread"
+
+[node name="VSeparator" type="VSeparator" parent="." unique_id=1195688413]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_oula8")
+
+[node name="ItemPriceLabel" type="Label" parent="." unique_id=542703277]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "$10"
+
+[node name="Button" type="Button" parent="." unique_id=814186869]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Buy"

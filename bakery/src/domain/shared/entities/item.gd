@@ -7,6 +7,19 @@ var _texture: Texture2D
 var _cost_price: int
 var _sale_price: int
 
+var name: String:
+	get:
+		return _name
+var texture: Texture2D:
+	get:
+		return _texture
+var cost_price: int:
+	get:
+		return _cost_price
+var sale_price: int:
+	get:
+		return _sale_price
+
 var _default_cost_price: Dictionary[EnumHolder.ItemCode, int] = {
 	EnumHolder.ItemCode.Bread: 10,
 }
@@ -47,3 +60,7 @@ class ArrayOfItems:
 
 	func get_array() -> Array[Item]:
 		return _value
+
+
+	func add(item: Item):
+		_value.append(item)

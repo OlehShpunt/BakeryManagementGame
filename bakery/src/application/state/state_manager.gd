@@ -18,3 +18,9 @@ func get_player_state() -> PlayerState:
 ## If already registered, returns the registered state.
 func register_seller_state(seller_id: int) -> SellerState:
 	return _seller_states.get_or_add(seller_id, SellerState.new(SellerItemLists.new()))
+
+
+func get_seller_state(seller_id: int) -> SellerState:
+	if (seller_id == null or !_seller_states.has(seller_id)):
+		return null
+	return _seller_states.get(seller_id)

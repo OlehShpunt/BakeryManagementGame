@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cb8jhbps15bmu"]
+
+[ext_resource type="Script" uid="uid://hn2030vveyju" path="res://src/presentation/shared/gameplay_ui.gd" id="1_hkoa1"]
+[ext_resource type="PackedScene" uid="uid://dppf1i3mld62o" path="res://src/presentation/npc/seller/ui/seller_ui.tscn" id="2_qprmg"]
+
+[node name="GameplayUi" type="Control" unique_id=1274756853]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hkoa1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=924097007]
+
+[node name="SellerUi" parent="CanvasLayer" unique_id=40930946 instance=ExtResource("2_qprmg")]
+visible = false

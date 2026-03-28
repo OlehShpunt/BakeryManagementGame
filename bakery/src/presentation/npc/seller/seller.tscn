@@ -18,3 +18,11 @@ position = Vector2(0, -10)
 texture = ExtResource("2_0n5uw")
 hframes = 4
 vframes = 6
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1761562955]
+offset_left = -10.0
+offset_top = -22.0
+offset_right = 10.0
+offset_bottom = 16.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

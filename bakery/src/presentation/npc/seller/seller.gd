@@ -7,3 +7,7 @@ var _seller_state: SellerState
 
 func _ready() -> void:
 	_seller_state = StateManager.register_seller_state(id)
+
+
+func _on_texture_button_pressed() -> void:
+	PresentationEventBus.show_seller_ui.emit(id)
