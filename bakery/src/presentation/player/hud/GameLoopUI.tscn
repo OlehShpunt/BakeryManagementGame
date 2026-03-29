@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://i200ys7r050"]
+[gd_scene format=3 uid="uid://i200ys7r050"]
 
-[ext_resource type="Script" uid="uid://dm0nwko7bm7k3" path="res://scripts/gui/GameLoopUI.gd" id="1_3mejj"]
+[ext_resource type="Script" uid="uid://dm0nwko7bm7k3" path="res://src/presentation/player/hud/GameLoopUI.gd" id="1_3mejj"]
 
-[node name="GameLoopUI" type="Control"]
+[node name="GameLoopUI" type="Control" unique_id=1201968885]
 z_index = 50
 layout_mode = 3
 anchors_preset = 0
@@ -10,9 +10,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3mejj")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1542982867]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1758864859]
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
@@ -21,7 +21,7 @@ offset_bottom = 84.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1313580988]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,11 +30,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 
-[node name="Left" type="Control" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="Left" type="Control" parent="CanvasLayer/Control/HBoxContainer" unique_id=338744267]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PhaseLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Left"]
+[node name="PhaseLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=1065458902]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -49,11 +49,11 @@ theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 40
 text = "Loading phase name..."
 
-[node name="Center" type="Control" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="Center" type="Control" parent="CanvasLayer/Control/HBoxContainer" unique_id=930158824]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RoundNumberLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Center"]
+[node name="RoundNumberLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Center" unique_id=2094249712]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -72,11 +72,11 @@ theme_override_font_sizes/font_size = 40
 text = "Loading round number..."
 horizontal_alignment = 1
 
-[node name="Right" type="Control" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="Right" type="Control" parent="CanvasLayer/Control/HBoxContainer" unique_id=1768367281]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PhaseTimerLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Right"]
+[node name="PhaseTimerLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=805936552]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -95,7 +95,7 @@ theme_override_font_sizes/font_size = 40
 text = "Loading timer value..."
 horizontal_alignment = 2
 
-[node name="PlayerBalanceLabel" type="Label" parent="CanvasLayer/Control"]
+[node name="PlayerBalanceLabel" type="Label" parent="CanvasLayer/Control" unique_id=1238148019]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 70.0
@@ -107,7 +107,7 @@ theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 40
 text = "Loading player balance..."
 
-[node name="PhaseTimer" type="Timer" parent="."]
+[node name="PhaseTimer" type="Timer" parent="." unique_id=1033395932]
 one_shot = true
 
-[node name="OneSecondTimer" type="Timer" parent="."]
+[node name="OneSecondTimer" type="Timer" parent="." unique_id=1867471148]

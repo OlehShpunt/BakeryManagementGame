@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmhjvxcewxaiq"]
+[gd_scene format=3 uid="uid://dmhjvxcewxaiq"]
 
-[ext_resource type="Script" uid="uid://bribhpk6fkepo" path="res://scripts/gui/inventory.gd" id="1_a7kgx"]
-[ext_resource type="Resource" uid="uid://cmbeqa4a3vk5c" path="res://resources/gui/inventory_resource.tres" id="2_ncym3"]
+[ext_resource type="Script" uid="uid://bribhpk6fkepo" path="res://src/presentation/player/hud/inventory.gd" id="1_a7kgx"]
+[ext_resource type="Resource" uid="uid://cmbeqa4a3vk5c" path="res://src/presentation/player/hud/inventory_resource.tres" id="2_ncym3"]
 
-[node name="Inventory" type="GridContainer"]
+[node name="Inventory" type="GridContainer" unique_id=2119830904]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

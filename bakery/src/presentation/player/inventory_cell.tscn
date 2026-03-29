@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://5t4x65xp3pp2"]
+
+[ext_resource type="Script" uid="uid://lsytjp2f1ony" path="res://src/presentation/player/inventory_cell.gd" id="1_261ot"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_261ot"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.3958249, 0, 1)
+
+[node name="InventoryCell" type="Panel" unique_id=1744521080]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_261ot")
+
+[node name="Border" type="Panel" parent="." unique_id=1603232802]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_261ot")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=400323411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=2053189133]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

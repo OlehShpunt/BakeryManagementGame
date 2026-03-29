@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7wdvsl7napov"]
+[gd_scene format=3 uid="uid://b7wdvsl7napov"]
 
-[ext_resource type="Script" uid="uid://derkh3q7rdc4t" path="res://scripts/gui/inventory_cell.gd" id="1_0glef"]
-[ext_resource type="Script" uid="uid://gbye2can8hqr" path="res://scripts/gui/cell_area.gd" id="2_vx6lm"]
+[ext_resource type="Script" uid="uid://derkh3q7rdc4t" path="res://src/presentation/player/hud/inventory_cell.gd" id="1_0glef"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gji7"]
 bg_color = Color(0.69, 0.69, 0.69, 0.333333)
@@ -19,12 +18,12 @@ anti_aliasing = false
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgt34"]
 size = Vector2(6, 6)
 
-[node name="InventoryCell" type="Panel"]
+[node name="InventoryCell" type="Panel" unique_id=275584412]
 custom_minimum_size = Vector2(20, 20)
 theme_override_styles/panel = SubResource("StyleBoxFlat_2gji7")
 script = ExtResource("1_0glef")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=14872019]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 8
@@ -39,21 +38,20 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1359026951]
 custom_minimum_size = Vector2(15, 15)
 layout_mode = 2
 expand_mode = 5
 stretch_mode = 5
 
-[node name="debug" type="Timer" parent="."]
+[node name="debug" type="Timer" parent="." unique_id=7188287]
 one_shot = true
 
-[node name="CellArea" type="Area2D" parent="."]
+[node name="CellArea" type="Area2D" parent="." unique_id=393286401]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("2_vx6lm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CellArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CellArea" unique_id=59143916]
 position = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_fgt34")
 debug_color = Color(0.824543, 0.261046, 0.753247, 0.42)

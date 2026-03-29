@@ -1,31 +1,38 @@
-class_name InventoryCell extends Panel
+class_name LegacyInventoryCell
+extends Panel
 
 @onready var texture = $CenterContainer/TextureRect
 @onready var flour = preload("res://scenes/food/ingredients/flour.tscn")
 var inventory_resource = preload("res://resources/gui/inventory_resource.tres")
 var mouse_is_hovering = false
 var moved_item
-var id : int
+var id: int
 var is_occupied = true
+
 
 func _ready() -> void:
 	pass
+
 
 func _process(_delta: float) -> void:
 	if inventory_resource.get_item(id):
 		texture.set_texture(item_form_converter.string_to_texture(inventory_resource.get_item(id)))
 
+
 func empty_cell():
 	texture.set_texture(null)
 
+
 func _on_cell_mouse_entered() -> void:
 	mouse_is_hovering = true
+
 
 func _on_cell_mouse_exited() -> void:
 	mouse_is_hovering = false
 
 ##TO DO: need to add a item holding manager, which will store the item that's being moved.
 ##TO DO: copy some code from here to InventoryCell (can't use inheritance, no components => no composition)
+
 
 func _input(event: InputEvent) -> void:
 	# PICK ITEM
@@ -40,9 +47,11 @@ func _input(event: InputEvent) -> void:
 		# Access the last child - the flour. When _ true, the global pos is same as mouse's gl pos
 		get_child(-1).is_being_moved_by_mouse = true
 
+
 # Like player() method in Player class (use has_method() to check whether it can store items)
 func inventory_cell():
 	pass
+
 
 # DEBUG
 func _on_timer_timeout() -> void:
