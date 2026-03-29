@@ -5,6 +5,7 @@ var _player_name: String
 var _player_location: EnumHolder.Location
 var _player_balance: int
 var _player_ref: Player
+var _player_inventory: Dictionary[int, Item]
 
 var player_ref: Player:
 	set(player_ref):
@@ -44,3 +45,19 @@ func get_player_name() -> String:
 func get_player_location() -> EnumHolder.Location:
 	print("[DEV][D] Returning Player Location %s" % [_player_location])
 	return _player_location
+
+
+func init_player_inventory(cell_count: int) -> void:
+	for count in range(cell_count):
+		_player_inventory[count] = null
+
+
+func set_inventory_item(cell_id: int, item: Item) -> void:
+	if (_player_inventory.has(cell_id)):
+		_player_inventory[cell_id] = item
+	else:
+		push_warning("Cell with id %s not found" % cell_id)
+
+
+func get_inventory_item(cell_id: int) -> Item:
+	return _player_inventory.get(cell_id)
