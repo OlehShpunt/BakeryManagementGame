@@ -2,12 +2,18 @@ extends Node
 
 var _player_state: PlayerState
 var _seller_states: Dictionary[int, SellerState]
+var _global_state: GlobalState
 
 
 func _init() -> void:
+	_global_state = GlobalState.new()
 	_player_state = PlayerState.new()
 
 	print("[DEV][A] State manager initialized")
+
+
+func get_global_state() -> GlobalState:
+	return _global_state
 
 
 func get_player_state() -> PlayerState:

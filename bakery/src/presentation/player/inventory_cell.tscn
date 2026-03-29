@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://5t4x65xp3pp2"]
 
 [ext_resource type="Script" uid="uid://lsytjp2f1ony" path="res://src/presentation/player/inventory_cell.gd" id="1_261ot"]
-[ext_resource type="Texture2D" uid="uid://cje45iuc52ihu" path="res://assets/ingredientsPNG/flour.png" id="1_uabaj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_261ot"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -32,7 +31,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_uabaj")
 expand_mode = 3
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=2053189133]

@@ -7,6 +7,10 @@ var _texture: Texture2D
 var _cost_price: int
 var _sale_price: int
 
+var item_code: EnumHolder.ItemCode:
+	get():
+		return _item_code
+
 var name: String:
 	set(name):
 		_name = name
