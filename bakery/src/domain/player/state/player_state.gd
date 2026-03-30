@@ -1,6 +1,8 @@
 class_name PlayerState
 extends RefCounted
 
+signal player_balance_updated(balance: int)
+
 var _player_name: String
 var _player_location: EnumHolder.Location
 var _player_balance: int
@@ -12,6 +14,13 @@ var player_ref: Player:
 		_player_ref = player_ref
 	get():
 		return _player_ref
+
+var balance: int:
+	set(value):
+		_player_balance = value
+		player_balance_updated.emit(_player_balance)
+	get():
+		return _player_balance
 
 
 func _init() -> void:
@@ -70,3 +79,18 @@ func get_inventory_item(cell_id: int) -> Item:
 		return null
 
 	return cell_state.item
+
+
+func get_first_empty_cell_state_id() -> int:
+	@warning_ignore("untyped_declaration")
+	for key in _player_cell_state_ref_registry.keys():
+		var cell_state: CellState = _player_cell_state_ref_registry[key]
+
+		if cell_state.item == null:
+			return key
+
+	return -1
+
+
+func subtract_balance_amount(item_price: int) -> void:
+	balance -= item_price

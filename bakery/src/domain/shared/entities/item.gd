@@ -8,6 +8,8 @@ var _cost_price: int
 var _sale_price: int
 
 var item_code: EnumHolder.ItemCode:
+	set(code):
+		_item_code = code
 	get():
 		return _item_code
 
@@ -87,16 +89,18 @@ var _texture_mapper: Dictionary[EnumHolder.ItemCode, Texture2D] = {
 }
 
 
-func _init(item_code: EnumHolder.ItemCode, cost_price: int = -999, sale_price: int = -999) -> void:
-	if (cost_price == -999):
+func _init(item_enum_code: EnumHolder.ItemCode, item_cost_price: int = -999, item_sale_price: int = -999) -> void:
+	self.item_code = item_enum_code
+
+	if (item_cost_price == -999):
 		_cost_price = _default_cost_price.get(item_code)
 	else:
-		_cost_price = cost_price
+		_cost_price = item_cost_price
 
-	if (sale_price == -999):
+	if (item_sale_price == -999):
 		_sale_price = _default_sale_price.get(item_code)
 	else:
-		_sale_price = sale_price
+		_sale_price = item_sale_price
 
 	_name = _name_mapper.get(item_code)
 	_texture = _texture_mapper.get(item_code)
@@ -114,5 +118,5 @@ class ArrayOfItems:
 		return _value
 
 
-	func add(item: Item):
+	func add(item: Item) -> void:
 		_value.append(item)

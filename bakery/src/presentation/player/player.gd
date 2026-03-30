@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var player_name: Label = $Name
 @onready var coordinate_display: Label = $CoordinateDisplay
 var last_direction: String = "s"
-var _player_movement_disabled = false
+var _player_movement_disabled := false
 
 ## Turn on to see player coordinates
 @export var show_coordinates: bool = false
@@ -87,9 +87,9 @@ func play_animation(direction: Vector2) -> void:
 				animation_player.play("down_idle")
 
 
-func _on_disable_player_movement():
+func _on_disable_player_movement() -> void:
 	_player_movement_disabled = true
 
 
-func _on_enable_player_movement():
+func _on_enable_player_movement() -> void:
 	_player_movement_disabled = false

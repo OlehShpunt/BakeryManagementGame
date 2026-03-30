@@ -1,6 +1,6 @@
 extends Control
 
-var seller_ui_item_row_scene = preload(("res://src/presentation/npc/seller/ui/seller_ui_item_row.tscn"))
+var seller_ui_item_row_scene := preload(("res://src/presentation/npc/seller/ui/seller_ui_item_row.tscn"))
 @onready var item_list_container: VBoxContainer = $Panel/ScrollContainer/ItemVBoxContainer
 
 
@@ -10,26 +10,26 @@ func _init() -> void:
 
 
 ## Renders seller UI depending on seller_id
-func _on_show_seller_ui(seller_id: int):
+func _on_show_seller_ui(seller_id: int) -> void:
 	PresentationEventBus.disable_player_movement.emit()
 
 	var seller_state := StateManager.get_seller_state(seller_id)
 
-	var items: Array[Item]
+	var rows: Dictionary[int, SellerUiItemRowState]
 
 	if (seller_state == null or seller_state.seller_item_list == null):
-		items = []
+		rows = { }
 	else:
-		items = seller_state.seller_item_list.get_array()
+		rows = seller_state.seller_item_list
 
-	for item in items:
-		_render_item(item)
+	for row_id in rows:
+		_render_row(rows.get(row_id))
 
 	self.show()
 
 
 # TODO: Optimize by caching
-func _on_hide_seller_ui():
+func _on_hide_seller_ui() -> void:
 	PresentationEventBus.enable_player_movement.emit()
 
 	var children := item_list_container.get_children()
@@ -39,9 +39,12 @@ func _on_hide_seller_ui():
 	self.hide()
 
 
-func _render_item(item: Item):
+func _render_row(row_state: SellerUiItemRowState) -> void:
 	var item_row: SellerUiItemRowHBoxContainer = seller_ui_item_row_scene.instantiate()
-	item_row.assign_item(item)
+	item_row.seller_ui_item_row_state = row_state
+	item_row.id = row_state.row_id
+	item_row.assign_item(row_state.item)
+	#seller_state.register_item_row()
 	item_list_container.add_child(item_row)
 
 

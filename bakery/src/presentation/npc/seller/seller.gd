@@ -22,11 +22,11 @@ func _on_texture_button_pressed() -> void:
 	PresentationEventBus.show_seller_ui.emit(id)
 
 
-func _on_area_2d_body_entered(body: Player) -> void:
+func _on_area_2d_body_entered(_body: Player) -> void:
 	sprite.material.set("shader_param/outline_enabled", true)
 	$TextureButton.mouse_default_cursor_shape = 2
 
 
-func _on_area_2d_body_exited(body: Player) -> void:
+func _on_area_2d_body_exited(_body: Player) -> void:
 	sprite.material.set("shader_param/outline_enabled", false)
 	$TextureButton.mouse_default_cursor_shape = 0

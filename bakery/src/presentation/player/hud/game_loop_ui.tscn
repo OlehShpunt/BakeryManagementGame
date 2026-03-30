@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://i200ys7r050"]
 
-[ext_resource type="Script" uid="uid://dm0nwko7bm7k3" path="res://src/presentation/player/hud/GameLoopUI.gd" id="1_3mejj"]
+[ext_resource type="Script" uid="uid://dm0nwko7bm7k3" path="res://src/presentation/player/hud/game_loop_ui.gd" id="1_o78el"]
 
 [node name="GameLoopUI" type="Control" unique_id=1201968885]
 z_index = 50
@@ -8,7 +8,7 @@ layout_mode = 3
 anchors_preset = 0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3mejj")
+script = ExtResource("1_o78el")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1542982867]
 
@@ -44,8 +44,7 @@ offset_top = -11.5
 offset_right = 199.0
 offset_bottom = 11.5
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_colors/font_color = Color(0, 0, 0, 0.8901961)
 theme_override_font_sizes/font_size = 40
 text = "Loading phase name..."
 
@@ -66,8 +65,7 @@ offset_right = 96.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_colors/font_color = Color(0, 0, 0, 0.8901961)
 theme_override_font_sizes/font_size = 40
 text = "Loading round number..."
 horizontal_alignment = 1
@@ -89,8 +87,7 @@ offset_right = -24.0
 offset_bottom = 28.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_colors/font_color = Color(0, 0, 0, 0.8901961)
 theme_override_font_sizes/font_size = 40
 text = "Loading timer value..."
 horizontal_alignment = 2
@@ -101,9 +98,12 @@ offset_left = 24.0
 offset_top = 70.0
 offset_right = 503.0
 offset_bottom = 126.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0.23333335, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 40
 text = "Loading player balance..."
 
