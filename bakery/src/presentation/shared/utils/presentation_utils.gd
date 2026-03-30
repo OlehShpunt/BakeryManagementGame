@@ -4,10 +4,10 @@ extends RefCounted
 static func items_array_to_dict(item_list: Item.ArrayOfItems, seller_id: int) -> Dictionary[int, SellerUiItemRowState]:
 	var result: Dictionary[int, SellerUiItemRowState] = { }
 
-	var items = item_list.get_array()
+	var items := item_list.get_array()
 
 	for i in range(items.size()):
-		var row_state = SellerUiItemRowState.new()
+		var row_state := SellerUiItemRowState.new()
 
 		row_state._row_id = i
 		row_state._item = items[i]

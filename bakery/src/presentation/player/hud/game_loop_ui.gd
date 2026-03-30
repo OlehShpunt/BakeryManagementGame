@@ -1,11 +1,11 @@
 extends Control
 
-@onready var phase_label = $CanvasLayer/Control/HBoxContainer/Left/PhaseLabel
-@onready var round_num_label = $CanvasLayer/Control/HBoxContainer/Center/RoundNumberLabel
-@onready var timer_label = $CanvasLayer/Control/HBoxContainer/Right/PhaseTimerLabel
-@onready var phase_timer = $PhaseTimer
-@onready var one_second_timer = $OneSecondTimer
-@onready var balance_label = $CanvasLayer/Control/PlayerBalanceLabel
+@onready var phase_label: Label = $CanvasLayer/Control/HBoxContainer/Left/PhaseLabel
+@onready var round_num_label: Label = $CanvasLayer/Control/HBoxContainer/Center/RoundNumberLabel
+@onready var timer_label: Label = $CanvasLayer/Control/HBoxContainer/Right/PhaseTimerLabel
+@onready var phase_timer: Timer = $PhaseTimer
+@onready var one_second_timer: Timer = $OneSecondTimer
+@onready var balance_label: Label = $CanvasLayer/Control/PlayerBalanceLabel
 
 
 func _ready() -> void:
@@ -17,19 +17,19 @@ func _ready() -> void:
 
 
 ## Assigns the given phase name to the label
-func change_phase(phase_name: String):
+func change_phase(phase_name: String) -> void:
 	if phase_name and phase_label:
 		phase_label.text = phase_name
 
 
 ## Assigns the given round number to the label
-func change_round(round_num: int):
+func change_round(round_num: int) -> void:
 	if round_num and round_num_label:
 		round_num_label.text = str(round_num)
 
 
 ## Starts PhaseTimer with duration in seconds
-func assign_new_timer(duration: int):
+func assign_new_timer(duration: int) -> void:
 	if duration:
 		phase_timer.start(duration)
 
@@ -39,8 +39,8 @@ func assign_new_timer(duration: int):
 
 ## Assigns the PhaseTimer time_left value to the label every second
 ## when OneSecondTimer emits a timeout signal
-func update_timer_label_each_second():
-	var curr_time = phase_timer.time_left as int
+func update_timer_label_each_second() -> void:
+	var curr_time := phase_timer.time_left as int
 	if timer_label:
 		timer_label.text = str(curr_time)
 

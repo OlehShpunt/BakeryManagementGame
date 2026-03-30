@@ -82,6 +82,7 @@ func get_inventory_item(cell_id: int) -> Item:
 
 
 func get_first_empty_cell_state_id() -> int:
+	@warning_ignore("untyped_declaration")
 	for key in _player_cell_state_ref_registry.keys():
 		var cell_state: CellState = _player_cell_state_ref_registry[key]
 
