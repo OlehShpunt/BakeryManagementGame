@@ -34,7 +34,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PhaseLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=1065458902]
+[node name="PhaseTimerLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=1065458902]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -44,8 +44,7 @@ offset_top = -11.5
 offset_right = 199.0
 offset_bottom = 11.5
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_colors/font_color = Color(0, 0, 0, 0.8901961)
 theme_override_font_sizes/font_size = 40
 text = "Loading phase name..."
 
@@ -53,7 +52,7 @@ text = "Loading phase name..."
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RoundNumberLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Center" unique_id=2094249712]
+[node name="PhaseTimerLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Center" unique_id=2094249712]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -66,8 +65,7 @@ offset_right = 96.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_colors/font_color = Color(0, 0, 0, 0.8901961)
 theme_override_font_sizes/font_size = 40
 text = "Loading round number..."
 horizontal_alignment = 1
@@ -89,8 +87,7 @@ offset_right = -24.0
 offset_bottom = 28.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_colors/font_color = Color(0, 0, 0, 0.8901961)
 theme_override_font_sizes/font_size = 40
 text = "Loading timer value..."
 horizontal_alignment = 2
@@ -101,9 +98,12 @@ offset_left = 24.0
 offset_top = 70.0
 offset_right = 503.0
 offset_bottom = 126.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0.23333335, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 40
 text = "Loading player balance..."
 
