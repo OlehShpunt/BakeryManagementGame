@@ -43,10 +43,16 @@ func _on_button_pressed() -> void:
 	if (cell_id == -1):
 		return
 
-	# TODO: Call use case with business logic and validation
+	var balance := StateManager.get_player_state().balance
+	var item := seller_ui_item_row_state.item
+
+	# Does the player have enough money?
+	if (balance < item.sale_price):
+		return
+	StateManager.get_player_state().subtract_balance_amount(item.sale_price)
 
 	# NOTE: Item sale_price is passed as cost_price
-	var item_copy: Item = Item.new(seller_ui_item_row_state.item.item_code, seller_ui_item_row_state.item.sale_price)
+	var item_copy: Item = Item.new(item.item_code, item.sale_price)
 	StateManager.get_player_state().set_inventory_item(cell_id, item_copy)
 	seller_ui_item_row_state.is_sold = true
 

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://hn2030vveyju" path="res://src/presentation/shared/gameplay_ui.gd" id="1_hkoa1"]
 [ext_resource type="PackedScene" uid="uid://c1gfsuuv7dwcm" path="res://src/presentation/player/player_inventory.tscn" id="2_gx4c8"]
 [ext_resource type="PackedScene" uid="uid://dppf1i3mld62o" path="res://src/presentation/npc/seller/ui/seller_ui.tscn" id="2_qprmg"]
+[ext_resource type="PackedScene" uid="uid://i200ys7r050" path="res://src/presentation/player/hud/game_loop_ui.tscn" id="3_tgn15"]
 
 [node name="GameplayUi" type="Control" unique_id=1274756853]
 layout_mode = 3
@@ -22,6 +23,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 grow_vertical = 0
 size_flags_vertical = 8
+
+[node name="GameLoopUI" parent="CanvasLayer2" unique_id=1201968885 instance=ExtResource("3_tgn15")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=924097007]
 
