@@ -70,3 +70,13 @@ func get_inventory_item(cell_id: int) -> Item:
 		return null
 
 	return cell_state.item
+
+
+func get_first_empty_cell_state_id() -> int:
+	for key in _player_cell_state_ref_registry.keys():
+		var cell_state: CellState = _player_cell_state_ref_registry[key]
+
+		if cell_state.item == null:
+			return key
+
+	return -1

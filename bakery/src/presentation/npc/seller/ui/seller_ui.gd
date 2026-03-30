@@ -41,6 +41,7 @@ func _on_hide_seller_ui():
 
 func _render_row(row_state: SellerUiItemRowState):
 	var item_row: SellerUiItemRowHBoxContainer = seller_ui_item_row_scene.instantiate()
+	item_row.seller_ui_item_row_state = row_state
 	item_row.id = row_state.row_id
 	item_row.assign_item(row_state.item)
 	#seller_state.register_item_row()
