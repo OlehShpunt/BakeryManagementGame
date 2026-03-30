@@ -1,18 +1,19 @@
 class_name SellerState
 extends RefCounted
 
-var _id: int
-var _seller_item_list: Item.ArrayOfItems
+var _seller_id: int
+var _seller_item_list: Dictionary[int, SellerUiItemRowState]
 
-var seller_item_list: Item.ArrayOfItems:
+var seller_item_list: Dictionary[int, SellerUiItemRowState]:
 	get():
 		return _seller_item_list
 
 
 func _init(seller_id: int) -> void:
-	_id = seller_id
-	_seller_item_list = SellerItemLists.get_random(seller_id)
+	_seller_id = seller_id
+	var items_array := SellerItemLists.get_random(seller_id)
+	_seller_item_list = PresentationUtils.items_array_to_dict(items_array, seller_id)
 
 
-func get_id() -> int:
-	return _id
+func get_seller_id() -> int:
+	return _seller_id

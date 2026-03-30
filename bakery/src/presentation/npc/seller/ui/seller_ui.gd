@@ -15,15 +15,15 @@ func _on_show_seller_ui(seller_id: int):
 
 	var seller_state := StateManager.get_seller_state(seller_id)
 
-	var items: Array[Item]
+	var rows: Dictionary[int, SellerUiItemRowState]
 
 	if (seller_state == null or seller_state.seller_item_list == null):
-		items = []
+		rows = { }
 	else:
-		items = seller_state.seller_item_list.get_array()
+		rows = seller_state.seller_item_list
 
-	for item in items:
-		_render_item(item)
+	for row_id in rows:
+		_render_row(rows.get(row_id))
 
 	self.show()
 
@@ -39,9 +39,11 @@ func _on_hide_seller_ui():
 	self.hide()
 
 
-func _render_item(item: Item):
+func _render_row(row_state: SellerUiItemRowState):
 	var item_row: SellerUiItemRowHBoxContainer = seller_ui_item_row_scene.instantiate()
-	item_row.assign_item(item)
+	item_row.id = row_state.row_id
+	item_row.assign_item(row_state.item)
+	#seller_state.register_item_row()
 	item_list_container.add_child(item_row)
 
 
