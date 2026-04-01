@@ -73,12 +73,19 @@ func set_inventory_item(cell_id: int, item: Item) -> void:
 
 
 func get_inventory_item(cell_id: int) -> Item:
+	if (cell_id not in _player_cell_state_ref_registry.keys()):
+		return null
+
 	var cell_state: CellState = _player_cell_state_ref_registry.get(cell_id)
 
 	if (cell_state.item == null):
 		return null
 
 	return cell_state.item
+
+
+func get_inventory_size() -> int:
+	return _player_cell_state_ref_registry.size()
 
 
 func get_first_empty_cell_state_id() -> int:

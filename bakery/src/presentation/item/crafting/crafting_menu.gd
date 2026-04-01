@@ -73,6 +73,7 @@ func setup_ingredient_slot(slot: Panel, item_key: String) -> void:
 func setup_result_slot(slot: Panel, item_key: String) -> void:
 	var center = slot.get_child(0) as CenterContainer
 	center.add_child(create_item_visual(item_key, true))
+	center.add_child(create_result_button(item_key))
 
 
 # ==================== VISUAL CREATOR - Big Icon Version ====================
@@ -108,6 +109,55 @@ func create_item_visual(item_key: String, is_result: bool = false) -> VBoxContai
 	vbox.add_child(label)
 
 	return vbox
+
+
+func create_result_button(item_key: String) -> TextureButton:
+	var recipe_item := Item.new(get_item_code_for_item(item_key))
+	var button := TextureButton.new()
+	button.custom_minimum_size = Vector2(120, 140)
+	button.pressed.connect(_on_cook_button_pressed.bind(recipe_item))
+	return button
+
+
+func _on_cook_button_pressed(recipe_item: Item) -> void:
+	if _has_required_items(recipe_item):
+		print("Can cook:", recipe_item)
+	else:
+		print("Not enough ingredients for:", recipe_item)
+
+
+func _has_required_items(recipe_item: Item) -> bool:
+	var required_counts: Dictionary[EnumHolder.ItemCode, int] = { } # count duplicates
+
+	# Count how many times each item appears in the required_items array
+	for ingredient in recipe_item._required_items:
+		if ingredient == null:
+			continue
+		if required_counts.has(ingredient):
+			required_counts[ingredient] += 1
+		else:
+			required_counts[ingredient] = 1
+
+	# Check inventory for each ingredient
+	for item_code in required_counts.keys():
+		var required_amount: int = required_counts[item_code] # explicitly typed
+		var count: int = _count_item_in_inventory(item_code)
+		if count < required_amount:
+			return false
+
+	return true
+
+
+func _count_item_in_inventory(item_id: int) -> int:
+	var count := 0
+
+	for cell_id in StateManager.get_player_state()._player_cell_state_ref_registry.keys():
+		var item: Item = StateManager.get_player_state().get_inventory_item(cell_id)
+
+		if item != null and item.item_code == item_id:
+			count += 1
+
+	return count
 
 
 # IMAGE PATH LOOKUP
@@ -162,3 +212,56 @@ func get_image_path_for_item(item_key: String) -> String:
 		_:
 			push_warning("Unknown item key: " + item_key)
 			return ""
+
+
+func get_item_code_for_item(item_key: String) -> EnumHolder.ItemCode:
+	match item_key:
+		"flour":
+			return EnumHolder.ItemCode.Flour
+		"milk":
+			return EnumHolder.ItemCode.Milk
+		"butter":
+			return EnumHolder.ItemCode.Butter
+		"chocolate":
+			return EnumHolder.ItemCode.Chocolate
+		"vanilla":
+			return EnumHolder.ItemCode.Vanilla
+		"cocoa_powder":
+			return EnumHolder.ItemCode.CocoaPowder
+		"nuts":
+			return EnumHolder.ItemCode.Nuts
+		"cherry":
+			return EnumHolder.ItemCode.Cherry
+		"jello":
+			return EnumHolder.ItemCode.Jello
+		"bread":
+			return EnumHolder.ItemCode.Bread
+		"bagel":
+			return EnumHolder.ItemCode.Bagel
+		"waffle":
+			return EnumHolder.ItemCode.Waffle
+		"sponge_cake":
+			return EnumHolder.ItemCode.SpongeCake
+		"donut":
+			return EnumHolder.ItemCode.Donut
+		"chocolate_candy":
+			return EnumHolder.ItemCode.ChocolateCandy
+		"signature_chocolate":
+			return EnumHolder.ItemCode.SignatureChocolate
+		"pudding":
+			return EnumHolder.ItemCode.Pudding
+		"chocolate_bun":
+			return EnumHolder.ItemCode.ChocolateBun
+		"muffin":
+			return EnumHolder.ItemCode.Muffin
+		"nut_candy":
+			return EnumHolder.ItemCode.NutCandy
+		"cookie":
+			return EnumHolder.ItemCode.Cookie
+		"nut_cake":
+			return EnumHolder.ItemCode.NutCake
+		"cherry_cake":
+			return EnumHolder.ItemCode.CherryCake
+		_:
+			push_warning("Unknown item key: " + item_key)
+			return -1
