@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cpqpbkotlhhh7"]
 
+[ext_resource type="Script" uid="uid://rbclj4qd6l5k" path="res://src/presentation/item/crafting/crafting_menu.gd" id="1_1nm4q"]
+
 [node name="CraftingMenu" type="Control" unique_id=1139309617]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1nm4q")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2007124371]
 layout_mode = 1

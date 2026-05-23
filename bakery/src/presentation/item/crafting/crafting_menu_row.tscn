@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bnwi4g4fhajcb"]
 
+[ext_resource type="Script" uid="uid://wjarpqgiaawb" path="res://src/presentation/item/crafting/crafting_menu_row.gd" id="1_7domc"]
 [ext_resource type="Texture2D" uid="uid://dlu0fajieyqty" path="res://assets/ingredientsPNG/cherry_cake.png" id="1_pbvq8"]
 [ext_resource type="Texture2D" uid="uid://p71uehyh4xc8" path="res://assets/objectsPNG/arrow right.png" id="2_7domc"]
 
@@ -21,6 +22,7 @@ bg_color = Color(0.40784314, 0, 0, 0.5176471)
 custom_minimum_size = Vector2(0, 356.5)
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_7domc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=687048178]
 layout_direction = 2
@@ -33,11 +35,11 @@ grow_vertical = 2
 theme_override_constants/separation = 14
 alignment = 2
 
-[node name="Item" type="Control" parent="HBoxContainer" unique_id=386969025]
+[node name="Item1" type="Control" parent="HBoxContainer" unique_id=386969025]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Item" unique_id=1593107276]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Item1" unique_id=1593107276]
 layout_mode = 1
 anchors_preset = -1
 offset_right = 200.0
@@ -45,10 +47,10 @@ offset_bottom = 356.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="HBoxContainer/Item/PanelContainer" unique_id=102791166]
+[node name="Panel" type="Panel" parent="HBoxContainer/Item1/PanelContainer" unique_id=102791166]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Item/PanelContainer/Panel" unique_id=340628656]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Item1/PanelContainer/Panel" unique_id=340628656]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,24 +60,26 @@ offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item/PanelContainer/Panel/VBoxContainer" unique_id=1684342338]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item1/PanelContainer/Panel/VBoxContainer" unique_id=1684342338]
 layout_mode = 2
 texture = ExtResource("1_pbvq8")
 expand_mode = 4
 
-[node name="ItemName" type="Label" parent="HBoxContainer/Item/PanelContainer/Panel/VBoxContainer" unique_id=1721231020]
+[node name="ItemName" type="Label" parent="HBoxContainer/Item1/PanelContainer/Panel/VBoxContainer" unique_id=1721231020]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Item Name"
 horizontal_alignment = 1
+clip_text = true
 
-[node name="Cost" type="Label" parent="HBoxContainer/Item/PanelContainer/Panel/VBoxContainer" unique_id=1651770017]
+[node name="Cost" type="Label" parent="HBoxContainer/Item1/PanelContainer/Panel/VBoxContainer" unique_id=1651770017]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Cost: ...$"
 horizontal_alignment = 1
+clip_text = true
 
-[node name="NotInInventory" type="Panel" parent="HBoxContainer/Item" unique_id=1258661709]
+[node name="NotInInventory" type="Panel" parent="HBoxContainer/Item1" unique_id=1258661709]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -119,12 +123,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Item Name"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="Cost" type="Label" parent="HBoxContainer/Item2/PanelContainer/Panel/VBoxContainer" unique_id=1293768788]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Cost: ...$"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="NotInInventory" type="Panel" parent="HBoxContainer/Item2" unique_id=792153578]
 visible = false
@@ -170,12 +176,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Item Name"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="Cost" type="Label" parent="HBoxContainer/Item3/PanelContainer/Panel/VBoxContainer" unique_id=1225239729]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Cost: ...$"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="NotInInventory" type="Panel" parent="HBoxContainer/Item3" unique_id=255260629]
 visible = false
@@ -221,12 +229,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Item Name"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="Cost" type="Label" parent="HBoxContainer/Item4/PanelContainer/Panel/VBoxContainer" unique_id=347985655]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Cost: ...$"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="NotInInventory" type="Panel" parent="HBoxContainer/Item4" unique_id=2037720007]
 visible = false
@@ -272,12 +282,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Item Name"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="Cost" type="Label" parent="HBoxContainer/Item5/PanelContainer/Panel/VBoxContainer" unique_id=591831276]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Cost: ...$"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="NotInInventory" type="Panel" parent="HBoxContainer/Item5" unique_id=1417036703]
 visible = false
@@ -323,12 +335,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Item Name"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="Cost" type="Label" parent="HBoxContainer/Item6/PanelContainer/Panel/VBoxContainer" unique_id=912379503]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Cost: ...$"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="NotInInventory" type="Panel" parent="HBoxContainer/Item6" unique_id=695963019]
 visible = false
@@ -374,12 +388,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Item Name"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="Cost" type="Label" parent="HBoxContainer/Item7/PanelContainer/Panel/VBoxContainer" unique_id=1437137560]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Cost: ...$"
 horizontal_alignment = 1
+clip_text = true
 
 [node name="NotInInventory" type="Panel" parent="HBoxContainer/Item7" unique_id=1922109116]
 visible = false
@@ -411,11 +427,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_7domc")
 
-[node name="RowItem8" type="Control" parent="HBoxContainer" unique_id=2065305114]
+[node name="ResultItem" type="Control" parent="HBoxContainer" unique_id=2065305114]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/RowItem8" unique_id=977458722]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/ResultItem" unique_id=977458722]
 layout_mode = 1
 anchors_preset = -1
 offset_right = 200.0
@@ -423,10 +439,10 @@ offset_bottom = 356.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="HBoxContainer/RowItem8/PanelContainer" unique_id=1650992229]
+[node name="Panel" type="Panel" parent="HBoxContainer/ResultItem/PanelContainer" unique_id=1650992229]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/RowItem8/PanelContainer/Panel" unique_id=984690411]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ResultItem/PanelContainer/Panel" unique_id=984690411]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -436,24 +452,27 @@ offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/RowItem8/PanelContainer/Panel/VBoxContainer" unique_id=653295728]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer" unique_id=653295728]
 layout_mode = 2
 texture = ExtResource("1_pbvq8")
 expand_mode = 4
 
-[node name="ItemName" type="Label" parent="HBoxContainer/RowItem8/PanelContainer/Panel/VBoxContainer" unique_id=36895353]
+[node name="ItemName" type="Label" parent="HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer" unique_id=36895353]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Cherry Pie"
+text = "Cherry Pieasdasdasdasd"
 horizontal_alignment = 1
+clip_text = true
+max_lines_visible = 1
 
-[node name="Cost" type="Label" parent="HBoxContainer/RowItem8/PanelContainer/Panel/VBoxContainer" unique_id=2097478653]
+[node name="Cost" type="Label" parent="HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer" unique_id=2097478653]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Cost: ...$"
 horizontal_alignment = 1
+clip_text = true
 
-[node name="NotInInventory" type="Panel" parent="HBoxContainer/RowItem8" unique_id=1320366519]
+[node name="NotInInventory" type="Panel" parent="HBoxContainer/ResultItem" unique_id=1320366519]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -462,7 +481,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="HBoxContainer/RowItem8" unique_id=2069125419]
+[node name="Button" type="Button" parent="HBoxContainer/ResultItem" unique_id=2069125419]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
