@@ -34,7 +34,10 @@ func rerender(items_in_inventory: Array[Item]) -> void:
 
 			# If not in items_in_inventory_copy
 			if not item_found_in_inventory:
-				recipe.append(Item.new(code))
+				var placeholder_item = Item.new(code)
+				# NOTE: -10 means that this item is not in player inventory, so make it inactive (show NotInInventory panel)
+				placeholder_item.cost_price = -10
+				recipe.append(placeholder_item)
 
 		var result_item: Item = Item.new(item_code)
 		var result: Dictionary = CraftingMenuRow.create(recipe, result_item)

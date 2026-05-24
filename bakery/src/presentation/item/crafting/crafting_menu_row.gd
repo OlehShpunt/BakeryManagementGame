@@ -1,6 +1,8 @@
 class_name CraftingMenuRow
 extends Control
 
+## NOTE: If cost_price is -10, it means that this item is not in player inventory, so show NotInInventory panel
+
 @onready var item1_name_label: Label = $HBoxContainer/Item1/PanelContainer/Panel/VBoxContainer/ItemName
 @onready var item1_texture_rect: TextureRect = $HBoxContainer/Item1/PanelContainer/Panel/VBoxContainer/TextureRect
 @onready var item1_cost_label: Label = $HBoxContainer/Item1/PanelContainer/Panel/VBoxContainer/Cost
@@ -50,6 +52,11 @@ var _item1: Item:
 		item1_name_label.text = value.name
 		item1_texture_rect.texture = value.texture
 		item1_cost_label.text = str(value.cost_price)
+		if value.cost_price == -10:
+			item1_not_in_inventory_panel.visible = true
+			item1_cost_label.text = ""
+		else:
+			item1_not_in_inventory_panel.visible = false
 
 var _item2: Item:
 	get:
@@ -59,6 +66,11 @@ var _item2: Item:
 		item2_name_label.text = value.name
 		item2_texture_rect.texture = value.texture
 		item2_cost_label.text = str(value.cost_price)
+		if value.cost_price == -10:
+			item2_not_in_inventory_panel.visible = true
+			item2_cost_label.text = ""
+		else:
+			item2_not_in_inventory_panel.visible = false
 
 var _item3: Item:
 	get:
@@ -68,6 +80,11 @@ var _item3: Item:
 		item3_name_label.text = value.name
 		item3_texture_rect.texture = value.texture
 		item3_cost_label.text = str(value.cost_price)
+		if value.cost_price == -10:
+			item3_not_in_inventory_panel.visible = true
+			item3_cost_label.text = ""
+		else:
+			item3_not_in_inventory_panel.visible = false
 
 var _item4: Item:
 	get:
@@ -77,6 +94,11 @@ var _item4: Item:
 		item4_name_label.text = value.name
 		item4_texture_rect.texture = value.texture
 		item4_cost_label.text = str(value.cost_price)
+		if value.cost_price == -10:
+			item4_not_in_inventory_panel.visible = true
+			item4_cost_label.text = ""
+		else:
+			item4_not_in_inventory_panel.visible = false
 
 var _item5: Item:
 	get:
@@ -86,6 +108,11 @@ var _item5: Item:
 		item5_name_label.text = value.name
 		item5_texture_rect.texture = value.texture
 		item5_cost_label.text = str(value.cost_price)
+		if value.cost_price == -10:
+			item5_not_in_inventory_panel.visible = true
+			item5_cost_label.text = ""
+		else:
+			item5_not_in_inventory_panel.visible = false
 
 var _item6: Item:
 	get:
@@ -95,6 +122,11 @@ var _item6: Item:
 		item6_name_label.text = value.name
 		item6_texture_rect.texture = value.texture
 		item6_cost_label.text = str(value.cost_price)
+		if value.cost_price == -10:
+			item6_not_in_inventory_panel.visible = true
+			item6_cost_label.text = ""
+		else:
+			item6_not_in_inventory_panel.visible = false
 
 var _item7: Item:
 	get:
@@ -104,6 +136,11 @@ var _item7: Item:
 		item7_name_label.text = value.name
 		item7_texture_rect.texture = value.texture
 		item7_cost_label.text = str(value.cost_price)
+		if value.cost_price == -10:
+			item7_not_in_inventory_panel.visible = true
+			item7_cost_label.text = ""
+		else:
+			item7_not_in_inventory_panel.visible = false
 
 var _result_item: Item:
 	get:
