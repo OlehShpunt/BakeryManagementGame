@@ -1,6 +1,5 @@
 class_name CraftingMenuRow
 extends Control
-
 ## NOTE: If cost_price is -10, it means that this item is not in player inventory, so show NotInInventory panel
 
 @onready var item1_name_label: Label = $HBoxContainer/Item1/PanelContainer/Panel/VBoxContainer/ItemName
@@ -41,6 +40,7 @@ extends Control
 @onready var result_item_name_label: Label = $HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer/ItemName
 @onready var result_item_texture_rect: TextureRect = $HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer/TextureRect
 @onready var result_item_cost_label: Label = $HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer/Cost
+@onready var result_item_button: Button = $HBoxContainer/ResultItem/Button
 
 static var crafting_menu_row_packed_scene: PackedScene = preload("res://src/presentation/item/crafting/crafting_menu_row.tscn")
 
@@ -230,4 +230,20 @@ func _set_items(recipe: Array[Item], result_item: Item) -> void:
 	if recipe.size() >= 7:
 		_item1 = recipe[6]
 
+	set_up_result_item_button(recipe, result_item)
+
 	_result_item = result_item
+
+
+## Sets result item cost as a sum of all items
+## If an item's cost is -10 (i.g. not in inventory), disables the result item button
+func set_up_result_item_button(recipe: Array[Item], result_item: Item) -> void:
+	var sum = 0
+
+	for item in recipe:
+		if item.cost_price == -10:
+			result_item_button.disabled = true
+			break
+		sum = sum + item.cost_price
+
+	result_item.cost_price = sum
