@@ -5,12 +5,36 @@ const crafting_menu_row_preload: PackedScene = preload("res://src/presentation/i
 
 
 func _ready() -> void:
+	rerender([])
+	var player_state: PlayerState = StateManager.get_player_state()
+	player_state.player_inventory_updated.connect(rerender)
+
+
+func rerender(items_in_inventory: Array[Item]) -> void:
+	for child in rows_container.get_children():
+		child.queue_free()
+
+	print("crafting menu rerender called")
+	# TODO: Optimize
 	for item_code: int in EnumHolder.ItemCode.values():
 		print("bams ", item_code)
+		# Need to copy so that Items are not erased for new row
+		var items_in_inventory_copy = items_in_inventory.duplicate_deep()
 		var recipeItemCodes: Array[EnumHolder.ItemCode] = Recipes.get_recipe_by_item_code(item_code)
 		var recipe: Array[Item] = []
 		for code in recipeItemCodes:
-			recipe.append(Item.new(code))
+			var item_found_in_inventory = false
+
+			for item in items_in_inventory_copy:
+				if item.item_code == code:
+					items_in_inventory_copy.erase(item)
+					recipe.append(item)
+					item_found_in_inventory = true
+					break
+
+			# If not in items_in_inventory_copy
+			if not item_found_in_inventory:
+				recipe.append(Item.new(code))
 
 		var result_item: Item = Item.new(item_code)
 		var result: Dictionary = CraftingMenuRow.create(recipe, result_item)
@@ -20,6 +44,10 @@ func _ready() -> void:
 			rows_container.add_child(crafting_menu_row_instance)
 		else:
 			pass
+
+	#func check_item_availability(recipe: Array[Item]) -> void:
+	#var player_state: PlayerState = StateManager.get_player_state()
+	#player_state.player_inventory_updated.connect()
 
 
 class Recipe:

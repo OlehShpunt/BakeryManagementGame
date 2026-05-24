@@ -9,26 +9,32 @@ extends Control
 @onready var item2_name_label: Label = $HBoxContainer/Item2/PanelContainer/Panel/VBoxContainer/ItemName
 @onready var item2_texture_rect: TextureRect = $HBoxContainer/Item2/PanelContainer/Panel/VBoxContainer/TextureRect
 @onready var item2_cost_label: Label = $HBoxContainer/Item2/PanelContainer/Panel/VBoxContainer/Cost
+@onready var item2_not_in_inventory_panel: Panel = $HBoxContainer/Item2/NotInInventory
 
 @onready var item3_name_label: Label = $HBoxContainer/Item3/PanelContainer/Panel/VBoxContainer/ItemName
 @onready var item3_texture_rect: TextureRect = $HBoxContainer/Item3/PanelContainer/Panel/VBoxContainer/TextureRect
 @onready var item3_cost_label: Label = $HBoxContainer/Item3/PanelContainer/Panel/VBoxContainer/Cost
+@onready var item3_not_in_inventory_panel: Panel = $HBoxContainer/Item3/NotInInventory
 
 @onready var item4_name_label: Label = $HBoxContainer/Item4/PanelContainer/Panel/VBoxContainer/ItemName
 @onready var item4_texture_rect: TextureRect = $HBoxContainer/Item4/PanelContainer/Panel/VBoxContainer/TextureRect
 @onready var item4_cost_label: Label = $HBoxContainer/Item4/PanelContainer/Panel/VBoxContainer/Cost
+@onready var item4_not_in_inventory_panel: Panel = $HBoxContainer/Item4/NotInInventory
 
 @onready var item5_name_label: Label = $HBoxContainer/Item5/PanelContainer/Panel/VBoxContainer/ItemName
 @onready var item5_texture_rect: TextureRect = $HBoxContainer/Item5/PanelContainer/Panel/VBoxContainer/TextureRect
 @onready var item5_cost_label: Label = $HBoxContainer/Item5/PanelContainer/Panel/VBoxContainer/Cost
+@onready var item5_not_in_inventory_panel: Panel = $HBoxContainer/Item5/NotInInventory
 
 @onready var item6_name_label: Label = $HBoxContainer/Item6/PanelContainer/Panel/VBoxContainer/ItemName
 @onready var item6_texture_rect: TextureRect = $HBoxContainer/Item6/PanelContainer/Panel/VBoxContainer/TextureRect
 @onready var item6_cost_label: Label = $HBoxContainer/Item6/PanelContainer/Panel/VBoxContainer/Cost
+@onready var item6_not_in_inventory_panel: Panel = $HBoxContainer/Item6/NotInInventory
 
 @onready var item7_name_label: Label = $HBoxContainer/Item7/PanelContainer/Panel/VBoxContainer/ItemName
 @onready var item7_texture_rect: TextureRect = $HBoxContainer/Item7/PanelContainer/Panel/VBoxContainer/TextureRect
 @onready var item7_cost_label: Label = $HBoxContainer/Item7/PanelContainer/Panel/VBoxContainer/Cost
+@onready var item7_not_in_inventory_panel: Panel = $HBoxContainer/Item7/NotInInventory
 
 @onready var result_item_name_label: Label = $HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer/ItemName
 @onready var result_item_texture_rect: TextureRect = $HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer/TextureRect
