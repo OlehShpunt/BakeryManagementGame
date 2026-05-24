@@ -1,0 +1,495 @@
+[gd_scene format=3 uid="uid://bnwi4g4fhajcb"]
+
+[ext_resource type="Script" uid="uid://wjarpqgiaawb" path="res://src/presentation/item/crafting/crafting_menu_row.gd" id="1_7domc"]
+[ext_resource type="Texture2D" uid="uid://dlu0fajieyqty" path="res://assets/ingredientsPNG/cherry_cake.png" id="1_pbvq8"]
+[ext_resource type="Texture2D" uid="uid://p71uehyh4xc8" path="res://assets/objectsPNG/arrow right.png" id="2_7domc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn603"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3a8f6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn603"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3a8f6"]
+bg_color = Color(0.40784314, 0, 0, 0.5176471)
+
+[node name="CraftingMenuRow" type="Control" unique_id=658095681]
+custom_minimum_size = Vector2(0, 356.5)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7domc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=687048178]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 2
+
+[node name="Item1" type="Control" parent="HBoxContainer" unique_id=386969025]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Item1" unique_id=1593107276]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 200.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Item1/PanelContainer" unique_id=102791166]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Item1/PanelContainer/Panel" unique_id=340628656]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item1/PanelContainer/Panel/VBoxContainer" unique_id=1684342338]
+layout_mode = 2
+texture = ExtResource("1_pbvq8")
+expand_mode = 4
+
+[node name="ItemName" type="Label" parent="HBoxContainer/Item1/PanelContainer/Panel/VBoxContainer" unique_id=1721231020]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Item Name"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Cost" type="Label" parent="HBoxContainer/Item1/PanelContainer/Panel/VBoxContainer" unique_id=1651770017]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Cost: ...$"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="NotInInventory" type="Panel" parent="HBoxContainer/Item1" unique_id=1258661709]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item2" type="Control" parent="HBoxContainer" unique_id=1959940212]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Item2" unique_id=366058400]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 200.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Item2/PanelContainer" unique_id=1393190254]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Item2/PanelContainer/Panel" unique_id=240386287]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item2/PanelContainer/Panel/VBoxContainer" unique_id=1083245029]
+layout_mode = 2
+texture = ExtResource("1_pbvq8")
+expand_mode = 4
+
+[node name="ItemName" type="Label" parent="HBoxContainer/Item2/PanelContainer/Panel/VBoxContainer" unique_id=863754877]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Item Name"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Cost" type="Label" parent="HBoxContainer/Item2/PanelContainer/Panel/VBoxContainer" unique_id=1293768788]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Cost: ...$"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="NotInInventory" type="Panel" parent="HBoxContainer/Item2" unique_id=792153578]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item3" type="Control" parent="HBoxContainer" unique_id=1176647007]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Item3" unique_id=482009008]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 200.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Item3/PanelContainer" unique_id=611291018]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Item3/PanelContainer/Panel" unique_id=504592125]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item3/PanelContainer/Panel/VBoxContainer" unique_id=1282543521]
+layout_mode = 2
+texture = ExtResource("1_pbvq8")
+expand_mode = 4
+
+[node name="ItemName" type="Label" parent="HBoxContainer/Item3/PanelContainer/Panel/VBoxContainer" unique_id=554016314]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Item Name"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Cost" type="Label" parent="HBoxContainer/Item3/PanelContainer/Panel/VBoxContainer" unique_id=1225239729]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Cost: ...$"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="NotInInventory" type="Panel" parent="HBoxContainer/Item3" unique_id=255260629]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item4" type="Control" parent="HBoxContainer" unique_id=923625051]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Item4" unique_id=68482955]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 200.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Item4/PanelContainer" unique_id=713387432]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Item4/PanelContainer/Panel" unique_id=1425509386]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item4/PanelContainer/Panel/VBoxContainer" unique_id=1561115561]
+layout_mode = 2
+texture = ExtResource("1_pbvq8")
+expand_mode = 4
+
+[node name="ItemName" type="Label" parent="HBoxContainer/Item4/PanelContainer/Panel/VBoxContainer" unique_id=1409636690]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Item Name"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Cost" type="Label" parent="HBoxContainer/Item4/PanelContainer/Panel/VBoxContainer" unique_id=347985655]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Cost: ...$"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="NotInInventory" type="Panel" parent="HBoxContainer/Item4" unique_id=2037720007]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item5" type="Control" parent="HBoxContainer" unique_id=1135571453]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Item5" unique_id=2095786125]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 200.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Item5/PanelContainer" unique_id=410412132]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Item5/PanelContainer/Panel" unique_id=1655012769]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item5/PanelContainer/Panel/VBoxContainer" unique_id=414533464]
+layout_mode = 2
+texture = ExtResource("1_pbvq8")
+expand_mode = 4
+
+[node name="ItemName" type="Label" parent="HBoxContainer/Item5/PanelContainer/Panel/VBoxContainer" unique_id=1672857628]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Item Name"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Cost" type="Label" parent="HBoxContainer/Item5/PanelContainer/Panel/VBoxContainer" unique_id=591831276]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Cost: ...$"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="NotInInventory" type="Panel" parent="HBoxContainer/Item5" unique_id=1417036703]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item6" type="Control" parent="HBoxContainer" unique_id=1454890868]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Item6" unique_id=1504131394]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 200.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Item6/PanelContainer" unique_id=861931019]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Item6/PanelContainer/Panel" unique_id=126213110]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item6/PanelContainer/Panel/VBoxContainer" unique_id=625902509]
+layout_mode = 2
+texture = ExtResource("1_pbvq8")
+expand_mode = 4
+
+[node name="ItemName" type="Label" parent="HBoxContainer/Item6/PanelContainer/Panel/VBoxContainer" unique_id=194809638]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Item Name"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Cost" type="Label" parent="HBoxContainer/Item6/PanelContainer/Panel/VBoxContainer" unique_id=912379503]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Cost: ...$"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="NotInInventory" type="Panel" parent="HBoxContainer/Item6" unique_id=695963019]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item7" type="Control" parent="HBoxContainer" unique_id=1769041128]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Item7" unique_id=1170531109]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 200.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Item7/PanelContainer" unique_id=1120660230]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Item7/PanelContainer/Panel" unique_id=857579655]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item7/PanelContainer/Panel/VBoxContainer" unique_id=29690627]
+layout_mode = 2
+texture = ExtResource("1_pbvq8")
+expand_mode = 4
+
+[node name="ItemName" type="Label" parent="HBoxContainer/Item7/PanelContainer/Panel/VBoxContainer" unique_id=152664794]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Item Name"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Cost" type="Label" parent="HBoxContainer/Item7/PanelContainer/Panel/VBoxContainer" unique_id=1437137560]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Cost: ...$"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="NotInInventory" type="Panel" parent="HBoxContainer/Item7" unique_id=1922109116]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=953602353]
+custom_minimum_size = Vector2(117.92, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gn603")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VSeparator" unique_id=119432939]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7domc")
+
+[node name="ResultItem" type="Control" parent="HBoxContainer" unique_id=2065305114]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/ResultItem" unique_id=977458722]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 200.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/ResultItem/PanelContainer" unique_id=1650992229]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ResultItem/PanelContainer/Panel" unique_id=984690411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer" unique_id=653295728]
+layout_mode = 2
+texture = ExtResource("1_pbvq8")
+expand_mode = 4
+
+[node name="ItemName" type="Label" parent="HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer" unique_id=36895353]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Cherry Pieasdasdasdasd"
+horizontal_alignment = 1
+clip_text = true
+max_lines_visible = 1
+
+[node name="Cost" type="Label" parent="HBoxContainer/ResultItem/PanelContainer/Panel/VBoxContainer" unique_id=2097478653]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Cost: ...$"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="NotInInventory" type="Panel" parent="HBoxContainer/ResultItem" unique_id=1320366519]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/ResultItem" unique_id=2069125419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3a8f6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gn603")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3a8f6")
+
+[connection signal="pressed" from="HBoxContainer/ResultItem/Button" to="." method="_on_button_pressed"]

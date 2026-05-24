@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1gfsuuv7dwcm" path="res://src/presentation/player/player_inventory.tscn" id="2_gx4c8"]
 [ext_resource type="PackedScene" uid="uid://dppf1i3mld62o" path="res://src/presentation/npc/seller/ui/seller_ui.tscn" id="2_qprmg"]
 [ext_resource type="PackedScene" uid="uid://i200ys7r050" path="res://src/presentation/player/hud/game_loop_ui.tscn" id="3_tgn15"]
+[ext_resource type="PackedScene" uid="uid://cpqpbkotlhhh7" path="res://src/presentation/item/crafting/crafting_menu.tscn" id="5_6mnvw"]
 
 [node name="GameplayUi" type="Control" unique_id=1274756853]
 layout_mode = 3
@@ -26,7 +27,29 @@ size_flags_vertical = 8
 
 [node name="GameLoopUI" parent="CanvasLayer2" unique_id=1201968885 instance=ExtResource("3_tgn15")]
 
+[node name="OpenMenu" type="Button" parent="CanvasLayer2" unique_id=757492766]
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 446.0
+offset_top = -193.0
+offset_right = 646.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 36
+text = "CRAFT"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=924097007]
 
 [node name="SellerUi" parent="CanvasLayer" unique_id=40930946 instance=ExtResource("2_qprmg")]
 visible = false
+
+[node name="CraftingMenu" parent="CanvasLayer" unique_id=1139309617 instance=ExtResource("5_6mnvw")]
+visible = false
+
+[connection signal="pressed" from="CanvasLayer2/OpenMenu" to="." method="_on_open_crafting_menu_pressed"]

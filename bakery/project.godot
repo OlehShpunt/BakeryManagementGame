@@ -27,6 +27,8 @@ EventListenerManager="*res://src/presentation/event_listeners/event_listener_man
 DomainEventBus="*res://src/domain/domain_event_bus.gd"
 PresentationEventBus="*uid://l5j82gw82qwf"
 GameplayUi="*uid://cb8jhbps15bmu"
+Console="*uid://ouiu5xh1cs8n"
+ConsoleCommandsAutoload="*uid://bclfr81bbe66a"
 
 [debug]
 

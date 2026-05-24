@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cpqpbkotlhhh7"]
+
+[ext_resource type="Script" uid="uid://rbclj4qd6l5k" path="res://src/presentation/item/crafting/crafting_menu.gd" id="1_1nm4q"]
+
+[node name="CraftingMenu" type="Control" unique_id=1139309617]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1nm4q")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2007124371]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=159609951]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1009357579]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=116752207]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 51
+text = "Crafting Menu"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=2104868755]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/MarginContainer2" unique_id=1375416965]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer2/ScrollContainer" unique_id=772994619]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="Button" type="Button" parent="." unique_id=1491241952]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.09094
+offset_top = 28.0
+offset_right = -24.090942
+offset_bottom = 134.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 70
+text = "×"
+
+[node name="Warning" type="Label" parent="." unique_id=1024187745]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 83.0
+offset_right = 1237.0
+offset_bottom = 124.875
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "You can only craft in the bakery kitchen"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_close_button_pressed"]

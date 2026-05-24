@@ -2,6 +2,7 @@ class_name PlayerState
 extends RefCounted
 
 signal player_balance_updated(balance: int)
+signal player_inventory_updated(items: Array[Item])
 
 var _player_name: String
 var _player_location: EnumHolder.Location
@@ -59,6 +60,17 @@ func get_player_location() -> EnumHolder.Location:
 func register_cell_state(cell_id: int, cell_state: CellState) -> void:
 	print("[DEBUG] registering cell state: ", cell_id, " --- value = ", cell_state)
 	_player_cell_state_ref_registry.set(cell_id, cell_state)
+	# Every time cell state changes, a signal is emitted with all items currently in inventory
+	cell_state.item_updated.connect(_helper_register_cell_state)
+
+
+func _helper_register_cell_state(_item: Item) -> void:
+	var new_items: Array[Item]
+	for cell_state: CellState in _player_cell_state_ref_registry.values():
+		if cell_state.item:
+			new_items.append(cell_state.item)
+
+	player_inventory_updated.emit(new_items)
 
 
 func get_cell_state(cell_id: int) -> CellState:
@@ -73,12 +85,19 @@ func set_inventory_item(cell_id: int, item: Item) -> void:
 
 
 func get_inventory_item(cell_id: int) -> Item:
+	if (cell_id not in _player_cell_state_ref_registry.keys()):
+		return null
+
 	var cell_state: CellState = _player_cell_state_ref_registry.get(cell_id)
 
 	if (cell_state.item == null):
 		return null
 
 	return cell_state.item
+
+
+func get_inventory_size() -> int:
+	return _player_cell_state_ref_registry.size()
 
 
 func get_first_empty_cell_state_id() -> int:
