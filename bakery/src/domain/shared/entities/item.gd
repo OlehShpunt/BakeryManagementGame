@@ -202,6 +202,13 @@ func _init(item_enum_code: EnumHolder.ItemCode, item_cost_price: int = -999, ite
 	_texture = _texture_mapper.get(item_code)
 
 
+func is_equal(item: Item) -> bool:
+	if (self.item_code == item.item_code and self.cost_price == item.cost_price and self.sale_price == item.sale_price):
+		return true
+
+	return false
+
+
 class ArrayOfItems:
 	var _value: Array[Item]
 

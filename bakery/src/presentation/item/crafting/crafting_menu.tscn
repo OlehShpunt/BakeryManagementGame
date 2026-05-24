@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://rbclj4qd6l5k" path="res://src/presentation/item/crafting/crafting_menu.gd" id="1_1nm4q"]
 
 [node name="CraftingMenu" type="Control" unique_id=1139309617]
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,3 +50,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 25
+
+[node name="Button" type="Button" parent="." unique_id=1491241952]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.09094
+offset_top = 28.0
+offset_right = -24.090942
+offset_bottom = 134.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 70
+text = "×"
+
+[connection signal="pressed" from="Button" to="." method="_on_close_button_pressed"]

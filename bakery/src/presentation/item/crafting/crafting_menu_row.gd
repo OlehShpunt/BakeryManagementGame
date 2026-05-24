@@ -44,6 +44,8 @@ extends Control
 
 static var crafting_menu_row_packed_scene: PackedScene = preload("res://src/presentation/item/crafting/crafting_menu_row.tscn")
 
+var craft_item_use_case = CraftItemUseCase.new()
+
 var _item1: Item:
 	get:
 		return _item1
@@ -247,3 +249,23 @@ func set_up_result_item_button(recipe: Array[Item], result_item: Item) -> void:
 		sum = sum + item.cost_price
 
 	result_item.cost_price = sum
+
+
+func _on_button_pressed() -> void:
+	var recipe: Array[Item] = []
+	if _item1 and _item1.cost_price != -10:
+		recipe.append(_item1)
+	if _item2 and _item2.cost_price != -10:
+		recipe.append(_item2)
+	if _item3 and _item3.cost_price != -10:
+		recipe.append(_item3)
+	if _item4 and _item4.cost_price != -10:
+		recipe.append(_item4)
+	if _item5 and _item5.cost_price != -10:		
+		recipe.append(_item5)
+	if _item6 and _item6.cost_price != -10:
+		recipe.append(_item6)
+	if _item7 and _item7.cost_price != -10:
+		recipe.append(_item7)
+
+	craft_item_use_case.execute(recipe, _result_item)

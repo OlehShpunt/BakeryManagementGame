@@ -1,4 +1,7 @@
+class_name CraftingMenu
 extends Control
+
+signal close_crafting_menu_button_pressed
 
 const crafting_menu_row_preload: PackedScene = preload("res://src/presentation/item/crafting/crafting_menu_row.tscn")
 @onready var rows_container: VBoxContainer = $PanelContainer/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer
@@ -47,3 +50,7 @@ func rerender(items_in_inventory: Array[Item]) -> void:
 			rows_container.add_child(crafting_menu_row_instance)
 		else:
 			pass
+
+
+func _on_close_button_pressed() -> void:
+	close_crafting_menu_button_pressed.emit()
