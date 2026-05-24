@@ -5,7 +5,7 @@ signal close_crafting_menu_button_pressed
 
 const crafting_menu_row_preload: PackedScene = preload("res://src/presentation/item/crafting/crafting_menu_row.tscn")
 @onready var rows_container: VBoxContainer = $PanelContainer/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer
-@onready var warning_label: Label = $PanelContainer/VBoxContainer/Warning
+@onready var warning_label: Label = $Warning
 
 
 func _ready() -> void:
