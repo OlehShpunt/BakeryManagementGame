@@ -5,12 +5,15 @@ signal close_crafting_menu_button_pressed
 
 const crafting_menu_row_preload: PackedScene = preload("res://src/presentation/item/crafting/crafting_menu_row.tscn")
 @onready var rows_container: VBoxContainer = $PanelContainer/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer
+@onready var warning_label: Label = $PanelContainer/VBoxContainer/Warning
 
 
 func _ready() -> void:
 	rerender([])
 	var player_state: PlayerState = StateManager.get_player_state()
 	player_state.player_inventory_updated.connect(rerender)
+	PresentationEventBus.player_entered_cooking_area.connect(func(): warning_label.hide())
+	PresentationEventBus.player_left_cooking_area.connect(func(): warning_label.show())
 
 
 func rerender(items_in_inventory: Array[Item]) -> void:

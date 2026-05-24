@@ -39,6 +39,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
 
@@ -64,5 +65,17 @@ grow_horizontal = 0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 70
 text = "×"
+
+[node name="Warning" type="Label" parent="." unique_id=1024187745]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 83.0
+offset_right = 1237.0
+offset_bottom = 124.875
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "You can only craft in the bakery kitchen"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_close_button_pressed"]

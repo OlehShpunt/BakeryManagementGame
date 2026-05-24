@@ -44,6 +44,9 @@ extends Control
 
 static var crafting_menu_row_packed_scene: PackedScene = preload("res://src/presentation/item/crafting/crafting_menu_row.tscn")
 
+# Enabled only when in crafting/cooking area
+var crafting_enabled = false
+
 var craft_item_use_case = CraftItemUseCase.new()
 
 var _item1: Item:
@@ -156,6 +159,9 @@ var _result_item: Item:
 
 
 func _ready() -> void:
+	PresentationEventBus.player_entered_cooking_area.connect(func(): crafting_enabled = true)
+	PresentationEventBus.player_left_cooking_area.connect(func(): crafting_enabled = false)
+
 	# Reset all default item displays
 	item1_name_label.text = ""
 	item1_texture_rect.texture = null
@@ -252,6 +258,9 @@ func set_up_result_item_button(recipe: Array[Item], result_item: Item) -> void:
 
 
 func _on_button_pressed() -> void:
+	if not crafting_enabled:
+		return
+
 	var recipe: Array[Item] = []
 	if _item1 and _item1.cost_price != -10:
 		recipe.append(_item1)
@@ -261,7 +270,7 @@ func _on_button_pressed() -> void:
 		recipe.append(_item3)
 	if _item4 and _item4.cost_price != -10:
 		recipe.append(_item4)
-	if _item5 and _item5.cost_price != -10:		
+	if _item5 and _item5.cost_price != -10:
 		recipe.append(_item5)
 	if _item6 and _item6.cost_price != -10:
 		recipe.append(_item6)
