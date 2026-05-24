@@ -5,6 +5,7 @@ extends HBoxContainer
 
 var _id: int
 var _seller_ui_item_row_state: SellerUiItemRowState
+var sell_seller_item_to_player_use_case: SellSellerItemToPlayerUseCase = SellSellerItemToPlayerUseCase.new()
 
 var id: int:
 	set(value):
@@ -37,24 +38,12 @@ func assign_item(item: Item) -> void:
 
 
 func _on_button_pressed() -> void:
-	var cell_id := StateManager.get_player_state().get_first_empty_cell_state_id()
+	var item_to_sell := seller_ui_item_row_state.item
 
-	# Is inventory full?
-	if (cell_id == -1):
-		return
-
-	var balance := StateManager.get_player_state().balance
-	var item := seller_ui_item_row_state.item
-
-	# Does the player have enough money?
-	if (balance < item.sale_price):
-		return
-	StateManager.get_player_state().subtract_balance_amount(item.sale_price)
-
-	# NOTE: Item sale_price is passed as cost_price
-	var item_copy: Item = Item.new(item.item_code, item.sale_price)
-	StateManager.get_player_state().set_inventory_item(cell_id, item_copy)
-	seller_ui_item_row_state.is_sold = true
+	var success := sell_seller_item_to_player_use_case.execute(item_to_sell)
+	
+	if (success):
+		seller_ui_item_row_state.is_sold = true
 
 
 func _on_is_sold_updated(is_sold: bool) -> void:
