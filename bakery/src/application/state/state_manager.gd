@@ -3,11 +3,14 @@ extends Node
 var _player_state: PlayerState
 var _seller_states: Dictionary[int, SellerState]
 var _global_state: GlobalState
+var _ws_client: WebSocketClient
 
 
 func _init() -> void:
 	_global_state = GlobalState.new()
 	_player_state = PlayerState.new()
+	_ws_client = WebSocketClient.new()
+	add_child(_ws_client)
 
 	print("[DEV][A] State manager initialized")
 

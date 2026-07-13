@@ -9,6 +9,7 @@ func _init() -> void:
 
 
 func execute() -> void:
+	await StateManager._ws_client.setup(StateManager.get_player_state().get_player_name())
 	load_location_use_case.execute(EnumHolder.Location.Street)
 	EventBus.start_game.emit()
 
