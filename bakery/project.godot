@@ -29,6 +29,7 @@ PresentationEventBus="*uid://l5j82gw82qwf"
 GameplayUi="*uid://cb8jhbps15bmu"
 Console="*uid://ouiu5xh1cs8n"
 ConsoleCommandsAutoload="*uid://bclfr81bbe66a"
+MultiplayerPlayerDisplay="*uid://b0hcjntvoyg32"
 
 [debug]
 

@@ -15,6 +15,9 @@ var connected := false
 var joined_lobby := false
 var player_name := ""
 
+# Events
+signal player_joined_lobby(id: String, name: String)
+
 
 func setup(player_name_param: String) -> void:
 	# Initiate connection to the given URL.
@@ -101,6 +104,7 @@ func send_teleport_player(x: int, y: int, scene_id: int) -> void:
 	print("> Sent TeleportPlayer")
 
 
+# TODO: use ASCII everywhere
 func handle_inbound_message(packet: PackedByteArray) -> void:
 	var reader := StreamPeerBuffer.new()
 	reader.data_array = packet
@@ -113,7 +117,7 @@ func handle_inbound_message(packet: PackedByteArray) -> void:
 			var p_name: String = reader.get_string(remaining_bytes) # Read player name
 			print("Player Name: %s" % p_name)
 			Console.print_info("< PlayerJoinedLobby: %s, %s" % [player_id, p_name])
-			# TODO: Pass `player_id` and `p_name` to another layer for processing
+			player_joined_lobby.emit(player_id, p_name)
 		2: # PlayerLeftLobby
 			var player_id := reader.get_string(36) # Read fixed-length GuidString36
 			Console.print_info("< PlayerLeftLobby: %s" % player_id)

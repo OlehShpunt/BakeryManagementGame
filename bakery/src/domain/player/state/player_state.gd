@@ -4,6 +4,7 @@ extends RefCounted
 signal player_balance_updated(balance: int)
 signal player_inventory_updated(items: Array[Item])
 
+var _player_id: String
 var _player_name: String
 var _player_location: EnumHolder.Location
 var _player_balance: int
