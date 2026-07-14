@@ -4,6 +4,10 @@ var _multiplayer_player_packed_scene: PackedScene = preload("res://src/presentat
 var _registry: Dictionary[String, MultiplayerPlayer]
 
 
+func _ready() -> void:
+	z_index = 1
+
+
 ## Display an existing registered player
 func display_player(id: String) -> void:
 	pass
