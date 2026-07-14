@@ -17,6 +17,7 @@ var player_name := ""
 
 # Events
 signal player_joined_lobby(id: String, name: String)
+signal player_moved(id: String, x: float, y: float)
 
 
 func setup(player_name_param: String) -> void:
@@ -87,7 +88,7 @@ func send_remove_from_lobby() -> void:
 
 func send_move_player(x: int, y: int) -> void:
 	var writer := StreamPeerBuffer.new()
-	writer.put_16(4) # Action code for MovePlayer
+	writer.put_16(3) # Action code for MovePlayer
 	writer.put_float(x) # Write x coordinate as float
 	writer.put_float(y) # Write y coordinate as float
 	socket.put_packet(writer.data_array)
@@ -127,6 +128,7 @@ func handle_inbound_message(packet: PackedByteArray) -> void:
 			var x: float = reader.get_float()
 			var y: float = reader.get_float()
 			Console.print_info("< PlayerMoved: %s, x: %f, y: %f" % [player_id, x, y])
+			player_moved.emit(player_id, x, y)
 			# TODO: Pass `player_id`, `x`, and `y` to another layer for processing
 		4: # PlayerTeleported
 			var player_id := reader.get_string(36) # Read fixed-length GuidString36

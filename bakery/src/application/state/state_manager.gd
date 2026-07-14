@@ -14,6 +14,7 @@ func _init() -> void:
 	_ws_client = WebSocketClient.new()
 	add_child(_ws_client)
 	_ws_client.player_joined_lobby.connect(_on_player_joined_lobby)
+	_ws_client.player_moved.connect(_on_player_moved)
 
 	print("[DEV][A] State manager initialized")
 
@@ -28,6 +29,11 @@ func _on_player_joined_lobby(id: String, name: String) -> void:
 
 	# Create new multiplayer player in presentation layer
 	MultiplayerPlayerDisplay.register_player(state)
+
+
+func _on_player_moved(id: String, x: float, y: float) -> void:
+	var state: MultiplayerPlayerState = _multiplayer_player_states.get(id)
+	state.position = Vector2(x, y)
 
 
 func get_global_state() -> GlobalState:
