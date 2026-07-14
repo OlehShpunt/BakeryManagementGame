@@ -1,3 +1,4 @@
+class_name MultiplayerPlayerDisplay
 extends Node2D
 
 var _multiplayer_player_packed_scene: PackedScene = preload("res://src/presentation/multiplayer/player/multiplayer_player.tscn")
@@ -5,7 +6,7 @@ var _registry: Dictionary[String, MultiplayerPlayer]
 
 
 func _ready() -> void:
-	z_index = 1
+	y_sort_enabled = true
 
 
 ## Display an existing registered player

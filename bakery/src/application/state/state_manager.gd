@@ -5,6 +5,7 @@ var _seller_states: Dictionary[int, SellerState]
 var _global_state: GlobalState
 var _ws_client: WebSocketClient
 var _multiplayer_player_states: Dictionary[String, MultiplayerPlayerState]
+var _multiplayer_player_display: MultiplayerPlayerDisplay = MultiplayerPlayerDisplay.new()
 
 
 func _init() -> void:
@@ -19,6 +20,10 @@ func _init() -> void:
 	print("[DEV][A] State manager initialized")
 
 
+func _ready() -> void:
+	add_child(_multiplayer_player_display)
+
+
 func _on_player_joined_lobby(id: String, name: String) -> void:
 	if (id == null or name == null):
 		return
@@ -28,7 +33,7 @@ func _on_player_joined_lobby(id: String, name: String) -> void:
 	_multiplayer_player_states.set(id, state)
 
 	# Create new multiplayer player in presentation layer
-	MultiplayerPlayerDisplay.register_player(state)
+	_multiplayer_player_display.register_player(state)
 
 
 func _on_player_moved(id: String, x: float, y: float) -> void:

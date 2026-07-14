@@ -240,6 +240,7 @@ _data = {
 radius = 8.0
 
 [node name="MultiplayerPlayer" type="CharacterBody2D" unique_id=1137795131]
+y_sort_enabled = true
 collision_layer = 0
 script = ExtResource("1_5o4ym")
 
@@ -274,4 +275,5 @@ vframes = 6
 libraries/ = SubResource("AnimationLibrary_ymcgp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2040380890]
+position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_ymcgp")
