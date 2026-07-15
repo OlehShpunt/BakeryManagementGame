@@ -1,12 +1,7 @@
-[gd_scene format=3 uid="uid://ck6catep7k4as"]
+[gd_scene format=3 uid="uid://pxvl01cwk2y7"]
 
-[ext_resource type="Script" uid="uid://cl2xj4eijch3e" path="res://src/presentation/player/player.gd" id="1_48atu"]
-[ext_resource type="Texture2D" uid="uid://c57gimoikstek" path="res://assets/city builder assets/exports city assets/Character parck/man-1.png" id="2_k8b3m"]
-[ext_resource type="Script" uid="uid://cmp64tvfefm5a" path="res://src/presentation/player/hud/camera_2d.gd" id="10_uhkya"]
-[ext_resource type="PackedScene" uid="uid://7mbnd2g4uv6c" path="res://src/presentation/player/hud/joystick.tscn" id="14_k4v7y"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_sjnek"]
-radius = 7.0
+[ext_resource type="Script" uid="uid://dc8033auuc638" path="res://src/presentation/multiplayer/player/multiplayer_player.gd" id="1_5o4ym"]
+[ext_resource type="Texture2D" uid="uid://c57gimoikstek" path="res://assets/city builder assets/exports city assets/Character parck/man-1.png" id="2_ymcgp"]
 
 [sub_resource type="Animation" id="Animation_org8v"]
 length = 0.001
@@ -228,7 +223,7 @@ tracks/0/keys = {
 "values": [12, 13, 14, 15]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lu5cv"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ymcgp"]
 _data = {
 &"RESET": SubResource("Animation_org8v"),
 &"down_idle": SubResource("Animation_u4om8"),
@@ -241,35 +236,15 @@ _data = {
 &"up_walk": SubResource("Animation_qlfo2")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1631247182]
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("1_48atu")
-speed = 350
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymcgp"]
+radius = 8.0
 
-[node name="PlayerCollisionShape" type="CollisionShape2D" parent="." unique_id=1841241589]
-position = Vector2(0, 6)
-shape = SubResource("CircleShape2D_sjnek")
-debug_color = Color(1, 1, 0, 0.419608)
+[node name="MultiplayerPlayer" type="CharacterBody2D" unique_id=1137795131]
+y_sort_enabled = true
+collision_layer = 0
+script = ExtResource("1_5o4ym")
 
-[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=161971249]
-position = Vector2(0, -16)
-texture = ExtResource("2_k8b3m")
-hframes = 4
-vframes = 6
-
-[node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="." unique_id=118826380]
-libraries/ = SubResource("AnimationLibrary_lu5cv")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1469158664]
-zoom = Vector2(2, 2)
-limit_left = 0
-limit_top = 0
-limit_right = 944
-limit_bottom = 816
-script = ExtResource("10_uhkya")
-
-[node name="Name" type="Label" parent="." unique_id=1035095289]
+[node name="Name" type="Label" parent="." unique_id=2101753187]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -290,24 +265,15 @@ text = "Player"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="CoordinateDisplay" type="Label" parent="." unique_id=466420853]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -48.0
-offset_right = 20.0
-offset_bottom = -25.6667
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.9, 0.9, 0.9, 1)
-theme_override_constants/line_spacing = 0
-theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 3
-text = "10, 10"
-horizontal_alignment = 1
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1050390600]
+position = Vector2(0, -16)
+texture = ExtResource("2_ymcgp")
+hframes = 4
+vframes = 6
 
-[node name="Joystick" parent="." unique_id=1436863201 instance=ExtResource("14_k4v7y")]
+[node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="." unique_id=2087339885]
+libraries/ = SubResource("AnimationLibrary_ymcgp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2040380890]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_ymcgp")

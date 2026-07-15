@@ -38,7 +38,10 @@ func _on_load_location(location: EnumHolder.Location) -> void:
 
 	var current_player_location: EnumHolder.Location = StateManager.get_player_state().get_player_location()
 	var coordinates: Vector2 = PlayerSpawnCoordinatesResolver.resolve(current_player_location, location)
-	spawn_player_use_case.execute(location, coordinates)
+	spawn_player_use_case.execute(location, coordinates) # Reparents the player to new location node
+	# Reparent multiplayer player display to new location node
+	var tree: SceneTree = get_tree()
+	StateManager._multiplayer_player_display.reparent(tree.current_scene)
 
 
 func _load_scene(packed_scene: PackedScene) -> void:

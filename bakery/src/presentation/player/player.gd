@@ -13,6 +13,8 @@ var _player_movement_disabled := false
 ## Turn on to see player coordinates
 @export var show_coordinates: bool = false
 
+var move_player_use_case: MovePlayerUseCase = MovePlayerUseCase.new()
+
 
 func _ready() -> void:
 	StateManager.get_player_state().player_ref = self
@@ -36,6 +38,7 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	player_movement() # delta not needed since move_and_slide does the delta multiplication
 	var _body_collided: bool = move_and_slide()
+	move_player_use_case.execute(position.x, position.y)
 
 
 func player_movement() -> void:
