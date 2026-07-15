@@ -18,6 +18,7 @@ var player_name := ""
 # Events
 signal player_joined_lobby(id: String, name: String)
 signal player_moved(id: String, x: float, y: float)
+signal player_teleported(player_id: String, x: float, y: float, scene_id: String)
 
 
 func setup(player_name_param: String) -> void:
@@ -92,12 +93,12 @@ func send_move_player(x: int, y: int) -> void:
 	writer.put_float(x) # Write x coordinate as float
 	writer.put_float(y) # Write y coordinate as float
 	socket.put_packet(writer.data_array)
-	print("> Sent MovePlayer")
+	#print("> Sent MovePlayer")
 
 
 func send_teleport_player(x: int, y: int, scene_id: int) -> void:
 	var writer := StreamPeerBuffer.new()
-	writer.put_16(3) # Action code for TeleportPlayer
+	writer.put_16(4) # Action code for TeleportPlayer
 	writer.put_float(x) # Write x coordinate as float
 	writer.put_float(y) # Write y coordinate as float
 	writer.put_16(scene_id) # Write scene ID as Int16
@@ -127,7 +128,7 @@ func handle_inbound_message(packet: PackedByteArray) -> void:
 			var player_id := reader.get_string(36) # Read fixed-length GuidString36
 			var x: float = reader.get_float()
 			var y: float = reader.get_float()
-			Console.print_info("< PlayerMoved: %s, x: %f, y: %f" % [player_id, x, y])
+			#Console.print_info("< PlayerMoved: %s, x: %f, y: %f" % [player_id, x, y])
 			player_moved.emit(player_id, x, y)
 			# TODO: Pass `player_id`, `x`, and `y` to another layer for processing
 		4: # PlayerTeleported
@@ -137,6 +138,7 @@ func handle_inbound_message(packet: PackedByteArray) -> void:
 			var scene_id: int = reader.get_16()
 			Console.print_info("< PlayerTeleported: %s, x: %f, y: %f, scene: %d" % [player_id, x, y, scene_id])
 			# TODO: Pass `player_id`, `x`, `y`, and `scene_id` to another layer for processing
+			player_teleported.emit(player_id, x, y, scene_id)
 		5: # Error
 			var remaining_bytes := reader.data_array.size() - reader.get_position()
 			var error_message := reader.get_string(remaining_bytes)
