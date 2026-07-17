@@ -7606,7 +7606,8 @@ tile_map_data = PackedByteArray("AAAFAAEAAgAOAAIAAAAGAAEAAgAPAAIAAAAFAAIAAgAOAAM
 tile_set = SubResource("TileSet_34bib")
 
 [node name="Seller" parent="To enable y sorting" unique_id=2001020013 instance=ExtResource("4_xftcp")]
-position = Vector2(117, 131)
+z_index = 1
+position = Vector2(118, 134)
 id = 2000
 
 [node name="Teleport" parent="." unique_id=1240222515 instance=ExtResource("3_v1nf0")]
